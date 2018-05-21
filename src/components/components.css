@@ -1,0 +1,53 @@
+div.Back {
+  width: 100%;
+  height: 100%;
+  background-image: url('../../public/image/back.jpg');
+  background-repeat: no-repeat;
+}
+
+img.Logo {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+div.TopRibbon {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 24px;
+  width: 100%;
+  color: white;
+  font-size: 12px;
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
+div.TopMenu {
+  height: 48px;
+  width: 100%;
+  background-color:rgba(0, 0, 0, 0.3);
+}
+
+div.LangSelector {
+  height: 100%;
+  margin-right: 64px;
+}
+
+div.LangSelector span {
+  height: 100%;
+  margin-right:   6px;
+  padding-right: 6px;
+  border-right: 1px gray solid;
+  cursor: default;
+}
+
+div.LangSelector span:last-child {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+div.LangSelector span.Selected {
+  color: lightgreen;
+}
+

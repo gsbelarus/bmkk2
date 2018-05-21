@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import { reducer, State as AppState, BMKKAction } from './reducer';
+import { reducer, State as AppState } from './reducer';
 
 export type State = {
   appState: AppState;

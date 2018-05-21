@@ -1,18 +1,23 @@
-import { combineReducers } from 'redux';
 import { Language } from './types';
 import * as actions from './actions';
-import { ActionType } from 'typesafe-actions';
+import { ActionType, getType } from 'typesafe-actions';
 
 export type BMKKAction = ActionType<typeof actions>;
 
 export type State = {
-  lang: Language;
+  selectedLang: Language;
 };
 
 const initialState: State = {
-  lang: 'ru'
+  selectedLang: 'RU'
 };
 
 export const  reducer = (state: State = initialState, action: BMKKAction): State => {
-  return state;
+  switch (action.type) {
+    case getType(actions.setLanguage):
+      return {...state, selectedLang: action.payload};
+
+    default:
+      return state;
+  }
 };
