@@ -1,13 +1,13 @@
 import { createStore, combineReducers } from 'redux';
-import { reducer, State as AppState } from './reducer';
+import { reducer, State as AppState, BMKKAction } from './reducer';
 
 export type State = {
-  reducer: AppState;
+  appState: AppState;
 };
 
 const rootReducer = combineReducers<State>(
   {
-    reducer
+    appState: reducer
   }
 );
 
