@@ -22,10 +22,25 @@ div.TopRibbon {
   background-color:rgba(0, 0, 0, 0.5);
 }
 
-div.TopMenu {
+nav.TopMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   height: 48px;
   width: 100%;
   background-color:rgba(0, 0, 0, 0.3);
+}
+
+nav.TopMenu a {
+  color: white;
+  font-weight: 400;
+  font-size: 24px;
+  margin-right: 36px;
+  text-decoration: none;
+}
+
+nav.TopMenu a:last-child {
+  margin-right: 64px;
 }
 
 div.LangSelector {

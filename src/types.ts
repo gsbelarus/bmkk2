@@ -8,7 +8,12 @@ export interface TName {
 }
 
 export interface LName {
-  ru?: TName;
-  by?: TName;
-  en?: TName;
+  [key: string]: TName;
 }
+
+export interface MenuItem {
+  path: string;
+  caption: LName;
+}
+
+export type MenuItems = MenuItem[];
