@@ -1,10 +1,10 @@
+import * as React from 'react';
 import { Page, PageProps } from './Page';
 
+const logoImg = require('../../public/image/logo.png');
+
 export class MainPage extends Page {
-  constructor(props: PageProps) {
-    super(props);
-    this.state = {
-      backClass: 'BackImage'
-    };
+  renderBody(): JSX.Element {
+    return (<img className="Logo" src={logoImg} />);
   }
 }

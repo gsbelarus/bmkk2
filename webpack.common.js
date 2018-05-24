@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports =  {
   entry: {
@@ -11,7 +12,20 @@ module.exports =  {
     new HtmlWebpackPlugin({
       title: 'Production',
       template: './public/index.html'
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: './public/data/goodgroup/*.*',
+        to: 'data/goodgroup/',
+        flatten: true
+      },
+      {
+        from: './public/data/about/*.*',
+        to: 'data/about/',
+        flatten: true
+      }
+    ], {}
+    )
   ],
   module: {
     rules: [
@@ -23,6 +37,10 @@ module.exports =  {
       {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader' ]
+      },
+      {
+        test: /\.(txt|md)$/,
+        use: 'raw-loader'
       },
       {
         test: /\.(png|jp(e*)g|svg)$/,

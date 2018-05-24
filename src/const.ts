@@ -1,5 +1,10 @@
 import { MenuItems } from './types';
 
+export const dataRoot = '/data/';
+export const aboutRoot = `${dataRoot}about/`;
+export const goodGroupsRoot = `${dataRoot}goodgroup/`;
+export const goodGroupsFile = `${goodGroupsRoot}goodgroup.json`;
+
 export const mainMenu: MenuItems = [
   {
     path: '',

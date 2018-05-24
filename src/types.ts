@@ -17,3 +17,14 @@ export interface MenuItem {
 }
 
 export type MenuItems = MenuItem[];
+
+export interface IGoodGroups {
+  version: string;
+  groups: {
+    ruid: string;
+    parent?: string;
+    caption: LName;
+    ordr: number;
+    image?: string;
+  }[];
+}

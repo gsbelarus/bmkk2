@@ -1,6 +1,9 @@
-div.BackImage {
-  width: 100%;
-  height: 100%;
+div.Page {
+  width: 100vw;
+  height: 100vh;
+}
+
+div.MainPage {
   background-image: url('../../public/image/back.jpg');
   background-repeat: no-repeat;
 }
@@ -66,3 +69,35 @@ div.LangSelector span.Selected {
   color: lightgreen;
 }
 
+div.WorkArea {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-top: 12px;
+}
+
+div.GroupsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: space-between;
+}
+
+div.GoodGroup {
+  padding: 24px;
+  text-align: center;
+}
+
+div.GoodGroup img {
+  display: block;
+  margin: 0 auto;
+}
+
+div.GoodGroupName {
+  font-size: 24px;
+  font-weight: 600;
+  color: brown;
+  width: 100%;
+  text-align: center;
+}

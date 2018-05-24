@@ -1,35 +1,32 @@
 import * as React from 'react';
 import './components.css';
 import { LangSelector } from './LangSelector';
-import { Language } from '../types';
-import { SetLanguage } from '../actions';
+import { Language, IGoodGroups } from '../types';
+import { SetLanguage, LoadGroups } from '../actions';
 import { mainMenu } from '../const';
 import { Link } from 'react-router-dom';
 
-const logoImg = require('../../public/image/logo.png');
-
 export type PageProps = {
   selectedLang: Language;
+  groups: IGoodGroups;
   onSetLanguage: SetLanguage
+  onLoadGroups: LoadGroups
 };
 
-export type PageState = {
-  backClass: string;
-};
-
-export class Page extends React.Component<PageProps, PageState> {
+export class Page extends React.Component<PageProps, {}> {
 
   constructor(props: PageProps) {
     super(props);
-    this.state = {
-      backClass: ''
-    };
+  }
+
+  renderBody(): JSX.Element {
+    return (<div />);
   }
 
   render() {
     const { selectedLang } = this.props;
     return (
-      <div className={this.state.backClass}>
+      <div className={`${this.constructor.name} Page`}>
         <div className="TopRibbon">
           <LangSelector {...this.props} />
         </div>
@@ -40,7 +37,9 @@ export class Page extends React.Component<PageProps, PageState> {
             ))
           }
         </nav>
-        <img className="Logo" src={logoImg} />
+        <div className="WorkArea">
+          {this.renderBody()}
+        </div>
       </div>
     );
   }

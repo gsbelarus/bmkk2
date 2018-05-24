@@ -3,8 +3,3 @@ body {
   margin: 0;
   font-family: 'Roboto';
 }
-
-div#root {
-  width: 100vw;
-  height: 100vh;
-}
