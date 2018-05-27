@@ -1,4 +1,5 @@
 Copyright (c) 2018 by Golden Software of Belarus, Ltd
+
 См. файл LICENSE с условиями использования.
 
 * После клонирования проекта с github следует выполнить команду npm install для установки всех библиотек
