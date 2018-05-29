@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Page, PageProps } from './Page';
 import { LoadGoods } from '../actions';
 import { IGoods } from '../types';
-import { goodsFile, goodsRoot } from '../const';
+import { goodsFile, goodsRoot, goodCaption } from '../const';
 
 export class Goods extends Page {
 
@@ -27,19 +27,22 @@ export class Goods extends Page {
         <div className="GroupsContainer">
           {
             goods.goods.map( (g, idx) => (
-              <div key={idx}  className="GoodGroup">
-                <img src={`${goodsRoot}${g.image}`} />
-                <div className="GoodGroupName">
+              <div key={idx}  className="GoodItem">
+                <img src={`${goodsRoot}${g.image}`} />                
+                <div className="GoodName">
                   {g.caption[selectedLang.toLowerCase()].name}
                 </div>
-                <div className="Consist">
+                <div className="GoodCaption">{goodCaption.description.consist[selectedLang.toLowerCase()].name}</div>
+                <div className="GoodDescr">                
                   {g.consist[selectedLang.toLowerCase()].name}
                 </div>
-                <div className="Casing">
+                <div className="GoodCaption">{goodCaption.description.casing[selectedLang.toLowerCase()].name}</div>
+                <div className="GoodDescr">
                   {g.casing[selectedLang.toLowerCase()].name}
                 </div>
-                <div className="Casing">
-                  {g.beforuse[selectedLang.toLowerCase()].name}
+                <div className="GoodCaption">{goodCaption.description.beforuse[selectedLang.toLowerCase()].name}</div>
+                <div className="GoodDescr">
+                {g.beforuse}
                 </div>
               </div>
             ))
