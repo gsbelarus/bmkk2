@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Page, PageProps } from './Page';
 import { LoadGoods } from '../actions';
 import { IGoods } from '../types';
-import { goodsFile, goodsRoot } from '../const';
+import { goodsFile, goodsRoot, GoodCaption } from '../const';
 
 export interface GoodsProps extends PageProps {
   groupID?: string;
@@ -26,7 +26,6 @@ export class Goods extends Page<GoodsProps> {
 
   renderBody(): JSX.Element {
     const { goods, selectedLang, groupID  } = this.props; 
-    
 
     if (goods) {
       return (
@@ -40,12 +39,15 @@ export class Goods extends Page<GoodsProps> {
                   {g.caption[selectedLang.toLowerCase()].name}
                 </div>
                 <div className="Consist">
+                  <h2>{GoodCaption.description.consist[selectedLang.toLowerCase()].name}</h2>
                   {g.consist[selectedLang.toLowerCase()].name}
                 </div>     
                 <div className="Casing">
+                  <h2>{GoodCaption.description.casing[selectedLang.toLowerCase()].name}</h2>
                   {g.casing[selectedLang.toLowerCase()].name}
                 </div>  
-                <div className="Casing">
+                <div className="Beforuse">
+                  <h2>{GoodCaption.description.beforuse[selectedLang.toLowerCase()].name}</h2>
                   {g.beforuse[selectedLang.toLowerCase()].name}
                 </div>                                           
               </div>

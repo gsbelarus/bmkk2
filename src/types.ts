@@ -18,7 +18,7 @@ export interface MenuItem {
 
 export type MenuItems = MenuItem[];
 
-export interface GoodItem {
+export interface GoodCapt {
   description: {
     consist: LName;
     casing: LName;
@@ -26,7 +26,7 @@ export interface GoodItem {
   }
 }
 
-export type GoodItems = GoodItem[];
+export type GoodCaptions = GoodCapt;
 
 export interface IGoodGroups {
   version: string;

@@ -25,17 +25,64 @@ export class GoodCard extends Page {
 
     if (goods) {
       return (
-        <div className="GroupsContainer">
-          {
-            goods.goods.map( (g, idx) => (
-              <div className="GoodGroup">
-                <img src={`${goodsRoot}${g.image}`} />
-                <div className="GoodGroupName">
-                  {g.caption[selectedLang.toLowerCase()].name}
-                </div>
-              </div>
-            ))
-          }
+        <div className="GoodCard">
+
+
+          <table>
+            <tbody>
+              <tr>
+                <th>Наименование продукта</th>
+                <td></td>
+              </tr>
+
+            
+            <tr>
+                <th>Описание</th>
+                <td>Колбаса вареная мясная </td>
+            </tr>
+
+            <tr>
+                <th>Производитель</th>
+                <td>ОАО «Александрийское»</td>
+            </tr>
+
+            
+            <tr>
+                <th>Сорт</th>
+                <td>Высший сорт</td>
+            </tr>
+
+            
+            <tr>
+                <th>Оболочка, упаковка</th>
+                <td>Оболочка Бига-3</td>
+            </tr>
+
+            
+            <tr>
+                <th>Стандарт, ГОСТ, ТУ</th>
+                <td>СТБ 126</td>
+            </tr>
+
+            
+            <tr>
+                <th>Стандарт, ГОСТ, ТУ</th>
+                <td>РЦ BY 500011238.2915-2012</td>
+            </tr>
+
+            
+            <tr>
+                <th>Срок реализации (годности), суток</th>
+                <td>30 суток</td>
+            </tr>
+
+            <tr>
+                <th>Условия хранения:</th>
+                <td><p>В целой упаковке при относительной влажности воздуха (75±5)% и температуре (4±2)°С</p></td>
+            </tr>
+        </tbody></table>          
+
+
         </div>
       );
     } else {
