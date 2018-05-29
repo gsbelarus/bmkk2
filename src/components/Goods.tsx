@@ -9,7 +9,7 @@ export interface GoodsProps extends PageProps {
 }; 
 
 export class Goods extends Page<GoodsProps> {
-  constructor(props: GoodsProps, selectedGroup: string) {
+  constructor(props: GoodsProps) {
     super(props);
   }
 
@@ -39,6 +39,15 @@ export class Goods extends Page<GoodsProps> {
                 <div className="GoodGroupName">
                   {g.caption[selectedLang.toLowerCase()].name}
                 </div>
+                <div className="Consist">
+                  {g.consist[selectedLang.toLowerCase()].name}
+                </div>     
+                <div className="Casing">
+                  {g.casing[selectedLang.toLowerCase()].name}
+                </div>  
+                <div className="Casing">
+                  {g.beforuse[selectedLang.toLowerCase()].name}
+                </div>                                           
               </div>
             ))
           }
