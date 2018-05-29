@@ -1,4 +1,4 @@
-import { MenuItems, GoodCaptions } from './types';
+import { MenuItems, GoodItems } from './types';
 
 export const dataRoot = '/data/';
 export const aboutRoot = `${dataRoot}about/`;
@@ -94,7 +94,7 @@ export const mainMenu: MenuItems = [
   }
 ];
 
-export const GoodCaption: GoodCaptions = 
+export const goodItem: GoodItems = [
   {
     description: {
       consist: {
@@ -131,5 +131,5 @@ export const GoodCaption: GoodCaptions =
         }
       }
     }
-  }     
- 
+  }
+];

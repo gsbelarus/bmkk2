@@ -4,16 +4,16 @@ import { LangSelector } from './LangSelector';
 import { Language, IGoodGroups, IGoods } from '../types';
 import { SetLanguage, LoadGroups, LoadGoods } from '../actions';
 import { mainMenu } from '../const';
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 
-export interface PageProps {
+export interface PageProps extends RouteComponentProps<any> {
   selectedLang: Language;
   groups: IGoodGroups;
   goods: IGoods;
-  onSetLanguage: SetLanguage
-  onLoadGroups: LoadGroups
-  onLoadGoods: LoadGoods
-};
+  onSetLanguage: SetLanguage;
+  onLoadGroups: LoadGroups;
+  onLoadGoods: LoadGoods;
+}
 
 export class Page<P extends PageProps = PageProps> extends React.Component<P, {}> {
 

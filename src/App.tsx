@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect, Dispatch as ReduxDispatch } from 'react-redux';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, RouteComponentProps } from 'react-router-dom';
 import './App.css';
 import { MainPage } from './components/MainPage';
 import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, LoadGoods } from './actions';
@@ -13,28 +13,61 @@ import { Goods } from './components/Goods';
 
 type Dispatch = ReduxDispatch<BMKKAction>;
 
-export type AppProps = {
-  selectedLang: Language,
-  groups: IGoodGroups,
-  goods: IGoods,
-  onSetLanguage: SetLanguage,
-  onLoadGroups: LoadGroups, 
-  selectedGroup: string,
-  onLoadGoods: LoadGoods
-};
+export interface AppProps {
+  selectedLang: Language;
+  groups: IGoodGroups;
+  goods: IGoods;
+  onSetLanguage: SetLanguage;
+  onLoadGroups: LoadGroups;
+  selectedGroup: string;
+  onLoadGoods: LoadGoods;
+}
 
 class App extends React.Component<AppProps, {}> {
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact={true} path="/" render={() => (<MainPage {...this.props} />)} />
-          <Route exact={true} path="/production" render={() => (<Production {...this.props} />)} />
-          <Route exact={true} 
-            path="/production/:groupID?" 
-            /*children = {({match}) => match} */
-            render={() => (<Goods {...this.props}  />)} />
-          <Route exact={true} path="/about" render={() => (<About {...this.props} />)} />
+          <Route
+            exact={true}
+            path="/"
+            render={
+              (props) => {
+                const mergedProps = {...this.props, ...props};
+                return <MainPage {...mergedProps} />;
+              }
+            }
+          />
+          <Route
+            exact={true}
+            path="/production"
+            render={
+              (props) => {
+                const mergedProps = {...this.props, ...props};
+                return <Production {...mergedProps} />;
+              }
+            }
+          />
+          <Route
+            exact={true}
+            path="/production/groups/:groupID"
+            render={
+              (props) => {
+                const mergedProps = {...this.props, ...props};
+                return <Goods {...mergedProps} />;
+              }
+            }
+          />
+          <Route
+            exact={true}
+            path="/about"
+            render={
+              (props) => {
+                const mergedProps = {...this.props, ...props};
+                return <About {...mergedProps} />;
+              }
+            }
+          />
         </Switch>
       </BrowserRouter>
     );

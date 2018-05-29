@@ -3,6 +3,7 @@ import { Page, PageProps } from './Page';
 import { LoadGroups } from '../actions';
 import { IGoodGroups } from '../types';
 import { goodGroupsFile, goodGroupsRoot } from '../const';
+import { Link } from 'react-router-dom';
 
 export class Production extends Page {
   constructor(props: PageProps) {
@@ -28,11 +29,13 @@ export class Production extends Page {
         <div className="GroupsContainer">
           {
             groups.groups.map( (g, idx) => (
-              <div className="GoodGroup">
-                <img src={`${goodGroupsRoot}${g.image}`} />
-                <div className="GoodGroupName">
-                  {g.caption[selectedLang.toLowerCase()].name}
-                </div>
+              <div key={idx} className="GoodGroup">
+                <Link to={`/production/groups/123`}>
+                  <img src={`${goodGroupsRoot}${g.image}`} />
+                  <div className="GoodGroupName">
+                   {g.caption[selectedLang.toLowerCase()].name}
+                  </div>
+                </Link>
               </div>
             ))
           }
