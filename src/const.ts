@@ -1,9 +1,11 @@
-import { MenuItems } from './types';
+import { MenuItems, GoodItems } from './types';
 
 export const dataRoot = '/data/';
 export const aboutRoot = `${dataRoot}about/`;
 export const goodGroupsRoot = `${dataRoot}goodgroup/`;
 export const goodGroupsFile = `${goodGroupsRoot}goodgroup.json`;
+export const goodsRoot = `${dataRoot}goods/`;
+export const goodsFile = `${goodsRoot}goods.json`;
 
 export const mainMenu: MenuItems = [
   {
@@ -91,3 +93,43 @@ export const mainMenu: MenuItems = [
     }
   }
 ];
+
+export const goodItem: GoodItems = [
+  {
+    description: {
+      consist: {
+        ru: {
+          name: 'Состав'
+        },
+        be: {
+          name: 'Склад'
+        },
+        en: {
+          name: 'Consist'
+        }
+      },
+      casing: {
+        ru: {
+          name: 'Оболочка'
+        },
+        be: {
+          name: 'Абалонка'
+        },
+        en: {
+          name: 'Casing'
+        }
+      },
+      beforuse: {
+        ru: {
+          name: 'Срок реализации'
+        },
+        be: {
+          name: 'Тэрмін рэалізацыі'
+        },
+        en: {
+          name: 'Sell by'
+        }
+      }
+    }
+  }     
+]  

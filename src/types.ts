@@ -18,6 +18,16 @@ export interface MenuItem {
 
 export type MenuItems = MenuItem[];
 
+export interface GoodItem {
+  description: {
+    consist: LName;
+    casing: LName;
+    beforuse: LName;
+  }
+}
+
+export type GoodItems = GoodItem[];
+
 export interface IGoodGroups {
   version: string;
   groups: {
@@ -26,5 +36,21 @@ export interface IGoodGroups {
     caption: LName;
     ordr: number;
     image?: string;
+  }[];
+}
+
+export interface IGoods {
+  version: string;
+  goods: {
+    ruid: string;
+    group: string;
+    caption: LName;
+    valuename: LName;  
+    consist: LName;       
+    casing: LName; 
+    image?: string;
+    costnde: number;
+    dcostfull: number;
+    beforuse: LName;
   }[];
 }
