@@ -26,7 +26,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
   }
 
   render() {
-    const { selectedLang } = this.props;
+    const { selectedLang, location } = this.props;
     return (
       <div className={`${this.constructor.name} Page`}>
         <div className="TopRibbon">
@@ -40,6 +40,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
           }
         </nav>
         <div className="WorkArea">
+          {location.pathname !== '/' && <div>{location.pathname}</div>}
           {this.renderBody()}
         </div>
       </div>

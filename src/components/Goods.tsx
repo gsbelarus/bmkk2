@@ -26,22 +26,19 @@ export class Goods extends Page {
     if (goods) {
       return (
         <div className="GroupsContainer">
-          <h2> 
-            {match.params.groupID}
-          </h2>
           {
             goods.goods.map( (g, idx) => (
               <div key={idx}  className="GoodItem">
-                <img src={`${goodsRoot}${g.image}`} />                
+                <img src={`${goodsRoot}${g.image}`} />
                 <h5 className="GoodName">
                   {g.caption[selectedLang.toLowerCase()].name}
                 </h5>
                 <ul>
-                  <li> 
+                  <li>
                     <strong>
                       {goodCaption.description.consist[selectedLang.toLowerCase()].name}
-                    </strong>                         
-                    <WrapText text={g.consist[selectedLang.toLowerCase()].name} />     
+                    </strong>
+                    <WrapText text={g.consist[selectedLang.toLowerCase()].name} />
                   </li>
                   <li>
                     <strong>
@@ -55,7 +52,7 @@ export class Goods extends Page {
                     </strong>
                     {g.beforuse}
                   </li>
-                </ul>  
+                </ul>
               </div>
             ))
           }
