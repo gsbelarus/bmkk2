@@ -36,9 +36,9 @@ export class Goods extends Page {
                 <ul>
                   <li>
                     <strong>
-                      {goodCaption.description.consist[selectedLang.toLowerCase()].name}
+                      {goodCaption.description.composition[selectedLang.toLowerCase()].name}
                     </strong>
-                    <WrapText text={g.consist[selectedLang.toLowerCase()].name} />
+                    <WrapText text={g.composition[selectedLang.toLowerCase()].name} />
                   </li>
                   <li>
                     <strong>
@@ -52,6 +52,12 @@ export class Goods extends Page {
                     </strong>
                     {g.beforuse}
                   </li>
+                  <li>
+                    <strong>
+                      {goodCaption.description.costnde[selectedLang.toLowerCase()].name}
+                    </strong>
+                    {g.costnde}
+                  </li>                  
                 </ul>
               </div>
             ))

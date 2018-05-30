@@ -98,7 +98,7 @@ export const mainMenu: MenuItems = [
 export const goodCaption: GoodCaptions = 
   {
     description: {
-      consist: {
+      composition: {
         ru: {
           name: 'Состав:'
         },
@@ -106,7 +106,7 @@ export const goodCaption: GoodCaptions =
           name: 'Склад:'
         },
         en: {
-          name: 'Consist:'
+          name: 'Composition:'
         }
       },
       casing: {
@@ -129,6 +129,17 @@ export const goodCaption: GoodCaptions =
         },
         en: {
           name: 'Sell by:'
+        }
+      },  
+      costnde: {
+        ru: {
+          name: 'Цена:'
+        },
+        be: {
+          name: 'Цана:'
+        },
+        en: {
+          name: 'Price:'
         }
       }
     }
