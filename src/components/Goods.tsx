@@ -3,6 +3,7 @@ import { Page, PageProps } from './Page';
 import { LoadGoods } from '../actions';
 import { IGoods } from '../types';
 import { goodsFile, goodsRoot, goodCaption } from '../const';
+import { WrapText } from './WrapText';
 
 export class Goods extends Page {
 
@@ -26,7 +27,7 @@ export class Goods extends Page {
       return (
         <div className="GroupsContainer">
           <h2> 
-           
+            {match.params.groupID}
           </h2>
           {
             goods.goods.map( (g, idx) => (
@@ -39,8 +40,8 @@ export class Goods extends Page {
                   <li> 
                     <strong>
                       {goodCaption.description.consist[selectedLang.toLowerCase()].name}
-                    </strong>                              
-                    {g.consist[selectedLang.toLowerCase()].name}
+                    </strong>                         
+                    <WrapText text={g.consist[selectedLang.toLowerCase()].name} />     
                   </li>
                   <li>
                     <strong>
