@@ -18,32 +18,43 @@ export class Goods extends Page {
   }
 
   renderBody(): JSX.Element {
-    const { goods, selectedLang, match  } = this.props;
+    const { groups, goods, selectedLang, match  } = this.props;
 
     console.log(this.props);
 
     if (goods) {
       return (
         <div className="GroupsContainer">
+          <h2> 
+           
+          </h2>
           {
             goods.goods.map( (g, idx) => (
               <div key={idx}  className="GoodItem">
                 <img src={`${goodsRoot}${g.image}`} />                
-                <div className="GoodName">
+                <h5 className="GoodName">
                   {g.caption[selectedLang.toLowerCase()].name}
-                </div>
-                <div className="GoodCaption">{goodCaption.description.consist[selectedLang.toLowerCase()].name}</div>
-                <div className="GoodDescr">                
-                  {g.consist[selectedLang.toLowerCase()].name}
-                </div>
-                <div className="GoodCaption">{goodCaption.description.casing[selectedLang.toLowerCase()].name}</div>
-                <div className="GoodDescr">
-                  {g.casing[selectedLang.toLowerCase()].name}
-                </div>
-                <div className="GoodCaption">{goodCaption.description.beforuse[selectedLang.toLowerCase()].name}</div>
-                <div className="GoodDescr">
-                {g.beforuse}
-                </div>
+                </h5>
+                <ul>
+                  <li> 
+                    <strong>
+                      {goodCaption.description.consist[selectedLang.toLowerCase()].name}
+                    </strong>                              
+                    {g.consist[selectedLang.toLowerCase()].name}
+                  </li>
+                  <li>
+                    <strong>
+                      {goodCaption.description.casing[selectedLang.toLowerCase()].name}
+                    </strong>
+                    {g.casing[selectedLang.toLowerCase()].name}
+                  </li>
+                  <li>
+                    <strong>
+                      {goodCaption.description.beforuse[selectedLang.toLowerCase()].name}
+                    </strong>
+                    {g.beforuse}
+                  </li>
+                </ul>  
               </div>
             ))
           }

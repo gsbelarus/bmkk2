@@ -100,35 +100,35 @@ export const goodCaption: GoodCaptions =
     description: {
       consist: {
         ru: {
-          name: 'Состав'
+          name: 'Состав:'
         },
         be: {
-          name: 'Склад'
+          name: 'Склад:'
         },
         en: {
-          name: 'Consist'
+          name: 'Consist:'
         }
       },
       casing: {
         ru: {
-          name: 'Оболочка'
+          name: 'Оболочка:'
         },
         be: {
-          name: 'Абалонка'
+          name: 'Абалонка:'
         },
         en: {
-          name: 'Casing'
+          name: 'Casing:'
         }
       },
       beforuse: {
         ru: {
-          name: 'Срок реализации'
+          name: 'Срок реализации:'
         },
         be: {
-          name: 'Тэрмін рэалізацыі'
+          name: 'Тэрмін рэалізацыі:'
         },
         en: {
-          name: 'Sell by'
+          name: 'Sell by:'
         }
       }
     }

@@ -30,7 +30,7 @@ export class Production extends Page {
           {
             groups.groups.map( (g, idx) => (
               <div key={idx} className="GoodGroup">
-                <Link to={`/production/groups/123`}>
+                <Link to={`/production/groups/` + g.ruid}>
                   <img src={`${goodGroupsRoot}${g.image}`} />
                   <div className="GoodGroupName">
                    {g.caption[selectedLang.toLowerCase()].name}

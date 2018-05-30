@@ -1,6 +1,7 @@
 div.Page {
   width: 100vw;
   height: 100vh;
+ 
 }
 
 div.MainPage {
@@ -109,16 +110,30 @@ div.GoodName {
   text-align: center;
 }
 div.GoodItem {
-  padding: 10px;
   width: 200px;
+  padding: 10px;
 }
-div.GoodDescr {
-  font-size: 10px;
-  width: 100%;
-  text-align: left;  
-  float: left;
-}
-div.GoodCaption {
-  float: left;
+div.GoodItem ul li {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #969696;
   font-size: 12px;
+}
+div.GoodItem ul {
+  font-size: 14px;
+  line-height: 1.4;
+  list-style: none none;
+  margin: 0;
+  padding: 0;
+}
+div.GoodItem h5 {
+  font: bold normal 18px "Times New Roman",serif;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  padding-bottom: 10px;
+  border-bottom: dotted 1px #006800;
+  text-align: center;
+}
+div.GoodItem strong {
+  padding-right: 4px;
 }
