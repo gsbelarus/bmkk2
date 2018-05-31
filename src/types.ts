@@ -23,7 +23,8 @@ export interface GoodCapt {
     composition: LName;
     casing: LName;
     beforuse: LName;
-    costnde: LName
+    costnde: LName;
+    dcostfull: LName
   }
 }
 

@@ -28,6 +28,11 @@ module.exports =  {
         from: './public/data/goods/*.*',
         to: 'data/goods/',
         flatten: true
+      },
+      {
+        from: './public/test/*.*',
+        to: 'test/',
+        flatten: true
       }
     ], {}
     )

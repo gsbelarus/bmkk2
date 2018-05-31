@@ -6,6 +6,7 @@ export const goodGroupsRoot = `${dataRoot}goodgroup/`;
 export const goodGroupsFile = `${goodGroupsRoot}goodgroup.json`;
 export const goodsRoot = `${dataRoot}goods/`;
 export const goodsFile = `${goodsRoot}goods.json`;
+export const goodFileNoImage = 'noimage.jpg';
 
 export const mainMenu: MenuItems = [
   {
@@ -133,15 +134,26 @@ export const goodCaption: GoodCaptions =
       },  
       costnde: {
         ru: {
-          name: 'Цена:'
+          name: 'Цена ФСО:'
         },
         be: {
-          name: 'Цана:'
+          name: 'Цана ФСО:'
         },
         en: {
-          name: 'Price:'
+          name: 'Price ФСО:'
         }
-      }
+      },  
+      dcostfull: {
+        ru: {
+          name: 'Цена ФСН:'
+        },
+        be: {
+          name: 'Цана ФСН:'
+        },
+        en: {
+          name: 'Price ФСН:'
+        }
+      }      
     }
   }
 ;

@@ -10,6 +10,7 @@ import { BMKKAction } from './reducer';
 import { Production } from './components/Production';
 import { About } from './components/About';
 import { Goods } from './components/Goods';
+import { Price } from './components/Price';
 
 type Dispatch = ReduxDispatch<BMKKAction>;
 
@@ -68,6 +69,16 @@ class App extends React.Component<AppProps, {}> {
               }
             }
           />
+          <Route
+            exact={true}
+            path="/price"
+            render={
+              (props) => {
+                const mergedProps = {...this.props, ...props};
+                return <Price {...mergedProps} />;
+              }
+            }
+          />          
         </Switch>
       </BrowserRouter>
     );

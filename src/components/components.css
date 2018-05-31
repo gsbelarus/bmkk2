@@ -1,7 +1,7 @@
 div.Page {
   width: 100vw;
   height: 100vh;
- 
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 div.MainPage {
@@ -102,22 +102,35 @@ div.GoodGroupName {
   width: 100%;
   text-align: center;
 }
+
+div.GoodsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: space-between;
+}
+
 div.GoodName {
   font-size: 14px;
   font-weight: bold;
   color: brown;
   width: 100%;
 }
+
 div.GoodItem {
   width: 200px;
   padding: 10px;
 }
+
 div.GoodItem ul li {
   margin-bottom: 5px;
   padding-bottom: 5px;
   border-bottom: 1px dotted #969696;
   font-size: 12px;
 }
+
 div.GoodItem ul {
   font-size: 14px;
   line-height: 1.4;
@@ -125,6 +138,7 @@ div.GoodItem ul {
   margin: 0;
   padding: 0;
 }
+
 div.GoodItem h5 {
   font: bold normal 18px "Times New Roman",serif;
   margin-bottom: 4px;
@@ -136,6 +150,10 @@ div.GoodItem h5 {
 
 div.GoodItem strong {
   padding-right: 4px;
+}
+
+div.GoodItem img {
+  
 }
 
 div.WrappedText span {
@@ -152,4 +170,48 @@ div.WrappedText span {
 div.GroupsContainer h2 {
   width: 100%;
   text-align: center;
+}
+
+div.PriceContainer{
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-areas: 
+    "header"
+    "section"
+    "aside-1"
+    "aside-2"
+    "footer";
+}
+@media (max-width: 700px) {
+  .PriceContainer {
+    grid-template-areas: 
+    "header header header"
+    "aside-1 section aside-2"
+    "footer footer footer";   
+  }
+}
+
+div.PriceContainer header {
+  grid-area: header;
+}
+
+aside:nth-of-type(1) {
+  grid-area: aside-1;
+} 
+
+section {
+  grid-area: section;
+}
+
+aside:nth-of-type(2) {
+  grid-area: aside-2;
+} 
+
+div.PriceContainer footer {
+  grid-area: footer;
+} 
+
+div.PriceContainer > * {
+  background-color: brown;
 }
