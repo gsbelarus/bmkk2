@@ -27,60 +27,62 @@ export class Goods extends Page {
       const g = goods.goods.filter((t) => t.group === match.params.groupID );
 
       return (
-        <div className="GoodsContainer">
+        <div>
           <div>
             {<Link to={`/price`}>
               Прейскурант
             </Link>}
           </div>
-          {
-            g.map( (g, idx) => {
-              const fullImageName = !g.image ? `${goodsRoot}${goodFileNoImage}`
-                : g.image.includes('//') ? g.image.replace('//', '/')
-                : `${goodsRoot}${g.image}`;
+          <div className="GoodsContainer">
+            {
+              g.map( (g, idx) => {
+                const fullImageName = !g.image ? `${goodsRoot}${goodFileNoImage}`
+                  : g.image.includes('//') ? g.image.replace('//', '/')
+                  : `${goodsRoot}${g.image}`;
 
-              return (
-                <div key={idx}  className="GoodItem">
-                  <img src={fullImageName} />
-                  <h5 className="GoodName">
-                    {g.caption[selectedLang.toLowerCase()].name}
-                  </h5>
-                  <ul>
-                    <li>
-                      <strong>
-                        {goodCaption.description.composition[selectedLang.toLowerCase()].name}
-                      </strong>
-                      <WrapText text={g.composition[selectedLang.toLowerCase()].name} />
-                    </li>
-                    <li>
-                      <strong>
-                        {goodCaption.description.casing[selectedLang.toLowerCase()].name}
-                      </strong>
-                      {g.casing[selectedLang.toLowerCase()].name}
-                    </li>
-                    <li>
-                      <strong>
-                        {goodCaption.description.beforuse[selectedLang.toLowerCase()].name}
-                      </strong>
-                      {g.beforuse}
-                    </li>
-                    <li>
-                      <strong>
-                        {goodCaption.description.costnde[selectedLang.toLowerCase()].name}
-                      </strong>
-                      {g.costnde} р.
-                    </li> 
-                    <li>
-                      <strong>
-                        {goodCaption.description.dcostfull[selectedLang.toLowerCase()].name}
-                      </strong>
-                      {g.dcostfull} р.
-                    </li>                                          
-                  </ul>
-                </div>
-              )
-            })
-          }
+                return (
+                  <div key={idx}  className="GoodItem">
+                    <img src={fullImageName} />
+                    <h5 className="GoodName">
+                      {g.caption[selectedLang.toLowerCase()].name}
+                    </h5>
+                    <ul>
+                      <li>
+                        <strong>
+                          {goodCaption.description.composition[selectedLang.toLowerCase()].name}
+                        </strong>
+                        <WrapText text={g.composition[selectedLang.toLowerCase()].name} />
+                      </li>
+                      <li>
+                        <strong>
+                          {goodCaption.description.casing[selectedLang.toLowerCase()].name}
+                        </strong>
+                        {g.casing[selectedLang.toLowerCase()].name}
+                      </li>
+                      <li>
+                        <strong>
+                          {goodCaption.description.beforuse[selectedLang.toLowerCase()].name}
+                        </strong>
+                        {g.beforuse}
+                      </li>
+                      <li>
+                        <strong>
+                          {goodCaption.description.costnde[selectedLang.toLowerCase()].name}
+                        </strong>
+                        {g.costnde} р.
+                      </li> 
+                      <li>
+                        <strong>
+                          {goodCaption.description.dcostfull[selectedLang.toLowerCase()].name}
+                        </strong>
+                        {g.dcostfull} р.
+                      </li>                                          
+                    </ul>
+                  </div>
+                )
+              })
+            }
+          </div>  
         </div>
       );
     } else {
