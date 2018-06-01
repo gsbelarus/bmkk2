@@ -1,5 +1,5 @@
 import { createAction } from 'typesafe-actions';
-import { Language, IGoodGroups, IGoods } from './types';
+import { Language, IGoodGroups, IGoods, INews } from './types';
 
 export const setLanguage = createAction('SET_LANGUAGE', resolve => {
   return (lang: Language) => resolve(lang);
@@ -18,3 +18,9 @@ export const loadGoods = createAction('LOAD_GOODS', resolve => {
 });
 
 export type LoadGoods = typeof loadGoods;
+
+export const loadNews = createAction('LOAD_NEWS', resolve => {
+  return (loadedNews: INews) => resolve(loadedNews);
+});
+
+export type LoadNews = typeof loadNews;

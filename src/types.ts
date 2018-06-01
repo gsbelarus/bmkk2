@@ -37,7 +37,7 @@ export interface IGoodGroups {
     parent?: string;
     caption: LName;
     ordr: number;
-    image?: string;
+    image: string;
   }[];
 }
 
@@ -50,9 +50,25 @@ export interface IGoods {
     valuename: LName;  
     composition: LName;       
     casing: LName; 
-    image?: string;
+    image: string;
     costnde: number;
     dcostfull: number;
     beforuse: LName;
   }[];
 }
+
+export interface INews {
+  version: string;
+  news: {
+    ruid: string;
+    title: LName;
+    body: LName;
+    date: Date;  
+    expireson: Date;       
+    pinned: Boolean; 
+    ordr: number;    
+    image: string;
+  }[];
+}
+
+

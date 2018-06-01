@@ -1,4 +1,4 @@
-import { Language, IGoodGroups, IGoods } from './types';
+import { Language, IGoodGroups, IGoods, INews } from './types';
 import * as actions from './actions';
 import { ActionType, getType } from 'typesafe-actions';
 import { lchmod } from 'fs';
@@ -10,13 +10,15 @@ export type State = {
   groups: IGoodGroups | undefined;
   selectedGroup: string; 
   goods: IGoods | undefined;
+  news: INews | undefined;  
 };
 
 const initialState: State = {
   selectedLang: 'RU',
   groups: undefined,
   selectedGroup: '',
-  goods: undefined
+  goods: undefined,
+  news: undefined 
 };
 
 export const  reducer = (state: State = initialState, action: BMKKAction): State => {
@@ -29,6 +31,9 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
 
     case getType(actions.loadGoods):
       return {...state, goods: action.payload}  
+
+    case getType(actions.loadNews):
+      return {...state, news: action.payload}        
 
     default:
       return state;

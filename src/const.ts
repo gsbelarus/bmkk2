@@ -5,24 +5,12 @@ export const aboutRoot = `${dataRoot}about/`;
 export const goodGroupsRoot = `${dataRoot}goodgroup/`;
 export const goodGroupsFile = `${goodGroupsRoot}goodgroup.json`;
 export const goodsRoot = `${dataRoot}goods/`;
+export const newsRoot = `${dataRoot}news/`;
 export const goodsFile = `${goodsRoot}goods.json`;
 export const goodFileNoImage = 'noimage.jpg';
+export const newsFile = `${newsRoot}news.json`;
 
 export const mainMenu: MenuItems = [
-  {
-    path: '',
-    caption: {
-      ru: {
-        name: 'Главная'
-      },
-      be: {
-        name: 'Галоўная'
-      },
-      en: {
-        name: 'Home'
-      }
-    }
-  },
   {
     path: 'about',
     caption: {
@@ -37,6 +25,20 @@ export const mainMenu: MenuItems = [
       }
     }
   },
+  {
+    path: 'news',
+    caption: {
+      ru: {
+        name: 'Новости'
+      },
+      be: {
+        name: 'Навины'
+      },
+      en: {
+        name: 'News'
+      }
+    }
+  },  
   {
     path: 'production',
     caption: {

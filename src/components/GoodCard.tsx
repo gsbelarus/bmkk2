@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Page, PageProps } from './Page';
 import { LoadGoods } from '../actions';
 import { IGoods } from '../types';
-import { goodsFile, goodsRoot } from '../const';
+import { goodsFile, goodsRoot, goodCaption, goodFileNoImage } from '../const';
 
 export class GoodCard extends Page {
   constructor(props: PageProps) {
@@ -21,13 +21,17 @@ export class GoodCard extends Page {
   }
 
   renderBody(): JSX.Element {
-    const { goods, selectedLang } = this.props;
+    const { goods, selectedLang, match } = this.props;
+    const g = goods.goods.find( t => t.ruid === match.params.goodID );
+    const fullImageName = !g!.image ? `${goodsRoot}${goodFileNoImage}`
+    : g!.image.includes('//') ? g!.image.replace('//', '/')
+    : `${goodsRoot}${g!.image}`;
 
-    if (goods) {
+    if (g) {
       return (
         <div className="GoodCard">
 
-
+          <img src={fullImageName} />
           <table>
             <tbody>
               <tr>

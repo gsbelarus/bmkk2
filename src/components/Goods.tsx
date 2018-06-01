@@ -28,12 +28,17 @@ export class Goods extends Page {
 
       return (
         <div>
-          <div>
-            {<Link to={`/price`}>
+          <div className="PriceBtn">
+            {<Link  to={`/price`}>
               Прейскурант
             </Link>}
-          </div>
-          <div className="GoodsContainer">
+          </div>   
+          <div className="News">
+            {<Link  to={`/news`}>
+              Новости
+            </Link>}
+          </div>             
+          <div className="GoodsContainer">          
             {
               g.map( (g, idx) => {
                 const fullImageName = !g.image ? `${goodsRoot}${goodFileNoImage}`
@@ -76,13 +81,18 @@ export class Goods extends Page {
                           {goodCaption.description.dcostfull[selectedLang.toLowerCase()].name}
                         </strong>
                         {g.dcostfull} р.
-                      </li>                                          
+                      </li>
+                      <Link className="GoodMore" to={`/production/groups/` + g.group + '/good/' + g.ruid}>
+                        Подробнее..
+                      </Link>                                          
                     </ul>
+                    
                   </div>
                 )
               })
             }
-          </div>  
+          </div> 
+         
         </div>
       );
     } else {
