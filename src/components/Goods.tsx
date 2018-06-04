@@ -33,16 +33,11 @@ export class Goods extends Page {
               Прейскурант
             </Link>}
           </div>   
-          <div className="News">
-            {<Link  to={`/news`}>
-              Новости
-            </Link>}
-          </div>             
           <div className="GoodsContainer">          
             {
               g.map( (g, idx) => {
                 const fullImageName = !g.image ? `${goodsRoot}${goodFileNoImage}`
-                  : g.image.includes('//') ? g.image.replace('//', '/')
+                  : g.image.includes('/') ? g.image
                   : `${goodsRoot}${g.image}`;
 
                 return (

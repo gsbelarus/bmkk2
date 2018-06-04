@@ -1,10 +1,11 @@
-import { MenuItems, GoodCaptions } from './types';
+import { MenuItems, GoodCaptions, PriceItems } from './types';
 
 export const dataRoot = '/data/';
 export const aboutRoot = `${dataRoot}about/`;
 export const goodGroupsRoot = `${dataRoot}goodgroup/`;
 export const goodGroupsFile = `${goodGroupsRoot}goodgroup.json`;
 export const goodsRoot = `${dataRoot}goods/`;
+export const goodsRoot2 = `${dataRoot}goods2/`;
 export const newsRoot = `${dataRoot}news/`;
 export const goodsFile = `${goodsRoot}goods.json`;
 export const goodFileNoImage = 'noimage.jpg';
@@ -159,3 +160,110 @@ export const goodCaption: GoodCaptions =
     }
   }
 ;
+
+export const priceCaption: PriceItems = [
+  {
+    caption: {
+      ru: {
+        name: '№'
+      },
+      be: {
+        name: '№'
+      },
+      en: {
+        name: '№'
+      }
+    }
+  },  
+  {
+    caption: {
+      ru: {
+        name: 'Наименование'
+      },
+      be: {
+        name: 'Найменне'
+      },
+      en: {
+        name: 'Name'
+      }
+    }
+  },
+  {
+    caption: {
+      ru: {
+        name: 'Ед. изм.'
+      },
+      be: {
+        name: 'Адзінка вымярэння'
+      },
+      en: {
+        name: 'Ед. изм.'
+      }
+    }
+  },
+  {
+    caption: {
+      ru: {
+        name: 'Цена ФСО/ФСН, BYR'
+      },
+      be: {
+        name: 'Цена ФСО/ФСН, BYR'
+      },
+      en: {
+        name: 'Цена ФСО/ФСН, BYR'
+      }
+    }
+  },
+  {
+    caption: {
+      ru: {
+        name: 'Ставка НДС, %'
+      },
+      be: {
+        name: 'Ставка НДС, %'
+      },
+      en: {
+        name: 'Ставка НДС, %'
+      }
+    }
+  },
+  {
+    caption: {
+      ru: {
+        name: 'Срок хранения'
+      },
+      be: {
+        name: 'Срок хранения'
+      },
+      en: {
+        name: 'Срок хранения'
+      }
+    }
+  },
+  {
+    caption: {
+      ru: {
+        name: 'Терм. состояние'
+      },
+      be: {
+        name: 'Терм. состояние'
+      },
+      en: {
+        name: 'Терм. состояние'
+      }
+    }
+  },
+  {
+    caption: {
+      ru: {
+        name: 'Описание'
+      },
+      be: {
+        name: 'Описание'
+      },
+      en: {
+        name: 'Описание'
+      }
+    }
+  }
+];

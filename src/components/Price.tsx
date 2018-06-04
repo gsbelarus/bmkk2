@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Page, PageProps } from './Page';
 import { LoadGoods } from '../actions';
 import { IGoods } from '../types';
-import { goodsFile, goodsRoot, goodCaption, goodFileNoImage } from '../const';
+import { goodsFile, priceCaption } from '../const';
 import { WrapText } from './WrapText';
 
 export class Price extends Page {
@@ -19,20 +19,57 @@ export class Price extends Page {
   }
 
   renderBody(): JSX.Element {
-    const { groups, goods, selectedLang, match  } = this.props;
+    const { groups, goods, selectedLang  } = this.props;
     console.log(this.props);
     
     if (goods) {   
 
       return (
         <div className="PriceContainer">
-          <header>
+          <h2>
             Прайс
-          </header>
-          <aside>aside1</aside>
-          <section>123</section>
-          <aside>aside2</aside>
-          <footer>Footer</footer>
+          </h2>
+
+          { 
+            <table>
+              <thead>
+                <tr>
+                  {
+                    priceCaption.map( (d, pr_idx) => (
+                        <th key={pr_idx}>
+                          {d.caption[selectedLang.toLowerCase()].name}
+                        </th>
+                      )
+                    )
+                  }   
+                </tr>
+              </thead>                
+              {groups.groups.map( (gr, gr_idx) => 
+                ( 
+                  <tbody>
+                   <tr>
+                      {gr.caption[selectedLang.toLowerCase()].name}
+                    </tr>
+                    {
+                        goods.goods.filter( g => g.group === gr.ruid ).map( (g, idx) => (
+                            <tr key={idx}>
+                                <td>{idx+1}</td>
+                                <td>{g.caption[selectedLang.toLowerCase()].name + ' (' + g.barcode + ')'}</td>
+                                <td>{g.valuename[selectedLang.toLowerCase()].name}</td>
+                                <td>{g.costnde + ' / ' + g.dcostfull}</td>                               
+                                <td>{g.rate}</td>
+                                <td>{g.beforuse}</td>
+                                <td>{g.term}</td>
+                                <td>{g.composition[selectedLang.toLowerCase()].name}</td>                                
+                            </tr>
+                          )
+                        )  
+                      }                  
+                  </tbody>
+                )
+              )}
+            </table>
+          } 
         </div>
       );
     } else {

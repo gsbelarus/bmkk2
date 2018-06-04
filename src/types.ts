@@ -41,6 +41,12 @@ export interface IGoodGroups {
   }[];
 }
 
+export interface PriceItem {
+  caption: LName;
+}
+
+export type PriceItems = PriceItem[];
+
 export interface IGoods {
   version: string;
   goods: {
@@ -51,9 +57,15 @@ export interface IGoods {
     composition: LName;       
     casing: LName; 
     image: string;
+    image2: string;    
     costnde: number;
     dcostfull: number;
-    beforuse: LName;
+    rate: number;
+    barcode: string;
+    issale: boolean;
+    isnew: boolean;
+    term: string;
+    beforuse: string;
   }[];
 }
 

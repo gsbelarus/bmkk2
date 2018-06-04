@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Page, PageProps } from './Page';
 import { LoadGoods } from '../actions';
 import { IGoods } from '../types';
-import { goodsFile, goodsRoot, goodCaption, goodFileNoImage } from '../const';
+import { goodsFile, goodsRoot, goodsRoot2, goodCaption, goodFileNoImage } from '../const';
 
 export class GoodCard extends Page {
   constructor(props: PageProps) {
@@ -23,23 +23,27 @@ export class GoodCard extends Page {
   renderBody(): JSX.Element {
     const { goods, selectedLang, match } = this.props;
     const g = goods.goods.find( t => t.ruid === match.params.goodID );
-    const fullImageName = !g!.image ? `${goodsRoot}${goodFileNoImage}`
-    : g!.image.includes('//') ? g!.image.replace('//', '/')
-    : `${goodsRoot}${g!.image}`;
+    const fullImageName = !g!.image2 ? `${goodsRoot2}${goodFileNoImage}`
+    : g!.image2.includes('/') ? g!.image2
+    : `${goodsRoot2}${g!.image2}`;
 
     if (g) {
       return (
         <div className="GoodCard">
 
           <img src={fullImageName} />
+
+
+
+
+
+
           <table>
             <tbody>
               <tr>
                 <th>Наименование продукта</th>
                 <td></td>
-              </tr>
-
-            
+              </tr>            
             <tr>
                 <th>Описание</th>
                 <td>Колбаса вареная мясная </td>
@@ -47,7 +51,7 @@ export class GoodCard extends Page {
 
             <tr>
                 <th>Производитель</th>
-                <td>ОАО «Александрийское»</td>
+                <td>ОАО Березовский мясоконсервный комбинат</td>
             </tr>
 
             

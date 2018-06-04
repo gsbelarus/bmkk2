@@ -32,7 +32,7 @@ export class News extends Page {
           {
             news.news.map( (n, idx) => {
               const fullImageName = !n.image ? ``
-              : n.image.includes('//') ? n.image.replace('//', '/')
+              : n.image.includes('/') ? n.image
               : `${newsRoot}${n.image}`;
                 return (
                   <div key={idx}  className="NewsItem">                    
