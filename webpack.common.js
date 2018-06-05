@@ -43,6 +43,11 @@ module.exports =  {
         from: './public/test/*.*',
         to: 'test/',
         flatten: true
+      },      
+      {
+        from: './public/data/contacts/*.*',
+        to: 'data/contacts/',
+        flatten: true
       }
     ], {}
     )

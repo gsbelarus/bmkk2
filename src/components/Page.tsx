@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './components.css';
 import { LangSelector } from './LangSelector';
-import { Language, IGoodGroups, IGoods, INews } from '../types';
-import { SetLanguage, LoadGroups, LoadGoods, LoadNews } from '../actions';
+import { Language, IGoodGroups, IGoods, INews, IContacts, IDepartments, IOutlets } from '../types';
+import { SetLanguage, LoadGroups, LoadGoods, LoadNews, LoadContacts, LoadDepartments, LoadOutlets } from '../actions';
 import { mainMenu } from '../const';
 import { Link, RouteComponentProps } from 'react-router-dom';
 
@@ -11,10 +11,16 @@ export interface PageProps extends RouteComponentProps<any> {
   groups: IGoodGroups;
   goods: IGoods;
   news: INews;
+  contacts: IContacts;
+  departments: IDepartments;  
+  outlets: IOutlets;   
   onSetLanguage: SetLanguage;
   onLoadGroups: LoadGroups;
   onLoadGoods: LoadGoods;
   onLoadNews: LoadNews;  
+  onLoadContacts: LoadContacts;
+  onLoadDepartments: LoadDepartments;   
+  onLoadOutlets: LoadOutlets;   
 }
 
 export class Page<P extends PageProps = PageProps> extends React.Component<P, {}> {

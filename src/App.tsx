@@ -3,9 +3,11 @@ import { connect, Dispatch as ReduxDispatch } from 'react-redux';
 import { BrowserRouter, Switch, Route, RouteComponentProps } from 'react-router-dom';
 import './App.css';
 import { MainPage } from './components/MainPage';
-import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, LoadGoods, LoadNews, loadNews } from './actions';
+import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, LoadGoods, 
+         LoadNews, loadNews, LoadContacts, loadContacts, LoadDepartments, loadDepartments,
+         LoadOutlets, loadOutlets } from './actions';
 import { State } from './store';
-import { Language, IGoodGroups, IGoods, INews } from './types';
+import { Language, IGoodGroups, IGoods, INews, IContacts, IDepartments, IOutlets } from './types';
 import { BMKKAction } from './reducer';
 import { Production } from './components/Production';
 import { About } from './components/About';
@@ -13,6 +15,8 @@ import { Goods } from './components/Goods';
 import { Price } from './components/Price';
 import { GoodCard } from './components/GoodCard';
 import { News } from './components/News';
+import { Contacts } from './components/Contacts';
+import { Outlets } from './components/Outlets';
 
 type Dispatch = ReduxDispatch<BMKKAction>;
 
@@ -21,11 +25,17 @@ export interface AppProps {
   groups: IGoodGroups;
   goods: IGoods;
   news: INews;
+  contacts: IContacts;
+  departments: IDepartments;  
+  outlets: IOutlets;    
   onSetLanguage: SetLanguage;
   onLoadGroups: LoadGroups;
   selectedGroup: string;
   onLoadGoods: LoadGoods;
   onLoadNews: LoadNews;  
+  onLoadContacts: LoadContacts;
+  onLoadDepartments: LoadDepartments;
+  onLoadOutlets: LoadOutlets;  
 }
 
 class App extends React.Component<AppProps, {}> {
@@ -102,7 +112,27 @@ class App extends React.Component<AppProps, {}> {
                 return <News {...mergedProps} />;
               }
             }
-          />                   
+          />     
+          <Route
+            exact={true}
+            path="/contacts"
+            render={
+              (props) => {
+                const mergedProps = {...this.props, ...props};
+                return <Contacts {...mergedProps} />;
+              }
+            }
+          />     
+          <Route
+            exact={true}
+            path="/outlets"
+            render={
+              (props) => {
+                const mergedProps = {...this.props, ...props};
+                return <Outlets {...mergedProps} />;
+              }
+            }
+          />                                     
         </Switch>
       </BrowserRouter>
     );
@@ -115,6 +145,9 @@ export default connect(
     onSetLanguage: setLanguage,
     onLoadGroups: loadGroups,
     onLoadGoods: loadGoods,
-    onLoadNews: loadNews
+    onLoadNews: loadNews,
+    onLoadContacts: loadContacts,
+    onLoadDepartments: loadDepartments,
+    onLoadOutlets: loadOutlets
   }
 )(App);

@@ -1,4 +1,4 @@
-import { MenuItems, GoodCaptions, PriceItems } from './types';
+import { MenuItems, GoodCaptions, PriceItems, ContactCaptions, OutletsCaptions } from './types';
 
 export const dataRoot = '/data/';
 export const aboutRoot = `${dataRoot}about/`;
@@ -10,6 +10,10 @@ export const newsRoot = `${dataRoot}news/`;
 export const goodsFile = `${goodsRoot}goods.json`;
 export const goodFileNoImage = 'noimage.jpg';
 export const newsFile = `${newsRoot}news.json`;
+export const contactsRoot = `${dataRoot}contacts/`;
+export const contactsFile = `${contactsRoot}contacts.json`;
+export const departmentsFile = `${contactsRoot}departments.json`;
+export const outletsFile = `${contactsRoot}outlets.json`;
 
 export const mainMenu: MenuItems = [
   {
@@ -267,3 +271,126 @@ export const priceCaption: PriceItems = [
     }
   }
 ];
+
+export const contactCaption: ContactCaptions = 
+  {
+    description: {
+      phone: {
+        ru: {
+          name: 'Телефон:'
+        },
+        be: {
+          name: 'Тэлефон:'
+        },
+        en: {
+          name: 'Phone:'
+        }
+      },
+      fax: {
+        ru: {
+          name: 'Факс:'
+        },
+        be: {
+          name: 'Факс:'
+        },
+        en: {
+          name: 'Fax:'
+        }
+      },
+      email: {
+        ru: {
+          name: 'email:'
+        },
+        be: {
+          name: 'email:'
+        },
+        en: {
+          name: 'email:'
+        }
+      }      
+    }
+  }
+;
+
+export const outletsCaption: OutletsCaptions = 
+{
+  description: {
+    caption: {
+      ru: {
+        name: 'Наименование и адрес магазина/точки реализации'
+      },
+      be: {
+        name: 'бел Наименование и адрес магазина/точки реализации'
+      },
+      en: {
+        name: 'англ Наименование и адрес магазина/точки реализации'
+      }
+    },  
+    phone: {
+      ru: {
+        name: 'Телефон/факс'
+      },
+      be: {
+        name: 'Тэлефон/факс'
+      },
+      en: {
+        name: 'Phone/Fax'
+      }
+    },
+    email: {
+      ru: {
+        name: 'email'
+      },
+      be: {
+        name: 'email'
+      },
+      en: {
+        name: 'email'
+      }
+    },
+    time: {
+      ru: {
+        name: 'Время работы'
+      },
+      be: {
+        name: 'бел Время работы'
+      },
+      en: {
+        name: 'англ Время работы'
+      }
+    },
+    timewd: {
+      ru: {
+        name: 'Пн-пт'
+      },
+      be: {
+        name: 'Пн-пт'
+      },
+      en: {
+        name: 'Mon-Fr'
+      }
+    },
+    timesat: {
+      ru: {
+        name: 'Сб'
+      },
+      be: {
+        name: 'Сб'
+      },
+      en: {
+        name: 'Sat'
+      }
+    },
+    timesun: {
+      ru: {
+        name: 'Вс'
+      },
+      be: {
+        name: 'Нд'
+      },
+      en: {
+        name: 'Sun'
+      }
+    }      
+  }
+};

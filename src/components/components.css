@@ -157,9 +157,6 @@ div.GoodItem ul .GoodMore {
   color: black;  
 }
 
-div.GoodItem img {
-  
-}
 
 div.WrappedText span {
   cursor: default;
@@ -202,6 +199,39 @@ div.PriceContainer {
   font-size: 12px;
 }
 
+.ContactInfo span{
+  padding-right: 6px;
+}
+
+div.ContactName {
+  padding-bottom: 10px;
+}
+
+div.ContactItem {
+  padding-bottom: 10px;
+}
+
+div.DepartmentItem {
+  min-width: 50%;
+  max-width: 50%;
+} 
+
+div.OutletContainer td {
+  font-size: 12px;
+}
+
+div.OutletContainer th {
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;  
+  vertical-align: middle;
+  border-bottom: 5px solid #c8c8c8;
+  border-top: 5px solid #c8c8c8;
+}
+
+div.OutletContainer thead {
+  background: #c8c8c8 !important;
+} 
 
 
 

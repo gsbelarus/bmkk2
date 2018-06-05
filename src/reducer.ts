@@ -1,4 +1,4 @@
-import { Language, IGoodGroups, IGoods, INews } from './types';
+import { Language, IGoodGroups, IGoods, INews, IContacts, IDepartments, IOutlets } from './types';
 import * as actions from './actions';
 import { ActionType, getType } from 'typesafe-actions';
 import { lchmod } from 'fs';
@@ -11,6 +11,9 @@ export type State = {
   selectedGroup: string; 
   goods: IGoods | undefined;
   news: INews | undefined;  
+  contacts: IContacts | undefined; 
+  departments: IDepartments | undefined;   
+  outlets: IOutlets | undefined;     
 };
 
 const initialState: State = {
@@ -18,7 +21,10 @@ const initialState: State = {
   groups: undefined,
   selectedGroup: '',
   goods: undefined,
-  news: undefined 
+  news: undefined ,
+  contacts: undefined,
+  departments: undefined,
+  outlets: undefined
 };
 
 export const  reducer = (state: State = initialState, action: BMKKAction): State => {
@@ -30,10 +36,19 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
       return {...state, groups: action.payload};
 
     case getType(actions.loadGoods):
-      return {...state, goods: action.payload}  
+      return {...state, goods: action.payload}; 
 
     case getType(actions.loadNews):
-      return {...state, news: action.payload}        
+      return {...state, news: action.payload}; 
+
+    case getType(actions.loadContacts):
+      return {...state, contacts: action.payload}; 
+
+    case getType(actions.loadDepartments):
+      return {...state, departments: action.payload};       
+
+    case getType(actions.loadOutlets):
+      return {...state, outlets: action.payload}        
 
     default:
       return state;

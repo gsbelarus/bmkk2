@@ -18,7 +18,7 @@ export interface MenuItem {
 
 export type MenuItems = MenuItem[];
 
-export interface GoodCapt {
+export interface GoodCaptions {
   description: {
     composition: LName;
     casing: LName;
@@ -28,7 +28,7 @@ export interface GoodCapt {
   }
 }
 
-export type GoodCaptions = GoodCapt;
+//export type GoodCaptions = GoodCapt;
 
 export interface IGoodGroups {
   version: string;
@@ -83,4 +83,59 @@ export interface INews {
   }[];
 }
 
+export interface IContacts {
+  version: string;
+  contacts: {
+    ruid: string;
+    department: string;
+    caption: LName;
+    phone: string;  
+    email: string;       
+    fax: string; 
+  }[];
+}
+
+export interface IDepartments {
+  version: string;
+  departments: {
+    ruid: string;
+    caption: LName;
+    ordr: number; 
+  }[];
+}
+
+export interface ContactCaptions {
+  description: {
+    phone: LName;
+    fax: LName;
+    email: LName
+  }
+}
+
+export interface IOutlets {
+  version: string;
+  outlets: {
+    ruid: string;
+    caption: LName;
+    address: LName;  
+    timewd: string;
+    timesat: string;
+    timesun: string;  
+    phone: string;  
+    email: string;       
+    fax: string; 
+  }[];
+}
+
+export interface OutletsCaptions {
+  description: {
+    caption: LName;
+    phone: LName;     
+    email: LName;
+    time: LName;   
+    timewd: LName;
+    timesat: LName;
+    timesun: LName;  
+  }
+}
 
