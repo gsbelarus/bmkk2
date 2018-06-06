@@ -1,7 +1,14 @@
+
 div.Page {
   width: 100vw;
   height: 100vh;
   font-family: 'Roboto Condensed', sans-serif;
+  --colorGray: #8e8e8e;  
+  --colorGrayLite: #c1c1c1;
+  --colorText: #504c4a;
+  --colorBrown: #c84d47;  
+  --colorBrownLite: #E4BBBB;  
+  color: var(--colorText);
 }
 
 div.MainPage {
@@ -11,7 +18,7 @@ div.MainPage {
 
 img.Logo {
   position: absolute;
-  top: 24px;
+  top: 14px;
   left: 24px;
 }
 
@@ -23,33 +30,36 @@ div.TopRibbon {
   width: 100%;
   color: white;
   font-size: 12px;
-  background-color:rgba(0, 0, 0, 0.5);
+  background-color: #2c2c2c;
+  padding-top: 10px;
 }
 
 nav.TopMenu {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  height: 48px;
+  height: 38px;
   width: 100%;
-  background-color:rgba(0, 0, 0, 0.3);
+  background-color: var(--colorBrown);
+  padding-top: 10px;
 }
 
 nav.TopMenu a {
   color: white;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   margin-right: 36px;
   text-decoration: none;
 }
 
 nav.TopMenu a:last-child {
-  margin-right: 64px;
+  margin-right: 64px;  
 }
 
 div.LangSelector {
   height: 100%;
   margin-right: 64px;
+  padding-top: 6px;
 }
 
 div.LangSelector span {
@@ -67,7 +77,7 @@ div.LangSelector span:last-child {
 }
 
 div.LangSelector span.Selected {
-  color: lightgreen;
+  color: var(--colorBrown);
 }
 
 div.WorkArea {
@@ -88,19 +98,24 @@ div.GroupsContainer {
 div.GoodGroup {
   padding: 24px;
   text-align: center;
+
 }
+
 
 div.GoodGroup img {
   display: block;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 
 div.GoodGroupName {
   font-size: 24px;
   font-weight: 600;
-  color: brown;
+  color: brown;  
   width: 100%;
-  text-align: center;
+  text-align: center; 
+}
+div.GoodGroup a {
+  text-decoration: none; 
 }
 
 div.GoodsContainer {
@@ -115,7 +130,7 @@ div.GoodsContainer {
 div.GoodName {
   font-size: 14px;
   font-weight: bold;
-  color: brown;
+  color: var(--colorBrown);
   width: 100%;
 }
 
@@ -148,15 +163,49 @@ div.GoodItem h5 {
   text-align: left;
 }
 
-div.GoodItem strong {
-  padding-right: 4px;
+div.GoodCard {
+  padding-top: 20px;
 }
+
+div.GoodCardItem ul li {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #969696;
+  font-size: 14px;
+}
+
+div.GoodCardItem ul {
+  line-height: 1.4;
+  list-style: none none;
+  margin: 0;
+  padding: 0;
+}
+
+div.GoodCardItem {
+  float: left;
+  padding-left: 40px;
+  max-width: 50%;
+}
+
+div.GoodCard img {
+  float: left;
+  margin-top: 24px;
+}
+div.GoodCard h2 {
+  width: 100%;
+  text-align: left;
+}
+
 
 div.GoodItem ul .GoodMore {
   float: right;
-  color: black;  
+  color: var(--colorText); 
+  text-decoration: none;
 }
 
+div.GoodItem img {
+  max-height: 100px;  
+}
 
 div.WrappedText span {
   cursor: default;
@@ -169,7 +218,7 @@ div.WrappedText span {
   font-weight: 400;
 }
 
-div.GroupsContainer h2 {
+h2 {
   width: 100%;
   text-align: center;
 }
@@ -217,21 +266,25 @@ div.DepartmentItem {
 } 
 
 div.OutletContainer td {
-  font-size: 12px;
+  font-size: 14px;
+  padding: 5px;
 }
 
 div.OutletContainer th {
   text-align: center;
-  padding-left: 10px;
-  padding-right: 10px;  
+  padding: 5px;  
   vertical-align: middle;
-  border-bottom: 5px solid #c8c8c8;
-  border-top: 5px solid #c8c8c8;
 }
 
-div.OutletContainer thead {
-  background: #c8c8c8 !important;
+div.OutletContainer thead tr {
+  background-color: var(--colorGrayLite) !important;
+
 } 
 
+div.OutletContainer tr:nth-child(odd) {
+  background-color: white;
+}
 
-
+div.OutletContainer tr:nth-child(even) {
+  background-color: var(--colorGrayLite);/* фон четных строк */
+}

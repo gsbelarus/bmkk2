@@ -8,7 +8,7 @@ export const goodsRoot = `${dataRoot}goods/`;
 export const goodsRoot2 = `${dataRoot}goods2/`;
 export const newsRoot = `${dataRoot}news/`;
 export const goodsFile = `${goodsRoot}goods.json`;
-export const goodFileNoImage = 'noimage.jpg';
+export const goodFileNoImage = 'noimage.png';
 export const newsFile = `${newsRoot}news.json`;
 export const contactsRoot = `${dataRoot}contacts/`;
 export const contactsFile = `${contactsRoot}contacts.json`;
@@ -105,7 +105,7 @@ export const mainMenu: MenuItems = [
 
 export const goodCaption: GoodCaptions = 
   {
-    description: {
+    description: {        
       composition: {
         ru: {
           name: 'Состав:'
@@ -328,24 +328,24 @@ export const outletsCaption: OutletsCaptions =
     },  
     phone: {
       ru: {
-        name: 'Телефон/факс'
+        name: 'Телефон, факс'
       },
       be: {
-        name: 'Тэлефон/факс'
+        name: 'Тэлефон, факс'
       },
       en: {
-        name: 'Phone/Fax'
+        name: 'Phone, Fax'
       }
     },
     email: {
       ru: {
-        name: 'email'
+        name: 'Email'
       },
       be: {
-        name: 'email'
+        name: 'Email'
       },
       en: {
-        name: 'email'
+        name: 'Email'
       }
     },
     time: {

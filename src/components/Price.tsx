@@ -27,7 +27,8 @@ export class Price extends Page {
       return (
         <div className="PriceContainer">
           <h2>
-            Прайс
+            ПРАЙС-ЛИСТ <br/>
+            в соответствии с прейскурантом цен на {goods.date}
           </h2>
 
           { 

@@ -30,67 +30,47 @@ export class GoodCard extends Page {
     if (g) {
       return (
         <div className="GoodCard">
-
           <img src={fullImageName} />
-
-
-
-
-
-
-          <table>
-            <tbody>
-              <tr>
-                <th>Наименование продукта</th>
-                <td></td>
-              </tr>            
-            <tr>
-                <th>Описание</th>
-                <td>Колбаса вареная мясная </td>
-            </tr>
-
-            <tr>
-                <th>Производитель</th>
-                <td>ОАО Березовский мясоконсервный комбинат</td>
-            </tr>
-
-            
-            <tr>
-                <th>Сорт</th>
-                <td>Высший сорт</td>
-            </tr>
-
-            
-            <tr>
-                <th>Оболочка, упаковка</th>
-                <td>Оболочка Бига-3</td>
-            </tr>
-
-            
-            <tr>
-                <th>Стандарт, ГОСТ, ТУ</th>
-                <td>СТБ 126</td>
-            </tr>
-
-            
-            <tr>
-                <th>Стандарт, ГОСТ, ТУ</th>
-                <td>РЦ BY 500011238.2915-2012</td>
-            </tr>
-
-            
-            <tr>
-                <th>Срок реализации (годности), суток</th>
-                <td>30 суток</td>
-            </tr>
-
-            <tr>
-                <th>Условия хранения:</th>
-                <td><p>В целой упаковке при относительной влажности воздуха (75±5)% и температуре (4±2)°С</p></td>
-            </tr>
-        </tbody></table>          
-
-
+          <div className="GoodCardItem">
+            <h2 className="GoodName">
+              {g.caption[selectedLang.toLowerCase()].name}
+            </h2>
+            <ul>
+              <li>
+                {g.category[selectedLang.toLowerCase()].name}
+              </li>                
+              <li>
+                <strong>
+                  {goodCaption.description.composition[selectedLang.toLowerCase()].name}
+                </strong>
+                {g.composition[selectedLang.toLowerCase()].name}
+              </li>
+              <li>
+                <strong>
+                  {goodCaption.description.casing[selectedLang.toLowerCase()].name}
+                </strong>
+                {g.casing[selectedLang.toLowerCase()].name}
+              </li>
+              <li>
+                <strong>
+                  {goodCaption.description.beforuse[selectedLang.toLowerCase()].name}
+                </strong>
+                {g.beforuse}
+              </li>
+              <li>
+                <strong>
+                  {goodCaption.description.costnde[selectedLang.toLowerCase()].name}
+                </strong>
+                {g.costnde} р.
+              </li> 
+              <li>
+                <strong>
+                  {goodCaption.description.dcostfull[selectedLang.toLowerCase()].name}
+                </strong>
+                {g.dcostfull} р.
+              </li>                                      
+            </ul>
+          </div>  
         </div>
       );
     } else {

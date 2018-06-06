@@ -63,7 +63,7 @@ export class Outlets extends Page {
                     outlets.outlets.sort( (a, b) => a.caption[selectedLang.toLowerCase()].name < b.caption[selectedLang.toLowerCase()].name ? -1 : (a.caption === b.caption ? 0 : 1) ).map( (g, idx) => (
                         <tr key={idx}>
                             <td className="tdLeft">{g.caption[selectedLang.toLowerCase()].name + ', ' + g.address[selectedLang.toLowerCase()].name}</td>
-                            <td>{(!g.phone ? '' : g.phone) + (g.fax ? '/' + g.fax : '')}</td>
+                            <td>{(!g.phone ? '' : g.phone) + (g.fax ? ', ' + g.fax : '')}</td>
                             <td>{g.email}</td> 
                             <td>{g.timewd}</td> 
                             <td>{g.timesat}</td> 

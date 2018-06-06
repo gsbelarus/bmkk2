@@ -49,11 +49,13 @@ export type PriceItems = PriceItem[];
 
 export interface IGoods {
   version: string;
+  date: string;  
   goods: {
     ruid: string;
     group: string;
     caption: LName;
-    valuename: LName;  
+    valuename: LName; 
+    category: LName; 
     composition: LName;       
     casing: LName; 
     image: string;
