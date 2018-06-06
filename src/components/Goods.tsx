@@ -22,9 +22,9 @@ export class Goods extends Page {
   renderBody(): JSX.Element {
     const { groups, goods, selectedLang, match  } = this.props;
     console.log(this.props);
-    
+
     if (goods) {
-      const g = goods.goods.filter((t) => t.group === match.params.groupID );
+      const filtered = goods.goods.filter((t) => t.group === match.params.groupID );
 
       return (
         <div>
@@ -32,10 +32,10 @@ export class Goods extends Page {
             {<Link  to={`/price`}>
               Прейскурант
             </Link>}
-          </div>   
-          <div className="GoodsContainer">          
+          </div>
+          <div className="GoodsContainer">
             {
-              g.map( (g, idx) => {
+              filtered.map( (g, idx) => {
                 const fullImageName = !g.image ? `${goodsRoot}${goodFileNoImage}`
                   : g.image.includes('/') ? g.image
                   : `${goodsRoot}${g.image}`;
@@ -70,7 +70,7 @@ export class Goods extends Page {
                           {goodCaption.description.costnde[selectedLang.toLowerCase()].name}
                         </strong>
                         {g.costnde} р.
-                      </li> 
+                      </li>
                       <li>
                         <strong>
                           {goodCaption.description.dcostfull[selectedLang.toLowerCase()].name}
@@ -79,15 +79,15 @@ export class Goods extends Page {
                       </li>
                       <Link className="GoodMore" to={`/production/groups/` + g.group + '/good/' + g.ruid}>
                         Подробнее..
-                      </Link>                                          
+                      </Link>
                     </ul>
-                    
+
                   </div>
-                )
+                );
               })
             }
-          </div> 
-         
+          </div>
+
         </div>
       );
     } else {
