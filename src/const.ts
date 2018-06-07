@@ -1,14 +1,15 @@
-import { MenuItems, GoodCaptions, PriceItems, ContactCaptions, OutletsCaptions } from './types';
+import { MenuItems, GoodCaptions, PriceItems, ContactCaptions, OutletsCaptions, PriceItem } from './types';
 
 export const dataRoot = '/data/';
 export const aboutRoot = `${dataRoot}about/`;
 export const goodGroupsRoot = `${dataRoot}goodgroup/`;
-export const goodGroupsFile = `${goodGroupsRoot}goodgroup.json`;
+export const goodGroupsFile = `${goodGroupsRoot}goodgroups.json`;
 export const goodsRoot = `${dataRoot}goods/`;
 export const goodsRoot2 = `${dataRoot}goods2/`;
 export const newsRoot = `${dataRoot}news/`;
 export const goodsFile = `${goodsRoot}goods.json`;
 export const goodFileNoImage = 'noimage.png';
+export const groupFileNoImage = 'noimage.png';
 export const newsFile = `${newsRoot}news.json`;
 export const contactsRoot = `${dataRoot}contacts/`;
 export const contactsFile = `${contactsRoot}contacts.json`;
@@ -106,7 +107,7 @@ export const mainMenu: MenuItems = [
 export const goodCaption: GoodCaptions = 
   {
     description: {        
-      composition: {
+      ingredients: {
         ru: {
           name: 'Состав:'
         },
@@ -309,8 +310,7 @@ export const contactCaption: ContactCaptions =
         }
       }      
     }
-  }
-;
+  };
 
 export const outletsCaption: OutletsCaptions = 
 {
@@ -394,3 +394,18 @@ export const outletsCaption: OutletsCaptions =
     }      
   }
 };
+
+export const moreCaption: PriceItem = 
+  {
+    caption: {
+      ru: {
+        name: 'подробнее..'
+      },
+      be: {
+        name: 'падрабязней..'
+      },
+      en: {
+        name: 'more..'
+      }
+    }
+  };

@@ -61,7 +61,7 @@ export class Price extends Page {
                                 <td>{g.rate}</td>
                                 <td>{g.beforuse}</td>
                                 <td>{g.term}</td>
-                                <td>{g.composition[selectedLang.toLowerCase()].name}</td>                                
+                                <td>{g.ingredients[selectedLang.toLowerCase()].name}</td>                                
                             </tr>
                           )
                         )  

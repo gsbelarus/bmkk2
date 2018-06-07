@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Page, PageProps } from './Page';
 import { LoadGoods } from '../actions';
 import { IGoods } from '../types';
-import { goodsFile, goodsRoot, goodCaption, goodFileNoImage } from '../const';
+import { goodsFile, goodsRoot, goodCaption, goodFileNoImage, moreCaption } from '../const';
 import { WrapText } from './WrapText';
 import { Link } from 'react-router-dom';
 
@@ -48,10 +48,13 @@ export class Goods extends Page {
                     </h5>
                     <ul>
                       <li>
+                        {g.grade[selectedLang.toLowerCase()].name ? g.grade[selectedLang.toLowerCase()].name : '-' }
+                      </li>                      
+                      <li>
                         <strong>
-                          {goodCaption.description.composition[selectedLang.toLowerCase()].name}
+                          {goodCaption.description.ingredients[selectedLang.toLowerCase()].name}
                         </strong>
-                        <WrapText text={g.composition[selectedLang.toLowerCase()].name} />
+                        <WrapText text={g.ingredients[selectedLang.toLowerCase()].name} />
                       </li>
                       <li>
                         <strong>
@@ -65,23 +68,10 @@ export class Goods extends Page {
                         </strong>
                         {g.beforuse}
                       </li>
-                      <li>
-                        <strong>
-                          {goodCaption.description.costnde[selectedLang.toLowerCase()].name}
-                        </strong>
-                        {g.costnde} р.
-                      </li>
-                      <li>
-                        <strong>
-                          {goodCaption.description.dcostfull[selectedLang.toLowerCase()].name}
-                        </strong>
-                        {g.dcostfull} р.
-                      </li>
                       <Link className="GoodMore" to={`/production/groups/` + g.group + '/good/' + g.ruid}>
-                        Подробнее..
+                        {moreCaption.caption[selectedLang.toLowerCase()].name}
                       </Link>
                     </ul>
-
                   </div>
                 );
               })

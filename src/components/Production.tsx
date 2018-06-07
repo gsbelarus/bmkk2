@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Page, PageProps } from './Page';
 import { LoadGroups } from '../actions';
 import { IGoodGroups } from '../types';
-import { goodGroupsFile, goodGroupsRoot } from '../const';
+import { goodGroupsFile, goodGroupsRoot, groupFileNoImage } from '../const';
 import { Link } from 'react-router-dom';
 
 export class Production extends Page {
@@ -31,7 +31,7 @@ export class Production extends Page {
             groups.groups.map( (g, idx) => (
               <div key={idx} className="GoodGroup">
                 <Link to={`/production/groups/` + g.ruid}>
-                  <img src={`${goodGroupsRoot}${g.image}`} />
+                  <img src={!g.image ? `${goodGroupsRoot}${groupFileNoImage}` : `${goodGroupsRoot}${g.image}`} />
                   <div className="GoodGroupName">
                    {g.caption[selectedLang.toLowerCase()].name}
                   </div>

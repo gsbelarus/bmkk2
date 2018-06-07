@@ -37,13 +37,13 @@ export class GoodCard extends Page {
             </h2>
             <ul>
               <li>
-                {g.category[selectedLang.toLowerCase()].name}
+                {g.grade[selectedLang.toLowerCase()].name}
               </li>                
               <li>
                 <strong>
-                  {goodCaption.description.composition[selectedLang.toLowerCase()].name}
+                  {goodCaption.description.ingredients[selectedLang.toLowerCase()].name}
                 </strong>
-                {g.composition[selectedLang.toLowerCase()].name}
+                {g.ingredients[selectedLang.toLowerCase()].name}
               </li>
               <li>
                 <strong>

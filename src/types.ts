@@ -20,7 +20,7 @@ export type MenuItems = MenuItem[];
 
 export interface GoodCaptions {
   description: {
-    composition: LName;
+    ingredients: LName;
     casing: LName;
     beforuse: LName;
     costnde: LName;
@@ -55,8 +55,8 @@ export interface IGoods {
     group: string;
     caption: LName;
     valuename: LName; 
-    category: LName; 
-    composition: LName;       
+    grade: LName; 
+    ingredients: LName;       
     casing: LName; 
     image: string;
     image2: string;    
