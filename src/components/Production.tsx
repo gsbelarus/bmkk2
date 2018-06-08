@@ -13,10 +13,11 @@ export class Production extends Page {
   componentDidMount() {
     const { onLoadGroups } = this.props;
     fetch(goodGroupsFile)
+    .then( res => res.text() )
     .then( res => {
-      return res.text();
+      console.log(res);
+      return JSON.parse(res);
     })
-    .then( res => JSON.parse(res) )
     .then( res => onLoadGroups(res as IGoodGroups) )
     .catch( err => console.log(err) );
   }

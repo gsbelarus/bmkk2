@@ -1,6 +1,11 @@
 import { MenuItems, GoodCaptions, PriceItems, ContactCaptions, OutletsCaptions, PriceItem } from './types';
 
-export const dataRoot = '/data/';
+/**
+ * при работе локально путь /data/
+ *
+ * при компиляции для сайта путь должен быть /bmkk/new/data/
+ */
+export const dataRoot = '/bmkk/new/data/';
 export const aboutRoot = `${dataRoot}about/`;
 export const goodGroupsRoot = `${dataRoot}goodgroups/`;
 export const goodGroupsFile = `${goodGroupsRoot}goodgroups.json`;
@@ -44,7 +49,7 @@ export const mainMenu: MenuItems = [
         name: 'News'
       }
     }
-  },  
+  },
   {
     path: 'production',
     caption: {
@@ -104,9 +109,9 @@ export const mainMenu: MenuItems = [
 ];
 
 
-export const goodCaption: GoodCaptions = 
+export const goodCaption: GoodCaptions =
   {
-    description: {        
+    description: {
       ingredients: {
         ru: {
           name: 'Состав:'
@@ -139,7 +144,7 @@ export const goodCaption: GoodCaptions =
         en: {
           name: 'Sell by:'
         }
-      },  
+      },
       costnde: {
         ru: {
           name: 'Цена ФСО:'
@@ -150,7 +155,7 @@ export const goodCaption: GoodCaptions =
         en: {
           name: 'Price ФСО:'
         }
-      },  
+      },
       dcostfull: {
         ru: {
           name: 'Цена ФСН:'
@@ -161,7 +166,7 @@ export const goodCaption: GoodCaptions =
         en: {
           name: 'Price ФСН:'
         }
-      }      
+      }
     }
   }
 ;
@@ -179,7 +184,7 @@ export const priceCaption: PriceItems = [
         name: '№'
       }
     }
-  },  
+  },
   {
     caption: {
       ru: {
@@ -273,7 +278,7 @@ export const priceCaption: PriceItems = [
   }
 ];
 
-export const contactCaption: ContactCaptions = 
+export const contactCaption: ContactCaptions =
   {
     description: {
       phone: {
@@ -308,11 +313,11 @@ export const contactCaption: ContactCaptions =
         en: {
           name: 'email:'
         }
-      }      
+      }
     }
   };
 
-export const outletsCaption: OutletsCaptions = 
+export const outletsCaption: OutletsCaptions =
 {
   description: {
     caption: {
@@ -325,7 +330,7 @@ export const outletsCaption: OutletsCaptions =
       en: {
         name: 'англ Наименование и адрес магазина/точки реализации'
       }
-    },  
+    },
     phone: {
       ru: {
         name: 'Телефон, факс'
@@ -391,11 +396,11 @@ export const outletsCaption: OutletsCaptions =
       en: {
         name: 'Sun'
       }
-    }      
+    }
   }
 };
 
-export const moreCaption: PriceItem = 
+export const moreCaption: PriceItem =
   {
     caption: {
       ru: {
