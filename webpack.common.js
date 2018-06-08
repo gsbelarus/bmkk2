@@ -33,17 +33,17 @@ module.exports =  {
         from: './public/data/goods2/*.*',
         to: 'data/goods2/',
         flatten: true
-      },      
+      },
       {
         from: './public/data/news/*.*',
         to: 'data/news/',
         flatten: true
-      },      
+      },
       {
         from: './public/test/*.*',
         to: 'test/',
         flatten: true
-      },      
+      },
       {
         from: './public/data/contacts/*.*',
         to: 'data/contacts/',
@@ -87,7 +87,7 @@ module.exports =  {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: '/bmkk/new'
   },
   stats: {
     assets: false,

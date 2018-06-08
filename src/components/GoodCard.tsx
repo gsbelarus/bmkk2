@@ -17,7 +17,7 @@ export class GoodCard extends Page {
     })
     .then( res => JSON.parse(res) )
     .then( res => onLoadGoods(res as IGoods) )
-    .catch( err => console.log(JSON.stringify(err)) );
+    .catch( err => console.log(err) );
   }
 
   renderBody(): JSX.Element {
@@ -38,7 +38,7 @@ export class GoodCard extends Page {
             <ul>
               <li>
                 {g.grade[selectedLang.toLowerCase()].name}
-              </li>                
+              </li>
               <li>
                 <strong>
                   {goodCaption.description.ingredients[selectedLang.toLowerCase()].name}
@@ -62,15 +62,15 @@ export class GoodCard extends Page {
                   {goodCaption.description.costnde[selectedLang.toLowerCase()].name}
                 </strong>
                 {g.costnde} р.
-              </li> 
+              </li>
               <li>
                 <strong>
                   {goodCaption.description.dcostfull[selectedLang.toLowerCase()].name}
                 </strong>
                 {g.dcostfull} р.
-              </li>                                      
+              </li>
             </ul>
-          </div>  
+          </div>
         </div>
       );
     } else {

@@ -15,14 +15,14 @@ export class Price extends Page {
     })
     .then( res => JSON.parse(res) )
     .then( res => onLoadGoods(res as IGoods) )
-    .catch( err => console.log(JSON.stringify(err)) );
+    .catch( err => console.log(err) );
   }
 
   renderBody(): JSX.Element {
     const { groups, goods, selectedLang  } = this.props;
     console.log(this.props);
-    
-    if (goods) {   
+
+    if (goods) {
 
       return (
         <div className="PriceContainer">
@@ -31,7 +31,7 @@ export class Price extends Page {
             в соответствии с прейскурантом цен на {goods.date}
           </h2>
 
-          { 
+          {
             <table>
               <thead>
                 <tr>
@@ -42,11 +42,11 @@ export class Price extends Page {
                         </th>
                       )
                     )
-                  }   
+                  }
                 </tr>
-              </thead>                
-              {groups.groups.map( (gr, gr_idx) => 
-                ( 
+              </thead>
+              {groups.groups.map( (gr, gr_idx) =>
+                (
                   <tbody>
                    <tr>
                       {gr.caption[selectedLang.toLowerCase()].name}
@@ -57,25 +57,25 @@ export class Price extends Page {
                                 <td>{idx+1}</td>
                                 <td>{g.caption[selectedLang.toLowerCase()].name + ' (' + g.barcode + ')'}</td>
                                 <td>{g.valuename[selectedLang.toLowerCase()].name}</td>
-                                <td>{g.costnde + ' / ' + g.dcostfull}</td>                               
+                                <td>{g.costnde + ' / ' + g.dcostfull}</td>
                                 <td>{g.rate}</td>
                                 <td>{g.beforuse}</td>
                                 <td>{g.term}</td>
-                                <td>{g.ingredients[selectedLang.toLowerCase()].name}</td>                                
+                                <td>{g.ingredients[selectedLang.toLowerCase()].name}</td>
                             </tr>
                           )
-                        )  
-                      }                  
+                        )
+                      }
                   </tbody>
                 )
               )}
             </table>
-          } 
+          }
         </div>
       );
     } else {
       return (
-        <div>          
+        <div>
           Loading...
         </div>
       );

@@ -20,7 +20,7 @@ export class News extends Page {
     })
     .then( res => JSON.parse(res) )
     .then( res => onLoadNews(res as INews) )
-    .catch( err => console.log(JSON.stringify(err)) );
+    .catch( err => console.log(err) );
   }
 
   renderBody(): JSX.Element {
@@ -28,26 +28,26 @@ export class News extends Page {
 
     if (news) {
       return (
-        <div className="GoodsContainer">          
+        <div className="GoodsContainer">
           {
             news.news.map( (n, idx) => {
               const fullImageName = !n.image ? ``
               : n.image.includes('/') ? n.image
               : `${newsRoot}${n.image}`;
                 return (
-                  <div key={idx}  className="NewsItem">                    
+                  <div key={idx}  className="NewsItem">
                     <h3>
                       {n.title[selectedLang.toLowerCase()].name}
                     </h3>
-                    <ReactMarkdown source={n.body[selectedLang.toLowerCase()].name} /> 
-                    <img src={fullImageName} className={fullImageName === '' ? 'NoneDisplay' : ''}/>   
+                    <ReactMarkdown source={n.body[selectedLang.toLowerCase()].name} />
+                    <img src={fullImageName} className={fullImageName === '' ? 'NoneDisplay' : ''}/>
                   </div>
-                )    
+                )
               }
-            ) 
-          }    
+            )
+          }
         </div>
-      )  
+      )
     } else {
       return (
         <div>

@@ -18,7 +18,7 @@ export class Production extends Page {
     })
     .then( res => JSON.parse(res) )
     .then( res => onLoadGroups(res as IGoodGroups) )
-    .catch( err => console.log(JSON.stringify(err)) );
+    .catch( err => console.log(err) );
   }
 
   renderBody(): JSX.Element {

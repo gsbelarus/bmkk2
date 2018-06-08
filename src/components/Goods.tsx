@@ -16,7 +16,7 @@ export class Goods extends Page {
     })
     .then( res => JSON.parse(res) )
     .then( res => onLoadGoods(res as IGoods) )
-    .catch( err => console.log(JSON.stringify(err)) );
+    .catch( err => console.log(err) );
   }
 
   renderBody(): JSX.Element {
@@ -49,7 +49,7 @@ export class Goods extends Page {
                     <ul>
                       <li>
                         {g.grade[selectedLang.toLowerCase()].name ? g.grade[selectedLang.toLowerCase()].name : '-' }
-                      </li>                      
+                      </li>
                       <li>
                         <strong>
                           {goodCaption.description.ingredients[selectedLang.toLowerCase()].name}

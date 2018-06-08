@@ -13,50 +13,50 @@ export class Outlets extends Page {
     .then( res => res.text())
     .then( res => JSON.parse(res) )
     .then( res => onLoadOutlets(res as IOutlets) )
-    .catch( err => console.log(JSON.stringify(err)) );
+    .catch( err => console.log(err) );
   }
 
   renderBody(): JSX.Element {
     const { outlets, selectedLang  } = this.props;
     console.log(this.props);
-    
-    if (outlets) {   
+
+    if (outlets) {
 
       return (
         <div className="OutletContainer">
           <h2>
             Фирменные магазины и точки реализации
           </h2>
-          { 
+          {
             <table>
               <thead>
                 <tr>
                   <th rowSpan={2}>
-                    {outletsCaption.description.caption[selectedLang.toLowerCase()].name} 
+                    {outletsCaption.description.caption[selectedLang.toLowerCase()].name}
                   </th>
                   <th rowSpan={2}>
-                    {outletsCaption.description.phone[selectedLang.toLowerCase()].name} 
+                    {outletsCaption.description.phone[selectedLang.toLowerCase()].name}
                   </th>
                   <th rowSpan={2}>
-                    {outletsCaption.description.email[selectedLang.toLowerCase()].name} 
-                  </th>         
+                    {outletsCaption.description.email[selectedLang.toLowerCase()].name}
+                  </th>
                   <th colSpan={3}>
-                     <p> 
-                        {outletsCaption.description.time[selectedLang.toLowerCase()].name} 
-                     </p>   
-                  </th>                                                
+                     <p>
+                        {outletsCaption.description.time[selectedLang.toLowerCase()].name}
+                     </p>
+                  </th>
                 </tr>
                 <tr>
                   <th>
-                    {outletsCaption.description.timewd[selectedLang.toLowerCase()].name} 
-                  </th>   
+                    {outletsCaption.description.timewd[selectedLang.toLowerCase()].name}
+                  </th>
                   <th>
-                    {outletsCaption.description.timesat[selectedLang.toLowerCase()].name} 
-                  </th>    
+                    {outletsCaption.description.timesat[selectedLang.toLowerCase()].name}
+                  </th>
                   <th>
-                    {outletsCaption.description.timesun[selectedLang.toLowerCase()].name} 
-                  </th>                                                       
-                </tr>                
+                    {outletsCaption.description.timesun[selectedLang.toLowerCase()].name}
+                  </th>
+                </tr>
               </thead>
               <tbody>
                 {
@@ -64,23 +64,23 @@ export class Outlets extends Page {
                         <tr key={idx}>
                             <td className="tdLeft">{g.caption[selectedLang.toLowerCase()].name + ', ' + g.address[selectedLang.toLowerCase()].name}</td>
                             <td>{(!g.phone ? '' : g.phone) + (g.fax ? ', ' + g.fax : '')}</td>
-                            <td>{g.email}</td> 
-                            <td>{g.timewd}</td> 
-                            <td>{g.timesat}</td> 
-                            <td>{g.timesun}</td>                               
+                            <td>{g.email}</td>
+                            <td>{g.timewd}</td>
+                            <td>{g.timesat}</td>
+                            <td>{g.timesun}</td>
                         </tr>
                       )
-                    )  
-                  }                  
+                    )
+                  }
               </tbody>
- 
+
             </table>
-          } 
+          }
         </div>
       );
     } else {
       return (
-        <div>          
+        <div>
           Loading...
         </div>
       );

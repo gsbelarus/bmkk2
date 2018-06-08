@@ -17,13 +17,13 @@ export class Contacts extends Page {
     .then( res => res.text() )
     .then( res => JSON.parse(res) )
     .then( res => onLoadContacts(res as IContacts) )
-    .catch( err => console.log(JSON.stringify(err)) );
+    .catch( err => console.log(err) );
 
     fetch(departmentsFile)
     .then( res => res.text() )
     .then( res => JSON.parse(res) )
     .then( res => onLoadDepartments(res as IDepartments) )
-    .catch( err => console.log(JSON.stringify(err)) );    
+    .catch( err => console.log(err) );
   }
 
   renderBody(): JSX.Element {
@@ -38,14 +38,14 @@ export class Contacts extends Page {
                 </h3>
                 {
                   contacts.contacts.filter( c => c.department === d.ruid ).map( (c, idx) => (
-                    <div key={idx} className="ContactItem">        
+                    <div key={idx} className="ContactItem">
                       <div className="ContactName">
                         {c.caption[selectedLang.toLowerCase()].name}
                       </div>
                       <div className={c.phone ? "ContactInfo" : "NoneDisplay"}>
                         <span>
                           {contactCaption.description.phone[selectedLang.toLowerCase()].name}
-                        </span>                      
+                        </span>
                         {c.phone}
                       </div>
                       <div className={c.fax ? "ContactInfo" : "NoneDisplay"}>
@@ -53,17 +53,17 @@ export class Contacts extends Page {
                           {contactCaption.description.fax[selectedLang.toLowerCase()].name}
                         </span>
                         {c.fax}
-                      </div>   
+                      </div>
                       <div className={c.email ? "ContactInfo" : "NoneDisplay"}>
                         <span>
                           {contactCaption.description.email[selectedLang.toLowerCase()].name}
-                        </span>                      
+                        </span>
                         {c.email}
-                      </div>                                                                       
+                      </div>
                     </div>
                     )
-                  ) 
-                }       
+                  )
+                }
               </div>
               )
             )
@@ -73,7 +73,7 @@ export class Contacts extends Page {
     } else {
       return (
         <div>
-          Loading...          
+          Loading...
         </div>
       );
     }

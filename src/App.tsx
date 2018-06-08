@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { connect, Dispatch as ReduxDispatch } from 'react-redux';
-import { BrowserRouter, Switch, Route, RouteComponentProps } from 'react-router-dom';
+import { HashRouter, Switch, Route, RouteComponentProps } from 'react-router-dom';
 import './App.css';
 import { MainPage } from './components/MainPage';
-import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, LoadGoods, 
+import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, LoadGoods,
          LoadNews, loadNews, LoadContacts, loadContacts, LoadDepartments, loadDepartments,
          LoadOutlets, loadOutlets } from './actions';
 import { State } from './store';
@@ -26,22 +26,22 @@ export interface AppProps {
   goods: IGoods;
   news: INews;
   contacts: IContacts;
-  departments: IDepartments;  
-  outlets: IOutlets;    
+  departments: IDepartments;
+  outlets: IOutlets;
   onSetLanguage: SetLanguage;
   onLoadGroups: LoadGroups;
   selectedGroup: string;
   onLoadGoods: LoadGoods;
-  onLoadNews: LoadNews;  
+  onLoadNews: LoadNews;
   onLoadContacts: LoadContacts;
   onLoadDepartments: LoadDepartments;
-  onLoadOutlets: LoadOutlets;  
+  onLoadOutlets: LoadOutlets;
 }
 
 class App extends React.Component<AppProps, {}> {
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
           <Route
             exact={true}
@@ -92,7 +92,7 @@ class App extends React.Component<AppProps, {}> {
                 return <GoodCard {...mergedProps} />;
               }
             }
-          />          
+          />
           <Route
             exact={true}
             path="/price"
@@ -102,7 +102,7 @@ class App extends React.Component<AppProps, {}> {
                 return <Price {...mergedProps} />;
               }
             }
-          />     
+          />
           <Route
             exact={true}
             path="/news"
@@ -112,7 +112,7 @@ class App extends React.Component<AppProps, {}> {
                 return <News {...mergedProps} />;
               }
             }
-          />     
+          />
           <Route
             exact={true}
             path="/contacts"
@@ -122,7 +122,7 @@ class App extends React.Component<AppProps, {}> {
                 return <Contacts {...mergedProps} />;
               }
             }
-          />     
+          />
           <Route
             exact={true}
             path="/outlets"
@@ -132,9 +132,9 @@ class App extends React.Component<AppProps, {}> {
                 return <Outlets {...mergedProps} />;
               }
             }
-          />                                     
+          />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
