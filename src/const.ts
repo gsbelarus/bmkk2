@@ -2,7 +2,7 @@ import { MenuItems, GoodCaptions, PriceItems, ContactCaptions, OutletsCaptions, 
 
 export const dataRoot = '/data/';
 export const aboutRoot = `${dataRoot}about/`;
-export const goodGroupsRoot = `${dataRoot}goodgroup/`;
+export const goodGroupsRoot = `${dataRoot}goodgroups/`;
 export const goodGroupsFile = `${goodGroupsRoot}goodgroups.json`;
 export const goodsRoot = `${dataRoot}goods/`;
 export const goodsRoot2 = `${dataRoot}goods2/`;

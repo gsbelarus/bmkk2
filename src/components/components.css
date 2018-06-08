@@ -43,6 +43,8 @@ nav.TopMenu {
   width: 100%;
   background-color: var(--colorBrown);
   padding-top: 14px;
+  bottom: -1px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);  
 }
 
 nav.TopMenu a {

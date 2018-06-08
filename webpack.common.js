@@ -15,8 +15,8 @@ module.exports =  {
     }),
     new CopyWebpackPlugin([
       {
-        from: './public/data/goodgroup/*.*',
-        to: 'data/goodgroup/',
+        from: './public/data/goodgroups/*.*',
+        to: 'data/goodgroups/',
         flatten: true
       },
       {
