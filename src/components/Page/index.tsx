@@ -1,9 +1,9 @@
 import * as React from 'react';
-import './components.css';
-import { LangSelector } from './LangSelector';
-import { Language, IGoodGroups, IGoods, INews, IContacts, IDepartments, IOutlets } from '../types';
-import { SetLanguage, LoadGroups, LoadGoods, LoadNews, LoadContacts, LoadDepartments, LoadOutlets } from '../actions';
-import { mainMenu } from '../const';
+import './page.css';
+import { LangSelector } from '../LangSelector/index';
+import { Language, IGoodGroups, IGoods, INews, IContacts, IDepartments, IOutlets } from '../../types';
+import { SetLanguage, LoadGroups, LoadGoods, LoadNews, LoadContacts, LoadDepartments, LoadOutlets } from '../../actions';
+import { mainMenu } from '../../const';
 import { Link, RouteComponentProps } from 'react-router-dom';
 
 export interface PageProps extends RouteComponentProps<any> {
@@ -12,21 +12,23 @@ export interface PageProps extends RouteComponentProps<any> {
   goods: IGoods;
   news: INews;
   contacts: IContacts;
-  departments: IDepartments;  
-  outlets: IOutlets;   
+  departments: IDepartments;
+  outlets: IOutlets;
   onSetLanguage: SetLanguage;
   onLoadGroups: LoadGroups;
   onLoadGoods: LoadGoods;
-  onLoadNews: LoadNews;  
+  onLoadNews: LoadNews;
   onLoadContacts: LoadContacts;
-  onLoadDepartments: LoadDepartments;   
-  onLoadOutlets: LoadOutlets;   
+  onLoadDepartments: LoadDepartments;
+  onLoadOutlets: LoadOutlets;
 }
 
 export class Page<P extends PageProps = PageProps> extends React.Component<P, {}> {
+  protected logoImg: any;
 
   constructor(props: P) {
     super(props);
+    // this.logoImg = require('../../../public/image/logo_black.png');
   }
 
   renderBody(): JSX.Element {
@@ -50,6 +52,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
         <div className="WorkArea">
           {location.pathname !== '/' && <div>{location.pathname}</div>}
           {this.renderBody()}
+          {this.logoImg && <img className="Logo" src={this.logoImg} />}
         </div>
       </div>
     );

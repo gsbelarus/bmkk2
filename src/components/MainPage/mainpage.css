@@ -1,0 +1,6 @@
+div.MainPage {
+  background-image: url('../../../public/image/back.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center
+}

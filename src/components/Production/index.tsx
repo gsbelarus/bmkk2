@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Page, PageProps } from './Page';
-import { LoadGroups } from '../actions';
-import { IGoodGroups } from '../types';
-import { goodGroupsFile, goodGroupsRoot, groupFileNoImage } from '../const';
+import { Page, PageProps } from '../Page';
+import { IGoodGroups } from '../../types';
+import { goodGroupsFile, goodGroupsRoot, groupFileNoImage } from '../../const';
 import { Link } from 'react-router-dom';
 
 export class Production extends Page {

@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Page, PageProps } from './Page';
-import { LoadGoods } from '../actions';
-import { IGoods } from '../types';
-import { goodsFile, goodsRoot, goodsRoot2, goodCaption, goodFileNoImage } from '../const';
+import { Page, PageProps } from '../Page';
+import { IGoods } from '../../types';
+import { goodsFile, goodsRoot2, goodCaption, goodFileNoImage } from '../../const';
 
 export class GoodCard extends Page {
   constructor(props: PageProps) {

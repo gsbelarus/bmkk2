@@ -5,7 +5,7 @@ import { MenuItems, GoodCaptions, PriceItems, ContactCaptions, OutletsCaptions, 
  *
  * при компиляции для сайта путь должен быть /bmkk/new/data/
  */
-export const dataRoot = '/bmkk/new/data/';
+export const dataRoot = '/data/';
 export const aboutRoot = `${dataRoot}about/`;
 export const goodGroupsRoot = `${dataRoot}goodgroups/`;
 export const goodGroupsFile = `${goodGroupsRoot}goodgroups.json`;
@@ -43,7 +43,7 @@ export const mainMenu: MenuItems = [
         name: 'Новости'
       },
       be: {
-        name: 'Навины'
+        name: 'Навіны'
       },
       en: {
         name: 'News'

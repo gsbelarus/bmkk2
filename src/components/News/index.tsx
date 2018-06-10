@@ -1,11 +1,8 @@
 import * as React from 'react';
-import { Page, PageProps } from './Page';
-import { LoadNews } from '../actions';
-import { INews } from '../types';
-import { newsFile, newsRoot } from '../const';
-import { Link } from 'react-router-dom';
+import { Page, PageProps } from '../Page';
+import { INews } from '../../types';
+import { newsFile, newsRoot } from '../../const';
 import * as ReactMarkdown from 'react-markdown';
-
 
 export class News extends Page {
   constructor(props: PageProps) {

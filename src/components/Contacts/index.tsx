@@ -1,9 +1,7 @@
 import * as React from 'react';
-import { Page, PageProps } from './Page';
-import { LoadContacts, LoadDepartments } from '../actions';
-import { IContacts, IDepartments } from '../types';
-import { contactsFile, contactsRoot, departmentsFile, contactCaption } from '../const';
-import { Link } from 'react-router-dom';
+import { Page, PageProps } from '../Page';
+import { IContacts, IDepartments } from '../../types';
+import { contactsFile, departmentsFile, contactCaption } from '../../const';
 
 export class Contacts extends Page {
   constructor(props: PageProps) {

@@ -1,9 +1,7 @@
 import * as React from 'react';
-import { Page, PageProps } from './Page';
-import { LoadGoods } from '../actions';
-import { IGoods } from '../types';
-import { goodsFile, priceCaption } from '../const';
-import { WrapText } from './WrapText';
+import { Page } from '../Page';
+import { IGoods } from '../../types';
+import { goodsFile, priceCaption } from '../../const';
 
 export class Price extends Page {
 
