@@ -23,6 +23,20 @@ export const outletsFile = `${contactsRoot}outlets.json`;
 
 export const mainMenu: MenuItems = [
   {
+    path: '',
+    caption: {
+      ru: {
+        name: 'Главная'
+      },
+      be: {
+        name: 'Галоўная'
+      },
+      en: {
+        name: 'Home'
+      }
+    }
+  },
+  {
     path: 'about',
     caption: {
       ru: {

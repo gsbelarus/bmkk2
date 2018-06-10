@@ -3,6 +3,7 @@ import { Page, PageProps } from '../Page';
 import { IGoodGroups } from '../../types';
 import { goodGroupsFile, goodGroupsRoot, groupFileNoImage } from '../../const';
 import { Link } from 'react-router-dom';
+import './production.css';
 
 export class Production extends Page {
   constructor(props: PageProps) {

@@ -5,7 +5,7 @@ body {
   --colorGray: #8e8e8e;
   --colorGrayLite: #c1c1c1;
   --colorText: #504c4a;
-  --colorBrown: rgba(255,0,0,0.5);
+  --colorBrown: rgb(209, 81, 66);
   --colorBrownLite: #E4BBBB;
   font-family: 'Roboto Condensed', sans-serif;
 }
