@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { connect, Dispatch as ReduxDispatch } from 'react-redux';
 import { HashRouter, Switch, Route, RouteComponentProps } from 'react-router-dom';
-import './App.css';
 import { MainPage } from './components/MainPage';
 import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, LoadGoods,
          LoadNews, loadNews, LoadContacts, loadContacts, LoadDepartments, loadDepartments,

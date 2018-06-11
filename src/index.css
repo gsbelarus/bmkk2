@@ -1,5 +1,11 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Roboto';
+  text-rendering: geometricPrecision;
+  --colorGray: #8e8e8e;
+  --colorGrayLite: #c1c1c1;
+  --colorText: #504c4a;
+  --colorBrown: rgb(209, 81, 66);
+  --colorBrownLite: #E4BBBB;
+  font-family: 'Roboto Condensed', sans-serif;
 }

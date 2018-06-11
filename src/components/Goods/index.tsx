@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Page, PageProps } from './Page';
-import { LoadGoods } from '../actions';
-import { IGoods } from '../types';
-import { goodsFile, goodsRoot, goodCaption, goodFileNoImage, moreCaption } from '../const';
-import { WrapText } from './WrapText';
+import { Page, PageProps } from '../Page';
+import { IGoods } from '../../types';
+import { goodsFile, goodsRoot, goodCaption, goodFileNoImage, moreCaption } from '../../const';
+import { WrapText } from '../WrapText/index';
 import { Link } from 'react-router-dom';
 
 export class Goods extends Page {

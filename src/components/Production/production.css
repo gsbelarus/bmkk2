@@ -1,0 +1,47 @@
+div.GroupsContainer {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: 0 auto;
+}
+
+div.GoodGroup {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 60px;
+  text-align: center;
+  width: 200px;
+  border: 1px solid white;
+  overflow: hidden;
+}
+
+div.GoodGroup img {
+  display: block;
+  margin: 0px auto;
+  width: 180px;
+}
+
+div.GoodGroupName {
+  font-size: 16px;
+  font-weight: 600;
+  color: brown;
+  width: 100%;
+  height: 59px;
+  text-align: left;
+  vertical-align: baseline;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+div.GoodGroup a {
+  text-decoration: none;
+}
+
+div.GoodGroup:hover {
+  border: 1px dotted brown;
+  transition:all 0.25s ease;
+}
+

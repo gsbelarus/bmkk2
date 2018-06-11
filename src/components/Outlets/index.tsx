@@ -1,9 +1,7 @@
 import * as React from 'react';
-import { Page, PageProps } from './Page';
-import { LoadOutlets } from '../actions';
-import { IOutlets } from '../types';
-import { outletsFile, outletsCaption } from '../const';
-import { WrapText } from './WrapText';
+import { Page } from '../Page';
+import { IOutlets } from '../../types';
+import { outletsFile, outletsCaption } from '../../const';
 
 export class Outlets extends Page {
 

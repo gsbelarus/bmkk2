@@ -1,20 +1,7 @@
-
 div.Page {
   width: 100vw;
   height: 100vh;
-  font-family: 'Roboto Condensed', sans-serif;
-  --colorGray: #8e8e8e;  
-  --colorGrayLite: #c1c1c1;
-  --colorText: #504c4a;
-  --colorBrown: #c84d47;  
-  --colorBrownLite: #E4BBBB;  
   color: var(--colorText);
-}
-
-div.MainPage {
-  background-image: url('../../public/image/back.jpg');
-  background-repeat: no-repeat;
-  background-size: 100%;  
 }
 
 img.Logo {
@@ -31,8 +18,9 @@ div.TopRibbon {
   width: 100%;
   color: white;
   font-size: 12px;
-  background-color: #2c2c2c;
-  padding-top: 12px;
+  background-color: rgba(0,0,0,0.2);
+  padding-top: 0px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
 nav.TopMenu {
@@ -44,7 +32,8 @@ nav.TopMenu {
   background-color: var(--colorBrown);
   padding-top: 14px;
   bottom: -1px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);  
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
 nav.TopMenu a {
@@ -56,72 +45,13 @@ nav.TopMenu a {
 }
 
 nav.TopMenu a:last-child {
-  margin-right: 64px;  
-}
-
-div.LangSelector {
-  height: 100%;
   margin-right: 64px;
-  padding-top: 6px;
-}
-
-div.LangSelector span {
-  height: 100%;
-  margin-right:   6px;
-  padding-right: 6px;
-  border-right: 1px gray solid;
-  cursor: default;
-}
-
-div.LangSelector span:last-child {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-div.LangSelector span.Selected {
-  color: var(--colorBrown);
 }
 
 div.WorkArea {
   max-width: 1040px;
   margin: 0 auto;
   padding-top: 12px;
-}
-
-div.GroupsContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  align-content: space-between;
-}
-
-div.GoodGroup {
-  padding: 14px;
-  text-align: center;
-  width: 200px;
-  height: 200px;
-}
-
-div.GoodGroup img {
-  display: block;
-  margin: 0px auto;
-  width: 200px;
-  height: 134px;  
-}
-
-div.GoodGroupName {
-  font-size: 18px;
-  font-weight: 600;
-  color: brown;  
-  width: 100%;
-  text-align: center; 
-}
-
-div.GoodGroup a {
-  text-decoration: none; 
 }
 
 div.GoodsContainer {
@@ -205,18 +135,18 @@ div.GoodCard h2 {
 
 div.GoodItem ul .GoodMore {
   float: right;
-  color: var(--colorText); 
+  color: var(--colorText);
   text-decoration: none;
   font-style: italic;
   font-size: 12px;
 }
 
 div.GoodItem img {
-  max-height: 100px;  
+  max-height: 100px;
 }
 
 div.WrappedText {
-
+  color: inherit;
 }
 
 div.WrappedText span {
@@ -230,13 +160,8 @@ div.WrappedText span {
   font-weight: 400;
 }
 
-h2 {
-  width: 100%;
-  text-align: center;
-}
-
 div.PriceBtn a {
-  color: black; 
+  color: black;
   text-decoration: none;
   cursor: default;
   border: 1px solid darkgray;
@@ -245,7 +170,7 @@ div.PriceBtn a {
   margin-left: 0.2em;
   padding: 6px;
   font-weight: 600;
-  float: right; 
+  float: right;
 }
 
 div.NewsItem {
@@ -275,7 +200,7 @@ div.ContactItem {
 div.DepartmentItem {
   min-width: 50%;
   max-width: 50%;
-} 
+}
 
 div.OutletContainer td {
   font-size: 14px;
@@ -284,14 +209,14 @@ div.OutletContainer td {
 
 div.OutletContainer th {
   text-align: center;
-  padding: 5px;  
+  padding: 5px;
   vertical-align: middle;
 }
 
 div.OutletContainer thead tr {
   background-color: var(--colorGrayLite) !important;
 
-} 
+}
 
 div.OutletContainer tr:nth-child(odd) {
   background-color: white;

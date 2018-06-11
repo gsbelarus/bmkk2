@@ -1,8 +1,8 @@
 import * as React from 'react';
-import './components.css';
-import { languages, Language } from '../types';
+import { languages, Language } from '../../types';
 import * as classNames from 'classnames';
-import { SetLanguage } from '../actions';
+import { SetLanguage } from '../../actions';
+import './langselector.css';
 
 export type LangSelectorProps = {
   selectedLang: Language;
