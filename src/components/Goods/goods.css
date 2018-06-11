@@ -1,4 +1,4 @@
-div.GroupsContainer {
+div.GoodsContainer {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -7,59 +7,65 @@ div.GroupsContainer {
   align-content: flex-start;
 }
 
-div.GroupsContainer a {
+div.GoodsContainer a {
   text-decoration: none;
 }
 
-div.GoodGroup {
+div.GoodItem {
   position: relative;
   margin-right: 20px;
   margin-bottom: 60px;
   text-align: center;
   width: 200px;
-  height: 200px;
+  height: 320px;
   border: 1px solid white;
   overflow: hidden;
 }
 
-div.GoodGroup img {
+div.GoodItem img {
   display: inline-block;
-  margin: 0px auto;
+  margin: 12px auto;
   width: 180px;
 }
 
-div.GoodGroupCaption {
+div.GoodData {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   position: absolute;
   bottom: 0;
-  height: 72px;
+  height: 192px;
   width: 100%;
 }
 
-div.GoodGroupText {
-  font-size: 16px;
-  font-weight: 400;
-  color: brown;
+div.GoodData > * {
+  font-size: 14px;
   text-align: left;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 8px;
+  color: black;
+  border-bottom: 1px dotted darkgray;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
-div.GoodGroup:hover {
+div.GoodData > *:last-child {
+  border-bottom: none;
+}
+
+.GoodName {
+  height: 42px;
+  min-height: 42px;
+  overflow: hidden;
+  font-weight: 800;
+}
+
+div.GoodItem:hover {
   border: 1px solid brown;
   box-shadow: 4px 4px 4px rgba(150,150,150,0.5);
   transition: all 0.5s ease;
 }
 
-div.GoodGroup:hover .GoodGroupText {
-  color: white;
-  transition: all 0.5s ease;
-}
-
-div.GoodGroup:hover .GoodGroupCaption {
-  background-color: var(--colorBrown);
+div.GoodItem:hover .GoodData {
+  background-color: var(--colorBrownLite);
   transition: all 0.5s ease;
 }

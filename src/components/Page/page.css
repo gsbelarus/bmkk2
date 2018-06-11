@@ -52,49 +52,7 @@ nav.TopMenu a:last-child {
 div.WorkArea {
   max-width: 1110px;
   margin: 0 auto;
-  padding-top: 22px;
-}
-
-div.GoodsContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  align-content: space-between;
-}
-
-div.GoodItem strong {
-  padding-right: 4px;
-}
-
-div.GoodItem {
-  width: 200px;
-  padding: 10px;
-}
-
-div.GoodItem ul li {
-  margin-bottom: 5px;
-  padding-bottom: 5px;
-  border-bottom: 1px dotted #969696;
-  font-size: 12px;
-}
-
-div.GoodItem ul {
-  font-size: 14px;
-  line-height: 1.4;
-  list-style: none none;
-  margin: 0;
-  padding: 0;
-}
-
-div.GoodItem h5 {
-  font: bold normal 18px,serif;
-  margin-bottom: 4px;
-  margin-top: 4px;
-  padding-bottom: 10px;
-  border-bottom: dotted 1px gray;
-  text-align: left;
+  padding-top: 32px;
 }
 
 div.GoodCard {
