@@ -1,23 +1,16 @@
 import * as React from 'react';
-import { Page, PageProps } from '../Page';
+import { Page } from '../Page';
 import { IGoodGroups } from '../../types';
 import { goodGroupsFile, goodGroupsRoot, groupFileNoImage } from '../../const';
 import { Link } from 'react-router-dom';
 import './production.css';
 
 export class Production extends Page {
-  constructor(props: PageProps) {
-    super(props);
-  }
-
   componentDidMount() {
     const { onLoadGroups } = this.props;
     fetch(goodGroupsFile)
     .then( res => res.text() )
-    .then( res => {
-      console.log(res);
-      return JSON.parse(res);
-    })
+    .then( res => JSON.parse(res) )
     .then( res => onLoadGroups(res as IGoodGroups) )
     .catch( err => console.log(err) );
   }
@@ -30,14 +23,16 @@ export class Production extends Page {
         <div className="GroupsContainer">
           {
             groups.groups.map( (g, idx) => (
-              <div key={idx} className="GoodGroup">
-                <Link to={`/production/groups/` + g.ruid}>
+              <Link key={idx} to={`/production/groups/` + g.ruid}>
+                <div className="GoodGroup">
                   <img src={!g.image ? `${goodGroupsRoot}${groupFileNoImage}` : `${goodGroupsRoot}${g.image}`} />
-                  <div className="GoodGroupName">
-                   {g.caption[selectedLang.toLowerCase()].name}
+                  <div className="GoodGroupCaption">
+                    <div className="GoodGroupText">
+                      {g.caption[selectedLang.toLowerCase()].name}
+                    </div>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             ))
           }
         </div>
