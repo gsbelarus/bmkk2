@@ -50,7 +50,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
           }
         </nav>
         <div className="WorkArea">
-          {location.pathname !== '/' && <div>{location.pathname}</div>}
+          {/* location.pathname !== '/' && <div>{location.pathname}</div> */}
           {this.renderBody()}
           {this.logoImg && <img className="Logo" src={this.logoImg} />}
         </div>

@@ -33,6 +33,7 @@ nav.TopMenu {
   padding-top: 14px;
   bottom: -1px;
   border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(150,150,150,0.8);
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
@@ -49,9 +50,9 @@ nav.TopMenu a:last-child {
 }
 
 div.WorkArea {
-  max-width: 1040px;
+  max-width: 1110px;
   margin: 0 auto;
-  padding-top: 12px;
+  padding-top: 22px;
 }
 
 div.GoodsContainer {

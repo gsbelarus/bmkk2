@@ -7,4 +7,5 @@
 
 .MainPage nav.TopMenu {
   background-color: rgba(219,69,53,0.8);
+  box-shadow: none;
 }

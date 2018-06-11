@@ -51,7 +51,7 @@ div.GoodGroupText {
 
 div.GoodGroup:hover {
   border: 1px solid brown;
-  box-shadow: 4px 4px 4px lightgray;
+  box-shadow: 4px 4px 4px rgba(150,150,150,0.5);
   transition: all 0.5s ease;
 }
 
