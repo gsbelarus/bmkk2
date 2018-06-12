@@ -1,0 +1,39 @@
+div.OutletsContainer {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+div.OutletBox {
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 60px;
+  text-align: center;
+  width: 200px;
+  height: 320px;
+  border: 1px solid gray;
+  box-shadow: 4px 4px 4px rgba(150,150,150,0.5);
+  overflow: hidden;
+}
+
+div.OutletBox .City {
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+  background-color: green;
+  height: 1.4em;
+}
+
+div.OutletBox:hover {
+  border: 1px solid brown;
+  box-shadow: 4px 4px 4px rgba(150,150,150,0.5);
+  transition: all 0.5s ease;
+}
+
+div.OutletBox:hover .OutletData {
+  background-color: var(--colorBrownLite);
+  transition: all 0.5s ease;
+}
