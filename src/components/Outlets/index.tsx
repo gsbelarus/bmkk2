@@ -22,14 +22,21 @@ export class Outlets extends Page {
       return (
         <div className="OutletsContainer">
           {
-            outlets.outlets.map( (outlet, idx) => (
-              <div key={idx} className="OutletBox">
-                {outlet.caption[selectedLang.toLowerCase()].name}
-                <div>
-                  {outlet.address[selectedLang.toLowerCase()].name}
+            outlets.outlets.map( (outlet, idx) => {
+              const re = /(?:г|д)\.(?:\s){0,1}([А-Яа-я]+)/;
+              const match = re.exec(outlet.address[selectedLang.toLowerCase()].name);
+              return (
+                <div key={idx} className="OutletBox">
+                  <div className="City">
+                    {match && match[1]}
+                  </div>
+                  {outlet.caption[selectedLang.toLowerCase()].name}
+                  <div>
+                    {outlet.address[selectedLang.toLowerCase()].name}
+                  </div>
                 </div>
-              </div>
-            ))
+              );
+            })
           }
         </div>
       );
