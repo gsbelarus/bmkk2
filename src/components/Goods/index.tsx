@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Page, PageProps } from '../Page';
 import { IGoods } from '../../types';
 import { goodsFile, goodsRoot, goodCaption, goodFileNoImage, moreCaption } from '../../const';
-import { WrapText } from '../WrapText/index';
 import { Link } from 'react-router-dom';
 import './goods.css';
 
@@ -30,7 +29,9 @@ export class Goods extends Page {
   }
 
   renderBody(): JSX.Element {
-    const { groups, goods, selectedLang, match  } = this.props;
+    const { goods, selectedLang, match  } = this.props;
+
+    console.log(goods);
 
     if (goods) {
       const shortenStr = (s: string, maxLength = 80): string => {
@@ -41,7 +42,7 @@ export class Goods extends Page {
         }
       };
 
-      const filtered = goods.goods.filter((t) => t.group === match.params.groupID );
+      const filtered = goods.goods.filter( t => t.group === match.params.groupID );
 
       return (
         <div className="GoodsContainer">

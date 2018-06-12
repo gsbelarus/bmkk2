@@ -4,6 +4,8 @@ import { IOutlets } from '../../types';
 import { outletsFile, outletsCaption } from '../../const';
 import './outlets.css';
 
+const outletImg = require('../../../public/image/outlet.png');
+
 export class Outlets extends Page {
 
   componentDidMount() {
@@ -30,9 +32,34 @@ export class Outlets extends Page {
                   <div className="City">
                     {match && match[1]}
                   </div>
-                  {outlet.caption[selectedLang.toLowerCase()].name}
-                  <div>
-                    {outlet.address[selectedLang.toLowerCase()].name}
+                  <div className="OutletImg">
+                    <img src={outletImg} />
+                  </div>
+                  <div className="OutletData">
+                    <div>
+                      <strong>{outlet.caption[selectedLang.toLowerCase()].name}</strong>
+                    </div>
+                    <div>
+                      <strong>Адрес: </strong>{outlet.address[selectedLang.toLowerCase()].name}
+                    </div>
+                    <div>
+                      <strong>Телефон: </strong>{outlet.phone}
+                    </div>
+                    <div>
+                      <strong>Email: </strong>{outlet.email}
+                    </div>
+                    <div>
+                      <strong>В рабочие дни: </strong>{outlet.timewd}
+                    </div>
+                    <div>
+                      <strong>В субботу: </strong>{outlet.timesat}
+                    </div>
+                    <div>
+                      <strong>В воскресенье: </strong>{outlet.timesun}
+                    </div>
+                    <div>
+                      <strong>Координаты: </strong>{outlet.lat}, {outlet.lon}
+                    </div>
                   </div>
                 </div>
               );

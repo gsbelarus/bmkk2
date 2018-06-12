@@ -44,8 +44,8 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
         </div>
         <nav className="TopMenu">
           {
-            mainMenu.map( mi => (
-              <Link to={`/${mi.path}`}><span>{mi.caption[selectedLang.toLowerCase()].name}</span></Link>
+            mainMenu.map( (mi, idx) => (
+              <Link key={idx} to={`/${mi.path}`}><span>{mi.caption[selectedLang.toLowerCase()].name}</span></Link>
             ))
           }
         </nav>
