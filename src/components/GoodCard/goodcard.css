@@ -1,0 +1,64 @@
+div.GoodCard {
+  padding-top: 20px;
+}
+
+div.GoodCardItem ul li {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #969696;
+}
+
+div.GoodCardItem ul {
+  line-height: 1.4;
+  list-style: none none;
+  margin: 0;
+  padding: 0;
+  width: 480px;
+}
+
+div.GoodCardItem {
+  float: left;
+  padding-left: 40px;
+  max-width: 50%;
+  font-size: 14px;
+}
+
+div.GoodCardItem strong {
+  padding-right: 4px;
+}
+
+div.GoodCard img {
+  float: left;
+  margin-top: 24px;
+}
+div.GoodCard h2 {
+  width: 100%;
+  text-align: left;
+}
+
+div.GoodCardItem table {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+ 
+}
+div.GoodCardItem table tr td {
+  padding: 4px; 
+}
+
+div.GoodCardItem table th {
+	padding: 4px;
+	background: #ededed;
+}
+
+div.PriceGoods a {
+  color: var(--colorBrown);   
+}
+
+div.PriceGoods {
+  float: left;
+  width: 100%;
+  padding-top: 10px;
+  
+}
