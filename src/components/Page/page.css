@@ -160,27 +160,3 @@ div.DepartmentItem {
   min-width: 50%;
   max-width: 50%;
 }
-
-div.OutletContainer td {
-  font-size: 14px;
-  padding: 5px;
-}
-
-div.OutletContainer th {
-  text-align: center;
-  padding: 5px;
-  vertical-align: middle;
-}
-
-div.OutletContainer thead tr {
-  background-color: var(--colorGrayLite) !important;
-
-}
-
-div.OutletContainer tr:nth-child(odd) {
-  background-color: white;
-}
-
-div.OutletContainer tr:nth-child(even) {
-  background-color: var(--colorGrayLite);/* фон четных строк */
-}
