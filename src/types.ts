@@ -24,7 +24,17 @@ export interface GoodCaptions {
     casing: LName;
     beforuse: LName;
     costnde: LName;
-    dcostfull: LName
+    dcostfull: LName;
+    proteins: LName;
+    fats: LName;
+    carbons: LName;
+    energy: LName;
+    vitamins: LName;
+    B1: LName;
+    B2: LName;
+    C: LName;
+    Ca: LName;
+    Fe: LName;    
   }
 }
 
@@ -68,6 +78,15 @@ export interface IGoods {
     isnew: boolean;
     term: string;
     beforuse: string;
+    proteins: number;
+    fats: number;
+    carbons: number;
+    enegry: number;
+    B1: number;
+    B2: number;
+    C: number;
+    Ca: number;
+    Fe: number;
   }[];
 }
 
@@ -126,6 +145,9 @@ export interface IOutlets {
     phone: string;  
     email: string;       
     fax: string; 
+    image: string;
+    lon: string;
+    lat: string;
   }[];
 }
 

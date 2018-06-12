@@ -19,6 +19,7 @@ export const newsFile = `${newsRoot}news.json`;
 export const contactsRoot = `${dataRoot}contacts/`;
 export const contactsFile = `${contactsRoot}contacts.json`;
 export const departmentsFile = `${contactsRoot}departments.json`;
+export const outletsRoot = `${dataRoot}outlets/`;
 export const outletsFile = `${contactsRoot}outlets.json`;
 
 export const mainMenu: MenuItems = [
@@ -161,26 +162,136 @@ export const goodCaption: GoodCaptions =
       },
       costnde: {
         ru: {
-          name: 'Цена ФСО:'
+          name: 'Цена ФСО, р:'
         },
         be: {
-          name: 'Цана ФСО:'
+          name: 'Цана ФСО, р:'
         },
         en: {
-          name: 'Price ФСО:'
+          name: 'Price ФСО, r:'
         }
       },
       dcostfull: {
         ru: {
-          name: 'Цена ФСН:'
+          name: 'Цена ФСН, р:'
         },
         be: {
-          name: 'Цана ФСН:'
+          name: 'Цана ФСН, р:'
         },
         en: {
-          name: 'Price ФСН:'
+          name: 'Price ФСН, r:'
         }
-      }
+      },
+      proteins: {
+        ru: {
+          name: 'Белки, г'
+        },
+        be: {
+          name: 'Белки, г'
+        },
+        en: {
+          name: 'Proteins, gr'
+        }
+      },
+      fats: {
+        ru: {
+          name: 'Жиры, г'
+        },
+        be: {
+          name: 'Жиры, г'
+        },
+        en: {
+          name: 'Fats, gr'
+        }
+      },
+      carbons: {
+        ru: {
+          name: 'Углеводы, г'
+        },
+        be: {
+          name: 'Углеводы, г'
+        },
+        en: {
+          name: 'Carbons, gr'
+        }
+      },
+      vitamins: {
+        ru: {
+          name: 'Витамины, мг'
+        },
+        be: {
+          name: 'Вітаміны, мг'
+        },
+        en: {
+          name: 'Vitamins, mg'
+        }
+      },
+      energy: {
+        ru: {
+          name: 'Каллорийность, ккал'
+        },
+        be: {
+          name: 'Каларыйнасць, ккал'
+        },
+        en: {
+          name: 'Energy value, kcal'
+        }
+      },
+      B1: {
+        ru: {
+          name: 'B1'
+        },
+        be: {
+          name: 'B1'
+        },
+        en: {
+          name: 'B1'
+        }
+      },
+      B2: {
+        ru: {
+          name: 'B2'
+        },
+        be: {
+          name: 'B2'
+        },
+        en: {
+          name: 'B2'
+        }
+      },
+      C: {
+        ru: {
+          name: 'C'
+        },
+        be: {
+          name: 'C'
+        },
+        en: {
+          name: 'C'
+        }
+      },
+      Ca: {
+        ru: {
+          name: 'Ca'
+        },
+        be: {
+          name: 'Ca'
+        },
+        en: {
+          name: 'Ca'
+        }
+      },
+      Fe: {
+        ru: {
+          name: 'Fe'
+        },
+        be: {
+          name: 'Fe'
+        },
+        en: {
+          name: 'Fe'
+        }
+      }                                               
     }
   }
 ;
@@ -228,13 +339,26 @@ export const priceCaption: PriceItems = [
   {
     caption: {
       ru: {
-        name: 'Цена ФСО/ФСН, BYR'
+        name: 'Цена ФСО, BYR'
       },
       be: {
-        name: 'Цена ФСО/ФСН, BYR'
+        name: 'Цена ФСО, BYR'
       },
       en: {
-        name: 'Цена ФСО/ФСН, BYR'
+        name: 'Цена ФСО, BYR'
+      }
+    }
+  },
+  {
+    caption: {
+      ru: {
+        name: 'Цена ФСН, BYR'
+      },
+      be: {
+        name: 'Цена ФСН, BYR'
+      },
+      en: {
+        name: 'Цена ФСН, BYR'
       }
     }
   },
@@ -274,6 +398,19 @@ export const priceCaption: PriceItems = [
       },
       en: {
         name: 'Терм. состояние'
+      }
+    }
+  },
+  {
+    caption: {
+      ru: {
+        name: 'Штрих-код'
+      },
+      be: {
+        name: 'Штрих-код'
+      },
+      en: {
+        name: 'Штрих-код'
       }
     }
   },
@@ -428,3 +565,5 @@ export const moreCaption: PriceItem =
       }
     }
   };
+
+ 

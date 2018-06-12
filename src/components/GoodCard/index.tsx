@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Page, PageProps } from '../Page';
 import { IGoods } from '../../types';
 import { goodsFile, goodsRoot2, goodCaption, goodFileNoImage } from '../../const';
+import './goodcard.css';
+import { Link } from 'react-router-dom';
 
 export class GoodCard extends Page {
   constructor(props: PageProps) {
@@ -33,7 +35,7 @@ export class GoodCard extends Page {
           <div className="GoodCardItem">
             <h2 className="GoodName">
               {g.caption[selectedLang.toLowerCase()].name}
-            </h2>
+            </h2>            
             <ul>
               <li>
                 {g.grade[selectedLang.toLowerCase()].name}
@@ -60,16 +62,82 @@ export class GoodCard extends Page {
                 <strong>
                   {goodCaption.description.costnde[selectedLang.toLowerCase()].name}
                 </strong>
-                {g.costnde} р.
+                {g.costnde} 
               </li>
               <li>
                 <strong>
                   {goodCaption.description.dcostfull[selectedLang.toLowerCase()].name}
                 </strong>
-                {g.dcostfull} р.
-              </li>
+                {g.dcostfull}
+              </li>                                 
             </ul>
+            <table>
+              <thead>
+                <tr>
+                  <th rowSpan={2}>
+                    {goodCaption.description.proteins[selectedLang.toLowerCase()].name}
+                  </th>
+                  <th rowSpan={2}>
+                    {goodCaption.description.fats[selectedLang.toLowerCase()].name}
+                  </th>                
+                  <th rowSpan={2}>
+                    {goodCaption.description.carbons[selectedLang.toLowerCase()].name}
+                  </th>      
+                  <th colSpan={5}>
+                    {goodCaption.description.vitamins[selectedLang.toLowerCase()].name}
+                  </th>
+                  <th rowSpan={2}>
+                    {goodCaption.description.energy[selectedLang.toLowerCase()].name}
+                  </th>                  
+                </tr>         
+                <tr>
+                  <th>
+                    {goodCaption.description.B1[selectedLang.toLowerCase()].name}
+                  </th>
+                  <th>
+                    {goodCaption.description.B2[selectedLang.toLowerCase()].name}
+                  </th>                
+                  <th>
+                    {goodCaption.description.C[selectedLang.toLowerCase()].name}
+                  </th>      
+                  <th>
+                    {goodCaption.description.Ca[selectedLang.toLowerCase()].name}
+                  </th> 
+                  <th>
+                    {goodCaption.description.Fe[selectedLang.toLowerCase()].name}
+                  </th>                                      
+                </tr>                    
+              </thead>
+              <tbody>
+                <tr key={g.ruid}>
+                  <td>{g.proteins}</td>
+                  <td>{g.fats}</td>                
+                  <td>{g.carbons}</td>
+                  <td>{g.B1}</td>
+                  <td>
+                    {g.B2}
+                  </td>
+                  <td>
+                    {g.C}
+                  </td>
+                  <td>
+                    {g.Ca}
+                  </td>
+                  <td>
+                    {g.Fe}
+                  </td>              
+                  <td>
+                    {g.enegry}
+                  </td> 
+                </tr>                                             
+              </tbody>  
+            </table>      
+            <div className="PriceGoods">
+              С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" <br/> 
+              можно ознакомиться <Link to={`/price`}>здесь!</Link>
+            </div>                   
           </div>
+
         </div>
       );
     } else {

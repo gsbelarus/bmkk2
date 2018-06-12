@@ -55,42 +55,7 @@ div.WorkArea {
   padding-top: 32px;
 }
 
-div.GoodCard {
-  padding-top: 20px;
-}
 
-div.GoodCardItem ul li {
-  margin-bottom: 5px;
-  padding-bottom: 5px;
-  border-bottom: 1px dotted #969696;
-  font-size: 14px;
-}
-
-div.GoodCardItem ul {
-  line-height: 1.4;
-  list-style: none none;
-  margin: 0;
-  padding: 0;
-}
-
-div.GoodCardItem {
-  float: left;
-  padding-left: 40px;
-  max-width: 50%;
-}
-
-div.GoodCardItem strong {
-  padding-right: 4px;
-}
-
-div.GoodCard img {
-  float: left;
-  margin-top: 24px;
-}
-div.GoodCard h2 {
-  width: 100%;
-  text-align: left;
-}
 
 div.GoodItem ul .GoodMore {
   float: right;
@@ -142,6 +107,15 @@ div.NoneDisplay {
 
 div.PriceContainer {
   font-size: 12px;
+}
+
+div.PriceContainer table td {
+  font-size: 12px;
+}
+
+td.tGrName {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .ContactInfo span{

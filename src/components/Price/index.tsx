@@ -28,9 +28,8 @@ export class Price extends Page {
             ПРАЙС-ЛИСТ <br/>
             в соответствии с прейскурантом цен на {goods.date}
           </h2>
-
           {
-            <table>
+            <table className="GrayTable">
               <thead>
                 <tr>
                   {
@@ -46,20 +45,24 @@ export class Price extends Page {
               {groups.groups.map( (gr, gr_idx) =>
                 (
                   <tbody>
-                   <tr>
-                      {gr.caption[selectedLang.toLowerCase()].name}
+                    <tr>
+                      <td colSpan={8} className="tGrName">
+                        {gr.caption[selectedLang.toLowerCase()].name}
+                      </td>  
                     </tr>
                     {
                         goods.goods.filter( g => g.group === gr.ruid ).map( (g, idx) => (
                             <tr key={idx}>
-                                <td>{idx+1}</td>
-                                <td>{g.caption[selectedLang.toLowerCase()].name + ' (' + g.barcode + ')'}</td>
-                                <td>{g.valuename[selectedLang.toLowerCase()].name}</td>
-                                <td>{g.costnde + ' / ' + g.dcostfull}</td>
-                                <td>{g.rate}</td>
-                                <td>{g.beforuse}</td>
-                                <td>{g.term}</td>
-                                <td>{g.ingredients[selectedLang.toLowerCase()].name}</td>
+                              <td>{idx+1}</td>
+                              <td>{g.caption[selectedLang.toLowerCase()].name}</td>                                                           
+                              <td>{g.valuename[selectedLang.toLowerCase()].name}</td>
+                              <td>{g.costnde}</td>
+                              <td>{g.dcostfull}</td>
+                              <td>{g.rate}</td>
+                              <td>{g.beforuse}</td>
+                              <td>{g.term}</td>
+                              <td>{g.barcode}</td>     
+                              <td>{g.ingredients[selectedLang.toLowerCase()].name}</td>
                             </tr>
                           )
                         )
