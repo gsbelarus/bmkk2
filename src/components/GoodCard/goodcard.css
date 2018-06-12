@@ -13,7 +13,7 @@ div.GoodCardItem ul {
   list-style: none none;
   margin: 0;
   padding: 0;
-  width: 480px;
+  width: 490px;
 }
 
 div.GoodCardItem {
@@ -38,7 +38,7 @@ div.GoodCard h2 {
 
 div.GoodCardItem table {
   float: left;
-  width: 100%;
+  width: 490px;
   margin-top: 10px;
   text-align: center;
  
