@@ -55,8 +55,6 @@ div.WorkArea {
   padding-top: 32px;
 }
 
-
-
 div.GoodItem ul .GoodMore {
   float: right;
   color: var(--colorText);
@@ -134,30 +132,3 @@ div.DepartmentItem {
   min-width: 50%;
   max-width: 50%;
 }
-<<<<<<< Updated upstream
-=======
-
-table.GrayTable td {
-  font-size: 14px;
-  padding: 5px;
-}
-
-table.GrayTable th {
-  text-align: center;
-  padding: 5px;
-  vertical-align: middle;
-}
-
-table.GrayTable thead tr {
-  background-color: var(--colorGrayLite) !important;
-
-}
-
-table.GrayTable tr:nth-child(odd) {
-  background-color: white;
-}
-
-table.GrayTable tr:nth-child(even) {
-  background-color: var(--colorGrayLite);/* фон четных строк */
-}
->>>>>>> Stashed changes

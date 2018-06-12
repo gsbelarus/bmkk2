@@ -1,0 +1,23 @@
+table.GrayTable td {
+  font-size: 14px;
+  padding: 5px;
+}
+
+table.GrayTable th {
+  text-align: center;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+table.GrayTable thead tr {
+  background-color: var(--colorGrayLite) !important;
+
+}
+
+table.GrayTable tr:nth-child(odd) {
+  background-color: white;
+}
+
+table.GrayTable tr:nth-child(even) {
+  background-color: var(--colorGrayLite);/* фон четных строк */
+}
