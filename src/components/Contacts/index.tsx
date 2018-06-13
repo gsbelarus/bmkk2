@@ -1,12 +1,10 @@
 import * as React from 'react';
-import { Page, PageProps } from '../Page';
+import { Page } from '../Page';
 import { IContacts, IDepartments } from '../../types';
 import { contactsFile, departmentsFile, contactCaption } from '../../const';
+import './contacts.css';
 
 export class Contacts extends Page {
-  constructor(props: PageProps) {
-    super(props);
-  }
 
   componentDidMount() {
     const { onLoadContacts, onLoadDepartments } = this.props;
