@@ -228,7 +228,7 @@ export const goodCaption: GoodCaptions =
       },
       energy: {
         ru: {
-          name: 'Каллорийность, ккал'
+          name: 'Калорийность, ккал'
         },
         be: {
           name: 'Каларыйнасць, ккал'
