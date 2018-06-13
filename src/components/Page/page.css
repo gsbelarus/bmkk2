@@ -79,3 +79,7 @@ div.NoneDisplay {
   display: none;
 }
 
+a {
+  color: red;
+}
+

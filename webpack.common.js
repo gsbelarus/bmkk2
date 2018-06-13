@@ -25,6 +25,11 @@ module.exports =  {
         flatten: true
       },
       {
+        from: './public/data/forcustomer/*.*',
+        to: 'data/forcustomer/',
+        flatten: true
+      },
+      {
         from: './public/data/goods/*.*',
         to: 'data/goods/',
         flatten: true

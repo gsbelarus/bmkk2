@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Page, PageProps } from '../Page';
+import { Page } from '../Page';
 import * as ReactMarkdown from 'react-markdown';
 
 const md: { [lang: string]: string } = {
