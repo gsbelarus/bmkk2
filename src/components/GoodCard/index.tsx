@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Page } from '../Page';
-import { goodsRoot, goodCaption, goodFileNoImage } from '../../const';
+import { goodsRoot, goodCaption, goodFileNoImage2 } from '../../const';
 import './goodcard.css';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ export class GoodCard extends Page {
   renderBody(): JSX.Element {
     const { goods, selectedLang, match } = this.props;
     const g = goods.goods.find( t => t.ruid === match.params.goodID );
-    const fullImageName = !g!.image2 ? `${goodsRoot}${goodFileNoImage}`
+    const fullImageName = !g!.image2 ? `${goodsRoot}${goodFileNoImage2}`
     : g!.image2.includes('/') ? g!.image2
     : `${goodsRoot}${g!.image2}`;
 
@@ -55,6 +55,12 @@ export class GoodCard extends Page {
                 </strong>
                 {g.dcostfull}
               </li>
+              <br/>
+              <li>
+                <strong>
+                  Пищевая ценность
+                </strong>
+              </li>
               <li>
                 <strong>
                   {goodCaption.description.proteins[selectedLang.toLowerCase()].name}
@@ -85,7 +91,6 @@ export class GoodCard extends Page {
               можно ознакомиться <Link to={`/price`}>здесь!</Link>
             </div>
           </div>
-
         </div>
       );
     } else {

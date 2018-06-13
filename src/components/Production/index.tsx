@@ -12,6 +12,7 @@ export class Production extends Page {
     if (groups) {
       return (
         <div>
+          <h2>Каталог продукции</h2> 
           <div>
             С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" можно ознакомиться <Link to={`/price`}>здесь!</Link>
           </div>

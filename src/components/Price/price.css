@@ -7,20 +7,21 @@ table.GrayTable{
 }
 
 table.GrayTable td, th {
-  font-size: 14px;
-  padding: 5px;
+  font-size: 12px;
+  padding: 2px 4px;
   border: 1px solid black;
 }
 
 table.GrayTable td.tGrName {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   border: none;
+  padding: 4px;  
 }
 
 table.GrayTable th {
   text-align: center;
-  padding: 5px;
+  padding: 2px 4px;
   vertical-align: middle;
 }
 
@@ -60,4 +61,5 @@ div.PriceTitle strong {
 div.PriceTop {
   width: 100%;
   float: left;
+  padding-bottom: 10px;
 }
