@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './wraptext.css';
 
 const maxWrappedLength = 90;
 
@@ -29,10 +30,10 @@ export class WrapText extends React.Component<WrapTextProps, WrapTextState> {
       if (this.state.wrapped) {
         const wrappedText = text.slice(0, maxWrappedLength);
         return (
-          <div className="WrappedText"> 
+          <div className="WrappedText">
             {wrappedText}
             <span onClick={ () => this.setState({ wrapped: false }) }>...</span>
-          </div> 
+          </div>
         );
       } else {
         return (
@@ -41,7 +42,7 @@ export class WrapText extends React.Component<WrapTextProps, WrapTextState> {
             <span onClick={ () => this.setState({ wrapped: true }) }>{'\u21c7'}</span>
           </div>
         );
-      }  
+      }
     }
   }
 }

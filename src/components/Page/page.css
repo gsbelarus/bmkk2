@@ -55,6 +55,12 @@ div.WorkArea {
   padding-top: 32px;
 }
 
+div.WorkAreaFullWidth {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 32px;
+}
+
 div.GoodItem ul .GoodMore {
   float: right;
   color: var(--colorText);
@@ -65,21 +71,6 @@ div.GoodItem ul .GoodMore {
 
 div.GoodItem img {
   max-height: 100px;
-}
-
-div.WrappedText {
-  color: inherit;
-}
-
-div.WrappedText span {
-  cursor: default;
-  border: 1px solid darkgray;
-  border-radius: 4px;
-  background-color: lightgrey;
-  margin-left: 0.2em;
-  padding-left: 0.4em;
-  padding-right: 0.4em;
-  font-weight: 400;
 }
 
 div.PriceBtn a {
@@ -101,19 +92,6 @@ div.NewsItem {
 
 div.NoneDisplay {
   display: none;
-}
-
-div.PriceContainer {
-  font-size: 12px;
-}
-
-div.PriceContainer table td {
-  font-size: 12px;
-}
-
-td.tGrName {
-  font-size: 16px;
-  font-weight: bold;
 }
 
 .ContactInfo span{

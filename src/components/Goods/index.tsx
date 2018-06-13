@@ -19,8 +19,6 @@ export class Goods extends Page {
   renderBody(): JSX.Element {
     const { goods, selectedLang, match  } = this.props;
 
-    console.log(goods);
-
     if (goods) {
       const shortenStr = (s: string, maxLength = 80): string => {
         if (s.length < maxLength) {

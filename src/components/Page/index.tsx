@@ -25,9 +25,11 @@ export interface PageProps extends RouteComponentProps<any> {
 
 export class Page<P extends PageProps = PageProps> extends React.Component<P, {}> {
   protected logoImg: any;
+  protected fullWidth: boolean;
 
   constructor(props: P) {
     super(props);
+    this.fullWidth = false;
     // this.logoImg = require('../../../public/image/logo_black.png');
   }
 
@@ -69,7 +71,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
             ))
           }
         </nav>
-        <div className="WorkArea">
+        <div className={this.fullWidth ? "WorkAreaFullWidth" : "WorkArea"}>
           {/* location.pathname !== '/' && <div>{location.pathname}</div> */}
           {this.renderBody()}
           {this.logoImg && <img className="Logo" src={this.logoImg} />}

@@ -1,19 +1,22 @@
 import * as React from 'react';
-import { Page } from '../Page';
+import { Page, PageProps } from '../Page';
 import { priceCaption } from '../../const';
 
 export class Price extends Page {
 
+  constructor(props: PageProps) {
+    super(props);
+    this.fullWidth = true;
+  }
+
   renderBody(): JSX.Element {
     const { groups, goods, selectedLang  } = this.props;
-    console.log(this.props);
 
     if (goods) {
       return (
         <div className="PriceContainer">
           <h2>
-            ПРАЙС-ЛИСТ <br/>
-            в соответствии с прейскурантом цен на {goods.date}
+            ПРАЙС-ЛИСТ в соответствии с прейскурантом цен на {goods.date}
           </h2>
           {
             <table className="GrayTable">

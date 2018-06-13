@@ -11,21 +11,26 @@ export class Production extends Page {
 
     if (groups) {
       return (
-        <div className="GroupsContainer">
-          {
-            groups.groups.map( (g, idx) => (
-              <Link key={idx} to={`/production/groups/` + g.ruid}>
-                <div className="GoodGroup">
-                  <img src={!g.image ? `${goodGroupsRoot}${groupFileNoImage}` : `${goodGroupsRoot}${g.image}`} />
-                  <div className="GoodGroupCaption">
-                    <div className="GoodGroupText">
-                      {g.caption[selectedLang.toLowerCase()].name}
+        <div>
+          <div>
+            С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" можно ознакомиться <Link to={`/price`}>здесь!</Link>
+          </div>
+          <div className="GroupsContainer">
+            {
+              groups.groups.map( (g, idx) => (
+                <Link key={idx} to={`/production/groups/` + g.ruid}>
+                  <div className="GoodGroup">
+                    <img src={!g.image ? `${goodGroupsRoot}${groupFileNoImage}` : `${goodGroupsRoot}${g.image}`} />
+                    <div className="GoodGroupCaption">
+                      <div className="GoodGroupText">
+                        {g.caption[selectedLang.toLowerCase()].name}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))
-          }
+                </Link>
+              ))
+            }
+          </div>
         </div>
       );
     } else {

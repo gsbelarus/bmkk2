@@ -1,0 +1,14 @@
+div.WrappedText {
+  color: inherit;
+}
+
+div.WrappedText span {
+  cursor: default;
+  border: 1px solid darkgray;
+  border-radius: 4px;
+  background-color: lightgrey;
+  margin-left: 0.2em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  font-weight: 400;
+}
