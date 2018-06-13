@@ -16,9 +16,22 @@ export class Price extends Page {
     if (goods) {
       return (
         <div className="PriceContainer">
-          <h2>
-            ПРАЙС-ЛИСТ в соответствии с прейскурантом цен на {goods.date}
-          </h2>
+          <div className="PriceTop">
+            <div className="PriceTitle">
+              <p>ОАО "Березовский мясоконсервный комбинат"</p>
+              <strong>ПРАЙС-ЛИСТ</strong> в соответствии с прейскурантом цен на {goods.date}
+            </div>
+            <div className="PriceInfo">
+              Зам.дир по производству и маркетингу +375-1643-25336 <br/>
+              Начальник отдела торговли и маркетинга +375-1643-41029<br/>
+              Отдел маркетинга тел.+375-1643-41641(факс) 6-74-65, 6-74-66<br/>
+              Торговый отдел факс +375-1643-41054, -41802, -41669, -41033, -23280, -41276, -41277<br/>
+              Производственный цех г.Барановичи тел. +375-163-417752, -417769(тел./факс) -423758<br/>
+              Нач. торг. отдела г.Барановичи тел. 8-033-6400816<br/>
+              e-mail: bermeat@mail.ru
+            </div>
+          </div>
+
           {
             <table className="GrayTable">
               <thead>
@@ -47,9 +60,9 @@ export class Price extends Page {
                               <td>{idx+1}</td>
                               <td>{g.caption[selectedLang.toLowerCase()].name}</td>
                               <td>{g.valuename[selectedLang.toLowerCase()].name}</td>
-                              <td>{g.costnde}</td>
-                              <td>{g.dcostfull}</td>
-                              <td>{g.rate}</td>
+                              <td className="tdRight">{g.costnde}</td>
+                              <td className="tdRight">{g.dcostfull}</td>
+                              <td className="tdRight">{g.rate}</td>
                               <td>{g.beforuse}</td>
                               <td>{g.term}</td>
                               <td>{g.barcode}</td>

@@ -55,68 +55,31 @@ export class GoodCard extends Page {
                 </strong>
                 {g.dcostfull}
               </li>
-            </ul>
-            <table>
-              <thead>
-                <tr>
-                  <th rowSpan={2}>
-                    {goodCaption.description.proteins[selectedLang.toLowerCase()].name}
-                  </th>
-                  <th rowSpan={2}>
-                    {goodCaption.description.fats[selectedLang.toLowerCase()].name}
-                  </th>
-                  <th rowSpan={2}>
-                    {goodCaption.description.carbons[selectedLang.toLowerCase()].name}
-                  </th>
-                  <th colSpan={5}>
-                    {goodCaption.description.vitamins[selectedLang.toLowerCase()].name}
-                  </th>
-                  <th rowSpan={2}>
-                    {goodCaption.description.energy[selectedLang.toLowerCase()].name}
-                  </th>
-                </tr>
-                <tr>
-                  <th>
-                    {goodCaption.description.B1[selectedLang.toLowerCase()].name}
-                  </th>
-                  <th>
-                    {goodCaption.description.B2[selectedLang.toLowerCase()].name}
-                  </th>
-                  <th>
-                    {goodCaption.description.C[selectedLang.toLowerCase()].name}
-                  </th>
-                  <th>
-                    {goodCaption.description.Ca[selectedLang.toLowerCase()].name}
-                  </th>
-                  <th>
-                    {goodCaption.description.Fe[selectedLang.toLowerCase()].name}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr key={g.ruid}>
-                  <td>{g.proteins}</td>
-                  <td>{g.fats}</td>
-                  <td>{g.carbons}</td>
-                  <td>{g.B1}</td>
-                  <td>
-                    {g.B2}
-                  </td>
-                  <td>
-                    {g.C}
-                  </td>
-                  <td>
-                    {g.Ca}
-                  </td>
-                  <td>
-                    {g.Fe}
-                  </td>
-                  <td>
-                    {g.enegry}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+              <li>
+                <strong>
+                  {goodCaption.description.proteins[selectedLang.toLowerCase()].name}
+                </strong>
+                {g.proteins}
+              </li>
+              <li>
+                <strong>
+                  {goodCaption.description.fats[selectedLang.toLowerCase()].name}
+                </strong>
+                {g.fats}
+              </li>
+              <li>
+                <strong>
+                  {goodCaption.description.carbons[selectedLang.toLowerCase()].name}
+                </strong>
+                {g.carbons}
+              </li>  
+              <li>
+                <strong>
+                  {goodCaption.description.energy[selectedLang.toLowerCase()].name}
+                </strong>
+                {g.enegry}
+              </li>                           
+            </ul>  
             <div className="PriceGoods">
               С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" <br/>
               можно ознакомиться <Link to={`/price`}>здесь!</Link>

@@ -36,3 +36,28 @@ table.GrayTable tr:nth-child(odd) {
 table.GrayTable tr:nth-child(even) {
   background-color: var(--colorGrayLite);/* фон четных строк */
 }
+
+.tdRight {
+  text-align: right;
+}
+
+div.PriceInfo {
+  float: right;
+  width: fit-content;
+}
+
+
+div.PriceTitle {
+  font-size: 14px;
+  width: fit-content;
+  float: left;
+}
+
+div.PriceTitle strong {
+  font-size: 18px;
+}
+
+div.PriceTop {
+  width: 100%;
+  float: left;
+}

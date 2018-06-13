@@ -184,57 +184,57 @@ export const goodCaption: GoodCaptions =
       },
       proteins: {
         ru: {
-          name: 'Белки, г'
+          name: 'Белки, г:'
         },
         be: {
-          name: 'Белки, г'
+          name: 'Белки, г:'
         },
         en: {
-          name: 'Proteins, gr'
+          name: 'Proteins, gr:'
         }
       },
       fats: {
         ru: {
-          name: 'Жиры, г'
+          name: 'Жиры, г:'
         },
         be: {
-          name: 'Жиры, г'
+          name: 'Жиры, г:'
         },
         en: {
-          name: 'Fats, gr'
+          name: 'Fats, gr:'
         }
       },
       carbons: {
         ru: {
-          name: 'Углеводы, г'
+          name: 'Углеводы, г:'
         },
         be: {
-          name: 'Углеводы, г'
+          name: 'Углеводы, г:'
         },
         en: {
-          name: 'Carbons, gr'
+          name: 'Carbons, gr:'
         }
       },
       vitamins: {
         ru: {
-          name: 'Витамины, мг'
+          name: 'Витамины, мг:'
         },
         be: {
-          name: 'Вітаміны, мг'
+          name: 'Вітаміны, мг:'
         },
         en: {
-          name: 'Vitamins, mg'
+          name: 'Vitamins, mg:'
         }
       },
       energy: {
         ru: {
-          name: 'Калорийность, ккал'
+          name: 'Калорийность, ккал:'
         },
         be: {
-          name: 'Каларыйнасць, ккал'
+          name: 'Каларыйнасць, ккал:'
         },
         en: {
-          name: 'Energy value, kcal'
+          name: 'Energy value, kcal:'
         }
       },
       B1: {

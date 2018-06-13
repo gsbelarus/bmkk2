@@ -16,7 +16,7 @@
       "date": "01.06.18",
       "expireson": "01.07.18",
       "pinned": "",
-      "image": "/test/1.jpg",
+      "image": "1.jpg",
       "ordr": "1"
     },
     {
@@ -34,8 +34,7 @@
       "date": "01.06.18",
       "expireson": "00:00:00",
       "pinned": "",
-      "image": "",
+      "image": "994749785_993372950.png",
       "ordr": "2"
-    }
-  ]
+    }  ]
 }
