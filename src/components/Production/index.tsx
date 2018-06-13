@@ -1,19 +1,10 @@
 import * as React from 'react';
 import { Page } from '../Page';
-import { IGoodGroups } from '../../types';
-import { goodGroupsFile, goodGroupsRoot, groupFileNoImage } from '../../const';
+import { goodGroupsRoot, groupFileNoImage } from '../../const';
 import { Link } from 'react-router-dom';
 import './production.css';
 
 export class Production extends Page {
-  componentDidMount() {
-    const { onLoadGroups } = this.props;
-    fetch(goodGroupsFile)
-    .then( res => res.text() )
-    .then( res => JSON.parse(res) )
-    .then( res => onLoadGroups(res as IGoodGroups) )
-    .catch( err => console.log(err) );
-  }
 
   renderBody(): JSX.Element {
     const { groups, selectedLang } = this.props;

@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Page, PageProps } from '../Page';
-import { IGoods } from '../../types';
-import { goodsFile, goodsRoot, goodCaption, goodFileNoImage, moreCaption } from '../../const';
+import { Page } from '../Page';
+import { goodsRoot, goodCaption, goodFileNoImage } from '../../const';
 import { Link } from 'react-router-dom';
 import './goods.css';
 
@@ -16,17 +15,6 @@ import './goods.css';
 */
 
 export class Goods extends Page {
-
-  componentDidMount() {
-    const { onLoadGoods } = this.props;
-    fetch(goodsFile)
-    .then( res => {
-      return res.text();
-    })
-    .then( res => JSON.parse(res) )
-    .then( res => onLoadGoods(res as IGoods) )
-    .catch( err => console.log(err) );
-  }
 
   renderBody(): JSX.Element {
     const { goods, selectedLang, match  } = this.props;

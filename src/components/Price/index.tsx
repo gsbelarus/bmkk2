@@ -1,27 +1,14 @@
 import * as React from 'react';
 import { Page } from '../Page';
-import { IGoods } from '../../types';
-import { goodsFile, priceCaption } from '../../const';
+import { priceCaption } from '../../const';
 
 export class Price extends Page {
-
-  componentDidMount() {
-    const { onLoadGoods } = this.props;
-    fetch(goodsFile)
-    .then( res => {
-      return res.text();
-    })
-    .then( res => JSON.parse(res) )
-    .then( res => onLoadGoods(res as IGoods) )
-    .catch( err => console.log(err) );
-  }
 
   renderBody(): JSX.Element {
     const { groups, goods, selectedLang  } = this.props;
     console.log(this.props);
 
     if (goods) {
-
       return (
         <div className="PriceContainer">
           <h2>
@@ -48,20 +35,20 @@ export class Price extends Page {
                     <tr>
                       <td colSpan={8} className="tGrName">
                         {gr.caption[selectedLang.toLowerCase()].name}
-                      </td>  
+                      </td>
                     </tr>
                     {
                         goods.goods.filter( g => g.group === gr.ruid ).map( (g, idx) => (
                             <tr key={idx}>
                               <td>{idx+1}</td>
-                              <td>{g.caption[selectedLang.toLowerCase()].name}</td>                                                           
+                              <td>{g.caption[selectedLang.toLowerCase()].name}</td>
                               <td>{g.valuename[selectedLang.toLowerCase()].name}</td>
                               <td>{g.costnde}</td>
                               <td>{g.dcostfull}</td>
                               <td>{g.rate}</td>
                               <td>{g.beforuse}</td>
                               <td>{g.term}</td>
-                              <td>{g.barcode}</td>     
+                              <td>{g.barcode}</td>
                               <td>{g.ingredients[selectedLang.toLowerCase()].name}</td>
                             </tr>
                           )

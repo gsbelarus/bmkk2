@@ -3,7 +3,7 @@ import './page.css';
 import { LangSelector } from '../LangSelector/index';
 import { Language, IGoodGroups, IGoods, INews, IContacts, IDepartments, IOutlets } from '../../types';
 import { SetLanguage, LoadGroups, LoadGoods, LoadNews, LoadContacts, LoadDepartments, LoadOutlets } from '../../actions';
-import { mainMenu } from '../../const';
+import { mainMenu, goodGroupsFile, goodsFile } from '../../const';
 import { Link, RouteComponentProps } from 'react-router-dom';
 
 export interface PageProps extends RouteComponentProps<any> {
@@ -29,6 +29,26 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
   constructor(props: P) {
     super(props);
     // this.logoImg = require('../../../public/image/logo_black.png');
+  }
+
+  componentDidMount() {
+    const { goods, groups, onLoadGoods, onLoadGroups } = this.props;
+
+    if (!groups) {
+      fetch(goodGroupsFile)
+      .then( res => res.text() )
+      .then( res => JSON.parse(res) )
+      .then( res => onLoadGroups(res as IGoodGroups) )
+      .catch( err => console.log(err) );
+    }
+
+    if (!goods) {
+      fetch(goodsFile)
+      .then( res => res.text() )
+      .then( res => JSON.parse(res) )
+      .then( res => onLoadGoods(res as IGoods) )
+      .catch( err => console.log(err) );
+    }
   }
 
   renderBody(): JSX.Element {

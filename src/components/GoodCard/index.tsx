@@ -1,25 +1,10 @@
 import * as React from 'react';
-import { Page, PageProps } from '../Page';
-import { IGoods } from '../../types';
-import { goodsFile, goodsRoot, goodCaption, goodFileNoImage } from '../../const';
+import { Page } from '../Page';
+import { goodsRoot, goodCaption, goodFileNoImage } from '../../const';
 import './goodcard.css';
 import { Link } from 'react-router-dom';
 
 export class GoodCard extends Page {
-  constructor(props: PageProps) {
-    super(props);
-  }
-
-  componentDidMount() {
-    const { onLoadGoods } = this.props;
-    fetch(goodsFile)
-    .then( res => {
-      return res.text();
-    })
-    .then( res => JSON.parse(res) )
-    .then( res => onLoadGoods(res as IGoods) )
-    .catch( err => console.log(err) );
-  }
 
   renderBody(): JSX.Element {
     const { goods, selectedLang, match } = this.props;
@@ -35,7 +20,7 @@ export class GoodCard extends Page {
           <div className="GoodCardItem">
             <h2 className="GoodName">
               {g.caption[selectedLang.toLowerCase()].name}
-            </h2>            
+            </h2>
             <ul>
               <li>
                 {g.grade[selectedLang.toLowerCase()].name}
@@ -62,14 +47,14 @@ export class GoodCard extends Page {
                 <strong>
                   {goodCaption.description.costnde[selectedLang.toLowerCase()].name}
                 </strong>
-                {g.costnde} 
+                {g.costnde}
               </li>
               <li>
                 <strong>
                   {goodCaption.description.dcostfull[selectedLang.toLowerCase()].name}
                 </strong>
                 {g.dcostfull}
-              </li>                                 
+              </li>
             </ul>
             <table>
               <thead>
@@ -79,39 +64,39 @@ export class GoodCard extends Page {
                   </th>
                   <th rowSpan={2}>
                     {goodCaption.description.fats[selectedLang.toLowerCase()].name}
-                  </th>                
+                  </th>
                   <th rowSpan={2}>
                     {goodCaption.description.carbons[selectedLang.toLowerCase()].name}
-                  </th>      
+                  </th>
                   <th colSpan={5}>
                     {goodCaption.description.vitamins[selectedLang.toLowerCase()].name}
                   </th>
                   <th rowSpan={2}>
                     {goodCaption.description.energy[selectedLang.toLowerCase()].name}
-                  </th>                  
-                </tr>         
+                  </th>
+                </tr>
                 <tr>
                   <th>
                     {goodCaption.description.B1[selectedLang.toLowerCase()].name}
                   </th>
                   <th>
                     {goodCaption.description.B2[selectedLang.toLowerCase()].name}
-                  </th>                
+                  </th>
                   <th>
                     {goodCaption.description.C[selectedLang.toLowerCase()].name}
-                  </th>      
+                  </th>
                   <th>
                     {goodCaption.description.Ca[selectedLang.toLowerCase()].name}
-                  </th> 
+                  </th>
                   <th>
                     {goodCaption.description.Fe[selectedLang.toLowerCase()].name}
-                  </th>                                      
-                </tr>                    
+                  </th>
+                </tr>
               </thead>
               <tbody>
                 <tr key={g.ruid}>
                   <td>{g.proteins}</td>
-                  <td>{g.fats}</td>                
+                  <td>{g.fats}</td>
                   <td>{g.carbons}</td>
                   <td>{g.B1}</td>
                   <td>
@@ -125,17 +110,17 @@ export class GoodCard extends Page {
                   </td>
                   <td>
                     {g.Fe}
-                  </td>              
+                  </td>
                   <td>
                     {g.enegry}
-                  </td> 
-                </tr>                                             
-              </tbody>  
-            </table>      
+                  </td>
+                </tr>
+              </tbody>
+            </table>
             <div className="PriceGoods">
-              С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" <br/> 
+              С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" <br/>
               можно ознакомиться <Link to={`/price`}>здесь!</Link>
-            </div>                   
+            </div>
           </div>
 
         </div>
