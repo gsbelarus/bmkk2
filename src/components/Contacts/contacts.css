@@ -1,0 +1,16 @@
+.ContactInfo span{
+  padding-right: 6px;
+}
+
+div.ContactName {
+  padding-bottom: 10px;
+}
+
+div.ContactItem {
+  padding-bottom: 10px;
+}
+
+div.DepartmentItem {
+  min-width: 50%;
+  max-width: 50%;
+}

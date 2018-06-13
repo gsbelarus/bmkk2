@@ -1,13 +1,11 @@
 import * as React from 'react';
-import { Page, PageProps } from '../Page';
+import { Page } from '../Page';
 import { INews } from '../../types';
 import { newsFile, newsRoot } from '../../const';
 import * as ReactMarkdown from 'react-markdown';
+import './news.css';
 
 export class News extends Page {
-  constructor(props: PageProps) {
-    super(props);
-  }
 
   componentDidMount() {
     const { onLoadNews } = this.props;

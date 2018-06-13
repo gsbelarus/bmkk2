@@ -16,6 +16,7 @@ import { GoodCard } from './components/GoodCard';
 import { News } from './components/News';
 import { Contacts } from './components/Contacts';
 import { Outlets } from './components/Outlets';
+import { ForCustomer } from './components/ForCustomer';
 
 type Dispatch = ReduxDispatch<BMKKAction>;
 
@@ -129,6 +130,16 @@ class App extends React.Component<AppProps, {}> {
               (props) => {
                 const mergedProps = {...this.props, ...props};
                 return <Outlets {...mergedProps} />;
+              }
+            }
+          />
+          <Route
+            exact={true}
+            path="/forcustomer"
+            render={
+              (props) => {
+                const mergedProps = {...this.props, ...props};
+                return <ForCustomer {...mergedProps} />;
               }
             }
           />

@@ -80,7 +80,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
-    path: 'partners',
+    path: 'forcustomer',
     caption: {
       ru: {
         name: 'Клиентам'
@@ -291,7 +291,7 @@ export const goodCaption: GoodCaptions =
         en: {
           name: 'Fe'
         }
-      }                                               
+      }
     }
   }
 ;
@@ -566,4 +566,3 @@ export const moreCaption: PriceItem =
     }
   };
 
- 
