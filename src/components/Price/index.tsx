@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Page, PageProps } from '../Page';
 import { priceCaption } from '../../const';
+import './price.css';
 
 export class Price extends Page {
 

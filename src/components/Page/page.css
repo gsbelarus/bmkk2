@@ -61,6 +61,20 @@ div.WorkAreaFullWidth {
   padding-top: 32px;
 }
 
+@media print {
+  div.TopRibbon {
+    display: none;
+  }
+
+  nav.TopMenu {
+    display: none;
+  }
+
+  div.WorkAreaFullWidth {
+    padding: 0;
+  }
+}
+
 div.GoodItem ul .GoodMore {
   float: right;
   color: var(--colorText);
