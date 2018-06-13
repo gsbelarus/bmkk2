@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Page, PageProps } from '../Page';
 import { IGoods } from '../../types';
-import { goodsFile, goodsRoot2, goodCaption, goodFileNoImage } from '../../const';
+import { goodsFile, goodsRoot, goodCaption, goodFileNoImage } from '../../const';
 import './goodcard.css';
 import { Link } from 'react-router-dom';
 
@@ -24,9 +24,9 @@ export class GoodCard extends Page {
   renderBody(): JSX.Element {
     const { goods, selectedLang, match } = this.props;
     const g = goods.goods.find( t => t.ruid === match.params.goodID );
-    const fullImageName = !g!.image2 ? `${goodsRoot2}${goodFileNoImage}`
+    const fullImageName = !g!.image2 ? `${goodsRoot}${goodFileNoImage}`
     : g!.image2.includes('/') ? g!.image2
-    : `${goodsRoot2}${g!.image2}`;
+    : `${goodsRoot}${g!.image2}`;
 
     if (g) {
       return (
