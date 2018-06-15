@@ -5,6 +5,7 @@ div.GroupsContainer {
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
+  padding-top: 20px;
 }
 
 div.GroupsContainer a {
@@ -41,7 +42,7 @@ div.GoodGroupCaption {
 div.GoodGroupText {
   font-size: 16px;
   font-weight: 400;
-  color: brown;
+  color: var(--colorBrown);
   text-align: left;
   padding-left: 12px;
   padding-right: 12px;
@@ -49,7 +50,7 @@ div.GoodGroupText {
 }
 
 div.GoodGroup:hover {
-  border: 1px solid brown;
+  border: 1px solid var(--colorBrown);
   box-shadow: 4px 4px 4px rgba(150,150,150,0.5);
   transition: all 0.5s ease;
 }
@@ -62,4 +63,10 @@ div.GoodGroup:hover .GoodGroupText {
 div.GoodGroup:hover .GoodGroupCaption {
   background-color: var(--colorBrown);
   transition: all 0.5s ease;
+}
+
+div.GoodGroupPrice {
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
