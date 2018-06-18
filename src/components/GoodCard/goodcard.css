@@ -1,5 +1,6 @@
 div.GoodCard {
   padding-top: 20px;
+  position: relative;
 }
 
 div.GoodCardItem ul li {
@@ -21,6 +22,12 @@ div.GoodCardItem {
   padding-left: 40px;
   max-width: 50%;
   font-size: 14px;
+}
+
+div.GoodCardNew{
+  color:var(--colorBrown);
+  font-size: 30px;
+  text-align: right;
 }
 
 div.GoodCardItem strong {
@@ -59,6 +66,5 @@ div.PriceGoods a {
 div.PriceGoods {
   float: left;
   width: 100%;
-  padding-top: 10px;
-  
+  padding-top: 10px;  
 }

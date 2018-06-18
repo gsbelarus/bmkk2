@@ -3,14 +3,22 @@
 }
 
 div.ContactName {
-  padding-bottom: 10px;
+  padding-bottom: 6px;
 }
 
 div.ContactItem {
-  padding-bottom: 10px;
+  padding-bottom: 14px;
 }
 
 div.DepartmentItem {
-  min-width: 50%;
-  max-width: 50%;
+  width: 50%;
+}
+
+div.DepartmentItem h4 {
+  max-width: 350px;
+  margin: 6px 0;
+}
+
+div.ContactItem i {
+  padding-right: 8px;
 }

@@ -29,33 +29,31 @@ export class Contacts extends Page {
         <div className="GroupsContainer">
           { departments.departments.map( (d, d_idx) => (
               <div key={d_idx} className="DepartmentItem">
-                <h3>
+                <h4>
                   {d.caption[selectedLang.toLowerCase()].name}
-                </h3>
+                </h4>
                 {
                   contacts.contacts.filter( c => c.department === d.ruid ).map( (c, idx) => (
                     <div key={idx} className="ContactItem">
-                      <div className="ContactName">
+                      <div className={c.caption[selectedLang.toLowerCase()].name ? "ContactName" : "NoneDisplay"}>
                         {c.caption[selectedLang.toLowerCase()].name}
                       </div>
                       <div className={c.phone ? "ContactInfo" : "NoneDisplay"}>
-                        <span>
-                          {contactCaption.description.phone[selectedLang.toLowerCase()].name}
-                        </span>
+                        <i className="fas fa-phone fa-xs"></i>
                         {c.phone}
                       </div>
                       <div className={c.fax ? "ContactInfo" : "NoneDisplay"}>
-                        <span>
-                          {contactCaption.description.fax[selectedLang.toLowerCase()].name}
-                        </span>
+                        <i className="fas fa-fax fa-xs"></i>
                         {c.fax}
                       </div>
                       <div className={c.email ? "ContactInfo" : "NoneDisplay"}>
-                        <span>
-                          {contactCaption.description.email[selectedLang.toLowerCase()].name}
-                        </span>
+                        <i className="far fa-envelope fa-xs"></i>
                         {c.email}
                       </div>
+                      <div className={c.description ? "ContactInfo" : "NoneDisplay"}>
+                        
+                        {c.description}
+                      </div>                      
                     </div>
                     )
                   )

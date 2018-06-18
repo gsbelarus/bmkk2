@@ -36,6 +36,9 @@ export class News extends Page {
                     </h3>
                     <ReactMarkdown source={n.body[selectedLang.toLowerCase()].name} />
                     <img src={fullImageName} className={fullImageName === '' ? 'NoneDisplay' : ''}/>
+                    <div className="NewsDate">
+                      {n.date}
+                    </div>
                   </div>
                 )
               }

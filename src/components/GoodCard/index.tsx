@@ -18,6 +18,9 @@ export class GoodCard extends Page {
         <div className="GoodCard">
           <img src={fullImageName} />
           <div className="GoodCardItem">
+            <div className={g.isnew==='1' ? "GoodCardNew" : "NoneDisplay"}>
+              Новинка!
+            </div>            
             <h2 className="GoodName">
               {g.caption[selectedLang.toLowerCase()].name}
             </h2>

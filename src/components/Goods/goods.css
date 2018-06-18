@@ -69,3 +69,13 @@ div.GoodItem:hover .GoodData {
   background-color: var(--colorBrownLite);
   transition: all 0.5s ease;
 }
+
+div.GoodNew {
+  position: absolute;
+  border: 1px solid var(--colorBrown) ;
+  border-radius: 5px;
+  background-color: var(--colorBrown); 
+  color: white;
+  padding: 0 2px; 
+  top: 4px;
+}

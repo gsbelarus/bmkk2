@@ -74,8 +74,8 @@ export interface IGoods {
     dcostfull: number;
     rate: number;
     barcode: string;
-    issale: boolean;
-    isnew: boolean;
+    issale: string;
+    isnew: string;
     term: string;
     beforuse: string;
     proteins: number;
@@ -113,6 +113,7 @@ export interface IContacts {
     phone: string;  
     email: string;       
     fax: string; 
+    description: string;
   }[];
 }
 
