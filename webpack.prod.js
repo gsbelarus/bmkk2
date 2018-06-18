@@ -18,6 +18,6 @@ module.exports = merge(common, {
     hints: false
   },
   output: {
-    publicPath: '/bmkk/new'
+    publicPath: '/bmkk/new/'
   },
 });

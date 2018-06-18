@@ -12,6 +12,11 @@ const md: { [lang: string]: string } = {
 const map = require('../../../public/image/map.jpg');
 
 export class ForCustomer extends Page {
+
+  getPageStyle() {
+    return `${super.getPageStyle()} ForCustomer`;
+  }
+
   renderBody(): JSX.Element {
     const { selectedLang } = this.props;
     return (

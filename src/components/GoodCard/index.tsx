@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 
 export class GoodCard extends Page {
 
+  getPageStyle() {
+    return `${super.getPageStyle()} GoodCard`;
+  }
+
   renderBody(): JSX.Element {
     const { goods, selectedLang, match } = this.props;
     const g = goods.goods.find( t => t.ruid === match.params.goodID );
@@ -20,7 +24,7 @@ export class GoodCard extends Page {
           <div className="GoodCardItem">
             <div className={g.isnew==='1' ? "GoodCardNew" : "NoneDisplay"}>
               Новинка!
-            </div>            
+            </div>
             <h2 className="GoodName">
               {g.caption[selectedLang.toLowerCase()].name}
             </h2>
@@ -81,14 +85,14 @@ export class GoodCard extends Page {
                   {goodCaption.description.carbons[selectedLang.toLowerCase()].name}
                 </strong>
                 {g.carbons}
-              </li>  
+              </li>
               <li>
                 <strong>
                   {goodCaption.description.energy[selectedLang.toLowerCase()].name}
                 </strong>
                 {g.enegry}
-              </li>                           
-            </ul>  
+              </li>
+            </ul>
             <div className="PriceGoods">
               С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" <br/>
               можно ознакомиться <Link to={`/price`}>здесь!</Link>

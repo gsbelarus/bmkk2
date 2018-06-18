@@ -57,14 +57,18 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
     return (<div />);
   }
 
+  getPageStyle() {
+    return 'Page';
+  }
+
   render() {
     const { selectedLang, location } = this.props;
     return (
-      <div className={`${this.constructor.name} Page`}>
+      <div className={this.getPageStyle()}>
         <div className="TopRibbon">
           <div className="TopPrice">
             <Link to={`/price`}>Прейскурант</Link>
-          </div>  
+          </div>
           <LangSelector {...this.props} />
         </div>
         <nav className="TopMenu">
