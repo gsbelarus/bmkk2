@@ -56,7 +56,7 @@ module.exports =  {
       },
       {
         from: './public/data/outlets/*.*',
-        to: 'data/contacts/',
+        to: 'data/outlets/',
         flatten: true
       },
       {
