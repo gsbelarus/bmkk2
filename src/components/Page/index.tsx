@@ -83,6 +83,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
           }
         </nav>
         <div className={this.fullWidth ? "WorkAreaFullWidth" : "WorkArea"}>
+          {this.fullWidth ? null : location.pathname}
           {this.renderBody()}
           {this.logoImg && <img className="Logo" src={this.logoImg} />}
         </div>

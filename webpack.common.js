@@ -60,7 +60,7 @@ module.exports =  {
         flatten: true
       },
       {
-        from: './public/data/upload-binary.php',
+        from: './public/data/upload_binary.php',
         to: 'data/',
         flatten: true
       }
