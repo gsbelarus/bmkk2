@@ -74,12 +74,15 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
         <nav className="TopMenu">
           {
             mainMenu.map( (mi, idx) => (
-              <Link key={idx} to={`/${mi.path}`}><span>{mi.caption[selectedLang.toLowerCase()].name}</span></Link>
+              <Link key={idx} to={`/${mi.path}`} className={mi.path !== '' && location.pathname.startsWith(`/${mi.path}`) ? "Selected" : ""}>
+                <span>
+                  {mi.caption[selectedLang.toLowerCase()].name}
+                </span>
+              </Link>
             ))
           }
         </nav>
         <div className={this.fullWidth ? "WorkAreaFullWidth" : "WorkArea"}>
-          {/* location.pathname !== '/' && <div>{location.pathname}</div> */}
           {this.renderBody()}
           {this.logoImg && <img className="Logo" src={this.logoImg} />}
         </div>

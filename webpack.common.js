@@ -58,6 +58,11 @@ module.exports =  {
         from: './public/data/outlets/*.*',
         to: 'data/contacts/',
         flatten: true
+      },
+      {
+        from: './public/data/upload-binary.php',
+        to: 'data/',
+        flatten: true
       }
     ], {}
     )
