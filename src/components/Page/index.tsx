@@ -57,6 +57,31 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
     return (<div />);
   }
 
+  renderNavPath(props: P): JSX.Element | null {
+    const { location, selectedLang } = props;
+    const { pathname } = location;
+
+    if (pathname === '/') {
+      return null;
+    }
+
+    const navPath = pathname.split('/').reduce(
+      (p, c, idx) => {
+        const mi = mainMenu.find( m => m.path === c );
+        const capt = mi ? mi.caption[selectedLang.toLowerCase()].name : c;
+        p.push(
+          <span>
+            {idx ? ' ⏵ ' : ''}
+            {capt}
+          </span>
+        );
+
+        return p;
+      }, [] as JSX.Element[]
+    )
+    return <div className="navPath">{navPath}</div>;
+  }
+
   getPageStyle() {
     return 'Page';
   }
@@ -73,7 +98,9 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
         </div>
         <nav className="TopMenu">
           {
-            mainMenu.map( (mi, idx) => (
+            mainMenu
+            .filter( f => f.path )
+            .map( (mi, idx) => (
               <Link key={idx} to={`/${mi.path}`} className={mi.path !== '' && location.pathname.startsWith(`/${mi.path}`) ? "Selected" : ""}>
                 <span>
                   {mi.caption[selectedLang.toLowerCase()].name}
@@ -83,7 +110,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
           }
         </nav>
         <div className={this.fullWidth ? "WorkAreaFullWidth" : "WorkArea"}>
-          {this.fullWidth ? null : location.pathname}
+          {this.fullWidth ? null : this.renderNavPath(this.props)}
           {this.renderBody()}
           {this.logoImg && <img className="Logo" src={this.logoImg} />}
         </div>
