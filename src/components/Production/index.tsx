@@ -12,9 +12,6 @@ export class Production extends Page {
     if (groups) {
       return (
         <div>
-          <div>
-            С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" можно ознакомиться <Link to={`/price`}>здесь!</Link>
-          </div>
           <div className="GroupsContainer">
             {
               groups.groups.map( (g, idx) => (

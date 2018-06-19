@@ -1,5 +1,11 @@
-.ContactInfo span{
-  padding-right: 6px;
+div.ContactsContainer {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding-top: 20px;
 }
 
 div.ContactName {
