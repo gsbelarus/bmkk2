@@ -4,22 +4,22 @@ import { MenuItems, GoodCaptions, PriceItems, ContactCaptions, OutletsCaptions, 
  * при работе локально путь /data/
  *
  * при компиляции для сайта путь должен быть /bmkk/new/data/
+export const DATA_ROOT = '/data/';
  */
-export const dataRoot = '/data/';
-export const aboutRoot = `${dataRoot}about/`;
-export const goodGroupsRoot = `${dataRoot}goodgroups/`;
+export const aboutRoot = `${DATA_ROOT}about/`;
+export const goodGroupsRoot = `${DATA_ROOT}goodgroups/`;
 export const goodGroupsFile = `${goodGroupsRoot}goodgroups.json`;
-export const goodsRoot = `${dataRoot}goods/`;
-export const newsRoot = `${dataRoot}news/`;
+export const goodsRoot = `${DATA_ROOT}goods/`;
+export const newsRoot = `${DATA_ROOT}news/`;
 export const goodsFile = `${goodsRoot}goods.json`;
 export const goodFileNoImage = 'noimage.png';
 export const goodFileNoImage2 = 'noimage_big.png';
 export const groupFileNoImage = 'noimage.png';
 export const newsFile = `${newsRoot}news.json`;
-export const contactsRoot = `${dataRoot}contacts/`;
+export const contactsRoot = `${DATA_ROOT}contacts/`;
 export const contactsFile = `${contactsRoot}contacts.json`;
 export const departmentsFile = `${contactsRoot}departments.json`;
-export const outletsRoot = `${dataRoot}outlets/`;
+export const outletsRoot = `${DATA_ROOT}outlets/`;
 export const outletsFile = `${contactsRoot}outlets.json`;
 
 export const mainMenu: MenuItems = [

@@ -1,0 +1,1 @@
+declare var DATA_ROOT: string;

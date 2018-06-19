@@ -10,6 +10,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new webpack.DefinePlugin({
+      'DATA_ROOT': JSON.stringify('/data/'),
       'process.env.NODE_ENV': JSON.stringify('development')
     })
   ],

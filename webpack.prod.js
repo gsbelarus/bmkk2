@@ -6,6 +6,7 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   plugins: [
     new webpack.DefinePlugin({
+      'DATA_ROOT': JSON.stringify('/bmkk/new/data/'),
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
