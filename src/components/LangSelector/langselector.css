@@ -1,12 +1,12 @@
 div.LangSelector {
   height: 100%;
   margin-right: 64px;
-  padding-top: 6px;
+  padding-top: 4px;
 }
 
 div.LangSelector span {
   height: 100%;
-  margin-right:   6px;
+  margin-right: 6px;
   padding-right: 6px;
   border-right: 1px gray solid;
   cursor: default;

@@ -29,7 +29,7 @@ export class News extends Page {
               const fullImageName = !n.image ? ``
                 : n.image.includes('/') ? n.image
                 : `${newsRoot}${n.image}`;
-              const newsText = `${n.title[sl].name}\n\n${n.body[sl].name}`;
+              const newsText = `## ${n.title[sl].name}\n\n${n.body[sl].name.trimRight()}`;
               return (
                 <div key={idx}  className="NewsItem">
                   <ReactMarkdown source={newsText} />

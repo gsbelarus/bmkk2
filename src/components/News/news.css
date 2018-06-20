@@ -1,3 +1,13 @@
 div.NewsItem {
+  padding-bottom: 4px;
+  margin-bottom: 12px;
   border-bottom: dotted 1px gray;
+}
+
+div.NewsItem h2 {
+  color: var(--colorBrown);
+}
+
+div.NewsDate {
+  font-size: 12px;
 }
