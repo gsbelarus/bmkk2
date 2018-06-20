@@ -9,9 +9,9 @@
         "be": { "name": "Жуковіч Уладзімір Уладзіміравіч" }, 
         "en": { "name": "ZHUKOVYCH Vladimir Vladimirovich" } 
       },
-      "phone": "6243580 мтс",
-      "email": "",
-      "fax": "",
+      "phone": "+375-1643-9-11-11",
+      "email": "bmkk@meat.by",
+      "fax": "+375-1643-9-11-91",
       "description": ""
     },
     {
@@ -19,12 +19,12 @@
       "department": "1015533388_1029231264",
       "caption": {
         "ru": { "name": "МОРОЗ Марина Павловна" }, 
-        "be": { "name": "" }, 
-        "en": { "name": "" } 
+        "be": { "name": "Мароз Марына Паўлаўна" }, 
+        "en": { "name": "Moroz Marina Paulovna" } 
       },
-      "phone": "6050635 мтс",
+      "phone": "+375-1643-9-11-11",
       "email": "",
-      "fax": "",
+      "fax": "+375-1643-9-11-91",
       "description": ""
     },
     {
@@ -32,11 +32,11 @@
       "department": "1015533389_1029231264",
       "caption": {
         "ru": { "name": "БОРУШКО Ирина Анатольевна" }, 
-        "be": { "name": "" }, 
-        "en": { "name": "" } 
+        "be": { "name": "Барушка Ірына Анатольеўна" }, 
+        "en": { "name": "Borushko Irina Anatolievna" } 
       },
-      "phone": "2243319 мтс",
-      "email": "",
+      "phone": "+375-1643-9-11-41",
+      "email": "buh@meat.by",
       "fax": "",
       "description": ""
     },
@@ -45,11 +45,11 @@
       "department": "1015533390_1029231264",
       "caption": {
         "ru": { "name": "ЕЛЕНЕВИЧ Алена Николаевна" }, 
-        "be": { "name": "" }, 
-        "en": { "name": "" } 
+        "be": { "name": "Еленевич Алёна Мікалаеўна" }, 
+        "en": { "name": "Yelenyevich Alena Nikolaevna" } 
       },
-      "phone": "",
-      "email": "",
+      "phone": "+375-1643-3-98-71",
+      "email": "peo@meat.by",
       "fax": "",
       "description": ""
     },
@@ -58,10 +58,10 @@
       "department": "1015533391_1029231264",
       "caption": {
         "ru": { "name": "РУДЬ Александр Викторович" }, 
-        "be": { "name": "" }, 
-        "en": { "name": "" } 
+        "be": { "name": "Рудзь Аляксандр Віктаравіч" }, 
+        "en": { "name": "Rud Alexander Viktorovich" } 
       },
-      "phone": "6730510 мтс",
+      "phone": "+375-1643-3-98-20",
       "email": "",
       "fax": "",
       "description": ""
@@ -87,7 +87,7 @@
         "be": { "name": "" }, 
         "en": { "name": "" } 
       },
-      "phone": "7215078 мтс",
+      "phone": "",
       "email": "",
       "fax": "",
       "description": ""
@@ -97,11 +97,11 @@
       "department": "1015533394_1029231264",
       "caption": {
         "ru": { "name": "ПРОЦ Анатолий Степанович" }, 
-        "be": { "name": "" }, 
-        "en": { "name": "" } 
+        "be": { "name": "Проц Анатоль Сцяпанавіч" }, 
+        "en": { "name": "Prots Anatoly Stepanovich" } 
       },
-      "phone": "80256037873",
-      "email": "",
+      "phone": "+375-1643-9-11-21",
+      "email": "market@meat.by",
       "fax": "",
       "description": ""
     },
@@ -113,7 +113,7 @@
         "be": { "name": "" }, 
         "en": { "name": "" } 
       },
-      "phone": "8242224 мтс",
+      "phone": "",
       "email": "",
       "fax": "",
       "description": ""
@@ -178,7 +178,7 @@
         "be": { "name": "" }, 
         "en": { "name": "" } 
       },
-      "phone": "5297063 мтс",
+      "phone": "",
       "email": "",
       "fax": "",
       "description": ""
@@ -191,7 +191,7 @@
         "be": { "name": "" }, 
         "en": { "name": "" } 
       },
-      "phone": "8025 6037896 лайф",
+      "phone": "",
       "email": "",
       "fax": "",
       "description": ""
@@ -204,7 +204,7 @@
         "be": { "name": "" }, 
         "en": { "name": "" } 
       },
-      "phone": "8228855 мтс",
+      "phone": "",
       "email": "",
       "fax": "",
       "description": ""
@@ -217,7 +217,7 @@
         "be": { "name": "" }, 
         "en": { "name": "" } 
       },
-      "phone": "2077863 мтс",
+      "phone": "",
       "email": "",
       "fax": "",
       "description": ""
@@ -230,7 +230,7 @@
         "be": { "name": "" }, 
         "en": { "name": "" } 
       },
-      "phone": "8054421 мтс",
+      "phone": "",
       "email": "",
       "fax": "",
       "description": ""
@@ -243,7 +243,7 @@
         "be": { "name": "" }, 
         "en": { "name": "" } 
       },
-      "phone": "80255493829 лайф",
+      "phone": "",
       "email": "",
       "fax": "",
       "description": ""
@@ -256,7 +256,7 @@
         "be": { "name": "" }, 
         "en": { "name": "" } 
       },
-      "phone": "8432128 мтс",
+      "phone": "",
       "email": "",
       "fax": "",
       "description": ""
@@ -269,7 +269,7 @@
         "be": { "name": "" }, 
         "en": { "name": "" } 
       },
-      "phone": "2270996 мтс",
+      "phone": "",
       "email": "",
       "fax": "",
       "description": ""
