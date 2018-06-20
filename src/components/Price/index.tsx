@@ -60,7 +60,7 @@ export class Price extends Page {
                         goods.goods.filter( g => g.group === gr.ruid ).map( (g, idx) => (
                             <tr key={idx}>
                               <td>{idx+1}</td>
-                              <td>{g.caption[selectedLang.toLowerCase()].name}</td>
+                              <td>{g.fullname}</td>
                               <td>{g.valuename[selectedLang.toLowerCase()].name}</td>
                               <td className="tdRight">{g.costnde}</td>
                               <td className="tdRight">{g.dcostfull}</td>

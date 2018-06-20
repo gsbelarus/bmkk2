@@ -1,8 +1,9 @@
 div.BottomPanel {
-  margin-top: 40px;
+  margin-top: 20px;
   background-color: gray;
-  height: 580px;
   width: 100vw;
+  color: white;
+  height: 80px;
 }
 
 div.Partners {
@@ -19,7 +20,7 @@ nav.BottomMenu {
   justify-content: flex-end;
   height: 38px;
   width: 100%;
-  padding-top: 110px;
+  padding-top: 20px;
  
 }
 
@@ -43,3 +44,8 @@ nav.BottomMenu a.Selected {
   color: var(--colorBrownLite)
 }
 
+div.foot_rights {
+  float: left;
+  font-size: 14px;
+  padding-left: 20px;
+}

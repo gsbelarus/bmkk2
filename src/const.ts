@@ -1,4 +1,4 @@
-import { MenuItems, GoodCaptions, PriceItems, ContactCaptions, OutletsCaptions, PriceItem } from './types';
+import { MenuItems, GoodCaptions, PriceItems, ContactCaptions, OutletsCaptions, PriceItem, IRights } from './types';
 
 /**
  * при работе локально путь /data/
@@ -566,3 +566,17 @@ export const moreCaption: PriceItem =
     }
   };
 
+  export const rightsInfo: IRights = 
+  {
+    text: {
+      ru: {
+        name: 'Березовский мясоконсервный комбинат © 2018 г. Все права защищены.' 
+      },
+      be: {
+        name: 'Бярозаўскі мясакансервавы камбінат © 2018 г. Усё правы абаронены.'
+      },
+      en: {
+        name: 'Bereza Meat Cannery © 2018 All rights reserved.'
+      }
+    }     
+  };

@@ -64,6 +64,7 @@ export interface IGoods {
     ruid: string;
     group: string;
     caption: LName;
+    fullname: string;
     valuename: LName; 
     grade: LName; 
     ingredients: LName;       
@@ -164,3 +165,6 @@ export interface OutletsCaptions {
   }
 }
 
+export interface IRights {
+  text: LName; 
+}
