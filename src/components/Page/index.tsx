@@ -72,7 +72,6 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
         const capt = mi ? mi.caption[sl].name : c;
 
         if (mi) {
-          console.log('abc - ' + mi.path);
           p.push(<span key={idx}><Link to={mi.path}>{capt}</Link></span>);
         } else {
           p.push(<span key={idx}>{capt}</span>);
