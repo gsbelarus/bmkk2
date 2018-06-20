@@ -31,7 +31,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
   constructor(props: P) {
     super(props);
     this.fullWidth = false;
-    this.logoImg = require('../../../public/image/logo_white_bg.png');
+    // this.logoImg = require('../../../public/image/logo_white_bg.png');
   }
 
   componentDidMount() {

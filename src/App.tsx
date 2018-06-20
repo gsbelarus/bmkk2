@@ -66,7 +66,7 @@ class App extends React.Component<AppProps, {}> {
           />
           <Route
             exact={true}
-            path="/production/groups/:groupID"
+            path="/production/:groupID"
             render={
               (props) => {
                 const mergedProps = {...this.props, ...props};
@@ -86,7 +86,7 @@ class App extends React.Component<AppProps, {}> {
           />
           <Route
             exact={true}
-            path="/production/groups/:groupID/good/:goodID"
+            path="/production/:groupID/good/:goodID"
             render={
               (props) => {
                 const mergedProps = {...this.props, ...props};

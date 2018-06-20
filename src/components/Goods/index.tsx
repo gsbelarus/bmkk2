@@ -29,7 +29,7 @@ export class Goods extends Page {
       };
 
       const filtered = goods.goods.filter( t => t.group === match.params.groupID );
-      const mygroup = groups.groups.find( t => t.ruid === match.params.groupID );    
+      const mygroup = groups.groups.find( t => t.ruid === match.params.groupID );
 
       return (
         <div>
@@ -42,7 +42,7 @@ export class Goods extends Page {
                   : `${goodsRoot}${g.image}`;
 
                 return (
-                  <Link key={idx} className="GoodMore" to={`/production/groups/` + g.group + '/good/' + g.ruid}>
+                  <Link key={idx} className="GoodMore" to={`/production/` + g.group + '/good/' + g.ruid}>
                     <div className="GoodItem">
                       <div className={g.isnew==='1' ? "GoodNew" : "NoneDisplay"}>
                         Новинка!
@@ -80,7 +80,7 @@ export class Goods extends Page {
               })
             }
           </div>
-        </div>  
+        </div>
       );
     } else {
       return (

@@ -8,6 +8,7 @@ export class Price extends Page {
   constructor(props: PageProps) {
     super(props);
     this.fullWidth = true;
+    this.logoImg = undefined;
   }
 
   renderBody(): JSX.Element {

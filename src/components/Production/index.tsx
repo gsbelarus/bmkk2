@@ -15,7 +15,7 @@ export class Production extends Page {
           <div className="GroupsContainer">
             {
               groups.groups.map( (g, idx) => (
-                <Link key={idx} to={`/production/groups/` + g.ruid}>
+                <Link key={idx} to={`/production/` + g.ruid}>
                   <div className="GoodGroup">
                     <img src={!g.image ? `${goodGroupsRoot}${groupFileNoImage}` : `${goodGroupsRoot}${g.image}`} />
                     <div className="GoodGroupCaption">
