@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { PageProps } from '../Page';
 
 export class BottomPanel extends React.Component<PageProps, {}> {
-  
+
   render() {
     const { sl, location } = this.props;
     const partnersImg = require('../../../public/image/partners.png');
@@ -17,9 +17,9 @@ export class BottomPanel extends React.Component<PageProps, {}> {
             mainMenu
             .filter( f => f.path )
             .map( (mi, idx) => (
-              <Link key={idx} to={`/${mi.path}`} className={mi.path !== '' && location.pathname.endsWith(`/${mi.path}`) ? "Selected" : ""}>
+              <Link key={idx} to={`/${mi.path}`} className={mi.path !== '' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
                 <span>
-                  {mi.caption[sl].name} 
+                  {mi.caption[sl].name}
                 </span>
               </Link>
             ))
