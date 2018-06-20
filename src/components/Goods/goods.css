@@ -5,6 +5,7 @@ div.GoodsContainer {
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
+  padding-top: 16px;
 }
 
 div.GoodsContainer a {
@@ -74,8 +75,8 @@ div.GoodNew {
   position: absolute;
   border: 1px solid var(--colorBrown) ;
   border-radius: 5px;
-  background-color: var(--colorBrown); 
+  background-color: var(--colorBrown);
   color: white;
-  padding: 0 2px; 
+  padding: 0 2px;
   top: 4px;
 }

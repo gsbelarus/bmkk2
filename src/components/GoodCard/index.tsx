@@ -36,7 +36,7 @@ export class GoodCard extends Page {
   }
 
   renderBody(): JSX.Element {
-    const { goods, selectedLang, match } = this.props;
+    const { goods, sl, match } = this.props;
     const g = goods.goods.find( t => t.ruid === match.params.goodID );
     const fullImageName = !g!.image2 ? `${goodsRoot}${goodFileNoImage2}`
     : g!.image2.includes('/') ? g!.image2
@@ -50,40 +50,40 @@ export class GoodCard extends Page {
             <div className={g.isnew==='1' ? "GoodCardNew" : "NoneDisplay"}>
               Новинка!
             </div>
-            <h2 className="GoodName">
-              {g.caption[selectedLang.toLowerCase()].name}
+            <h2>
+              {g.caption[sl].name ? g.caption[sl].name : g.fullname}
             </h2>
             <ul>
               <li>
-                {g.grade[selectedLang.toLowerCase()].name}
+                {g.grade[sl].name}
               </li>
               <li>
                 <strong>
-                  {goodCaption.description.ingredients[selectedLang.toLowerCase()].name}
+                  {goodCaption.description.ingredients[sl].name}
                 </strong>
-                {g.ingredients[selectedLang.toLowerCase()].name}
+                {g.ingredients[sl].name}
               </li>
               <li>
                 <strong>
-                  {goodCaption.description.casing[selectedLang.toLowerCase()].name}
+                  {goodCaption.description.casing[sl].name}
                 </strong>
-                {g.casing[selectedLang.toLowerCase()].name}
+                {g.casing[sl].name}
               </li>
               <li>
                 <strong>
-                  {goodCaption.description.beforuse[selectedLang.toLowerCase()].name}
+                  {goodCaption.description.beforuse[sl].name}
                 </strong>
                 {g.beforuse}
               </li>
               <li>
                 <strong>
-                  {goodCaption.description.costnde[selectedLang.toLowerCase()].name}
+                  {goodCaption.description.costnde[sl].name}
                 </strong>
                 {g.costnde}
               </li>
               <li>
                 <strong>
-                  {goodCaption.description.dcostfull[selectedLang.toLowerCase()].name}
+                  {goodCaption.description.dcostfull[sl].name}
                 </strong>
                 {g.dcostfull}
               </li>
@@ -95,25 +95,25 @@ export class GoodCard extends Page {
               </li>
               <li>
                 <strong>
-                  {goodCaption.description.proteins[selectedLang.toLowerCase()].name}
+                  {goodCaption.description.proteins[sl].name}
                 </strong>
                 {g.proteins}
               </li>
               <li>
                 <strong>
-                  {goodCaption.description.fats[selectedLang.toLowerCase()].name}
+                  {goodCaption.description.fats[sl].name}
                 </strong>
                 {g.fats}
               </li>
               <li>
                 <strong>
-                  {goodCaption.description.carbons[selectedLang.toLowerCase()].name}
+                  {goodCaption.description.carbons[sl].name}
                 </strong>
                 {g.carbons}
               </li>
               <li>
                 <strong>
-                  {goodCaption.description.energy[selectedLang.toLowerCase()].name}
+                  {goodCaption.description.energy[sl].name}
                 </strong>
                 {g.enegry}
               </li>

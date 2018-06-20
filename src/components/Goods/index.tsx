@@ -19,7 +19,7 @@ export class Goods extends Page {
   }
 
   renderBody(): JSX.Element {
-    const { goods, groups, selectedLang, match  } = this.props;
+    const { goods, groups, sl, match  } = this.props;
 
     if (goods) {
       const shortenStr = (s: string, maxLength = 80): string => {
@@ -35,7 +35,6 @@ export class Goods extends Page {
 
       return (
         <div>
-          <h1>{mygroup ? mygroup.caption[selectedLang.toLowerCase()].name : ''}</h1>
           <div className="GoodsContainer">
             {
               filtered.map( (g, idx) => {
@@ -52,28 +51,28 @@ export class Goods extends Page {
                       <img src={fullImageName} />
                       <div className="GoodData">
                         <div className="GoodName">
-                          {g.caption[selectedLang.toLowerCase()].name}
+                          {g.caption[sl].name ? g.caption[sl].name : g.fullname}
                         </div>
                         <div>
-                          {g.grade[selectedLang.toLowerCase()].name ? g.grade[selectedLang.toLowerCase()].name : 'Без сорта' }
+                          {g.grade[sl].name ? g.grade[sl].name : 'Без сорта' }
                         </div>
                         <div>
                           <strong>
-                            {`${goodCaption.description.beforuse[selectedLang.toLowerCase()].name} `}
+                            {`${goodCaption.description.beforuse[sl].name} `}
                           </strong>
                           {g.beforuse}
                         </div>
                         <div>
                           <strong>
-                            {`${goodCaption.description.casing[selectedLang.toLowerCase()].name} `}
+                            {`${goodCaption.description.casing[sl].name} `}
                           </strong>
-                          {g.casing[selectedLang.toLowerCase()].name}
+                          {g.casing[sl].name}
                         </div>
                         <div>
                           <strong>
-                            {`${goodCaption.description.ingredients[selectedLang.toLowerCase()].name} `}
+                            {`${goodCaption.description.ingredients[sl].name} `}
                           </strong>
-                          {shortenStr(g.ingredients[selectedLang.toLowerCase()].name)}
+                          {shortenStr(g.ingredients[sl].name)}
                         </div>
                       </div>
                     </div>
