@@ -43,9 +43,7 @@ export class Contacts extends Page {
           <div className="ContactsContainer">
             { depts.map( (d, d_idx) => (
                 <div key={d_idx} className="DepartmentItem">
-                  <h4>
-                    {d.caption[sl].name}
-                  </h4>
+                  <div>{d.caption[sl].name}</div>
                   {
                     contacts.contacts.filter( c => c.department === d.ruid ).map( (c, idx) => (
                       <div key={idx} className="ContactItem">

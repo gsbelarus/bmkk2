@@ -8,23 +8,26 @@ div.ContactsContainer {
   padding-top: 20px;
 }
 
-div.ContactName {
-  padding-bottom: 6px;
-}
-
-div.ContactItem {
-  padding-bottom: 14px;
-}
-
 div.DepartmentItem {
-  width: 50%;
+  flex: 1 1 32%;
+  padding-bottom: 36px;
+  max-width: 32%;
 }
 
-div.DepartmentItem h4 {
-  max-width: 350px;
-  margin: 6px 0;
+div.DepartmentItem:first-child {
+  flex: 0 1 100%;
+  max-width: 100%;
+}
+
+div.ContactItem div:first-child{
+  color: var(--colorBrown);
+  font-size: 20px;
+  font-weight: 800;
+  padding-top: 8px;
+  padding-bottom: 12px;
 }
 
 div.ContactItem i {
-  padding-right: 8px;
+  padding-right: 2em;
+  color: gray;
 }
