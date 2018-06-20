@@ -59,7 +59,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
   }
 
   renderNavPath(props: P): JSX.Element | null {
-    const { location, selectedLang } = props;
+    const { location, sl } = props;
     const { pathname } = location;
 
     if (pathname === '/') {
@@ -69,11 +69,11 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
     const navPath = pathname.split('/').reduce(
       (p, c, idx) => {
         const mi = mainMenu.find( m => m.path === c );
-        const capt = mi ? mi.caption[selectedLang.toLowerCase()].name : c;
+        const capt = mi ? mi.caption[sl].name : c;
         p.push(
           <span>
             {idx ? ' ⏵ ' : ''}
-            {capt}
+            {mi ? <Link to={mi.path}>{capt}</Link> : capt}
           </span>
         );
 
