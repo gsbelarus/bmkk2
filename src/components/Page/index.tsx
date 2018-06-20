@@ -58,29 +58,30 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
     return (<div />);
   }
 
-  renderNavPath(props: P): JSX.Element | null {
+  renderNavPath(props: PageProps): JSX.Element[] {
     const { location, sl } = props;
-    const { pathname } = location;
+    const pathname = location.pathname;
 
     if (pathname === '/') {
-      return null;
+      return [];
     }
 
     const navPath = pathname.split('/').reduce(
       (p, c, idx) => {
-        const mi = mainMenu.find( m => m.path === c );
+        const mi = mainMenu.find( m => m.path === `/${c}` );
         const capt = mi ? mi.caption[sl].name : c;
-        p.push(
-          <span>
-            {idx ? ' ⏵ ' : ''}
-            {mi ? <Link to={mi.path}>{capt}</Link> : capt}
-          </span>
-        );
+
+        if (mi) {
+          console.log('abc - ' + mi.path);
+          p.push(<span key={idx}><Link to={mi.path}>{capt}</Link></span>);
+        } else {
+          p.push(<span key={idx}>{capt}</span>);
+        };
 
         return p;
       }, [] as JSX.Element[]
     )
-    return <div className="navPath">{navPath}</div>;
+    return navPath;
   }
 
   getPageStyle() {
@@ -88,7 +89,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
   }
 
   render() {
-    const { selectedLang, location } = this.props;
+    const { sl, location } = this.props;
     return (
       <div className={this.getPageStyle()}>
         <div className="TopRibbon">
@@ -100,16 +101,16 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
             mainMenu
             .filter( f => f.path )
             .map( (mi, idx) => (
-              <Link key={idx} to={`/${mi.path}`} className={mi.path !== '' && location.pathname.startsWith(`/${mi.path}`) ? "Selected" : ""}>
+              <Link key={idx} to={mi.path} className={mi.path !== '' && location.pathname.startsWith(`/${mi.path}`) ? "Selected" : ""}>
                 <span>
-                  {mi.caption[selectedLang.toLowerCase()].name}
+                  {mi.caption[sl].name}
                 </span>
               </Link>
             ))
           }
         </nav>
         <div className={this.fullWidth ? "WorkAreaFullWidth" : "WorkArea"}>
-          {this.fullWidth ? null : this.renderNavPath(this.props)}
+          {this.fullWidth ? null : <div className="navPath">{this.renderNavPath(this.props)}</div>}
           {this.renderBody()}
           <Link to="/">
             {this.logoImg && <img className="Logo" src={this.logoImg} />}

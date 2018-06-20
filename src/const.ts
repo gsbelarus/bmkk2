@@ -24,7 +24,7 @@ export const outletsFile = `${contactsRoot}outlets.json`;
 
 export const mainMenu: MenuItems = [
   {
-    path: '',
+    path: '/',
     caption: {
       ru: {
         name: 'Главная'
@@ -38,7 +38,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
-    path: 'about',
+    path: '/about',
     caption: {
       ru: {
         name: 'О нас'
@@ -52,7 +52,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
-    path: 'news',
+    path: '/news',
     caption: {
       ru: {
         name: 'Новости'
@@ -66,7 +66,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
-    path: 'production',
+    path: '/production',
     caption: {
       ru: {
         name: 'Продукция'
@@ -80,7 +80,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
-    path: 'forcustomer',
+    path: '/forcustomer',
     caption: {
       ru: {
         name: 'Клиентам'
@@ -94,7 +94,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
-    path: 'outlets',
+    path: '/outlets',
     caption: {
       ru: {
         name: 'Фирменная торговля'
@@ -108,7 +108,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
-    path: 'contacts',
+    path: '/contacts',
     caption: {
       ru: {
         name: 'Контакты'

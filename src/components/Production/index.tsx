@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import './production.css';
 
 export class Production extends Page {
-
   renderBody(): JSX.Element {
     const { groups, selectedLang } = this.props;
 

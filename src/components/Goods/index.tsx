@@ -1,20 +1,22 @@
 import * as React from 'react';
-import { Page } from '../Page';
+import { Page, PageProps } from '../Page';
 import { goodsRoot, goodCaption, goodFileNoImage } from '../../const';
 import { Link } from 'react-router-dom';
 import './goods.css';
 
-/*
-
-          <div className="PriceBtn">
-            {<Link  to={`/price`}>
-              Прейскурант
-            </Link>}
-          </div>
-
-*/
-
 export class Goods extends Page {
+
+  renderNavPath(props: PageProps): JSX.Element[] {
+    const result = super.renderNavPath(props);
+    const { groups, match, sl } = props;
+    if (groups && groups.groups) {
+      const mygroup = groups.groups.find( g => g.ruid === match.params.groupID );
+      if (mygroup) {
+        result.splice(-1, 1, <span key={mygroup.ruid}>{mygroup.caption[sl].name}</span>);
+      }
+    }
+    return result;
+  }
 
   renderBody(): JSX.Element {
     const { goods, groups, selectedLang, match  } = this.props;
