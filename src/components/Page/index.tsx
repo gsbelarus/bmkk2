@@ -31,7 +31,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
   constructor(props: P) {
     super(props);
     this.fullWidth = false;
-    // this.logoImg = require('../../../public/image/logo_black.png');
+    this.logoImg = require('../../../public/image/logo_white_bg.png');
   }
 
   componentDidMount() {
@@ -111,7 +111,9 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
         <div className={this.fullWidth ? "WorkAreaFullWidth" : "WorkArea"}>
           {this.fullWidth ? null : this.renderNavPath(this.props)}
           {this.renderBody()}
-          {this.logoImg && <img className="Logo" src={this.logoImg} />}
+          <Link to="/">
+            {this.logoImg && <img className="Logo" src={this.logoImg} />}
+          </Link>
         </div>
       </div>
     );
