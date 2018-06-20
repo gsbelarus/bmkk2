@@ -1,0 +1,45 @@
+div.BottomPanel {
+  margin-top: 40px;
+  background-color: gray;
+  height: 580px;
+  width: 100vw;
+}
+
+div.Partners {
+   position: relative;
+}
+
+div.Partners img {
+  height: 38px;
+}
+
+nav.BottomMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 38px;
+  width: 100%;
+  padding-top: 110px;
+ 
+}
+
+nav.BottomMenu a {
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+  margin-right: 36px;
+  text-decoration: none;
+}
+
+nav.BottomMenu a:last-child {
+  margin-right: 64px;
+}
+
+nav.BottomMenu a:hover {
+  color: var(--colorBrownLite)
+}
+
+nav.BottomMenu a.Selected {
+  color: var(--colorBrownLite)
+}
+

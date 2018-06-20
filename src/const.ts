@@ -20,7 +20,7 @@ export const contactsRoot = `${DATA_ROOT}contacts/`;
 export const contactsFile = `${contactsRoot}contacts.json`;
 export const departmentsFile = `${contactsRoot}departments.json`;
 export const outletsRoot = `${DATA_ROOT}outlets/`;
-export const outletsFile = `${contactsRoot}outlets.json`;
+export const outletsFile = `${outletsRoot}outlets.json`;
 
 export const mainMenu: MenuItems = [
   {
