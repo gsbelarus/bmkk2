@@ -162,10 +162,10 @@ export const goodCaption: GoodCaptions =
       },
       costnde: {
         ru: {
-          name: 'Цена ФСО, р:'
+          name: 'Цена ФСО, руб:'
         },
         be: {
-          name: 'Цана ФСО, р:'
+          name: 'Кошт ФСО, руб:'
         },
         en: {
           name: 'Price ФСО, r:'
@@ -173,10 +173,10 @@ export const goodCaption: GoodCaptions =
       },
       dcostfull: {
         ru: {
-          name: 'Цена ФСН, р:'
+          name: 'Цена ФСН, руб:'
         },
         be: {
-          name: 'Цана ФСН, р:'
+          name: 'Кошт ФСН, руб:'
         },
         en: {
           name: 'Price ФСН, r:'
@@ -187,7 +187,7 @@ export const goodCaption: GoodCaptions =
           name: 'Белки, г:'
         },
         be: {
-          name: 'Белки, г:'
+          name: 'Бялкі, г:'
         },
         en: {
           name: 'Proteins, gr:'
@@ -198,7 +198,7 @@ export const goodCaption: GoodCaptions =
           name: 'Жиры, г:'
         },
         be: {
-          name: 'Жиры, г:'
+          name: 'Тлушчы, г:'
         },
         en: {
           name: 'Fats, gr:'
@@ -209,7 +209,7 @@ export const goodCaption: GoodCaptions =
           name: 'Углеводы, г:'
         },
         be: {
-          name: 'Углеводы, г:'
+          name: 'Вугляводы, г:'
         },
         en: {
           name: 'Carbons, gr:'
