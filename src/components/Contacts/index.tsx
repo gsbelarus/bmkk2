@@ -34,7 +34,7 @@ export class Contacts extends Page {
 
     if (contacts && departments) {
       const depts = departments.departments.filter(
-        d => contacts.contacts.some( c => c.department === d.ruid )
+        d => contacts.contacts.some( c => c.department === d.ruid && (!!c.phone || !!c.email) )
       );
 
       return (
