@@ -44,7 +44,7 @@ export class Goods extends Page {
                   : `${goodsRoot}${g.image}`;
 
                 return (
-                  <Link key={idx} className="GoodMore" to={`/production/` + g.group + '/good/' + g.ruid}>
+                  <Link key={idx} className="GoodMore" to={`/production/${g.group}/${g.ruid}`}>
                     <div className="GoodItem">
                       <div className={g.isnew==='1' ? "GoodNew" : "NoneDisplay"}>
                         Новинка!

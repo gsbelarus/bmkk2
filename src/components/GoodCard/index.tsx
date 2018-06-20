@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Page } from '../Page';
+import { Page, PageProps } from '../Page';
 import { goodsRoot, goodCaption, goodFileNoImage2 } from '../../const';
 import './goodcard.css';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,31 @@ export class GoodCard extends Page {
 
   getPageStyle() {
     return `${super.getPageStyle()} GoodCard`;
+  }
+
+  renderNavPath(props: PageProps): JSX.Element[] {
+    const result = super.renderNavPath(props);
+    const { goods, groups, sl, match } = this.props;
+
+    if (goods && goods.goods && groups && groups.groups) {
+      const mygood = goods.goods.find( t => t.ruid === match.params.goodID );
+      if (mygood) {
+        const mygroup = groups.groups.find( g => g.ruid === mygood.group );
+        if (mygroup) {
+          result.splice(-2, 2,
+            <span key={mygroup.ruid}>
+              <Link to={`/production/${mygroup.ruid}`}>
+                {mygroup.caption[sl].name}
+              </Link>
+            </span>,
+            <span key={mygood.ruid}>
+              {mygood.caption[sl].name}
+            </span>
+          );
+        }
+      }
+    }
+    return result;
   }
 
   renderBody(): JSX.Element {
