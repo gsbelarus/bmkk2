@@ -10,7 +10,7 @@ div.ContactsContainer {
 
 div.DepartmentItem {
   flex: 1 1 32%;
-  padding-bottom: 36px;
+  padding-bottom: 3em;
   max-width: 32%;
 }
 
@@ -19,12 +19,17 @@ div.DepartmentItem:first-child {
   max-width: 100%;
 }
 
+div.DepartmentItem div:first-child {
+  font-size: 14px;
+}
+
 div.ContactItem div:first-child{
   color: var(--colorBrown);
   font-size: 20px;
   font-weight: 800;
-  padding-top: 8px;
+  padding-top: 4px;
   padding-bottom: 12px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
 div.ContactItem i {
