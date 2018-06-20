@@ -100,7 +100,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
             mainMenu
             .filter( f => f.path )
             .map( (mi, idx) => (
-              <Link key={idx} to={mi.path} className={mi.path !== '' && location.pathname.startsWith(`/${mi.path}`) ? "Selected" : ""}>
+              <Link key={idx} to={mi.path} className={mi.path !== '' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
                 <span>
                   {mi.caption[sl].name}
                 </span>
