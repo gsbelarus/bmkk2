@@ -14,6 +14,7 @@ export interface PageProps extends RouteComponentProps<any> {
   contacts: IContacts;
   departments: IDepartments;
   outlets: IOutlets;
+  sl: string;
   onSetLanguage: SetLanguage;
   onLoadGroups: LoadGroups;
   onLoadGoods: LoadGoods;

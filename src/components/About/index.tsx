@@ -10,7 +10,7 @@ const md: { [lang: string]: string } = {
 
 export class About extends Page {
   renderBody(): JSX.Element {
-    const { selectedLang } = this.props;
-    return (<ReactMarkdown source={md[selectedLang.toLowerCase()]} />);
+    const { sl } = this.props;
+    return (<ReactMarkdown source={md[sl]} />);
   }
 }

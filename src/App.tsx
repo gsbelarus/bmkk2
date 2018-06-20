@@ -28,6 +28,7 @@ export interface AppProps {
   contacts: IContacts;
   departments: IDepartments;
   outlets: IOutlets;
+  sl: string;
   onSetLanguage: SetLanguage;
   onLoadGroups: LoadGroups;
   selectedGroup: string;
@@ -150,7 +151,12 @@ class App extends React.Component<AppProps, {}> {
 }
 
 export default connect(
-  (state: State) => ({ ...state.appState }),
+  (state: State) => (
+    {
+      ...state.appState,
+      sl: state.appState.selectedLang.toLowerCase()
+    }
+  ),
   {
     onSetLanguage: setLanguage,
     onLoadGroups: loadGroups,

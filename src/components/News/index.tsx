@@ -19,7 +19,7 @@ export class News extends Page {
   }
 
   renderBody(): JSX.Element {
-    const { news, selectedLang } = this.props;
+    const { news, sl } = this.props;
 
     if (news) {
       return (
@@ -27,20 +27,18 @@ export class News extends Page {
           {
             news.news.map( (n, idx) => {
               const fullImageName = !n.image ? ``
-              : n.image.includes('/') ? n.image
-              : `${newsRoot}${n.image}`;
-                return (
-                  <div key={idx}  className="NewsItem">
-                    <h3>
-                      {n.title[selectedLang.toLowerCase()].name}
-                    </h3>
-                    <ReactMarkdown source={n.body[selectedLang.toLowerCase()].name} />
-                    <img src={fullImageName} className={fullImageName === '' ? 'NoneDisplay' : ''}/>
-                    <div className="NewsDate">
-                      {n.date}
-                    </div>
+                : n.image.includes('/') ? n.image
+                : `${newsRoot}${n.image}`;
+              const newsText = `${n.title[sl].name}\n\n${n.body[sl].name}`;
+              return (
+                <div key={idx}  className="NewsItem">
+                  <ReactMarkdown source={newsText} />
+                  <img src={fullImageName} className={fullImageName === '' ? 'NoneDisplay' : ''}/>
+                  <div className="NewsDate">
+                    {n.date}
                   </div>
-                )
+                </div>
+              )
               }
             )
           }
