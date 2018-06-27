@@ -31,7 +31,6 @@ export class Goods extends Page {
       };
 
       const filtered = goods.goods.filter( t => t.group === match.params.groupID );
-      const mygroup = groups.groups.find( t => t.ruid === match.params.groupID );
 
       return (
         <div>
@@ -66,13 +65,13 @@ export class Goods extends Page {
                           <strong>
                             {`${goodCaption.description.casing[sl].name} `}
                           </strong>
-                          {g.casing[sl].name}
+                          {g.casing[sl].name ? g.casing[sl].name : g.casing['ru'].name}
                         </div>
                         <div>
                           <strong>
                             {`${goodCaption.description.ingredients[sl].name} `}
                           </strong>
-                          {shortenStr(g.ingredients[sl].name)}
+                          {g.ingredients[sl].name ? shortenStr(g.ingredients[sl].name) : shortenStr(g.ingredients['ru'].name) }
                         </div>
                       </div>
                     </div>

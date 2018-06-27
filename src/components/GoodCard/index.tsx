@@ -61,13 +61,13 @@ export class GoodCard extends Page {
                 <strong>
                   {goodCaption.description.ingredients[sl].name}
                 </strong>
-                {g.ingredients[sl].name}
+                {g.ingredients[sl].name ? g.ingredients[sl].name : g.ingredients['ru'].name}
               </li>
               <li>
                 <strong>
                   {goodCaption.description.casing[sl].name}
                 </strong>
-                {g.casing[sl].name}
+                {g.casing[sl].name ? g.casing[sl].name : g.casing['ru'].name}
               </li>
               <li>
                 <strong>
