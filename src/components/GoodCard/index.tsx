@@ -86,37 +86,7 @@ export class GoodCard extends Page {
                   {goodCaption.description.dcostfull[sl].name}
                 </strong>
                 {g.dcostfull}
-              </li>
-              <br/>
-              <li>
-                <strong>
-                  Пищевая ценность
-                </strong>
-              </li>
-              <li>
-                <strong>
-                  {goodCaption.description.proteins[sl].name}
-                </strong>
-                {g.proteins}
-              </li>
-              <li>
-                <strong>
-                  {goodCaption.description.fats[sl].name}
-                </strong>
-                {g.fats}
-              </li>
-              <li>
-                <strong>
-                  {goodCaption.description.carbons[sl].name}
-                </strong>
-                {g.carbons}
-              </li>
-              <li>
-                <strong>
-                  {goodCaption.description.energy[sl].name}
-                </strong>
-                {g.enegry}
-              </li>
+              </li>          
             </ul>
             <div className="PriceGoods">
               С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" <br/>

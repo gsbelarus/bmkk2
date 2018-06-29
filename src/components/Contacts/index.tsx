@@ -5,12 +5,6 @@ import { contactsFile, departmentsFile } from '../../const';
 import './contacts.css';
 import * as ReactMarkdown from 'react-markdown';
 
-const md: { [lang: string]: string } = {
-  ru: require(`../../../public/data/contacts/req.ru.md`),
-  be: require(`../../../public/data/contacts/req.be.md`),
-  en: require(`../../../public/data/contacts/req.en.md`)
-};
-
 export class Contacts extends Page {
 
   componentDidMount() {
@@ -38,8 +32,7 @@ export class Contacts extends Page {
       );
 
       return (
-        <div>
-          <ReactMarkdown source={md[sl]} />
+        <div>          
           <div className="ContactsContainer">
             { depts.map( (d, d_idx) => (
                 <div key={d_idx} className="DepartmentItem">

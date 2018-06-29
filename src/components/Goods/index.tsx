@@ -47,32 +47,14 @@ export class Goods extends Page {
                       <div className={g.isnew==='1' ? "GoodNew" : "NoneDisplay"}>
                         Новинка!
                       </div>
+                        <div className={g.grade[sl].name ? "GoodGrade" : "NoneDisplay"}>
+                          {g.grade[sl].name}
+                        </div>   
                       <img src={fullImageName} />
-                      <div className="GoodData">
+                      <div className="GoodData">                     
                         <div className="GoodName">
                           {g.caption[sl].name ? g.caption[sl].name : g.fullname}
-                        </div>
-                        <div>
-                          {g.grade[sl].name ? g.grade[sl].name : 'Без сорта' }
-                        </div>
-                        <div>
-                          <strong>
-                            {`${goodCaption.description.beforuse[sl].name} `}
-                          </strong>
-                          {g.beforuse}
-                        </div>
-                        <div>
-                          <strong>
-                            {`${goodCaption.description.casing[sl].name} `}
-                          </strong>
-                          {g.casing[sl].name ? g.casing[sl].name : g.casing['ru'].name}
-                        </div>
-                        <div>
-                          <strong>
-                            {`${goodCaption.description.ingredients[sl].name} `}
-                          </strong>
-                          {g.ingredients[sl].name ? shortenStr(g.ingredients[sl].name) : shortenStr(g.ingredients['ru'].name) }
-                        </div>
+                        </div>                      
                       </div>
                     </div>
                   </Link>

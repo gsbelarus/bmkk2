@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Page } from '../Page';
 import * as ReactMarkdown from 'react-markdown';
 
+const img = require(`../../../public/data/about/about1.jpg`); 
+
 const md: { [lang: string]: string } = {
   ru: require(`../../../public/data/about/about.ru.md`),
   be: require(`../../../public/data/about/about.be.md`),
