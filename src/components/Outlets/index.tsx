@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Page } from '../Page';
 import { IOutlets } from '../../types';
-import { outletsFile, outletsCaption } from '../../const';
+import { outletsFile, addInfo } from '../../const';
 import './outlets.css';
 
 const outletImg = require('../../../public/image/outlet.png');
@@ -18,17 +18,17 @@ export class Outlets extends Page {
   }
 
   renderBody(): JSX.Element {
-    const { outlets, selectedLang } = this.props;
+    const { outlets, sl } = this.props;
 
     if (outlets) {
       return (
         <div>
-          <p>Комбинат имеет сеть фирменной торговли, где можно приобрести товар в розницу:</p>
+          <p>{addInfo.textOutlets[sl].name}</p>
           <div className="OutletsContainer">
             {
               outlets.outlets.map( (outlet, idx) => {
                 const re = /(?:г|д)\.(?:\s){0,1}([А-Яа-я]+)/;
-                const match = re.exec(outlet.address[selectedLang.toLowerCase()].name);
+                const match = re.exec(Page.getLName(outlet.address, sl));
                 return (
                   <div key={idx} className="OutletBox">
                     <div className="City">
@@ -39,10 +39,10 @@ export class Outlets extends Page {
                     </div>
                     <div className="OutletData">
                       <div>
-                        <strong>{outlet.caption[selectedLang.toLowerCase()].name}</strong>
+                        <strong>{Page.getLName(outlet.caption, sl)}</strong>
                       </div>
                       <div>
-                        <strong>Адрес: </strong>{outlet.address[selectedLang.toLowerCase()].name}
+                        <strong>Адрес: </strong>{Page.getLName(outlet.address, sl)}
                       </div>
                       <div>
                         <strong>Телефон: </strong>{outlet.phone}

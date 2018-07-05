@@ -29,11 +29,11 @@ export class News extends Page {
               const fullImageName = !n.image ? ``
                 : n.image.includes('/') ? n.image
                 : `${newsRoot}${n.image}`;
-              const newsText = `## ${n.title[sl].name}\n\n${n.body[sl].name.trimRight()}`;
+              const newsText = `## ${Page.getLName(n.title, sl)}\n\n${Page.getLName(n.body, sl).trimRight()}`;
               return (
                 <div key={idx}  className="NewsItem">
                   <ReactMarkdown source={newsText} />
-                  <img src={fullImageName} className={fullImageName === '' ? 'NoneDisplay' : ''}/>
+                  {fullImageName && <img src={fullImageName}/>}
                   <div className="NewsDate">
                     {n.date}
                   </div>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Page, PageProps } from '../Page';
-import { goodsRoot, goodCaption, goodFileNoImage2 } from '../../const';
+import { goodsRoot, goodCaption, goodFileNoImage2, addInfo } from '../../const';
 import './goodcard.css';
 import { Link } from 'react-router-dom';
 
@@ -22,11 +22,11 @@ export class GoodCard extends Page {
           result.splice(-2, 2,
             <span key={mygroup.ruid}>
               <Link to={`/production/${mygroup.ruid}`}>
-                {mygroup.caption[sl].name}
+                {Page.getLName(mygroup.caption, sl)}
               </Link>
             </span>,
             <span key={mygood.ruid}>
-              {mygood.caption[sl].name}
+              {mygood.caption ? Page.getLName(mygood.caption, sl) : mygood.fullname ? mygood.fullname : ''}
             </span>
           );
         }
@@ -51,23 +51,23 @@ export class GoodCard extends Page {
               Новинка!
             </div>
             <h2>
-              {g.caption[sl].name ? g.caption[sl].name : g.fullname}
+              {g.caption ? Page.getLName(g.caption, sl) : g.fullname ? g.fullname : ''}
             </h2>
             <ul>
               <li>
-                {g.grade[sl].name}
+                {Page.getLName(g.grade, sl)}
               </li>
               <li>
                 <strong>
                   {goodCaption.description.ingredients[sl].name}
                 </strong>
-                {g.ingredients[sl].name ? g.ingredients[sl].name : g.ingredients['ru'].name}
+                {Page.getLName(g.ingredients, sl)}
               </li>
               <li>
                 <strong>
                   {goodCaption.description.casing[sl].name}
                 </strong>
-                {g.casing[sl].name ? g.casing[sl].name : g.casing['ru'].name}
+                {Page.getLName(g.casing, sl)}
               </li>
               <li>
                 <strong>
@@ -89,8 +89,7 @@ export class GoodCard extends Page {
               </li>          
             </ul>
             <div className="PriceGoods">
-              С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" <br/>
-              можно ознакомиться <Link to={`/price`}>здесь!</Link>
+              {addInfo.textPriceMore[sl].name} <Link to={`/price`}>{addInfo.textPriceLink[sl].name}!</Link>
             </div>
           </div>
         </div>

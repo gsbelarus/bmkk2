@@ -11,8 +11,9 @@ export class Price extends Page {
     this.logoImg = undefined;
   }
 
+
   renderBody(): JSX.Element {
-    const { groups, goods, selectedLang  } = this.props;
+    const { groups, goods, sl  } = this.props;
 
     if (goods) {
       return (
@@ -41,7 +42,7 @@ export class Price extends Page {
                   {
                     priceCaption.map( (d, pr_idx) => (
                         <th key={pr_idx}>
-                          {d.caption[selectedLang.toLowerCase()].name}
+                          {d.caption[sl].name}
                         </th>
                       )
                     )
@@ -53,7 +54,7 @@ export class Price extends Page {
                   <tbody>
                     <tr>
                       <td colSpan={8} className="tGrName">
-                        {gr.caption[selectedLang.toLowerCase()].name}
+                        {Page.getLName(gr.caption, sl)}
                       </td>
                     </tr>
                     {
@@ -61,14 +62,14 @@ export class Price extends Page {
                             <tr key={idx}>
                               <td>{idx+1}</td>
                               <td>{g.fullname}</td>
-                              <td>{g.valuename[selectedLang.toLowerCase()].name}</td>
+                              <td>{Page.getLName(g.valuename, sl)}</td>
                               <td className="tdRight">{g.costnde}</td>
                               <td className="tdRight">{g.dcostfull}</td>
                               <td className="tdRight">{g.rate}</td>
                               <td>{g.beforuse}</td>
                               <td>{g.term}</td>
                               <td>{g.barcode}</td>
-                              <td>{g.ingredients[selectedLang.toLowerCase()].name}</td>
+                              <td>{Page.getLName(g.ingredients, sl)}</td>
                             </tr>
                           )
                         )

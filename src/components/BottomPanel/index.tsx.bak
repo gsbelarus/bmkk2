@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Language } from '../../types';
-import { mainMenu, rightsInfo } from '../../const';
+import { mainMenu, addInfo } from '../../const';
 import './bottompanel.css';
 import { Link } from 'react-router-dom';
 import { PageProps } from '../Page';
@@ -31,7 +31,7 @@ export class BottomPanel extends React.Component<PageProps, {}> {
           }
         </nav>
         <div className="foot_rights">
-          {rightsInfo.text[sl].name}
+          {addInfo.textRight[sl].name}
         </div>   
       </div>
     );

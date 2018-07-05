@@ -165,6 +165,9 @@ export interface OutletsCaptions {
   }
 }
 
-export interface IRights {
-  text: LName; 
+export interface IAddInfo {
+  textRights: LName; 
+  textPriceMore: LName;  
+  textPriceLink: LName;  
+  textOutlets: LName;  
 }

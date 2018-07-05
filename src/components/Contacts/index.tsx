@@ -28,7 +28,7 @@ export class Contacts extends Page {
 
     if (contacts && departments) {
       const depts = departments.departments.filter(
-        d => contacts.contacts.some( c => c.department === d.ruid && (!!c.phone || !!c.email) )
+        d => contacts.contacts.some( c => c.department === d.ruid && !!c.ruid )
       );
 
       return (
@@ -36,11 +36,11 @@ export class Contacts extends Page {
           <div className="ContactsContainer">
             { depts.map( (d, d_idx) => (
                 <div key={d_idx} className="DepartmentItem">
-                  <div>{d.caption[sl].name}</div>
+                  <div>{Page.getLName(d.caption, sl)}</div>
                   {
                     contacts.contacts.filter( c => c.department === d.ruid ).map( (c, idx) => (
                       <div key={idx} className="ContactItem">
-                        {c.caption[sl].name && <div>{c.caption[sl].name}</div>}
+                        {c.caption && <div>{Page.getLName(c.caption, sl)}</div>}
                         {c.phone && <div><i className="fas fa-phone fa-xs" />{c.phone}</div>}
                         {c.fax && <div><i className="fas fa-fax fa-xs" />{c.fax}</div>}
                         {c.email && <div><i className="far fa-envelope fa-xs" />{c.email}</div>}

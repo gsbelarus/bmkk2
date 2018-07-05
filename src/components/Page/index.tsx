@@ -5,6 +5,7 @@ import { Language, IGoodGroups, IGoods, INews, IContacts, IDepartments, IOutlets
 import { SetLanguage, LoadGroups, LoadGoods, LoadNews, LoadContacts, LoadDepartments, LoadOutlets } from '../../actions';
 import { mainMenu, goodGroupsFile, goodsFile } from '../../const';
 import { Link, RouteComponentProps } from 'react-router-dom';
+import { LName } from '../../types';
 
 export interface PageProps extends RouteComponentProps<any> {
   selectedLang: Language;
@@ -86,6 +87,14 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
   getPageStyle() {
     return 'Page';
   }
+
+  static getLName(lname: LName | undefined, l: string) {
+    const lang = l.toLowerCase();
+    return lname && lname[lang] && lname[lang].name ?
+      lname[lang].name : (
+        lname && lname['ru'] && lname['ru'].name ? lname['ru'].name : ''
+      );
+  }  
 
   render() {
     const { sl, location } = this.props;

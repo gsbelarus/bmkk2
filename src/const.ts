@@ -1,4 +1,4 @@
-import { MenuItems, GoodCaptions, PriceItems, ContactCaptions, OutletsCaptions, PriceItem, IRights } from './types';
+import { MenuItems, GoodCaptions, PriceItems, ContactCaptions, OutletsCaptions, PriceItem, IAddInfo } from './types';
 
 /**
  * при работе локально путь /data/
@@ -566,9 +566,9 @@ export const moreCaption: PriceItem =
     }
   };
 
-  export const rightsInfo: IRights = 
+  export const addInfo: IAddInfo = 
   {
-    text: {
+    textRights: {
       ru: {
         name: 'Березовский мясоконсервный комбинат © 2018 г. Все права защищены.' 
       },
@@ -578,5 +578,39 @@ export const moreCaption: PriceItem =
       en: {
         name: 'Bereza Meat Cannery © 2018 All rights reserved.'
       }
-    }     
+    },
+    textPriceMore: {
+      ru: {
+        name: 'С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" можно ознакомиться' 
+      },
+      be: {
+        name: 'бел С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" можно ознакомиться'
+      },
+      en: {
+        name: 'англ С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" можно ознакомиться'
+      }
+    },
+    textPriceLink: {
+      ru: {
+        name: 'здесь' 
+      },
+      be: {
+        name: 'тут'
+      },
+      en: {
+        name: 'here'
+      }
+    },
+    textOutlets: {
+      ru: {
+        name: 'Комбинат имеет сеть фирменной торговли, где можно приобрести товар в розницу:' 
+      },
+      be: {
+        name: 'бел Комбинат имеет сеть фирменной торговли, где можно приобрести товар в розницу:'
+      },
+      en: {
+        name: 'англ Комбинат имеет сеть фирменной торговли, где можно приобрести товар в розницу:'
+      }
+    }                            
   };
+

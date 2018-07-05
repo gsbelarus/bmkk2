@@ -6,7 +6,7 @@ import './production.css';
 
 export class Production extends Page {
   renderBody(): JSX.Element {
-    const { groups, selectedLang } = this.props;
+    const { groups, sl } = this.props;
 
     if (groups) {
       return (
@@ -19,7 +19,7 @@ export class Production extends Page {
                     <img src={!g.image ? `${goodGroupsRoot}${groupFileNoImage}` : `${goodGroupsRoot}${g.image}`} />
                     <div className="GoodGroupCaption">
                       <div className="GoodGroupText">
-                        {g.caption[selectedLang.toLowerCase()].name}
+                        {Page.getLName(g.caption, sl)}
                       </div>
                     </div>
                   </div>
