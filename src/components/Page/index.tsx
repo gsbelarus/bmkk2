@@ -1,9 +1,9 @@
 import * as React from 'react';
 import './page.css';
 import { LangSelector } from '../LangSelector/index';
-import { Language, IGoodGroups, IGoods, INews, IContacts, IDepartments, IOutlets } from '../../types';
-import { SetLanguage, LoadGroups, LoadGoods, LoadNews, LoadContacts, LoadDepartments, LoadOutlets } from '../../actions';
-import { mainMenu, goodGroupsFile, goodsFile } from '../../const';
+import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets } from '../../types';
+import { SetLanguage, LoadGroups, LoadGoods, LoadPrice, LoadNews, LoadContacts, LoadDepartments, LoadOutlets } from '../../actions';
+import { mainMenu, goodGroupsFile, goodsFile, priceFile } from '../../const';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { LName } from '../../types';
 
@@ -11,6 +11,7 @@ export interface PageProps extends RouteComponentProps<any> {
   selectedLang: Language;
   groups: IGoodGroups;
   goods: IGoods;
+  price: IPrice;  
   news: INews;
   contacts: IContacts;
   departments: IDepartments;
@@ -19,6 +20,7 @@ export interface PageProps extends RouteComponentProps<any> {
   onSetLanguage: SetLanguage;
   onLoadGroups: LoadGroups;
   onLoadGoods: LoadGoods;
+  onLoadPrice: LoadPrice;  
   onLoadNews: LoadNews;
   onLoadContacts: LoadContacts;
   onLoadDepartments: LoadDepartments;
@@ -36,7 +38,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
   }
 
   componentDidMount() {
-    const { goods, groups, onLoadGoods, onLoadGroups } = this.props;
+    const { goods, price, groups, onLoadGoods, onLoadPrice, onLoadGroups } = this.props;
 
     if (!groups) {
       fetch(goodGroupsFile)
@@ -53,6 +55,15 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
       .then( res => onLoadGoods(res as IGoods) )
       .catch( err => console.log(err) );
     }
+
+    if (!price) {
+      fetch(priceFile)
+      .then( res => res.text() )
+      .then( res => JSON.parse(res) )
+      .then( res => onLoadPrice(res as IPrice) )
+      .catch( err => console.log(err) );
+    }  
+
   }
 
   renderBody(): JSX.Element {

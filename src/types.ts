@@ -71,12 +71,7 @@ export interface IGoods {
     casing: LName; 
     image: string;
     image2: string;    
-    costnde: number;
-    dcostfull: number;
     rate: number;
-    barcode: string;
-    issale: string;
-    isnew: string;
     term: string;
     beforuse: string;
     proteins: number;
@@ -88,6 +83,19 @@ export interface IGoods {
     C: number;
     Ca: number;
     Fe: number;
+  }[];
+}
+
+export interface IPrice {
+  version: string;
+  date: string;  
+  price: {
+    ruid: string; 
+    costnde: number;
+    dcostfull: number; 
+    barcode: string;
+    issale: string;
+    isnew: string;
   }[];
 }
 

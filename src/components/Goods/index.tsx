@@ -20,7 +20,7 @@ export class Goods extends Page {
   }
 
   renderBody(): JSX.Element {
-    const { goods, sl, match  } = this.props;
+    const { goods, price, sl, match  } = this.props;
 
     if (goods) {
 
@@ -34,11 +34,12 @@ export class Goods extends Page {
                 const fullImageName = !g.image ? `${goodsRoot}${goodFileNoImage}`
                   : g.image.includes('/') ? g.image
                   : `${goodsRoot}${g.image}`;
-
+                const myprice = price.price.find( p => p.ruid === g.ruid );
                 return (
                   <Link key={idx} className="GoodMore" to={`/production/${g.group}/${g.ruid}`}>
                     <div className="GoodItem">
-                      {g.isnew && <div className="GoodNew">Новинка!</div>}
+                      {(myprice ? myprice.issale : '') && <div className="GoodNew">Скидка!</div>}                                          
+                      {(myprice ? myprice.isnew && !myprice.issale : '') && <div className="GoodNew">Новинка!</div>}
                       {g.grade && <div className="GoodGrade">{Page.getLName(g.grade, sl)}</div>} 
                       <img src={fullImageName} />
                       <div className="GoodData">                     

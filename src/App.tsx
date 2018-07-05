@@ -2,11 +2,11 @@ import * as React from 'react';
 import { connect, Dispatch as ReduxDispatch } from 'react-redux';
 import { HashRouter, Switch, Route, RouteComponentProps } from 'react-router-dom';
 import { MainPage } from './components/MainPage';
-import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, LoadGoods,
+import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, loadPrice, LoadPrice, LoadGoods,
          LoadNews, loadNews, LoadContacts, loadContacts, LoadDepartments, loadDepartments,
          LoadOutlets, loadOutlets } from './actions';
 import { State } from './store';
-import { Language, IGoodGroups, IGoods, INews, IContacts, IDepartments, IOutlets } from './types';
+import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets } from './types';
 import { BMKKAction } from './reducer';
 import { Production } from './components/Production';
 import { About } from './components/About';
@@ -24,6 +24,7 @@ export interface AppProps {
   selectedLang: Language;
   groups: IGoodGroups;
   goods: IGoods;
+  price: IPrice;
   news: INews;
   contacts: IContacts;
   departments: IDepartments;
@@ -33,6 +34,7 @@ export interface AppProps {
   onLoadGroups: LoadGroups;
   selectedGroup: string;
   onLoadGoods: LoadGoods;
+  onLoadPrice: LoadPrice;  
   onLoadNews: LoadNews;
   onLoadContacts: LoadContacts;
   onLoadDepartments: LoadDepartments;
@@ -161,6 +163,7 @@ export default connect(
     onSetLanguage: setLanguage,
     onLoadGroups: loadGroups,
     onLoadGoods: loadGoods,
+    onLoadPrice: loadPrice,    
     onLoadNews: loadNews,
     onLoadContacts: loadContacts,
     onLoadDepartments: loadDepartments,

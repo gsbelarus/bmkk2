@@ -12,6 +12,7 @@ export const goodGroupsFile = `${goodGroupsRoot}goodgroups.json`;
 export const goodsRoot = `${DATA_ROOT}goods/`;
 export const newsRoot = `${DATA_ROOT}news/`;
 export const goodsFile = `${goodsRoot}goods.json`;
+export const priceFile = `${goodsRoot}price.json`;
 export const goodFileNoImage = 'noimage.png';
 export const goodFileNoImage2 = 'noimage_big.png';
 export const groupFileNoImage = 'noimage.png';

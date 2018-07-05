@@ -1,5 +1,5 @@
 import { createAction } from 'typesafe-actions';
-import { Language, IGoodGroups, IGoods, INews, IContacts, IDepartments, IOutlets } from './types';
+import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets } from './types';
 
 export const setLanguage = createAction('SET_LANGUAGE', resolve => {
   return (lang: Language) => resolve(lang);
@@ -18,6 +18,12 @@ export const loadGoods = createAction('LOAD_GOODS', resolve => {
 });
 
 export type LoadGoods = typeof loadGoods;
+
+export const loadPrice = createAction('LOAD_PRICE', resolve => {
+  return (loadedPrice: IPrice) => resolve(loadedPrice);
+});
+
+export type LoadPrice = typeof loadPrice;
 
 export const loadNews = createAction('LOAD_NEWS', resolve => {
   return (loadedNews: INews) => resolve(loadedNews);

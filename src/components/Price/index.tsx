@@ -11,11 +11,10 @@ export class Price extends Page {
     this.logoImg = undefined;
   }
 
-
   renderBody(): JSX.Element {
-    const { groups, goods, sl  } = this.props;
+    const { groups, goods, price, sl  } = this.props;
 
-    if (goods) {
+    if (goods && price) {
       return (
         <div className="PriceContainer">
           <div className="PriceTop">
@@ -58,20 +57,22 @@ export class Price extends Page {
                       </td>
                     </tr>
                     {
-                        goods.goods.filter( g => g.group === gr.ruid ).map( (g, idx) => (
+                        goods.goods.filter( g => g.group === gr.ruid ).map( (g, idx) => {
+                          const myprice = price.price.find( p => p.ruid === g.ruid );
+                          return (                            
                             <tr key={idx}>
                               <td>{idx+1}</td>
                               <td>{g.fullname}</td>
                               <td>{Page.getLName(g.valuename, sl)}</td>
-                              <td className="tdRight">{g.costnde}</td>
-                              <td className="tdRight">{g.dcostfull}</td>
+                              <td className="tdRight">{myprice ? myprice.costnde : ''}</td>
+                              <td className="tdRight">{myprice ? myprice.dcostfull : ''}</td>
                               <td className="tdRight">{g.rate}</td>
                               <td>{g.beforuse}</td>
                               <td>{g.term}</td>
-                              <td>{g.barcode}</td>
+                              <td>{myprice ? myprice.barcode : ''}</td>
                               <td>{Page.getLName(g.ingredients, sl)}</td>
                             </tr>
-                          )
+                          )}
                         )
                       }
                   </tbody>

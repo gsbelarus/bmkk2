@@ -36,20 +36,20 @@ export class GoodCard extends Page {
   }
 
   renderBody(): JSX.Element {
-    const { goods, sl, match } = this.props;
+    const { goods, price, sl, match } = this.props;
     const g = goods.goods.find( t => t.ruid === match.params.goodID );
     const fullImageName = !g!.image2 ? `${goodsRoot}${goodFileNoImage2}`
     : g!.image2.includes('/') ? g!.image2
     : `${goodsRoot}${g!.image2}`;
 
     if (g) {
+      const myprice = price.price.find( p => p.ruid === g.ruid);       
       return (
         <div className="GoodCard">
           <img src={fullImageName} />
           <div className="GoodCardItem">
-            <div className={g.isnew==='1' ? "GoodCardNew" : "NoneDisplay"}>
-              Новинка!
-            </div>
+            {(myprice ? myprice.issale : '') && <div className="GoodCardNew">Скидка!</div>}
+            {(myprice ? myprice.isnew && !myprice.issale : '') && <div className="GoodCardNew">Новинка!</div>}
             <h2>
               {g.caption ? Page.getLName(g.caption, sl) : g.fullname ? g.fullname : ''}
             </h2>
@@ -79,13 +79,13 @@ export class GoodCard extends Page {
                 <strong>
                   {goodCaption.description.costnde[sl].name}
                 </strong>
-                {g.costnde}
+                {myprice ? myprice.costnde : ''}
               </li>
               <li>
                 <strong>
                   {goodCaption.description.dcostfull[sl].name}
                 </strong>
-                {g.dcostfull}
+                {myprice ? myprice.dcostfull : ''}
               </li>          
             </ul>
             <div className="PriceGoods">
