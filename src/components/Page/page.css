@@ -10,6 +10,15 @@ div.Page h1 {
   color: var(--colorBrown);
   width: 100%;
   padding-top: 22px;
+  font-size: 28px;
+}
+
+div.Page h2 {
+  font-size: 22px;
+}
+
+div.Page h3 {
+  font-size: 18px;
 }
 
 img.Logo {

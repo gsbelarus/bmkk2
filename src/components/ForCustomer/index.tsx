@@ -9,6 +9,12 @@ const md: { [lang: string]: string } = {
   en: require(`../../../public/data/forcustomer/forcustomer.en.md`)
 };
 
+const mdf: { [lang: string]: string } = {
+  ru: require(`../../../public/data/forcustomer/forforeigners.ru.md`),
+  be: require(`../../../public/data/forcustomer/forforeigners.be.md`),
+  en: require(`../../../public/data/forcustomer/forforeigners.en.md`)
+};
+
 const map = require('../../../public/image/map.jpg');
 
 export class ForCustomer extends Page {
@@ -25,6 +31,7 @@ export class ForCustomer extends Page {
         <a href="https://www.google.com/maps/place/Berozovskiy+Myasokonservnyy+Kombinat/@52.543019,24.9606592,14.5z/data=!4m5!3m4!1s0x4720b6da3c7872d3:0xbf3aaf50876462b4!8m2!3d52.542146!4d24.9549723">
           <img src={map} />
         </a>
+        <ReactMarkdown source={mdf[selectedLang.toLowerCase()]} />
       </div>
     );
   }
