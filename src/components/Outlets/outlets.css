@@ -65,3 +65,7 @@ div.OutletData > * {
 div.OutletData > *:last-child {
   border-bottom: none;
 }
+
+div.Foreign {
+  margin-top: -50px;
+}

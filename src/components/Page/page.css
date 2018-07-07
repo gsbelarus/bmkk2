@@ -1,6 +1,6 @@
 div.Page {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   color: var(--colorText);
 }
 
@@ -163,3 +163,73 @@ div.navPath span::after {
 div.navPath span:last-child::after {
   content: none;
 }
+footer {
+  background: #252525;
+  padding-top: 60px;
+}
+div.Bottom {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+nav.FooterMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;  
+  width: 100%;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);  
+  background-color: inherit !important;
+  
+}
+
+nav.FooterMenu a {
+  font-size: 14px;
+  color: white;
+  margin-right: 36px;
+  text-decoration: none;
+}
+
+nav.FooterMenu a:last-child {
+  margin-right: 64px;
+}
+
+nav.FooterMenu a:hover {
+  color: var(--colorBrown);
+}
+
+.Bottom img.Logo {
+  position: absolute;
+  height: 70px;
+  left: 60px;
+  top: inherit;
+  bottom: -150px;
+}
+
+nav.FooterMenu ul  {
+  list-style: none none;
+  padding-left: 0px;
+  margin-top: 2px;
+}
+
+nav.FooterMenu ul li { 
+  padding-top: 4px;
+}
+
+nav.FooterMenu ul a {
+  font-size: 12px;
+}  
+
+nav.FooterMenu a a:last-child {
+  margin-right: 0px;
+}
+
+div.TextRights {
+  font-size: 12px;
+  padding-left: 20px;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+

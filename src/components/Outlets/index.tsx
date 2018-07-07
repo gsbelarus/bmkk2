@@ -2,9 +2,16 @@ import * as React from 'react';
 import { Page } from '../Page';
 import { IOutlets } from '../../types';
 import { outletsFile, addInfo } from '../../const';
+import * as ReactMarkdown from 'react-markdown';
 import './outlets.css';
 
 const outletImg = require('../../../public/image/outlet.png');
+
+const mdf: { [lang: string]: string } = {
+  ru: require(`../../../public/data/forcustomer/forforeigners.ru.md`),
+  be: require(`../../../public/data/forcustomer/forforeigners.be.md`),
+  en: require(`../../../public/data/forcustomer/forforeigners.en.md`)
+};
 
 export class Outlets extends Page {
 
@@ -68,6 +75,7 @@ export class Outlets extends Page {
               })
             }
           </div>
+          <ReactMarkdown source={mdf[sl.toLowerCase()]} className="Foreign" />
         </div>  
       );
     } else {

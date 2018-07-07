@@ -12,6 +12,7 @@ export interface LName {
 }
 
 export interface MenuItem {
+  id: number,
   path: string;
   caption: LName;
 }

@@ -25,6 +25,7 @@ export const outletsFile = `${outletsRoot}outlets.json`;
 
 export const mainMenu: MenuItems = [
   {
+    id: 1,    
     path: '/',
     caption: {
       ru: {
@@ -39,6 +40,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
+    id: 2,    
     path: '/about',
     caption: {
       ru: {
@@ -53,6 +55,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
+    id: 3,    
     path: '/news',
     caption: {
       ru: {
@@ -67,6 +70,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
+    id: 4,    
     path: '/production',
     caption: {
       ru: {
@@ -81,6 +85,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
+    id: 5,    
     path: '/forcustomer',
     caption: {
       ru: {
@@ -95,6 +100,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
+    id: 6,    
     path: '/outlets',
     caption: {
       ru: {
@@ -109,6 +115,7 @@ export const mainMenu: MenuItems = [
     }
   },
   {
+    id: 7,    
     path: '/contacts',
     caption: {
       ru: {
@@ -119,6 +126,129 @@ export const mainMenu: MenuItems = [
       },
       en: {
         name: 'Contacts'
+      }
+    }
+  }
+];
+
+export const subMenu: MenuItems = [
+  {
+    id: 2,    
+    path: '/about',
+    caption: {
+      ru: {
+        name: 'История'
+      },
+      be: {
+        name: 'Гісторыя'
+      },
+      en: {
+        name: 'History'
+      }
+    }
+  },  
+  {
+    id: 2,    
+    path: '/about',
+    caption: {
+      ru: {
+        name: 'Персонал'
+      },
+      be: {
+        name: 'Персанал'
+      },
+      en: {
+        name: 'Staff'
+      }
+    }
+  },   
+  {
+    id: 2,    
+    path: '/about',
+    caption: {
+      ru: {
+        name: 'Вакансии'
+      },
+      be: {
+        name: 'Vacancy'
+      },
+      en: {
+        name: 'Вакансіі'
+      }
+    }
+  },   
+  {
+    id: 2,    
+    path: '/about',
+    caption: {
+      ru: {
+        name: 'Отдых с нами'
+      },
+      be: {
+        name: 'Адпачынак з намі'
+      },
+      en: {
+        name: 'Holidays with us'
+      }
+    }
+  },       
+  {
+    id: 4,
+    path: '/price',
+    caption: {
+      ru: {
+        name: 'Прейскурант'
+      },
+      be: {
+        name: 'Прэйскурант'
+      },
+      en: {
+        name: 'Price-list'
+      }
+    }
+  },
+  {
+    id: 5,
+    path: '/forcustomer',
+    caption: {
+      ru: {
+        name: 'Схема проезда'
+      },
+      be: {
+        name: 'Схема проезда'
+      },
+      en: {
+        name: 'Схема проезда'
+      }
+    }
+  },
+  {
+    id: 5,    
+    path: '/forcustomer',
+    caption: {
+      ru: {
+        name: 'Стать клиентом'
+      },
+      be: {
+        name: 'Стать клиентом'
+      },
+      en: {
+        name: 'Стать клиентом'
+      }
+    }
+  },
+  {
+    id: 6,    
+    path: '/outlets',
+    caption: {
+      ru: {
+        name: 'Иностранным покупателям'
+      },
+      be: {
+        name: 'бел Иностранным покупателям'
+      },
+      en: {
+        name: 'англ Иностранным покупателям'
       }
     }
   }
