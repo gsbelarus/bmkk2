@@ -17,6 +17,7 @@ import { News } from './components/News';
 import { Contacts } from './components/Contacts';
 import { Outlets } from './components/Outlets';
 import { ForCustomer } from './components/ForCustomer';
+import { BrowserRouter } from 'react-router-dom'
 
 type Dispatch = ReduxDispatch<BMKKAction>;
 
@@ -44,7 +45,7 @@ export interface AppProps {
 class App extends React.Component<AppProps, {}> {
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
           <Route
             exact={true}
@@ -57,7 +58,7 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            exact={true}
+            exact={true}          
             path="/production"
             render={
               (props) => {
@@ -77,7 +78,6 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            exact={true}
             path="/about"
             render={
               (props) => {
@@ -97,7 +97,6 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            exact={true}
             path="/price"
             render={
               (props) => {
@@ -107,7 +106,6 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            exact={true}
             path="/news"
             render={
               (props) => {
@@ -117,7 +115,6 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            exact={true}
             path="/contacts"
             render={
               (props) => {
@@ -127,7 +124,6 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            exact={true}
             path="/outlets"
             render={
               (props) => {
@@ -137,7 +133,6 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            exact={true}
             path="/forcustomer"
             render={
               (props) => {
@@ -147,7 +142,7 @@ class App extends React.Component<AppProps, {}> {
             }
           />
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }

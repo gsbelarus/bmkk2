@@ -16,6 +16,4 @@ div.AboutImg {
 div.AboutImg img {
   width: 200px;
   margin-bottom: 10px;
-  border: 1px solid darkgray;
-  box-shadow: 2px 2px 4px lightgray;  
 }

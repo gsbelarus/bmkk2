@@ -9,7 +9,6 @@ div.Page h1 {
   font-weight: 800;
   color: var(--colorBrown);
   width: 100%;
-  padding-top: 22px;
   font-size: 28px;
 }
 
@@ -44,7 +43,7 @@ div.TopRibbon a {
   cursor: default;
   display: inline-block;
   margin-right: 32px;
-  margin-top: 4px;
+  margin-top: 5px;
   color: inherit;
   text-decoration: none;
   height: 100%;
@@ -61,7 +60,7 @@ nav.TopMenu {
   height: 38px;
   width: 100%;
   background-color: var(--colorBrown);
-  padding-top: 14px;
+  padding-top: 7px;
   bottom: -1px;
   border-bottom: 1px solid rgba(0,0,0,0.1);
   box-shadow: 0 2px 4px rgba(150,150,150,0.8);
@@ -109,6 +108,8 @@ div.WorkArea {
   max-width: 1110px;
   margin: 0 auto;
   padding-top: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 div.WorkAreaFullWidth {
@@ -163,15 +164,18 @@ div.navPath span::after {
 div.navPath span:last-child::after {
   content: none;
 }
+
 footer {
-  background: #252525;
   padding-top: 60px;
 }
+
 div.Bottom {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
   display: block;
+  background: #252525;
+  padding-top: 30px;
 }
 
 nav.FooterMenu {
@@ -180,18 +184,21 @@ nav.FooterMenu {
   justify-content: flex-end;  
   width: 100%;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3);  
-  background-color: inherit !important;
-  
+  background-color: inherit !important;  
 }
 
-nav.FooterMenu a {
+.TopLi a {
+  font-size: 14px !important;
+}
+
+nav.FooterMenu a, nav.FooterMenu li {
   font-size: 14px;
   color: white;
   margin-right: 36px;
   text-decoration: none;
 }
 
-nav.FooterMenu a:last-child {
+nav.FooterMenu li:last-child {
   margin-right: 64px;
 }
 
@@ -204,7 +211,7 @@ nav.FooterMenu a:hover {
   height: 70px;
   left: 60px;
   top: inherit;
-  bottom: -150px;
+  bottom: -280px;
 }
 
 nav.FooterMenu ul  {
@@ -221,7 +228,7 @@ nav.FooterMenu ul a {
   font-size: 12px;
 }  
 
-nav.FooterMenu a a:last-child {
+nav.FooterMenu a:last-child {
   margin-right: 0px;
 }
 
@@ -233,3 +240,23 @@ div.TextRights {
   padding-bottom: 20px;
 }
 
+div.Slider {
+  margin: 0px auto 50px auto;
+  width: 800px;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: #252525 !important;
+}
+
+.slick-next {
+  right: -40px !important;
+}
+
+.slick-prev {
+  left: -40px !important;
+}
+
+.slick-slide img {
+  height: 50px !important; 
+}

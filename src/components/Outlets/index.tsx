@@ -75,7 +75,9 @@ export class Outlets extends Page {
               })
             }
           </div>
-          <ReactMarkdown source={mdf[sl.toLowerCase()]} className="Foreign" />
+          <div id="foreign">
+            <ReactMarkdown source={mdf[sl.toLowerCase()]} />
+          </div>  
         </div>  
       );
     } else {

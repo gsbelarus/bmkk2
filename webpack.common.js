@@ -73,13 +73,13 @@ module.exports =  {
         use: 'raw-loader'
       },
       {
-        test: /\.(png|jp(e*)g|svg)$/,
+        test: /\.(png|jp(e*)g|svg|eot|ttf|woff|gif)$/,
         use: [
           {
             loader: 'url-loader',
             options: {
                 limit: 8000, // Convert images < 8kb to base64 strings
-                name: 'images/[hash]-[name].[ext]'
+                name: '[name].[ext]'//'images/[hash]-[name].[ext]'
             }
           }
         ]
@@ -99,5 +99,8 @@ module.exports =  {
     children: false,
     chunks: false,
     modules: false
+  },
+  node: {
+    fs: 'empty'
   }
 };

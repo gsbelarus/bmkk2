@@ -134,7 +134,7 @@ export const mainMenu: MenuItems = [
 export const subMenu: MenuItems = [
   {
     id: 2,    
-    path: '/about',
+    path: '/about#history',
     caption: {
       ru: {
         name: 'История'
@@ -149,7 +149,7 @@ export const subMenu: MenuItems = [
   },  
   {
     id: 2,    
-    path: '/about',
+    path: '/about#staff',
     caption: {
       ru: {
         name: 'Персонал'
@@ -164,22 +164,22 @@ export const subMenu: MenuItems = [
   },   
   {
     id: 2,    
-    path: '/about',
+    path: '/about#vacancy',
     caption: {
       ru: {
         name: 'Вакансии'
       },
       be: {
-        name: 'Vacancy'
+        name: 'Вакансіі'
       },
       en: {
-        name: 'Вакансіі'
+        name: 'Vacancy'
       }
     }
   },   
   {
     id: 2,    
-    path: '/about',
+    path: '/about#rest',
     caption: {
       ru: {
         name: 'Отдых с нами'
@@ -209,7 +209,7 @@ export const subMenu: MenuItems = [
   },
   {
     id: 5,
-    path: '/forcustomer',
+    path: '/forcustomer#direction',
     caption: {
       ru: {
         name: 'Схема проезда'
@@ -224,22 +224,22 @@ export const subMenu: MenuItems = [
   },
   {
     id: 5,    
-    path: '/forcustomer',
+    path: '/forcustomer#requisites',
     caption: {
       ru: {
-        name: 'Стать клиентом'
+        name: 'Реквизиты предприятия'
       },
       be: {
-        name: 'Стать клиентом'
+        name: 'Реквизиты предприятия'
       },
       en: {
-        name: 'Стать клиентом'
+        name: 'Реквизиты предприятия'
       }
     }
   },
   {
     id: 6,    
-    path: '/outlets',
+    path: '/outlets#foreign',
     caption: {
       ru: {
         name: 'Иностранным покупателям'
@@ -428,7 +428,7 @@ export const goodCaption: GoodCaptions =
 ;
 
 export const priceCaption: PriceItems = [
-  {
+  { 
     caption: {
       ru: {
         name: '№'
@@ -463,7 +463,7 @@ export const priceCaption: PriceItems = [
         name: 'Адзінка вымярэння'
       },
       en: {
-        name: 'Ед. изм.'
+        name: 'Unit'
       }
     }
   },
@@ -476,7 +476,7 @@ export const priceCaption: PriceItems = [
         name: 'Цена ФСО, BYR'
       },
       en: {
-        name: 'Цена ФСО, BYR'
+        name: 'Price FSO'
       }
     }
   },
@@ -489,7 +489,7 @@ export const priceCaption: PriceItems = [
         name: 'Цена ФСН, BYR'
       },
       en: {
-        name: 'Цена ФСН, BYR'
+        name: 'Price FSN'
       }
     }
   },
@@ -502,7 +502,7 @@ export const priceCaption: PriceItems = [
         name: 'Ставка НДС, %'
       },
       en: {
-        name: 'Ставка НДС, %'
+        name: 'Vat rate, %'
       }
     }
   },
@@ -515,7 +515,7 @@ export const priceCaption: PriceItems = [
         name: 'Срок хранения'
       },
       en: {
-        name: 'Срок хранения'
+        name: 'Shelf life'
       }
     }
   },
@@ -528,7 +528,7 @@ export const priceCaption: PriceItems = [
         name: 'Терм. состояние'
       },
       en: {
-        name: 'Терм. состояние'
+        name: 'Thermal state'
       }
     }
   },
@@ -541,11 +541,12 @@ export const priceCaption: PriceItems = [
         name: 'Штрих-код'
       },
       en: {
-        name: 'Штрих-код'
+        name: 'Barcode'
       }
     }
   },
   {
+  
     caption: {
       ru: {
         name: 'Описание'
@@ -554,7 +555,7 @@ export const priceCaption: PriceItems = [
         name: 'Описание'
       },
       en: {
-        name: 'Описание'
+        name: 'Description'
       }
     }
   }

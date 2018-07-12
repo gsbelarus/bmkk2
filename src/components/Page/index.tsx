@@ -7,6 +7,9 @@ import { mainMenu, subMenu, goodGroupsFile, goodsFile, priceFile, addInfo, price
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { LName } from '../../types';
 import {CSVLink} from 'react-csv';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import { SimleSlider } from '../Slider/SimleSlider';
 
 export interface PageProps extends RouteComponentProps<any> {
   selectedLang: Language;
@@ -28,7 +31,7 @@ export interface PageProps extends RouteComponentProps<any> {
   onLoadOutlets: LoadOutlets;
 }
 
-export class Page<P extends PageProps = PageProps> extends React.Component<P, {}> {
+export class Page<P extends PageProps = PageProps> extends React.PureComponent<P, {}> {
 
   protected fullWidth: boolean;
   protected logoImg: any;  
@@ -111,29 +114,35 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
 
   render() {
     const { sl, location, goods, price } = this.props;
-    let csvData: any | undefined = undefined;
-    let headers: any | undefined = undefined;
+    let csvData: any | undefined = null;
+    let headers: {label: string, key: number}[] = [];
 
     if (goods && price) {
-      csvData = [];
-      headers = []; 
-      priceCaption.map( (pr, idx) => (
-        headers.push ({label: pr.caption['ru'].name, key: pr.caption['en'].name})
-      ));
-      goods.goods.map( (g, idx) => (       
-        headers.map( (h, idx) => (
-          csvData.push ({
-              
-          })
-        ))
-      ))        
+      csvData = [];      
+      priceCaption.map( (pr, p_idx) =>
+        headers.push ({label: pr.caption['ru'].name, key: p_idx+1})
+      );
+      goods.goods.map( (g, idx) => {
+        const myprice = price.price.find( p => p.ruid === g.ruid );
+        return csvData.push ({
+            '1' : idx+1, 
+            '2' : g.fullname + ' ', 
+            '3' : Page.getLName(g.valuename, sl), 
+            '4' : myprice && myprice.costnde,
+            '5' : myprice && myprice.dcostfull,
+            '6' : g.rate,          
+            '7' : g.beforuse,
+            '8' : g.term,
+            '9' : myprice && myprice.barcode,
+            '10' : Page.getLName(g.ingredients, sl)
+        });             
+      })    
     }
-
     return (
       <div>
         <div className={this.getPageStyle()}>
           <div className="TopRibbon">
-            {csvData && <div><CSVLink headers={headers} data={csvData}>Прейскурант XLS</CSVLink></div>}
+            {csvData && <div><CSVLink filename={"PriceBmkk.xls"} headers={headers} data={csvData}>Прейскурант XLS</CSVLink></div>}
             <div><Link to={`/price`}>Прейскурант</Link></div>
             <LangSelector {...this.props} />
           </div>
@@ -141,13 +150,13 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
             {
               mainMenu
               .filter( f => f.path )
-              .map( (mi, idx) => (
+              .map( (mi, idx) => 
                 <Link key={idx} to={mi.path} className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
                   <span>
                     {mi.caption[sl].name}
                   </span>
                 </Link>
-              ))
+              )
             }
           </nav>
           <div className={this.fullWidth ? "WorkAreaFullWidth" : "WorkArea"}>
@@ -157,49 +166,54 @@ export class Page<P extends PageProps = PageProps> extends React.Component<P, {}
               {this.logoImg && <img className="Logo" src={this.logoImg} />}
             </Link>
           </div>
-
         </div>
+        
         <footer>
-            <div className="Bottom">          
-              <Link to="/">
-                {this.logoImg && <img className="Logo" src={this.logoImg} />}
-              </Link>
-              <nav className="FooterMenu">
-                {
-                  mainMenu
-                  .filter( f => f.path )
-                  .map( (mi, idx) => {
-                    const subM = subMenu.filter( t => t.id === mi.id );
-                    return (
-                      <Link key={idx} to={mi.path} className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
-                        <span>
-                          {mi.caption[sl].name}
-                          <ul>
-                            {
-                              subM && subM.map( (sm, idx) => (
-                              <li> 
-                                <Link key={idx} to={sm.path}>
-                                  { sm.caption[sl].name}
-                                </Link>   
-                              </li>
-                              ))                              
-                            }
-                            {mi.id === 7 && <li>Тел.: +375-1643-9-11-11 </li> }
-                            {mi.id === 7 && <li>Тел.: +375-1643-9-11-12 </li> }
-                            {mi.id === 7 && <li>Email: bmkk@meat.by </li> }
-                          </ul>
-                        </span>
-                      </Link>                      
-                    )
-                  })
-                  
-                }   
-                      
-              </nav> 
-              <div className="TextRights">
-                {addInfo.textRights[sl].name}
-              </div>
-            </div>  
+          <div className="Slider">
+            <SimleSlider />          
+          </div>            
+          <div className="Bottom">          
+            <Link to="/">
+              {this.logoImg && <img className="Logo" src={this.logoImg} />}
+            </Link>
+            <nav className="FooterMenu">
+              {
+                mainMenu
+                .filter( f => f.path )
+                .map( (mi, idx) => {
+                  const subM = subMenu.filter( t => t.id === mi.id );
+                  return (
+                    <div>                      
+                    <span key={idx}>
+                      <ul>
+                        <li key={idx} className="TopLi">                                                    
+                          <Link to={mi.path} className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}> 
+                            {mi.caption[sl].name}
+                          </Link>                           
+                        </li>
+                        {
+                          subM && subM.map( (sm, idx) => (
+                          <li key={idx}> 
+                            <a href={sm.path}>
+                              {sm.caption[sl].name}
+                            </a>   
+                          </li>
+                          ))                              
+                        }
+                        {mi.id === 7 && <li key={idx+1}>Тел.: +375-1643-9-11-11 </li> }
+                        {mi.id === 7 && <li key={idx+2}>Тел.: +375-1643-9-11-12 </li> }
+                        {mi.id === 7 && <li key={idx+3}>Email: bmkk@meat.by </li> }
+                      </ul>
+                    </span>                      
+                    </div>                                          
+                  )
+                })
+              }   
+            </nav> 
+            <div className="TextRights">
+              {addInfo.textRights[sl].name}
+            </div>
+          </div>  
         </footer>      
       </div>
     );

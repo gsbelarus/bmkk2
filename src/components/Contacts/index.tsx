@@ -26,13 +26,19 @@ export class Contacts extends Page {
   renderBody(): JSX.Element {
     const { contacts, departments, sl } = this.props;
 
+    const mdr: { [lang: string]: string } = {
+      ru: require(`../../../public/data/forcustomer/requisites.ru.md`),
+      be: require(`../../../public/data/forcustomer/requisites.be.md`),
+      en: require(`../../../public/data/forcustomer/requisites.en.md`)
+    };    
+
     if (contacts && departments) {
       const depts = departments.departments.filter(
         d => contacts.contacts.some( c => c.department === d.ruid && !!c.ruid )
       );
 
       return (
-        <div>          
+        <div className="Contacts">          
           <div className="ContactsContainer">
             { depts.map( (d, d_idx) => (
                 <div key={d_idx} className="DepartmentItem">
@@ -54,6 +60,9 @@ export class Contacts extends Page {
               )
             }
           </div>
+          <div id="requisites">
+            <ReactMarkdown source={mdr[sl.toLowerCase()]} />
+          </div>           
         </div>
       );
     } else {

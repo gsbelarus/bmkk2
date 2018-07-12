@@ -9,6 +9,18 @@ const md: { [lang: string]: string } = {
   en: require(`../../../public/data/forcustomer/forcustomer.en.md`)
 };
 
+const mdd: { [lang: string]: string } = {
+  ru: require(`../../../public/data/forcustomer/direction.ru.md`),
+  be: require(`../../../public/data/forcustomer/direction.be.md`),
+  en: require(`../../../public/data/forcustomer/direction.en.md`)
+};
+
+const mdr: { [lang: string]: string } = {
+  ru: require(`../../../public/data/forcustomer/requisites.ru.md`),
+  be: require(`../../../public/data/forcustomer/requisites.be.md`),
+  en: require(`../../../public/data/forcustomer/requisites.en.md`)
+};
+
 const map = require('../../../public/image/map.jpg');
 
 export class ForCustomer extends Page {
@@ -22,9 +34,15 @@ export class ForCustomer extends Page {
     return (
       <div>
         <ReactMarkdown source={md[selectedLang.toLowerCase()]} />
-        <a href="https://www.google.com/maps/place/Berozovskiy+Myasokonservnyy+Kombinat/@52.543019,24.9606592,14.5z/data=!4m5!3m4!1s0x4720b6da3c7872d3:0xbf3aaf50876462b4!8m2!3d52.542146!4d24.9549723">
-          <img src={map} />
-        </a> 
+        <div id="direction">
+          <ReactMarkdown source={mdd[selectedLang.toLowerCase()]} />
+          <a href="https://www.google.com/maps/place/Berozovskiy+Myasokonservnyy+Kombinat/@52.543019,24.9606592,14.5z/data=!4m5!3m4!1s0x4720b6da3c7872d3:0xbf3aaf50876462b4!8m2!3d52.542146!4d24.9549723">
+            <img src={map} />
+          </a>
+        </div>   
+        <div id="requisites">
+          <ReactMarkdown source={mdr[selectedLang.toLowerCase()]} />
+        </div>         
       </div>
     );
   }
