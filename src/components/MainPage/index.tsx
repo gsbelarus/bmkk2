@@ -9,6 +9,6 @@ export class MainPage extends Page {
 
   constructor(P: PageProps) {
     super(P);
-    this.logoImg = require('../../../public/image/logo2.png');
+    this.logoImg = require('../../../public/image/logo_bw.svg');
   }
 }

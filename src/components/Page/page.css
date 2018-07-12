@@ -22,8 +22,9 @@ div.Page h3 {
 
 img.Logo {
   position: absolute;
-  top: 14px;
+  top: -10px;
   left: 24px;
+  height: 150px;
 }
 
 div.TopRibbon {
@@ -199,7 +200,7 @@ nav.FooterMenu a, nav.FooterMenu li {
 }
 
 nav.FooterMenu li:last-child {
-  margin-right: 64px;
+  margin-right: 28px;
 }
 
 nav.FooterMenu a:hover {
@@ -208,10 +209,10 @@ nav.FooterMenu a:hover {
 
 .Bottom img.Logo {
   position: absolute;
-  height: 70px;
+  height: 120px;
   left: 60px;
   top: inherit;
-  bottom: -280px;
+  bottom: -320px;
 }
 
 nav.FooterMenu ul  {
