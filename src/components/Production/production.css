@@ -12,24 +12,47 @@ div.GroupsContainer a {
   text-decoration: none;
 }
 
-div.GoodGroup {
+div.Card {
   position: relative;
   margin-right: 20px;
   margin-bottom: 40px;
   text-align: center;
   width: 200px;
   height: 200px;
-  border: 1px solid white;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);  
   overflow: hidden;
 }
 
-div.GoodGroup img {
+div.Card:hover {
+  border-radius: 2px;
+  /* box-shadow: 0 3px 7px rgba(0,0,0,0.25), 0 3px 3px rgba(0,0,0,0.22); */
+  background-color: #cacaca21;
+  transition: all 0.5s ease;  
+}
+
+div.Card:hover .CardCaption {
+  background-color: #cacacaad;
+  transition: all 0.5s ease;
+}  
+
+.Card a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left:0;
+  z-index: 3;
+}
+
+div.Card img {
   display: inline-block;
   margin: 0px auto;
   width: 180px;
 }
 
-div.GoodGroupCaption {
+div.CardCaption {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -37,36 +60,23 @@ div.GoodGroupCaption {
   bottom: 0;
   height: 72px;
   width: 100%;
-}
-
-div.GoodGroupText {
+  background-color: #ebebeba1;
   font-size: 16px;
   font-weight: 400;
-  color: var(--colorBrown);
+  color: #504c4ad4;
   text-align: left;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 8px;
+  padding-top: 8px;  
 }
 
-div.GoodGroup:hover {
-  border: 1px solid var(--colorBrown);
-  box-shadow: 4px 4px 4px rgba(150,150,150,0.5);
-  transition: all 0.5s ease;
+.CardText {
+  text-align: left;
+  width: 100%;
 }
 
-div.GoodGroup:hover .GoodGroupText {
-  color: white;
-  transition: all 0.5s ease;
-}
-
-div.GoodGroup:hover .GoodGroupCaption {
-  background-color: var(--colorBrown);
-  transition: all 0.5s ease;
-}
-
-div.GoodGroupPrice {
+/* div.GoodGroupPrice {
   float: right;
   padding-top: 10px;
   padding-bottom: 10px;
-}
+} */

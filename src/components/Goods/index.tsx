@@ -3,7 +3,7 @@ import { Page, PageProps } from '../Page';
 import { goodsRoot, goodCaption, goodFileNoImage } from '../../const';
 import { Link } from 'react-router-dom';
 import './goods.css';
-
+import '../Production/production.css';
 
 export class Goods extends Page {
 
@@ -36,19 +36,18 @@ export class Goods extends Page {
                   : `${goodsRoot}${g.image}`;
                 const myprice = price.price.find( p => p.ruid === g.ruid );
                 return (
-                  <Link key={idx} className="GoodMore" to={`/production/${g.group}/${g.ruid}`}>
-                    <div className="GoodItem">
-                      {(myprice ? myprice.issale : '') && <div className="GoodNew">Скидка!</div>}                                          
-                      {(myprice ? myprice.isnew && !myprice.issale : '') && <div className="GoodNew">Новинка!</div>}
-                      {g.grade && <div className="GoodGrade">{Page.getLName(g.grade, sl)}</div>} 
-                      <img src={fullImageName} />
-                      <div className="GoodData">                     
-                        <div className="GoodName">
-                          {g.caption ? Page.getLName(g.caption, sl) : g.fullname ? g.fullname : ''}
-                        </div>                      
-                      </div>
+                  <div className="Card"> 
+                    <Link key={idx} className="GoodMore" to={`/production/${g.group}/${g.ruid}`}></Link>
+                    {(myprice ? myprice.issale : '') && <div className="GoodNew">Скидка!</div>}                                          
+                    {(myprice ? myprice.isnew && !myprice.issale : '') && <div className="GoodNew">Новинка!</div>}
+                    {g.grade && <div className="GoodGrade">{Page.getLName(g.grade, sl)}</div>} 
+                    <img src={fullImageName} />
+                    <div className="CardCaption">                     
+                      <div className="CardText">
+                        {g.caption ? Page.getLName(g.caption, sl) : g.fullname ? g.fullname : ''}
+                      </div>                      
                     </div>
-                  </Link>
+                  </div>                 
                 );
               })
             }

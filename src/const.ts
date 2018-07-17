@@ -25,7 +25,7 @@ export const outletsFile = `${outletsRoot}outlets.json`;
 
 export const mainMenu: MenuItems = [
   {
-    id: 1,    
+    /*id: 1,    
     path: '/',
     caption: {
       ru: {
@@ -39,7 +39,7 @@ export const mainMenu: MenuItems = [
       }
     }
   },
-  {
+  { */
     id: 2,    
     path: '/about',
     caption: {
@@ -239,7 +239,7 @@ export const subMenu: MenuItems = [
   },
   {
     id: 6,    
-    path: '/outlets#foreign',
+    path: '/outlets#foreigns',
     caption: {
       ru: {
         name: 'Иностранным покупателям'
@@ -743,6 +743,28 @@ export const moreCaption: PriceItem =
       en: {
         name: 'англ Комбинат имеет сеть фирменной торговли, где можно приобрести товар в розницу:'
       }
-    }                            
+    },
+    textPriceTop: {
+      ru: {
+        name: 'Прейскурант' 
+      },
+      be: {
+        name: 'Прэйскурант'
+      },
+      en: {
+        name: 'Price-list'
+      }
+    },
+    textPriceXlsTop: {
+      ru: {
+        name: 'Прейскурант XLS' 
+      },
+      be: {
+        name: 'Прэйскурант XLS'
+      },
+      en: {
+        name: 'Price-list XLS'
+      }
+    }                                     
   };
 

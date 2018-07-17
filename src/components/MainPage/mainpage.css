@@ -1,21 +1,38 @@
-.MainPage {
+/* .MainPage { 
   background-image: url('../../../public/image/back.jpg');
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center
-}
+}*/
 
-.MainPage nav.TopMenu {
-  background-color: rgba(219,69,53,0.8);
-  box-shadow: none;
+.MainPage header {
+  background-color: transparent;
+  /* box-shadow: none; */
 }
-
+/* 
 .MainPage div.TopRibbon {
   color: white;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  background-color: inherit;
 }
 
 .MainPage div.TopRibbon a:hover {
   color: var(--colorBrownLite);
+} */
+
+.MainPage .FullPage {
+  min-height: auto;
 }
 
+.MainPage .header-back {
+  background-image: url('../../../public/image/back.jpg');
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100vh;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #464646;  
+}

@@ -1,6 +1,23 @@
+header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  line-height: 64px;
+  width: 100%;
+  background-color: var(--colorBrown);
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14);
+
+  /* background-image: url(/back.jpg); 
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;*/
+}
+
 div.Page {
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
   color: var(--colorText);
 }
 
@@ -22,20 +39,24 @@ div.Page h3 {
 
 img.Logo {
   position: absolute;
-  top: -10px;
+  top: -72px;
   left: 24px;
   height: 150px;
 }
 
-div.TopRibbon {
+.TopRibbonContent {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  height: 26px;
   width: 100%;
-  color: rgb(40, 40, 40);
+}
+
+div.TopRibbon {
+  height: 26px;
+  line-height: 28px;
+  color: var(--colorTextWhite);
   font-size: 14px;
-  background-color: rgba(0,0,0,0.2);
+  background-color: #0000001f;
   padding-top: 0px;
   text-shadow: none;
 }
@@ -44,73 +65,47 @@ div.TopRibbon a {
   cursor: default;
   display: inline-block;
   margin-right: 32px;
-  margin-top: 5px;
   color: inherit;
   text-decoration: none;
-  height: 100%;
 }
 
 div.TopRibbon a:hover {
   color: rgb(90, 90, 90);
 }
 
-nav.TopMenu {
+.TopMenuContent {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  height: 38px;
-  width: 100%;
-  background-color: var(--colorBrown);
-  padding-top: 7px;
-  bottom: -1px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 0 2px 4px rgba(150,150,150,0.8);
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  width: 100%;  
+  height: 64px;
+  line-height: 64px;  
 }
 
 nav.TopMenu a {
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
-  font-size: 20px;
-  margin-right: 36px;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-right: 16px;
   text-decoration: none;
+  line-height: 64px;
 }
 
-nav.TopMenu a:last-child {
-  margin-right: 64px;
+nav.TopMenu span {
+  padding: 8px 16px;
 }
 
-nav.TopMenu a:hover {
-  animation: color-me-in 1s;
-}
-
-@keyframes color-me-in {
-  0% {
-    color: white;
-  }
-  30% {
-    color: pink;
-  }
-  /* You could think of as "step 2" */
-  100% {
-    color: white;
-  }
-}
-
-nav.TopMenu a.Selected:hover {
-  animation: none;
-}
-
-nav.TopMenu a.Selected span {
-  border-bottom: 2px dotted pink;
+nav.TopMenu span:hover, nav.TopMenu span.Selected {
+  color: White;
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.7); 
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 4px;  
 }
 
 div.WorkArea {
-  max-width: 1110px;
-  margin: 0 auto;
-  padding-top: 12px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-top: 90px;
+  padding: 16px 0;
 }
 
 div.WorkAreaFullWidth {
@@ -182,10 +177,10 @@ div.Bottom {
 nav.FooterMenu {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;  
+  justify-content: space-between;  
   width: 100%;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3);  
-  background-color: inherit !important;  
+  background-color: inherit !important; 
 }
 
 .TopLi a {
@@ -208,11 +203,8 @@ nav.FooterMenu a:hover {
 }
 
 .Bottom img.Logo {
-  position: absolute;
   height: 120px;
-  left: 60px;
   top: inherit;
-  bottom: -320px;
 }
 
 nav.FooterMenu ul  {
@@ -233,31 +225,41 @@ nav.FooterMenu a:last-child {
   margin-right: 0px;
 }
 
-div.TextRights {
+div.footer-copyright {
   font-size: 12px;
-  padding-left: 20px;
   color: white;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 20px;
 }
 
-div.Slider {
-  margin: 0px auto 50px auto;
-  width: 800px;
+.Slider {
+  padding: 0 20px;
 }
 
 .slick-prev:before, .slick-next:before {
   color: #252525 !important;
 }
-
+/* 
 .slick-next {
   right: -40px !important;
 }
 
 .slick-prev {
   left: -40px !important;
-}
+} */
 
 .slick-slide img {
   height: 50px !important; 
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.FullPage {
+  min-height: calc(100vh - 90px);
 }

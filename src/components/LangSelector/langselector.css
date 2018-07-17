@@ -1,7 +1,7 @@
 div.LangSelector {
   height: 100%;
-  margin-right: 64px;
-  padding-top: 4px;
+  margin-right: 32px;
+  line-height: 28px;
 }
 
 div.LangSelector span {
@@ -9,7 +9,7 @@ div.LangSelector span {
   margin-right: 6px;
   padding-right: 6px;
   border-right: 1px gray solid;
-  cursor: default;
+  cursor: pointer;
 }
 
 div.LangSelector span:last-child {
@@ -19,5 +19,5 @@ div.LangSelector span:last-child {
 }
 
 div.LangSelector span.Selected {
-  color: var(--colorBrown);
+  color: var(--colorText);
 }

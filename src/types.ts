@@ -179,4 +179,6 @@ export interface IAddInfo {
   textPriceMore: LName;  
   textPriceLink: LName;  
   textOutlets: LName;  
+  textPriceTop: LName;
+  textPriceXlsTop: LName;
 }

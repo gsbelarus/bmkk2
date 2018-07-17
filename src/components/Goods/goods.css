@@ -12,7 +12,7 @@ div.GoodsContainer a {
   text-decoration: none;
 }
 
-div.GoodItem {
+/* div.GoodItem {
   position: relative;
   margin-right: 20px;
   margin-bottom: 20px;
@@ -72,7 +72,7 @@ div.GoodItem:hover .GoodData {
   background-color: var(--colorBrown);
   transition: all 0.5s ease;
   color: white;
-}
+} */
 
 div.GoodNew {
   position: absolute;
@@ -90,7 +90,7 @@ div.GoodGrade {
   padding-right: 2px;
 }
 
-div.GoodItem:hover .GoodGrade {
+div.Card:hover .GoodGrade {
   background-color: var(--colorBrown);
   transition: all 0.5s ease;
   color: white;
