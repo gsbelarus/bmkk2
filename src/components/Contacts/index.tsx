@@ -38,8 +38,8 @@ export class Contacts extends Page {
       );
 
       return (
-        <div className="Contacts">          
-          <div className="ContactsContainer">
+        <div>          
+          <div className="FlexContainer">
             { depts.map( (d, d_idx) => (
                 <div key={d_idx} className="DepartmentItem">
                   <div>{Page.getLName(d.caption, sl)}</div>

@@ -27,10 +27,12 @@ div.Page h1 {
   color: var(--colorBrown);
   width: 100%;
   font-size: 28px;
+  line-height: 32px;  
 }
 
 div.Page h2 {
   font-size: 22px;
+  line-height: 24px;
 }
 
 div.Page h3 {
@@ -39,9 +41,9 @@ div.Page h3 {
 
 img.Logo {
   position: absolute;
-  top: -72px;
-  left: 24px;
-  height: 150px;
+  top: -42px;
+  left: 0;
+  height: 210px;
 }
 
 .TopRibbonContent {
@@ -67,6 +69,7 @@ div.TopRibbon a {
   margin-right: 32px;
   color: inherit;
   text-decoration: none;
+  cursor: pointer;  
 }
 
 div.TopRibbon a:hover {
@@ -89,7 +92,6 @@ nav.TopMenu a {
   text-transform: uppercase;
   margin-right: 16px;
   text-decoration: none;
-  line-height: 64px;
 }
 
 nav.TopMenu span {
@@ -111,7 +113,7 @@ div.WorkArea {
 div.WorkAreaFullWidth {
   padding-left: 16px;
   padding-right: 16px;
-  padding-top: 32px;
+  padding-top: 122px;
 }
 
 @media print {
@@ -205,6 +207,7 @@ nav.FooterMenu a:hover {
 .Bottom img.Logo {
   height: 120px;
   top: inherit;
+  position: relative;
 }
 
 nav.FooterMenu ul  {
@@ -234,6 +237,7 @@ div.footer-copyright {
 
 .Slider {
   padding: 0 20px;
+  margin-top: -40px;  
 }
 
 .slick-prev:before, .slick-next:before {

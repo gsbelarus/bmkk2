@@ -1,13 +1,3 @@
-div.ContactsContainer {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  padding-top: 20px;
-}
-
 div.DepartmentItem {
   flex: 1 1 32%;
   padding-bottom: 3em;
@@ -35,8 +25,4 @@ div.ContactItem div:first-child{
 div.ContactItem i {
   padding-right: 2em;
   color: gray;
-}
-
-div.Contacts {
-
 }

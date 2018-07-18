@@ -36,3 +36,12 @@
   background-size: cover;
   background-color: #464646;  
 }
+
+.MainPage nav.TopMenu {
+  background-color: rgba(219,69,53,0.8);
+  box-shadow: none;
+} 
+
+.MainPage .LangSelector span.Selected { 
+  color: var(--colorBrown);
+}

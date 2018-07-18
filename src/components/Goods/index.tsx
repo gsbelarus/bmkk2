@@ -3,7 +3,6 @@ import { Page, PageProps } from '../Page';
 import { goodsRoot, goodCaption, goodFileNoImage } from '../../const';
 import { Link } from 'react-router-dom';
 import './goods.css';
-import '../Production/production.css';
 
 export class Goods extends Page {
 
@@ -28,7 +27,7 @@ export class Goods extends Page {
 
       return (
         <div>
-          <div className="GoodsContainer">
+          <div className="Goods FlexContainer">
             {
               filtered.map( (g, idx) => {
                 const fullImageName = !g.image ? `${goodsRoot}${goodFileNoImage}`
@@ -36,11 +35,13 @@ export class Goods extends Page {
                   : `${goodsRoot}${g.image}`;
                 const myprice = price.price.find( p => p.ruid === g.ruid );
                 return (
-                  <div className="Card"> 
+                  <div className="Card CardGood"> 
+                    <div className="bg"></div>
                     <Link key={idx} className="GoodMore" to={`/production/${g.group}/${g.ruid}`}></Link>
-                    {(myprice ? myprice.issale : '') && <div className="GoodNew">Скидка!</div>}                                          
-                    {(myprice ? myprice.isnew && !myprice.issale : '') && <div className="GoodNew">Новинка!</div>}
-                    {g.grade && <div className="GoodGrade">{Page.getLName(g.grade, sl)}</div>} 
+                    {/* <div className="Badge GoodNew">Скидка!</div> */}
+                    {(myprice ? myprice.issale : '') && <div className="Badge GoodNew">Скидка!</div>} 
+                    {(myprice ? myprice.isnew && !myprice.issale : '') && <div className="Badge GoodNew">Новинка!</div>}
+                    {g.grade && <div className="Badge BadgeTopRight">{Page.getLName(g.grade, sl)}</div>} 
                     <img src={fullImageName} />
                     <div className="CardCaption">                     
                       <div className="CardText">

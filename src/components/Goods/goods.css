@@ -1,97 +1,17 @@
-div.GoodsContainer {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  padding-top: 16px;
-}
-
-div.GoodsContainer a {
-  text-decoration: none;
-}
-
-/* div.GoodItem {
-  position: relative;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  width: 200px;
-  height: 194px;
-  border: 1px solid white;
-  overflow: hidden;
-  font-size: 14px;  
-  color: var(--colorText);
-  
-}
-
-div.GoodItem img {
-  display: inline-block;
-  margin: 0px auto;
-  width: 180px;
-}
-
-div.GoodData {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: absolute;
-  bottom: 0;
-  height: 58px;
-  width: 100%;
-}
-
-div.GoodData > * {
-  text-align: left;
-  border-bottom: 1px dotted darkgray;
-  margin-bottom: 2px;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-
-div.GoodData > *:last-child {
-  border-bottom: none;
-}
-
-.GoodName {
-  height: 58px;
-  min-height: 42px;
-  overflow: hidden;
-  padding-top: 4px;
-}
-
-div.GoodItem:hover {
-  border: 1px solid var(--colorBrown) ;
-  box-shadow: 4px 4px 4px rgba(150,150,150,0.5);
-  transition: all 0.5s ease;
-  border: 1px solid var(--colorBrown) ;
-}
-
-div.GoodItem:hover .GoodData {
-  background-color: var(--colorBrown);
-  transition: all 0.5s ease;
-  color: white;
-} */
-
 div.GoodNew {
   position: absolute;
   border: 1px solid var(--colorBrown) ;
   background-color: var(--colorBrown);
   color: white;
-  padding: 0 2px;
   top: 4px;
-}
-div.GoodGrade {
-  text-align: right;
-  font-size: 12px;
-  height: 20px;
-  padding-top: 4px;
-  padding-right: 2px;
+  left: 4px;
 }
 
-div.Card:hover .GoodGrade {
-  background-color: var(--colorBrown);
-  transition: all 0.5s ease;
-  color: white;
+.Goods .Card .CardCaption {
+  min-height: 58px;
+  font-size: 14px;
+}
+
+.Goods .Card img {
+  padding-top: 18px;
 }

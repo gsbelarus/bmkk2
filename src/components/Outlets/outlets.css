@@ -1,13 +1,4 @@
-div.OutletsContainer {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-}
-
-div.OutletBox {
+/* div.OutletBox {
   position: relative;
   margin-right: 20px;
   margin-bottom: 60px;
@@ -19,15 +10,7 @@ div.OutletBox {
   overflow: hidden;
 }
 
-div.OutletBox .City {
-  font-size: 18px;
-  font-weight: 800;
-  color: white;
-  background-color: var(--colorBrown);
-  height: 1.4em;
-  border-bottom: 1px solid darkred;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-}
+
 
 div.OutletBox:hover {
   border: 1px solid var(--colorBrown);
@@ -38,6 +21,16 @@ div.OutletBox:hover {
 div.OutletBox:hover .OutletData {
   background-color: var(--colorBrownLite);
   transition: all 0.5s ease;
+} */
+
+.OutletBox .Card .City {
+  font-size: 16px;
+  font-weight: normal;
+  color: #504c4ad4;  
+  background-color: #ebebeba1;
+  height: 1.4em;
+  margin-bottom: 6px;
+  line-height: 24px;
 }
 
 div.OutletData {
@@ -62,10 +55,25 @@ div.OutletData > * {
   overflow: hidden;
 }
 
+div.OutletData strong {
+  color: black;
+  font-size: 13px;
+}
+
 div.OutletData > *:last-child {
   border-bottom: none;
 }
 
-div.Foreign {
-  margin-top: -50px;
+#foreigns {
+  margin-top: 16px;
+}
+
+.OutletBox .Card  {
+  min-height: 316px;
+  width: 230px;
+}
+
+.OutletBox .CardCaption {
+  background-color: transparent;  
+  padding-bottom: 6px;
 }

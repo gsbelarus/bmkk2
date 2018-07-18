@@ -31,43 +31,45 @@ export class Outlets extends Page {
       return (
         <div>
           <p>{addInfo.textOutlets[sl].name}</p>
-          <div className="OutletsContainer">
+          <div className="OutletBox FlexContainer">
             {
               outlets.outlets.map( (outlet, idx) => {
                 const re = /(?:г|д)\.(?:\s){0,1}([А-Яа-я]+)/;
                 const match = re.exec(Page.getLName(outlet.address, sl));
                 return (
-                  <div key={idx} className="OutletBox">
+                  <div key={idx} className="Card">
+                    <div className="bg"></div>
+                   
                     <div className="City">
                       {match && match[1]}
-                    </div>
+                      </div>
                     <div className="OutletImg">
                       <img src={outletImg} />
                     </div>
-                    <div className="OutletData">
+                    <div className="CardCaption OutletData">
                       <div>
                         <strong>{Page.getLName(outlet.caption, sl)}</strong>
                       </div>
                       <div>
-                        <strong>Адрес: </strong>{Page.getLName(outlet.address, sl)}
+                        Адрес: <strong>{Page.getLName(outlet.address, sl)}</strong>
                       </div>
                       <div>
-                        <strong>Телефон: </strong>{outlet.phone}
+                        Телефон: <strong>{outlet.phone}</strong>
                       </div>
                       <div>
-                        <strong>Email: </strong>{outlet.email}
+                        Email: <strong>{outlet.email}</strong>
                       </div>
                       <div>
-                        <strong>В рабочие дни: </strong>{outlet.timewd}
+                        В рабочие дни: <strong>{outlet.timewd}</strong>
                       </div>
                       <div>
-                        <strong>В субботу: </strong>{outlet.timesat}
+                        В субботу: <strong>{outlet.timesat}</strong>
                       </div>
                       <div>
-                        <strong>В воскресенье: </strong>{outlet.timesun}
+                        В воскресенье: <strong>{outlet.timesun}</strong>
                       </div>
                       <div>
-                        <strong>Координаты: </strong>{outlet.lat}, {outlet.lon}
+                        Координаты: <strong>{outlet.lat}, {outlet.lon}</strong>
                       </div>
                     </div>
                   </div>

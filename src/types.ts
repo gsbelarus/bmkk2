@@ -105,6 +105,7 @@ export interface INews {
   news: {
     ruid: string;
     title: LName;
+    short: LName;
     body: LName;
     date: Date;  
     expireson: Date;       

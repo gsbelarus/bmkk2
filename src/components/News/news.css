@@ -1,13 +1,17 @@
-div.NewsItem {
-  padding-bottom: 4px;
+.News .Card {
+  padding: 16px;
   margin-bottom: 12px;
   border-bottom: dotted 1px gray;
+  width: 100%;
+  text-align: left;  
 }
 
-div.NewsItem h2 {
+.News .Card h2 {
   color: var(--colorBrown);
 }
 
 div.NewsDate {
   font-size: 12px;
+  width: 100%;
+  text-align: right;
 }

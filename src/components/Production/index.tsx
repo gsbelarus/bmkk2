@@ -11,10 +11,11 @@ export class Production extends Page {
     if (groups) {
       return (
         <div>
-          <div className="GroupsContainer">
+          <div className="FlexContainer">
             {
               groups.groups.map( (g, idx) => (  
                 <div className="Card"> 
+                  <div className="bg"></div>
                   <Link key={idx} to={`/production/` + g.ruid}>
                   </Link>  
                   <img src={!g.image ? `${goodGroupsRoot}${groupFileNoImage}` : `${goodGroupsRoot}${g.image}`} />                  

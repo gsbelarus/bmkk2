@@ -23,7 +23,7 @@ export class News extends Page {
 
     if (news) {
       return (
-        <div className="GoodsContainer">
+        <div className="News FlexContainer">
           {
             news.news.map( (n, idx) => {
               const fullImageName = !n.image ? ``
@@ -31,7 +31,7 @@ export class News extends Page {
                 : `${newsRoot}${n.image}`;
               const newsText = `## ${Page.getLName(n.title, sl)}\n\n${Page.getLName(n.body, sl).trimRight()}`;
               return (
-                <div key={idx}  className="NewsItem">
+                <div key={idx}  className="Card">
                   <ReactMarkdown source={newsText} />
                   {fullImageName && <img src={fullImageName}/>}
                   <div className="NewsDate">

@@ -141,7 +141,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
     return (
       <div>        
         <div className={this.getPageStyle()}>
-          <header>           
+          <header>       
             <div className="TopRibbon">
               <div className="container TopRibbonContent">      
                 {csvData && <div><CSVLink filename={"PriceBmkk.xls"} headers={headers} data={csvData}>{addInfo.textPriceXlsTop[sl].name}</CSVLink></div>}
@@ -151,6 +151,9 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
               </div>            
             <nav className="TopMenu">  
               <div className="container TopMenuContent">                  
+              <Link to="/">
+                {this.logoImg && <img className="Logo" src={this.logoImg} />}
+              </Link>    
                 {
                   mainMenu
                   .filter( f => f.path )
@@ -175,9 +178,6 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
               <div className={this.fullWidth ? "WorkAreaFullWidth" : "WorkArea"}>
                 {this.fullWidth ? null : <div className="navPath">{this.renderNavPath(this.props)}</div>}
                 {this.renderBody()}
-                <Link to="/">
-                  {this.logoImg && <img className="Logo" src={this.logoImg} />}
-                </Link>
               </div> 
               <div className={this.getPageStyle().includes('MainPage')  ? "Slider" : "NoneDisplay"}>              
                 <SimleSlider />
@@ -187,10 +187,10 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
           <footer>
             <div className="Bottom">  
               <div className="container">         
-                <Link to="/">
-                  {<img className="Logo" src={this.logoImg} />}
-                </Link>
                 <nav className="FooterMenu">
+                  <Link to="/">
+                    {<img className="Logo" src={this.logoImg} />}
+                  </Link>                
                   {
                     mainMenu
                     .filter( f => f.path )
