@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { connect, Dispatch as ReduxDispatch } from 'react-redux';
-import { HashRouter, Switch, Route, RouteComponentProps } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Switch, Route } from 'react-router-dom';
 import { MainPage } from './components/MainPage';
 import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, loadPrice, LoadPrice, LoadGoods,
          LoadNews, loadNews, LoadContacts, loadContacts, LoadDepartments, loadDepartments,
@@ -18,8 +18,6 @@ import { Contacts } from './components/Contacts';
 import { Outlets } from './components/Outlets';
 import { ForCustomer } from './components/ForCustomer';
 import { BrowserRouter } from 'react-router-dom'
-
-type Dispatch = ReduxDispatch<BMKKAction>;
 
 export interface AppProps {
   selectedLang: Language;
