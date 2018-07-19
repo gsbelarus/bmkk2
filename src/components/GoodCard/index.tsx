@@ -45,54 +45,56 @@ export class GoodCard extends Page {
     if (g) {
       const myprice = price.price.find( p => p.ruid === g.ruid);       
       return (
-        <div className="GoodCard">
-          <img src={fullImageName} />
-          <div className="GoodCardItem">
-            {(myprice ? myprice.issale : '') && <div className="GoodCardNew">Скидка!</div>}
-            {(myprice ? myprice.isnew && !myprice.issale : '') && <div className="GoodCardNew">Новинка!</div>}
-            <h2>
-              {g.caption ? Page.getLName(g.caption, sl) : g.fullname ? g.fullname : ''}
-            </h2>
-            <ul>
-              <li>
-                {Page.getLName(g.grade, sl)}
-              </li>
-              <li>
-                <strong>
-                  {goodCaption.description.ingredients[sl].name}
-                </strong>
-                {Page.getLName(g.ingredients, sl)}
-              </li>
-              <li>
-                <strong>
-                  {goodCaption.description.casing[sl].name}
-                </strong>
-                {Page.getLName(g.casing, sl)}
-              </li>
-              <li>
-                <strong>
-                  {goodCaption.description.beforuse[sl].name}
-                </strong>
-                {g.beforuse}
-              </li>
-              <li>
-                <strong>
-                  {goodCaption.description.costnde[sl].name}
-                </strong>
-                {myprice ? myprice.costnde : ''}
-              </li>
-              <li>
-                <strong>
-                  {goodCaption.description.dcostfull[sl].name}
-                </strong>
-                {myprice ? myprice.dcostfull : ''}
-              </li>          
-            </ul>
-            <div className="PriceGoods">
-              {addInfo.textPriceMore[sl].name} <Link to={`/price`}>{addInfo.textPriceLink[sl].name}!</Link>
+        <div className="GoodsContainer">
+          <div className="GoodCard">
+            <img src={fullImageName} />
+            <div className="GoodCardItem">
+              {(myprice ? myprice.issale : '') && <div className="GoodCardNew">Скидка!</div>}
+              {(myprice ? myprice.isnew && !myprice.issale : '') && <div className="GoodCardNew">Новинка!</div>}
+              <h2>
+                {g.caption ? Page.getLName(g.caption, sl) : g.fullname ? g.fullname : ''}
+              </h2>
+              <ul>
+                <li>
+                  {Page.getLName(g.grade, sl)}
+                </li>
+                <li>
+                  <strong>
+                    {goodCaption.description.ingredients[sl].name}
+                  </strong>
+                  {Page.getLName(g.ingredients, sl)}
+                </li>
+                <li>
+                  <strong>
+                    {goodCaption.description.casing[sl].name}
+                  </strong>
+                  {Page.getLName(g.casing, sl)}
+                </li>
+                <li>
+                  <strong>
+                    {goodCaption.description.beforuse[sl].name}
+                  </strong>
+                  {g.beforuse}
+                </li>
+                <li>
+                  <strong>
+                    {goodCaption.description.costnde[sl].name}
+                  </strong>
+                  {myprice ? myprice.costnde : ''}
+                </li>
+                <li>
+                  <strong>
+                    {goodCaption.description.dcostfull[sl].name}
+                  </strong>
+                  {myprice ? myprice.dcostfull : ''}
+                </li>          
+              </ul>
+              <div className="PriceGoods">
+                {addInfo.textPriceMore[sl].name} <Link to={`/price`}>{addInfo.textPriceLink[sl].name}!</Link>
+              </div>
             </div>
           </div>
-        </div>
+        </div>  
       );
     } else {
       return (
