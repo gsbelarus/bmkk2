@@ -55,4 +55,5 @@ div.OutletData > *:last-child {
 .OutletBox .CardCaption {
   background-color: transparent;  
   padding-bottom: 6px;
+  z-index: 1000;
 }
