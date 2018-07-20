@@ -35,9 +35,9 @@ export class Goods extends Page {
                   : `${goodsRoot}${g.image}`;
                 const myprice = price.price.find( p => p.ruid === g.ruid );
                 return (
-                  <div className="Card CardGood"> 
+                  <div key={idx} className="Card CardGood"> 
                     <div className="bg"></div>
-                    <Link key={idx} className="GoodMore" to={`/production/${g.group}/${g.ruid}`}></Link>
+                    <Link className="GoodMore" to={`/production/${g.group}/${g.ruid}`}></Link>
                     {/* <div className="Badge GoodNew">Скидка!</div> */}
                     {(myprice ? myprice.issale : '') && <div className="Badge GoodNew">Скидка!</div>} 
                     {(myprice ? myprice.isnew && !myprice.issale : '') && <div className="Badge GoodNew">Новинка!</div>}

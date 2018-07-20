@@ -39,7 +39,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
   constructor(props: P) {
     super(props);
     this.fullWidth = false;
-    this.logoImg = require('../../../public/image/logo_red_white_bk.svg');
+    this.logoImg = require('../../../public/image/logo_red_white_bk.png');
   }
 
   componentDidMount() {
@@ -116,6 +116,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
     const { sl, location, goods, price } = this.props;
     let csvData: any | undefined = null;
     let headers: {label: string, key: number}[] = [];
+    const logoImgBtm = require('../../../public/image/logo_bw.svg');
 
     if (goods && price) {
       csvData = [];
@@ -134,7 +135,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
             '7' : g.beforuse,
             '8' : g.term,
             '9' : myprice && myprice.barcode,
-            '10' : Page.getLName(g.ingredients, sl)
+            '10' : Page.getLName(g.ingredientsprice, sl)
         });
       })
     }
@@ -158,8 +159,8 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
                   mainMenu
                   .filter( f => f.path )
                   .map( (mi, idx) =>
-                    <Link  to={mi.path} >
-                      <span key={idx} className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
+                    <Link key={idx} to={mi.path} >
+                      <span  className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
                         {mi.caption[sl].name}
                       </span>
                     </Link>
@@ -186,7 +187,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
               <div className="container">
                 <nav className="FooterMenu">
                   <Link to="/">
-                    {<img className="Logo" src={this.logoImg} />}
+                    {<img className="Logo" src={logoImgBtm} />}
                   </Link>
                   {
                     mainMenu
@@ -194,10 +195,10 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
                     .map( (mi, idx) => {
                       const subM = subMenu.filter( t => t.id === mi.id );
                       return (
-                        <div>
-                        <span key={idx}>
+                        <div key={idx} >
+                        <span>
                           <ul>
-                            <li key={idx} className="TopLi">
+                            <li className="TopLi">
                               <Link to={mi.path} className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
                                 {mi.caption[sl].name}
                               </Link>

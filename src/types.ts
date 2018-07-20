@@ -68,7 +68,8 @@ export interface IGoods {
     fullname: string;
     valuename: LName; 
     grade: LName; 
-    ingredients: LName;       
+    ingredients: LName;     
+    ingredientsprice: LName;        
     casing: LName; 
     image: string;
     image2: string;    

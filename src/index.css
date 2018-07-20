@@ -187,7 +187,7 @@ div.Card {
   position: absolute;
   top: 0;
   left:0;
-  z-index: 3;
+  z-index: 1000;
 }
 
 .Card img {
@@ -215,6 +215,7 @@ div.Card {
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 8px;  
+  z-index: 1000;
 }
 
 .CardText {

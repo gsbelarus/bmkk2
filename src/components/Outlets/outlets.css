@@ -1,28 +1,3 @@
-/* div.OutletBox {
-  position: relative;
-  margin-right: 20px;
-  margin-bottom: 60px;
-  text-align: center;
-  width: 240px;
-  height: 343px;
-  border: 1px solid gray;
-  box-shadow: 4px 4px 4px rgba(150,150,150,0.5);
-  overflow: hidden;
-}
-
-
-
-div.OutletBox:hover {
-  border: 1px solid var(--colorBrown);
-  box-shadow: 4px 4px 4px rgba(150,150,150,0.5);
-  transition: all 0.5s ease;
-}
-
-div.OutletBox:hover .OutletData {
-  background-color: var(--colorBrownLite);
-  transition: all 0.5s ease;
-} */
-
 .OutletBox .Card .City {
   font-size: 16px;
   font-weight: normal;
@@ -47,7 +22,7 @@ div.OutletData > * {
   font-size: 14px;
   text-align: left;
   color: black;
-  border-bottom: 1px dotted darkgray;
+  border-bottom: 1px dotted #a9a9a952;
   margin-bottom: 2px;
   margin-left: 4px;
   margin-right: 4px;

@@ -8,7 +8,7 @@ export class Price extends Page {
   constructor(props: PageProps) {
     super(props);
     this.fullWidth = true;
-    this.logoImg = undefined;
+    // this.logoImg = undefined;
   }
 
   renderBody(): JSX.Element {
@@ -50,7 +50,7 @@ export class Price extends Page {
               </thead>
               {groups.groups.map( (gr, gr_idx) =>
                 (
-                  <tbody>
+                  <tbody key={gr_idx}>
                     <tr>
                       <td colSpan={8} className="tGrName">
                         {Page.getLName(gr.caption, sl)}
@@ -70,7 +70,7 @@ export class Price extends Page {
                               <td>{g.beforuse}</td>
                               <td>{g.term}</td>
                               <td>{myprice ? myprice.barcode : ''}</td>
-                              <td>{Page.getLName(g.ingredients, sl)}</td>
+                              <td>{Page.getLName(g.ingredientsprice, sl)}</td>
                             </tr>
                           )}
                         )
