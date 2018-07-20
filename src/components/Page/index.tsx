@@ -158,8 +158,8 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
                   mainMenu
                   .filter( f => f.path )
                   .map( (mi, idx) => 
-                    <Link key={idx} to={mi.path} >
-                      <span className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
+                    <Link  to={mi.path} >
+                      <span key={idx} className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
                         {mi.caption[sl].name}
                       </span>
                     </Link>
@@ -169,9 +169,6 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
             </nav>             
           </header>    
           <div className="header-back" >
-            {/* <div class="billboard gs-container"> 
-
-            </div>*/}
           </div>          
           <main className="FullPage">
             <div className="container"> 
