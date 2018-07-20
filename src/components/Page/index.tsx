@@ -15,7 +15,7 @@ export interface PageProps extends RouteComponentProps<any> {
   selectedLang: Language;
   groups: IGoodGroups;
   goods: IGoods;
-  price: IPrice;  
+  price: IPrice;
   news: INews;
   contacts: IContacts;
   departments: IDepartments;
@@ -24,7 +24,7 @@ export interface PageProps extends RouteComponentProps<any> {
   onSetLanguage: SetLanguage;
   onLoadGroups: LoadGroups;
   onLoadGoods: LoadGoods;
-  onLoadPrice: LoadPrice;  
+  onLoadPrice: LoadPrice;
   onLoadNews: LoadNews;
   onLoadContacts: LoadContacts;
   onLoadDepartments: LoadDepartments;
@@ -34,12 +34,12 @@ export interface PageProps extends RouteComponentProps<any> {
 export class Page<P extends PageProps = PageProps> extends React.PureComponent<P, {}> {
 
   protected fullWidth: boolean;
-  protected logoImg: any;  
+  protected logoImg: any;
 
   constructor(props: P) {
     super(props);
     this.fullWidth = false;
-    // this.logoImg = require('../../../public/image/logo_white_bg.png');
+    this.logoImg = require('../../../public/image/logo_red_white_bk.svg');
   }
 
   componentDidMount() {
@@ -67,7 +67,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
       .then( res => JSON.parse(res) )
       .then( res => onLoadPrice(res as IPrice) )
       .catch( err => console.log(err) );
-    }  
+    }
 
   }
 
@@ -110,7 +110,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
       lname[lang].name : (
         lname && lname['ru'] && lname['ru'].name ? lname['ru'].name : ''
       );
-  }  
+  }
 
   render() {
     const { sl, location, goods, price } = this.props;
@@ -118,46 +118,46 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
     let headers: {label: string, key: number}[] = [];
 
     if (goods && price) {
-      csvData = [];      
+      csvData = [];
       priceCaption.map( (pr, p_idx) =>
         headers.push ({label: pr.caption['ru'].name, key: p_idx+1})
       );
       goods.goods.map( (g, idx) => {
         const myprice = price.price.find( p => p.ruid === g.ruid );
         return csvData.push ({
-            '1' : idx+1, 
-            '2' : g.fullname + ' ', 
-            '3' : Page.getLName(g.valuename, sl), 
+            '1' : idx+1,
+            '2' : g.fullname + ' ',
+            '3' : Page.getLName(g.valuename, sl),
             '4' : myprice && myprice.costnde,
             '5' : myprice && myprice.dcostfull,
-            '6' : g.rate,          
+            '6' : g.rate,
             '7' : g.beforuse,
             '8' : g.term,
             '9' : myprice && myprice.barcode,
             '10' : Page.getLName(g.ingredients, sl)
-        });             
-      })    
+        });
+      })
     }
     return (
-      <div>        
+      <div>
         <div className={this.getPageStyle()}>
-          <header>       
+          <header>
             <div className="TopRibbon">
-              <div className="container TopRibbonContent">      
+              <div className="container TopRibbonContent">
                 {csvData && <div><CSVLink filename={"PriceBmkk.xls"} headers={headers} data={csvData}>{addInfo.textPriceXlsTop[sl].name}</CSVLink></div>}
                 <div><Link to={`/price`}>{addInfo.textPriceTop[sl].name}</Link></div>
                 <LangSelector {...this.props} />
                 </div>
-              </div>            
-            <nav className="TopMenu">  
-              <div className="container TopMenuContent">                  
+              </div>
+            <nav className="TopMenu">
+              <div className="container TopMenuContent">
               <Link to="/">
                 {this.logoImg && <img className="Logo" src={this.logoImg} />}
-              </Link>    
+              </Link>
                 {
                   mainMenu
                   .filter( f => f.path )
-                  .map( (mi, idx) => 
+                  .map( (mi, idx) =>
                     <Link  to={mi.path} >
                       <span key={idx} className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
                         {mi.caption[sl].name}
@@ -165,69 +165,69 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
                     </Link>
                   )
                 }
-              </div>  
-            </nav>             
-          </header>    
+              </div>
+            </nav>
+          </header>
           <div className="header-back" >
-          </div>          
+          </div>
           <main className="FullPage">
-            <div className="container"> 
+            <div className="container">
               <div className={this.fullWidth ? "WorkAreaFullWidth" : "WorkArea"}>
                 {this.fullWidth ? null : <div className="navPath">{this.renderNavPath(this.props)}</div>}
                 {this.renderBody()}
-              </div> 
-              <div className={this.getPageStyle().includes('MainPage')  ? "Slider" : "NoneDisplay"}>              
+              </div>
+              <div className={this.getPageStyle().includes('MainPage')  ? "Slider" : "NoneDisplay"}>
                 <SimleSlider />
-              </div>  
-            </div>    
-          </main>        
+              </div>
+            </div>
+          </main>
           <footer>
-            <div className="Bottom">  
-              <div className="container">         
+            <div className="Bottom">
+              <div className="container">
                 <nav className="FooterMenu">
                   <Link to="/">
                     {<img className="Logo" src={this.logoImg} />}
-                  </Link>                
+                  </Link>
                   {
                     mainMenu
                     .filter( f => f.path )
                     .map( (mi, idx) => {
                       const subM = subMenu.filter( t => t.id === mi.id );
                       return (
-                        <div>                      
+                        <div>
                         <span key={idx}>
                           <ul>
-                            <li key={idx} className="TopLi">                                                    
-                              <Link to={mi.path} className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}> 
+                            <li key={idx} className="TopLi">
+                              <Link to={mi.path} className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
                                 {mi.caption[sl].name}
-                              </Link>                           
+                              </Link>
                             </li>
                             {
                               subM && subM.map( (sm, idx) => (
-                              <li key={idx}> 
+                              <li key={idx}>
                                 <a href={sm.path}>
                                   {sm.caption[sl].name}
-                                </a>   
+                                </a>
                               </li>
-                              ))                              
+                              ))
                             }
                             {mi.id === 7 && <li key={idx+1}>Тел.: +375-1643-9-11-11 </li> }
                             {mi.id === 7 && <li key={idx+2}>Тел.: +375-1643-9-11-12 </li> }
                             {mi.id === 7 && <li key={idx+3}>Email: bmkk@meat.by </li> }
                           </ul>
-                        </span>                      
-                        </div>                                          
+                        </span>
+                        </div>
                       )
                     })
-                  }   
-                </nav> 
+                  }
+                </nav>
                 <div className="footer-copyright">
                   {addInfo.textRights[sl].name}
                 </div>
-              </div>  
+              </div>
             </div>
-          </footer>  
-        </div>    
+          </footer>
+        </div>
       </div>
     );
   }
