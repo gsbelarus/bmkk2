@@ -77,15 +77,25 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
 
   renderNavPath(props: PageProps): JSX.Element[] {
     const { location, sl } = props;
-    const pathname = location.pathname;
+    let pathname = location.pathname;
 
-    if (pathname === '/') {
+    if (pathname === `${PUBLIC_ROOT}`) {
       return [];
     }
 
-    const navPath = pathname.split('/').reduce(
+    if (pathname.startsWith(PUBLIC_ROOT)) {
+      pathname = pathname.slice(PUBLIC_ROOT.length);
+    }
+
+    const splitpath = pathname.split('/');
+
+    if (splitpath.length === 1) {
+      return [];
+    }
+
+    const navPath = splitpath.reduce(
       (p, c, idx) => {
-        const mi = mainMenu.find( m => m.path === `/${c}` );
+        const mi = mainMenu.find( m => m.path === `${PUBLIC_ROOT}${c}` );
         const capt = mi ? mi.caption[sl].name : c;
 
         if (mi) {
@@ -146,13 +156,13 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
             <div className="TopRibbon">
               <div className="container TopRibbonContent">
                 {csvData && <div><CSVLink filename={"PriceBmkk.xls"} headers={headers} data={csvData}>{addInfo.textPriceXlsTop[sl].name}</CSVLink></div>}
-                <div><Link to={`/price`}>{addInfo.textPriceTop[sl].name}</Link></div>
+                {goods && price && <div><Link to={`${PUBLIC_ROOT}price`}>{addInfo.textPriceTop[sl].name}</Link></div>}
                 <LangSelector {...this.props} />
                 </div>
               </div>
             <nav className="TopMenu">
               <div className="container TopMenuContent">
-              <Link to="/">
+              <Link to={`${PUBLIC_ROOT}`}>
                 {this.logoImg && <img className="Logo" src={this.logoImg} />}
               </Link>
                 {
@@ -160,7 +170,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
                   .filter( f => f.path )
                   .map( (mi, idx) =>
                     <Link key={idx} to={mi.path} >
-                      <span  className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
+                      <span  className={mi.path !== PUBLIC_ROOT && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
                         {mi.caption[sl].name}
                       </span>
                     </Link>
@@ -186,7 +196,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
             <div className="Bottom">
               <div className="container">
                 <nav className="FooterMenu">
-                  <Link to="/">
+                  <Link to={`${PUBLIC_ROOT}`}>
                     {<img className="Logo" src={logoImgBtm} />}
                   </Link>
                   {
@@ -199,7 +209,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
                         <span>
                           <ul>
                             <li className="TopLi">
-                              <Link to={mi.path} className={mi.path !== '/' && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
+                              <Link to={mi.path} className={mi.path !== PUBLIC_ROOT && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
                                 {mi.caption[sl].name}
                               </Link>
                             </li>

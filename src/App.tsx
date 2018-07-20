@@ -33,7 +33,7 @@ export interface AppProps {
   onLoadGroups: LoadGroups;
   selectedGroup: string;
   onLoadGoods: LoadGoods;
-  onLoadPrice: LoadPrice;  
+  onLoadPrice: LoadPrice;
   onLoadNews: LoadNews;
   onLoadContacts: LoadContacts;
   onLoadDepartments: LoadDepartments;
@@ -47,7 +47,7 @@ class App extends React.Component<AppProps, {}> {
         <Switch>
           <Route
             exact={true}
-            path="/"
+            path={PUBLIC_ROOT}
             render={
               (props) => {
                 const mergedProps = {...this.props, ...props};
@@ -56,8 +56,8 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            exact={true}          
-            path="/production"
+            exact={true}
+            path={`${PUBLIC_ROOT}production`}
             render={
               (props) => {
                 const mergedProps = {...this.props, ...props};
@@ -67,7 +67,7 @@ class App extends React.Component<AppProps, {}> {
           />
           <Route
             exact={true}
-            path="/production/:groupID"
+            path={`${PUBLIC_ROOT}production/:groupID`}
             render={
               (props) => {
                 const mergedProps = {...this.props, ...props};
@@ -76,7 +76,7 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            path="/about"
+            path={`${PUBLIC_ROOT}about`}
             render={
               (props) => {
                 const mergedProps = {...this.props, ...props};
@@ -86,7 +86,7 @@ class App extends React.Component<AppProps, {}> {
           />
           <Route
             exact={true}
-            path="/production/:groupID/:goodID"
+            path={`${PUBLIC_ROOT}production/:groupID/:goodID`}
             render={
               (props) => {
                 const mergedProps = {...this.props, ...props};
@@ -95,7 +95,7 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            path="/price"
+            path={`${PUBLIC_ROOT}price`}
             render={
               (props) => {
                 const mergedProps = {...this.props, ...props};
@@ -104,7 +104,7 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            path="/news"
+            path={`${PUBLIC_ROOT}news`}
             render={
               (props) => {
                 const mergedProps = {...this.props, ...props};
@@ -113,7 +113,7 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            path="/contacts"
+            path={`${PUBLIC_ROOT}contacts`}
             render={
               (props) => {
                 const mergedProps = {...this.props, ...props};
@@ -122,7 +122,7 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            path="/outlets"
+            path={`${PUBLIC_ROOT}outlets`}
             render={
               (props) => {
                 const mergedProps = {...this.props, ...props};
@@ -131,7 +131,7 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
-            path="/forcustomer"
+            path={`${PUBLIC_ROOT}forcustomer`}
             render={
               (props) => {
                 const mergedProps = {...this.props, ...props};
@@ -156,7 +156,7 @@ export default connect(
     onSetLanguage: setLanguage,
     onLoadGroups: loadGroups,
     onLoadGoods: loadGoods,
-    onLoadPrice: loadPrice,    
+    onLoadPrice: loadPrice,
     onLoadNews: loadNews,
     onLoadContacts: loadContacts,
     onLoadDepartments: loadDepartments,

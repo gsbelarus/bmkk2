@@ -13,12 +13,12 @@ export class Production extends Page {
         <div>
           <div className="FlexContainer">
             {
-              groups.groups.map( (g, idx) => (  
-                <div className="Card" key={idx} > 
+              groups.groups.map( (g, idx) => (
+                <div className="Card" key={idx} >
                   <div className="bg"></div>
-                  <Link to={`/production/` + g.ruid}>
-                  </Link>  
-                  <img src={!g.image ? `${goodGroupsRoot}${groupFileNoImage}` : `${goodGroupsRoot}${g.image}`} />                  
+                  <Link to={`${PUBLIC_ROOT}production/` + g.ruid}>
+                  </Link>
+                  <img src={!g.image ? `${goodGroupsRoot}${groupFileNoImage}` : `${goodGroupsRoot}${g.image}`} />
                   <div className="CardCaption">
                     <div className="CardText">
                       {Page.getLName(g.caption, sl)}

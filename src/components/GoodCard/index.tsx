@@ -21,7 +21,7 @@ export class GoodCard extends Page {
         if (mygroup) {
           result.splice(-2, 2,
             <span key={mygroup.ruid}>
-              <Link to={`/production/${mygroup.ruid}`}>
+              <Link to={`${PUBLIC_ROOT}production/${mygroup.ruid}`}>
                 {Page.getLName(mygroup.caption, sl)}
               </Link>
             </span>,
@@ -43,7 +43,7 @@ export class GoodCard extends Page {
     : `${goodsRoot}${g!.image2}`;
 
     if (g) {
-      const myprice = price.price.find( p => p.ruid === g.ruid);       
+      const myprice = price.price.find( p => p.ruid === g.ruid);
       return (
         <div className="GoodsContainer">
           <div className="GoodCard">
@@ -87,14 +87,14 @@ export class GoodCard extends Page {
                     {goodCaption.description.dcostfull[sl].name}
                   </strong>
                   {myprice ? myprice.dcostfull : ''}
-                </li>          
+                </li>
               </ul>
               <div className="PriceGoods">
-                {addInfo.textPriceMore[sl].name} <Link to={`/price`}>{addInfo.textPriceLink[sl].name}!</Link>
+                {addInfo.textPriceMore[sl].name} <Link to={`${PUBLIC_ROOT}price`}>{addInfo.textPriceLink[sl].name}!</Link>
               </div>
             </div>
           </div>
-        </div>  
+        </div>
       );
     } else {
       return (

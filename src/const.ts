@@ -25,8 +25,8 @@ export const outletsFile = `${outletsRoot}outlets.json`;
 
 export const mainMenu: MenuItems = [
   {
-    /*id: 1,    
-    path: '/',
+    /*id: 1,
+    path: `${PUBLIC_ROOT}`,
     caption: {
       ru: {
         name: 'Главная'
@@ -40,8 +40,8 @@ export const mainMenu: MenuItems = [
     }
   },
   { */
-    id: 2,    
-    path: '/about',
+    id: 2,
+    path: `${PUBLIC_ROOT}about`,
     caption: {
       ru: {
         name: 'О нас'
@@ -55,8 +55,8 @@ export const mainMenu: MenuItems = [
     }
   },
   {
-    id: 3,    
-    path: '/news',
+    id: 3,
+    path: `${PUBLIC_ROOT}news`,
     caption: {
       ru: {
         name: 'Новости'
@@ -70,8 +70,8 @@ export const mainMenu: MenuItems = [
     }
   },
   {
-    id: 4,    
-    path: '/production',
+    id: 4,
+    path: `${PUBLIC_ROOT}production`,
     caption: {
       ru: {
         name: 'Продукция'
@@ -85,8 +85,8 @@ export const mainMenu: MenuItems = [
     }
   },
   {
-    id: 5,    
-    path: '/forcustomer',
+    id: 5,
+    path: `${PUBLIC_ROOT}forcustomer`,
     caption: {
       ru: {
         name: 'Клиентам'
@@ -100,8 +100,8 @@ export const mainMenu: MenuItems = [
     }
   },
   {
-    id: 6,    
-    path: '/outlets',
+    id: 6,
+    path: `${PUBLIC_ROOT}outlets`,
     caption: {
       ru: {
         name: 'Фирменная торговля'
@@ -115,8 +115,8 @@ export const mainMenu: MenuItems = [
     }
   },
   {
-    id: 7,    
-    path: '/contacts',
+    id: 7,
+    path: `${PUBLIC_ROOT}contacts`,
     caption: {
       ru: {
         name: 'Контакты'
@@ -133,8 +133,8 @@ export const mainMenu: MenuItems = [
 
 export const subMenu: MenuItems = [
   {
-    id: 2,    
-    path: '/about#history',
+    id: 2,
+    path: `${PUBLIC_ROOT}about#history`,
     caption: {
       ru: {
         name: 'История'
@@ -146,10 +146,10 @@ export const subMenu: MenuItems = [
         name: 'History'
       }
     }
-  },  
+  },
   {
-    id: 2,    
-    path: '/about#staff',
+    id: 2,
+    path: `${PUBLIC_ROOT}about#staff`,
     caption: {
       ru: {
         name: 'Персонал'
@@ -161,10 +161,10 @@ export const subMenu: MenuItems = [
         name: 'Staff'
       }
     }
-  },   
+  },
   {
-    id: 2,    
-    path: '/about#vacancy',
+    id: 2,
+    path: `${PUBLIC_ROOT}about#vacancy`,
     caption: {
       ru: {
         name: 'Вакансии'
@@ -176,10 +176,10 @@ export const subMenu: MenuItems = [
         name: 'Vacancy'
       }
     }
-  },   
+  },
   {
-    id: 2,    
-    path: '/about#rest',
+    id: 2,
+    path: `${PUBLIC_ROOT}about#rest`,
     caption: {
       ru: {
         name: 'Отдых с нами'
@@ -191,10 +191,10 @@ export const subMenu: MenuItems = [
         name: 'Holidays with us'
       }
     }
-  },       
+  },
   {
     id: 4,
-    path: '/price',
+    path: `${PUBLIC_ROOT}price`,
     caption: {
       ru: {
         name: 'Прейскурант'
@@ -209,7 +209,7 @@ export const subMenu: MenuItems = [
   },
   {
     id: 5,
-    path: '/forcustomer#direction',
+    path: `${PUBLIC_ROOT}forcustomer#direction`,
     caption: {
       ru: {
         name: 'Схема проезда'
@@ -223,8 +223,8 @@ export const subMenu: MenuItems = [
     }
   },
   {
-    id: 5,    
-    path: '/forcustomer#requisites',
+    id: 5,
+    path: `${PUBLIC_ROOT}forcustomer#requisites`,
     caption: {
       ru: {
         name: 'Реквизиты предприятия'
@@ -238,8 +238,8 @@ export const subMenu: MenuItems = [
     }
   },
   {
-    id: 6,    
-    path: '/outlets#foreigns',
+    id: 6,
+    path: `${PUBLIC_ROOT}outlets#foreigns`,
     caption: {
       ru: {
         name: 'Иностранным покупателям'
@@ -428,7 +428,7 @@ export const goodCaption: GoodCaptions =
 ;
 
 export const priceCaption: PriceItems = [
-  { 
+  {
     caption: {
       ru: {
         name: '№'
@@ -546,7 +546,7 @@ export const priceCaption: PriceItems = [
     }
   },
   {
-  
+
     caption: {
       ru: {
         name: 'Описание'
@@ -698,11 +698,11 @@ export const moreCaption: PriceItem =
     }
   };
 
-  export const addInfo: IAddInfo = 
+  export const addInfo: IAddInfo =
   {
     textRights: {
       ru: {
-        name: 'Березовский мясоконсервный комбинат © 2018 г. Все права защищены.' 
+        name: 'Березовский мясоконсервный комбинат © 2018 г. Все права защищены.'
       },
       be: {
         name: 'Бярозаўскі мясакансервавы камбінат © 2018 г. Усё правы абаронены.'
@@ -713,7 +713,7 @@ export const moreCaption: PriceItem =
     },
     textPriceMore: {
       ru: {
-        name: 'С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" можно ознакомиться' 
+        name: 'С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" можно ознакомиться'
       },
       be: {
         name: 'бел С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" можно ознакомиться'
@@ -724,7 +724,7 @@ export const moreCaption: PriceItem =
     },
     textPriceLink: {
       ru: {
-        name: 'здесь' 
+        name: 'здесь'
       },
       be: {
         name: 'тут'
@@ -735,7 +735,7 @@ export const moreCaption: PriceItem =
     },
     textOutlets: {
       ru: {
-        name: 'Комбинат имеет сеть фирменной торговли, где можно приобрести товар в розницу:' 
+        name: 'Комбинат имеет сеть фирменной торговли, где можно приобрести товар в розницу:'
       },
       be: {
         name: 'бел Комбинат имеет сеть фирменной торговли, где можно приобрести товар в розницу:'
@@ -746,7 +746,7 @@ export const moreCaption: PriceItem =
     },
     textPriceTop: {
       ru: {
-        name: 'Прейскурант' 
+        name: 'Прейскурант'
       },
       be: {
         name: 'Прэйскурант'
@@ -757,7 +757,7 @@ export const moreCaption: PriceItem =
     },
     textPriceXlsTop: {
       ru: {
-        name: 'Прейскурант XLS' 
+        name: 'Прейскурант XLS'
       },
       be: {
         name: 'Прэйскурант XLS'
@@ -765,6 +765,6 @@ export const moreCaption: PriceItem =
       en: {
         name: 'Price-list XLS'
       }
-    }                                     
+    }
   };
 

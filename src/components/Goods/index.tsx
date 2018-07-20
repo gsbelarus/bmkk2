@@ -35,20 +35,20 @@ export class Goods extends Page {
                   : `${goodsRoot}${g.image}`;
                 const myprice = price.price.find( p => p.ruid === g.ruid );
                 return (
-                  <div key={idx} className="Card CardGood"> 
+                  <div key={idx} className="Card CardGood">
                     <div className="bg"></div>
-                    <Link className="GoodMore" to={`/production/${g.group}/${g.ruid}`}></Link>
+                    <Link className="GoodMore" to={`${PUBLIC_ROOT}production/${g.group}/${g.ruid}`}></Link>
                     {/* <div className="Badge GoodNew">Скидка!</div> */}
-                    {(myprice ? myprice.issale : '') && <div className="Badge GoodNew">Скидка!</div>} 
+                    {(myprice ? myprice.issale : '') && <div className="Badge GoodNew">Скидка!</div>}
                     {(myprice ? myprice.isnew && !myprice.issale : '') && <div className="Badge GoodNew">Новинка!</div>}
-                    {g.grade && <div className="Badge BadgeTopRight">{Page.getLName(g.grade, sl)}</div>} 
+                    {g.grade && <div className="Badge BadgeTopRight">{Page.getLName(g.grade, sl)}</div>}
                     <img src={fullImageName} />
-                    <div className="CardCaption">                     
+                    <div className="CardCaption">
                       <div className="CardText">
                         {g.caption ? Page.getLName(g.caption, sl) : g.fullname ? g.fullname : ''}
-                      </div>                      
+                      </div>
                     </div>
-                  </div>                 
+                  </div>
                 );
               })
             }
