@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Page, PageProps } from '../Page';
-import { goodsRoot, goodCaption, goodFileNoImage } from '../../const';
+import { goodsRoot, goodFileNoImage } from '../../const';
 import { Link } from 'react-router-dom';
 import './goods.css';
 

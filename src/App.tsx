@@ -4,9 +4,9 @@ import { Switch, Route } from 'react-router-dom';
 import { MainPage } from './components/MainPage';
 import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, loadPrice, LoadPrice, LoadGoods,
          LoadNews, loadNews, LoadContacts, loadContacts, LoadDepartments, loadDepartments,
-         LoadOutlets, loadOutlets } from './actions';
+         LoadOutlets, loadOutlets, LoadcsvData, loadcsvData } from './actions';
 import { State } from './store';
-import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets } from './types';
+import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData } from './types';
 import { Production } from './components/Production';
 import { About } from './components/About';
 import { Goods } from './components/Goods';
@@ -28,6 +28,7 @@ export interface AppProps {
   departments: IDepartments;
   outlets: IOutlets;
   sl: string;
+  csvData: IcsvData; 
   onSetLanguage: SetLanguage;
   onLoadGroups: LoadGroups;
   selectedGroup: string;
@@ -37,6 +38,7 @@ export interface AppProps {
   onLoadContacts: LoadContacts;
   onLoadDepartments: LoadDepartments;
   onLoadOutlets: LoadOutlets;
+  onLoadcsvData: LoadcsvData;  
 }
 
 class App extends React.Component<AppProps, {}> {
@@ -159,6 +161,7 @@ export default connect(
     onLoadNews: loadNews,
     onLoadContacts: loadContacts,
     onLoadDepartments: loadDepartments,
-    onLoadOutlets: loadOutlets
+    onLoadOutlets: loadOutlets,
+    onLoadcsvData: loadcsvData    
   }
 )(App);

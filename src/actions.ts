@@ -1,5 +1,5 @@
 import { createAction } from 'typesafe-actions';
-import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets } from './types';
+import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData } from './types';
 
 export const setLanguage = createAction('SET_LANGUAGE', resolve => {
   return (lang: Language) => resolve(lang);
@@ -48,3 +48,9 @@ export const loadOutlets = createAction('LOAD_OUTLETS', resolve => {
 });
 
 export type LoadOutlets = typeof loadOutlets;
+
+export const loadcsvData = createAction('LOAD_CSVDATA', resolve => {
+  return (loadedcsvData: IcsvData) => resolve(loadedcsvData);
+});
+
+export type LoadcsvData = typeof loadcsvData;

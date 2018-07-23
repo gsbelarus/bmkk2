@@ -1,4 +1,4 @@
-import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets } from './types';
+import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData } from './types';
 import * as actions from './actions';
 import { ActionType, getType } from 'typesafe-actions';
 import { lchmod } from 'fs';
@@ -14,7 +14,8 @@ export type State = {
   news: INews | undefined;  
   contacts: IContacts | undefined; 
   departments: IDepartments | undefined;   
-  outlets: IOutlets | undefined;     
+  outlets: IOutlets | undefined; 
+  csvData: IcsvData  | undefined;    
 };
 
 const initialState: State = {
@@ -26,7 +27,8 @@ const initialState: State = {
   news: undefined ,
   contacts: undefined,
   departments: undefined,
-  outlets: undefined
+  outlets: undefined,
+  csvData: undefined
 };
 
 export const  reducer = (state: State = initialState, action: BMKKAction): State => {
@@ -53,7 +55,10 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
       return {...state, departments: action.payload};       
 
     case getType(actions.loadOutlets):
-      return {...state, outlets: action.payload}        
+      return {...state, outlets: action.payload};        
+
+      case getType(actions.loadcsvData):
+      return {...state, csvData: action.payload}          
 
     default:
       return state;

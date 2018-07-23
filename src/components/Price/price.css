@@ -63,3 +63,7 @@ div.PriceTop {
   float: left;
   padding-bottom: 10px;
 }
+
+.GrayTable a:hover {
+  color: var(--colorBrown);
+}

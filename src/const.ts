@@ -768,3 +768,10 @@ export const moreCaption: PriceItem =
     }
   };
 
+
+  export const headers: {label: string, key: number}[] = [];
+
+  priceCaption.map( (pr, p_idx) =>
+    headers.push ({label: pr.caption['ru'].name, key: p_idx+1})
+);
+

@@ -240,19 +240,6 @@ div.footer-copyright {
   padding-bottom: 20px;
 }
 
-.Slider {
-  padding: 0 20px;
-  margin-top: -40px;  
-}
-
-.slick-prev:before, .slick-next:before {
-  color: #252525 !important;
-}
-
-.slick-slide img {
-  height: 50px !important; 
-}
-
 .container {
   max-width: 1040px;
   margin: 0 auto;

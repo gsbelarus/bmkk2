@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Page, PageProps } from '../Page';
 import { priceCaption } from '../../const';
 import './price.css';
+import { Link } from 'react-router-dom';
 
 export class Price extends Page {
 
@@ -62,7 +63,9 @@ export class Price extends Page {
                           return (                            
                             <tr key={idx}>
                               <td>{idx+1}</td>
-                              <td>{g.fullname}</td>
+                              <td>                                
+                                <Link to={`${PUBLIC_ROOT}production/${g.group}/${g.ruid}`}>{g.fullname}</Link>
+                              </td>
                               <td>{Page.getLName(g.valuename, sl)}</td>
                               <td className="tdRight">{myprice ? myprice.costnde : ''}</td>
                               <td className="tdRight">{myprice ? myprice.dcostfull : ''}</td>

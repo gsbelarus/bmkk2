@@ -101,6 +101,10 @@ export interface IPrice {
   }[];
 }
 
+export type IcsvData = {
+  [key: string]: string | number;
+}[];
+
 export interface INews {
   version: string;
   news: {
