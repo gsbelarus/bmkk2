@@ -7,7 +7,6 @@ import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, loadPrice,
          LoadOutlets, loadOutlets } from './actions';
 import { State } from './store';
 import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets } from './types';
-import { BMKKAction } from './reducer';
 import { Production } from './components/Production';
 import { About } from './components/About';
 import { Goods } from './components/Goods';

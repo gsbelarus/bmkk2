@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 
 export class GoodCard extends Page {
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   getPageStyle() {
     return `${super.getPageStyle()} GoodCard`;
   }
