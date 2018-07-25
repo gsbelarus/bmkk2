@@ -13,6 +13,12 @@ const mdf: { [lang: string]: string } = {
   en: require(`../../../public/data/forcustomer/forforeigners.en.md`)
 };
 
+const md: { [lang: string]: string } = {
+  ru: require(`../../../public/data/outlets/outlets.ru.md`),
+  be: require(`../../../public/data/outlets/outlets.be.md`),
+  en: require(`../../../public/data/outlets/outlets.en.md`)
+};
+
 export class Outlets extends Page {
 
   componentDidMount() {
@@ -30,7 +36,9 @@ export class Outlets extends Page {
     if (outlets) {
       return (
         <div>
-          <p>{addInfo.textOutlets[sl].name}</p>
+          <div>
+            <ReactMarkdown source={md[sl.toLowerCase()]} />
+          </div>  
           <div className="OutletBox FlexContainer">
             {
               outlets.outlets.map( (outlet, idx) => {

@@ -27,7 +27,7 @@ export class Production extends Page {
                 </div>
               ))
             }
-          </div>
+          </div>        
         </div>
       );
     } else {
