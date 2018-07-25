@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Page } from '../Page';
 import { IOutlets } from '../../types';
-import { outletsFile, addInfo } from '../../const';
+import { outletsFile, addInfo, outletsRoot, outletFileNoImage } from '../../const';
 import * as ReactMarkdown from 'react-markdown';
 import './outlets.css';
 
-const outletImg = require('../../../public/image/outlet.png');
+// const outletImg = require('../../../public/image/outlet.png');
 
 const mdf: { [lang: string]: string } = {
   ru: require(`../../../public/data/forcustomer/forforeigners.ru.md`),
@@ -36,10 +36,12 @@ export class Outlets extends Page {
               outlets.outlets.map( (outlet, idx) => {
                 const re = /(?:г|д)\.(?:\s){0,1}([А-Яа-я]+)/;
                 const match = re.exec(Page.getLName(outlet.address, sl));
+                const outletImg = !outlet.image ? `${outletsRoot}${outletFileNoImage}`
+                : outlet.image.includes('/') ? outlet.image
+                : `${outletsRoot}${outlet.image}`;
                 return (
                   <div key={idx} className="Card">
-                    <div className="bg"></div>
-                   
+                    <div className="bg"></div>                   
                     <div className="City">
                       {match && match[1]}
                       </div>

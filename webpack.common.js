@@ -54,6 +54,11 @@ module.exports =  {
         from: './public/data/upload_binary.php',
         to: 'data/',
         flatten: true
+      },
+      {
+        from: './public/.htaccess',
+        to: '',
+        flatten: true
       }
     ], {}
     )

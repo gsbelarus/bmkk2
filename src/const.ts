@@ -16,6 +16,7 @@ export const priceFile = `${goodsRoot}price.json`;
 export const goodFileNoImage = 'noimage.png';
 export const goodFileNoImage2 = 'noimage_big.png';
 export const groupFileNoImage = 'noimage.png';
+export const outletFileNoImage = 'outlet.png';
 export const newsFile = `${newsRoot}news.json`;
 export const contactsRoot = `${DATA_ROOT}contacts/`;
 export const contactsFile = `${contactsRoot}contacts.json`;
