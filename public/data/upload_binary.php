@@ -15,7 +15,8 @@ $fn = $_POST['FN'];
 $path = $_POST['PATH'];
 $data = $_POST['DATA'];
 
-$ext = strtolower(substr($fn, -3));
+$path_parts = pathinfo($fn);
+$ext = $path_parts['extension'];
 
 if (strpos($path, '..') === FALSE && substr($path, 0, 1) !== '/') {
 	if ($ext === 'jpg' || $ext === 'json' || $ext === 'png') {
