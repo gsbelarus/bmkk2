@@ -161,14 +161,11 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
       lname[lang].name : (
         lname && lname['ru'] && lname['ru'].name ? lname['ru'].name : ''
       );
-  }
-
-  
+  }  
 
   render() {
     const { sl, location, goods, price, csvData } = this.props;
     const logoImgBtm = require('../../../public/image/logo_bw.svg');
-
    
     return (
       <div>
@@ -201,6 +198,8 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
             </nav>
           </header>
           <div className="header-back" >
+            <div className="header-back-title"> 
+            </div>
           </div>
           <main className="FullPage">
             <div className="container">

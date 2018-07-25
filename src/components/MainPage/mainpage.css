@@ -37,6 +37,17 @@
   background-color: #464646;  
 }
 
+.MainPage .header-back-title {
+  background-image: url(../../../public/image/bmkk.png);
+  position: absolute;
+  width: 655px;
+  z-index: 1000;
+  height: 304px;
+  background-repeat: no-repeat;
+  bottom: 16px;
+  left: 10px;
+}
+
 .MainPage nav.TopMenu {
   background-color: rgba(219,69,53,0.8);
   box-shadow: none;
