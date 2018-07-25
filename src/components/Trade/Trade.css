@@ -1,13 +1,13 @@
-.Slider  {
+.Trade  {
   padding: 0 20px;
   margin-top: -70px;  
 }
 
-.Slider img {
+.Trade img {
   height: 50px !important; 
 }
 
-.Slider .FlexContainer {
+.Trade .FlexContainer {
   display: flex;
   justify-content: space-between;
 }

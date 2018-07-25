@@ -7,28 +7,20 @@ export type BMKKAction = ActionType<typeof actions>;
 
 export type State = {
   selectedLang: Language;
-  groups: IGoodGroups | undefined;
+  groups?: IGoodGroups;
   selectedGroup: string; 
-  goods: IGoods | undefined;
-  price: IPrice | undefined;  
-  news: INews | undefined;  
-  contacts: IContacts | undefined; 
-  departments: IDepartments | undefined;   
-  outlets: IOutlets | undefined; 
-  csvData: IcsvData  | undefined;    
+  goods?: IGoods;
+  price?: IPrice;  
+  news?: INews;  
+  contacts?: IContacts; 
+  departments?: IDepartments;   
+  outlets?: IOutlets; 
+  csvData?: IcsvData;    
 };
 
 const initialState: State = {
   selectedLang: 'RU',
-  groups: undefined,
-  selectedGroup: '',
-  goods: undefined,
-  price: undefined,  
-  news: undefined ,
-  contacts: undefined,
-  departments: undefined,
-  outlets: undefined,
-  csvData: undefined
+  selectedGroup: ''
 };
 
 export const  reducer = (state: State = initialState, action: BMKKAction): State => {

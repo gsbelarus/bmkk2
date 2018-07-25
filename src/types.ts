@@ -102,7 +102,16 @@ export interface IPrice {
 }
 
 export type IcsvData = {
-  [key: string]: string | number;
+  '1': number;
+  '2': string;
+  '3': string;
+  '4': number | undefined,
+  '5': number | undefined,
+  '6': number,
+  '7': string,
+  '8': string,
+  '9': string | undefined,
+  '10': string | undefined
 }[];
 
 export interface INews {

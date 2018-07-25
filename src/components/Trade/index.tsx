@@ -1,8 +1,8 @@
 
 import * as React from 'react';
-import './slider.css';
+import './trade.css';
 
-export class SimleSlider extends React.Component {
+export class Trade extends React.Component {
   render() {
     const img1 = require(`../../../public/image/partn1.png`); 
     const img2 = require(`../../../public/image/partn2.png`); 

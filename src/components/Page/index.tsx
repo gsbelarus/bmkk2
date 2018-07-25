@@ -2,12 +2,12 @@ import * as React from 'react';
 import './page.css';
 import { LangSelector } from '../LangSelector';
 import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData } from '../../types';
-import { SetLanguage, LoadGroups, LoadGoods, LoadPrice, LoadNews, LoadContacts, LoadDepartments, LoadOutlets } from '../../actions';
+import { SetLanguage, LoadGroups, LoadGoods, LoadPrice, LoadNews, LoadContacts, LoadDepartments, LoadOutlets, LoadcsvData } from '../../actions';
 import { mainMenu, subMenu, goodGroupsFile, goodsFile, priceFile, addInfo, headers  } from '../../const';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { LName } from '../../types';
 import {CSVLink} from 'react-csv';
-import { SimleSlider } from '../Slider';
+import { Trade } from '../Trade';
 
 export interface PageProps extends RouteComponentProps<any> {
   selectedLang: Language;
@@ -28,6 +28,7 @@ export interface PageProps extends RouteComponentProps<any> {
   onLoadContacts: LoadContacts;
   onLoadDepartments: LoadDepartments;
   onLoadOutlets: LoadOutlets;
+  onLoadcsvData: LoadcsvData;
 }
 
 export class Page<P extends PageProps = PageProps> extends React.PureComponent<P, {}> {
@@ -43,35 +44,52 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
 
   componentDidMount() {
 
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
    
-    const { goods, price, groups, onLoadGoods, onLoadPrice, onLoadGroups, sl, csvData } = this.props;
+    const { goods, price, groups, onLoadGoods, onLoadPrice, onLoadGroups, sl, csvData, onLoadcsvData } = this.props;
 
-    if (!groups) {
+    const _groups = groups ? groups :
       fetch(goodGroupsFile)
       .then( res => res.text() )
       .then( res => JSON.parse(res) )
-      .then( res => onLoadGroups(res as IGoodGroups) )
-      .catch( err => console.log(err) );
-    }
+      .then( res => { const g = res as IGoodGroups; onLoadGroups(g); return g; } );
 
-    if (!goods) {
+    const _goods = goods ? goods :
       fetch(goodsFile)
       .then( res => res.text() )
       .then( res => JSON.parse(res) )
-      .then( res => onLoadGoods(res as IGoods) )
-      .catch( err => console.log(err) );
-    }
+      .then( res => { const g = res as IGoods; onLoadGoods(g); return g; } );
 
-    if (!price) {
+    const _price = price ? price :
       fetch(priceFile)
       .then( res => res.text() )
       .then( res => JSON.parse(res) )
-      .then( res => onLoadPrice(res as IPrice) )
-      .catch( err => console.log(err) );
-    }
-
+      .then( res => { const p = res as IPrice; onLoadPrice(p); return p; } );
   
+    Promise.all<IGoodGroups, IGoods, IPrice>([_groups, _goods, _price])
+      .then( 
+        ([_, gd, p]) => {
+          if (!csvData) {
+            onLoadcsvData(gd.goods.reduce( (prev, g, idx) => {
+              const myprice = p.price.find( p => p.ruid === g.ruid );
+              prev.push ({
+                  '1' : idx+1,
+                  '2' : g.fullname,
+                  '3' : Page.getLName(g.valuename, sl),
+                  '4' : myprice && myprice.costnde,
+                  '5' : myprice && myprice.dcostfull,
+                  '6' : g.rate,
+                  '7' : g.beforuse,
+                  '8' : g.term,
+                  '9' : myprice && myprice.barcode,
+                  '10' : Page.getLName(g.ingredientsprice, sl)
+              });
+              return prev;
+            }, [] as IcsvData));
+          }
+        } 
+      )
+      .catch( err => console.log(err) );
 
     // if (goods && price) {
     //    //csvData = [];
@@ -158,7 +176,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
           <header>
             <div className="TopRibbon">
               <div className="container TopRibbonContent">
-                {/* {csvData && <div><CSVLink filename={"PriceBmkk.xls"} headers={headers} data={csvData}>{addInfo.textPriceXlsTop[sl].name}</CSVLink></div>} */}
+                {csvData && <div><CSVLink filename={"PriceBmkk.xls"} headers={headers} data={csvData}>{addInfo.textPriceXlsTop[sl].name}</CSVLink></div>} 
                 {goods && price && <div><Link to={`${PUBLIC_ROOT}price`}>{addInfo.textPriceTop[sl].name}</Link></div>}
                 <LangSelector {...this.props} />
                 </div>
@@ -190,8 +208,8 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
                 {this.fullWidth ? null : <div className="navPath">{this.renderNavPath(this.props)}</div>}
                 {this.renderBody()}
               </div>
-              <div className={this.getPageStyle().includes('MainPage')  ? "Slider" : "NoneDisplay"}>
-                <SimleSlider />
+              <div className={this.getPageStyle().includes('MainPage')  ? "Trade" : "NoneDisplay"}>
+                <Trade />
               </div>
             </div>
           </main>
