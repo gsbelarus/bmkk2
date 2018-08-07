@@ -23,7 +23,7 @@ export class Goods extends Page {
 
     if (goods) {
 
-      const filtered = goods.goods.filter( t => t.group === match.params.groupID );
+      const filtered = goods.goods.filter( t => t.group === match.params.groupID && Page.getLName(t.caption, sl));
 
       return (
         <div>
