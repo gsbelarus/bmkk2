@@ -1,3 +1,2 @@
-﻿Англ Березовский мясокомбинат имеет сеть фирменной торговли, где можно приобрести товар в розницу.  
-В магазинах комбината представлен широкий выбор продукции по ценам производителям, регулярные акции и скидки! 
-И так далее в таком же духе.
+﻿Berezovsky meat-packing plant has a network of company trade, where you can buy goods at retail.
+In the shops of the plant there is a wide range of products at producer prices, regular promotions and discounts!

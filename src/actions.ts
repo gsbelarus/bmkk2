@@ -54,3 +54,4 @@ export const loadcsvData = createAction('LOAD_CSVDATA', resolve => {
 });
 
 export type LoadcsvData = typeof loadcsvData;
+

@@ -174,6 +174,7 @@ export interface IOutlets {
     image: string;
     lon: string;
     lat: string;
+    ordr: number;
   }[];
 }
 

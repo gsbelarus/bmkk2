@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require("path");
 const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
@@ -16,9 +17,14 @@ module.exports = merge(common, {
       sourceMap: true
     }),
   ],
+  resolve: {
+    alias: {
+      '@mydata_root': path.resolve(__dirname, '/bmkk/new/data/')
+    }
+  },
   performance: {
     hints: false
-  },
+  }, 
   output: {
     publicPath: '/bmkk/new/'
   },

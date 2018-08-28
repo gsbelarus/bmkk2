@@ -49,7 +49,7 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
     case getType(actions.loadOutlets):
       return {...state, outlets: action.payload};        
 
-      case getType(actions.loadcsvData):
+    case getType(actions.loadcsvData):
       return {...state, csvData: action.payload}          
 
     default:

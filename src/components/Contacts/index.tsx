@@ -42,11 +42,11 @@ export class Contacts extends Page {
           <div className="FlexContainer">
             { depts.map( (d, d_idx) => (
                 <div key={d_idx} className="DepartmentItem">
-                  <div>{Page.getLName(d.caption, sl)}</div>
+                  <div className="DeptName">{Page.getLName(d.caption, sl)}</div>
                   {
                     contacts.contacts.filter( c => c.department === d.ruid ).map( (c, idx) => (
                       <div key={idx} className="ContactItem">
-                        {c.caption && <div>{Page.getLName(c.caption, sl)}</div>}
+                        <div>{Page.getLName(c.caption, sl)}</div>
                         {c.phone && <div><i className="fas fa-phone fa-xs" />{c.phone}</div>}
                         {c.fax && <div><i className="fas fa-fax fa-xs" />{c.fax}</div>}
                         {c.email && <div><i className="far fa-envelope fa-xs" />{c.email}</div>}

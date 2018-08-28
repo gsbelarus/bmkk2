@@ -14,9 +14,9 @@ const mdf: { [lang: string]: string } = {
 };
 
 const md: { [lang: string]: string } = {
-  ru: require(`../../../public/data/outlets/outlets.ru.md`),
-  be: require(`../../../public/data/outlets/outlets.be.md`),
-  en: require(`../../../public/data/outlets/outlets.en.md`)
+  ru: require(`@data_root/outlets/outlets.ru.md`),
+  be: require(`@data_root/outlets/outlets.be.md`),
+  en: require(`@data_root/outlets/outlets.en.md`)
 };
 
 export class Outlets extends Page {
@@ -27,13 +27,14 @@ export class Outlets extends Page {
     .then( res => res.text())
     .then( res => JSON.parse(res) )
     .then( res => onLoadOutlets(res as IOutlets) )
-    .catch( err => console.log(err) );
+    .catch( err => console.log(err) );    
   }
 
   renderBody(): JSX.Element {
     const { outlets, sl } = this.props;
 
     if (outlets) {
+      outlets.outlets.sort((a, b) => a.ordr - b.ordr);
       return (
         <div>
           <div>
@@ -57,29 +58,29 @@ export class Outlets extends Page {
                       <img src={outletImg} />
                     </div>
                     <div className="CardCaption OutletData">
-                      <div>
-                        <strong>{Page.getLName(outlet.caption, sl)}</strong>
+                      <div className="CardCaptionTitle">
+                        {Page.getLName(outlet.caption, sl)}
                       </div>
                       <div>
-                        Адрес: <strong>{Page.getLName(outlet.address, sl)}</strong>
+                        <span className="CardCaptionLabel">Адрес: </span>{Page.getLName(outlet.address, sl)}
                       </div>
                       <div>
-                        Телефон: <strong>{outlet.phone}</strong>
+                        <span className="CardCaptionLabel">Телефон: </span>{outlet.phone}
                       </div>
                       <div>
-                        Email: <strong>{outlet.email}</strong>
+                        <span className="CardCaptionLabel">Email: </span>{outlet.email}
                       </div>
                       <div>
-                        В рабочие дни: <strong>{outlet.timewd}</strong>
+                        <span className="CardCaptionLabel">В рабочие дни: </span>{outlet.timewd}
                       </div>
                       <div>
-                        В субботу: <strong>{outlet.timesat}</strong>
+                        <span className="CardCaptionLabel">В субботу: </span>{outlet.timesat}
                       </div>
                       <div>
-                        В воскресенье: <strong>{outlet.timesun}</strong>
+                        <span className="CardCaptionLabel">В воскресенье: </span>{outlet.timesun}
                       </div>
                       <div>
-                        Координаты: <strong>{outlet.lat}, {outlet.lon}</strong>
+                        <span className="CardCaptionLabel">Координаты: </span>{outlet.lat}, {outlet.lon}
                       </div>
                     </div>
                   </div>
