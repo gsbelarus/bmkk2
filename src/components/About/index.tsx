@@ -1,70 +1,67 @@
 import * as React from 'react';
-import { Page } from '../Page';
+import { Page, LoadMDFile } from '../Page';
 import * as ReactMarkdown from 'react-markdown';
 import './about.css';
+import { languages } from '../../types';
+import { aboutRoot } from '../../const';
 
 const img1 = require(`../../../public/data/about/about1.jpg`); 
 const img2 = require(`../../../public/data/about/about2.jpg`); 
 const img3 = require(`../../../public/data/about/about3.jpg`); 
 const img4 = require(`../../../public/data/about/about4.jpg`); 
 
-const md: { [lang: string]: string } = {
-  ru: require(`../../../public/data/about/about.ru.md`),
-  be: require(`../../../public/data/about/about.be.md`),
-  en: require(`../../../public/data/about/about.en.md`)
-};
-
-const mdh: { [lang: string]: string } = {
-  ru: require(`../../../public/data/about/history.ru.md`),
-  be: require(`../../../public/data/about/history.be.md`),
-  en: require(`../../../public/data/about/history.en.md`)
-};
-
-const mds: { [lang: string]: string } = {
-  ru: require(`../../../public/data/about/staff.ru.md`),
-  be: require(`../../../public/data/about/staff.be.md`),
-  en: require(`../../../public/data/about/staff.en.md`)
-};
-
-const mdv: { [lang: string]: string } = {
-  ru: require(`../../../public/data/about/vacancy.ru.md`),
-  be: require(`../../../public/data/about/vacancy.be.md`),
-  en: require(`../../../public/data/about/vacancy.en.md`)
-};
-
-const mdr: { [lang: string]: string } = {
-  ru: require(`../../../public/data/about/rest.ru.md`),
-  be: require(`../../../public/data/about/rest.be.md`),
-  en: require(`../../../public/data/about/rest.en.md`)
-};
-
 export class About extends Page {
+
+  componentDidMount() {
+    const { onLoadAboutMD, onLoadHistoryMD, onLoadStaffMD, onLoadVacancyMD, onLoadRestMD} = this.props;
+    languages.map((l, idx) => 
+      {
+        LoadMDFile(`${aboutRoot}about.` + l.toLowerCase() + `.md`, l, onLoadAboutMD);  
+        LoadMDFile(`${aboutRoot}history.` + l.toLowerCase() + `.md`, l, onLoadHistoryMD);     
+        LoadMDFile(`${aboutRoot}staff.` + l.toLowerCase() + `.md`, l, onLoadStaffMD);  
+        LoadMDFile(`${aboutRoot}vacancy.` + l.toLowerCase() + `.md`, l, onLoadVacancyMD);       
+        LoadMDFile(`${aboutRoot}rest.` + l.toLowerCase() + `.md`, l, onLoadRestMD); 
+      }
+    )    
+  }
+
   renderBody(): JSX.Element {
-    const { sl } = this.props;
+    const { sl, aboutMD, historyMD, staffMD, vacancyMD, restMD } = this.props;
     return (
       <div>
-        <div className="About">
-          <ReactMarkdown source={md[sl]} className="AboutText"/>        
-          <div className="AboutImg">
-            <img src={img1} />
-            <img src={img2} />          
-            <img src={img3} />          
-            <img src={img4} />
-          </div>         
-        </div>  
-        <div id="history">
-          <ReactMarkdown source={mdh[sl]}/> 
-        </div>   
-        <div id="staff">
-          <ReactMarkdown source={mds[sl]}/> 
-        </div>
-        <div id="vacancy">
-          <ReactMarkdown source={mdv[sl]}/> 
-        </div>          
-        <div id="rest">
-          <ReactMarkdown source={mdr[sl]}/> 
-        </div>                 
-      </div>    
+        { aboutMD && aboutMD[sl.toUpperCase()] &&
+          <div className="About">
+            <ReactMarkdown source={aboutMD[sl.toUpperCase()].name} className="AboutText"/>        
+            <div className="AboutImg">
+              <img src={img1} />
+              <img src={img2} />          
+              <img src={img3} />          
+              <img src={img4} />
+            </div>         
+          </div>
+        } 
+        { historyMD && historyMD[sl.toUpperCase()] &&
+          <div id="history">
+            <ReactMarkdown source={historyMD[sl.toUpperCase()].name}/> 
+          </div>
+        }
+        { staffMD && staffMD[sl.toUpperCase()] &&
+          <div id="staff">
+            <ReactMarkdown source={staffMD[sl.toUpperCase()].name}/> 
+          </div>
+        }  
+        { vacancyMD && vacancyMD[sl.toUpperCase()] &&
+          <div id="vacancy">
+            <ReactMarkdown source={vacancyMD[sl.toUpperCase()].name}/> 
+          </div>          
+        }  
+        { restMD && restMD[sl.toUpperCase()] &&
+          <div id="rest">
+            <ReactMarkdown source={restMD[sl.toUpperCase()].name}/> 
+          </div>                 
+        }  
+      </div> 
+        
       );
   }
 }

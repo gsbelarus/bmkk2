@@ -55,3 +55,65 @@ export const loadcsvData = createAction('LOAD_CSVDATA', resolve => {
 
 export type LoadcsvData = typeof loadcsvData;
 
+export const loadOutletsMD = createAction('LOAD_OUTLETSMD', resolve => {
+  return (loadedOutletsMD: { lang: string, text: string }) => resolve(loadedOutletsMD);
+});
+
+export type LoadOutletsMD = typeof loadOutletsMD;
+
+export const loadForForeignersMD = createAction('LOAD_FORFOREIGNERSMD', resolve => {
+  return (loadedForForeignersMD: { lang: string, text: string }) => resolve(loadedForForeignersMD);
+});
+
+export type LoadForForeignersMD = typeof loadForForeignersMD;
+
+export const loadAboutMD = createAction('LOAD_ABOUTMD', resolve => {
+  return (loadedAboutMD: { lang: string, text: string }) => resolve(loadedAboutMD);
+});
+
+export type LoadAboutMD = typeof loadAboutMD;
+
+export const loadHistoryMD = createAction('LOAD_HISTORYMD', resolve => {
+  return (loadedHistoryMD: { lang: string, text: string }) => resolve(loadedHistoryMD);
+});
+
+export type LoadHistoryMD = typeof loadHistoryMD;
+
+export const loadVacancyMD = createAction('LOAD_VACANCYMD', resolve => {
+  return (loadedVacancyMD: { lang: string, text: string }) => resolve(loadedVacancyMD);
+});
+
+export type LoadVacancyMD = typeof loadVacancyMD;
+
+export const loadRestMD = createAction('LOAD_RESTMD', resolve => {
+  return (loadedRestMD: { lang: string, text: string }) => resolve(loadedRestMD);
+});
+
+export type LoadRestMD = typeof loadRestMD;
+
+export const loadStaffMD = createAction('LOAD_STAFFMD', resolve => {
+  return (loadedStaffMD: { lang: string, text: string }) => resolve(loadedStaffMD);
+});
+
+export type LoadStaffMD = typeof loadStaffMD;
+
+export const loadDirectionMD = createAction('LOAD_DIRECTIONMD', resolve => {
+  return (loadedDirectionMD: { lang: string, text: string }) => resolve(loadedDirectionMD);
+});
+
+export type LoadDirectionMD = typeof loadDirectionMD;
+
+export const loadRequisitesMD = createAction('LOAD_REQUISITESMD', resolve => {
+  return (loadedRequisitesMD: { lang: string, text: string }) => resolve(loadedRequisitesMD);
+});
+
+export type LoadRequisitesMD = typeof loadRequisitesMD;
+
+export const loadForCustomerMD = createAction('LOAD_FORCUSTOMERMD', resolve => {
+  return (loadedForCustomerMD: { lang: string, text: string }) => resolve(loadedForCustomerMD);
+});
+
+export type LoadForCustomerMD = typeof loadForCustomerMD;
+
+
+

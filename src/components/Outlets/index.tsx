@@ -1,45 +1,40 @@
 import * as React from 'react';
-import { Page } from '../Page';
-import { IOutlets } from '../../types';
-import { outletsFile, addInfo, outletsRoot, outletFileNoImage } from '../../const';
+import { Page, LoadMDFile } from '../Page';
+import { IOutlets, languages } from '../../types';
+import { outletsFile, outletsRoot, outletFileNoImage, forcustomerRoot } from '../../const';
 import * as ReactMarkdown from 'react-markdown';
 import './outlets.css';
-
-// const outletImg = require('../../../public/image/outlet.png');
-
-const mdf: { [lang: string]: string } = {
-  ru: require(`../../../public/data/forcustomer/forforeigners.ru.md`),
-  be: require(`../../../public/data/forcustomer/forforeigners.be.md`),
-  en: require(`../../../public/data/forcustomer/forforeigners.en.md`)
-};
-
-const md: { [lang: string]: string } = {
-  ru: require(`@data_root/outlets/outlets.ru.md`),
-  be: require(`@data_root/outlets/outlets.be.md`),
-  en: require(`@data_root/outlets/outlets.en.md`)
-};
 
 export class Outlets extends Page {
 
   componentDidMount() {
-    const { onLoadOutlets } = this.props;
+    const { onLoadOutlets, onLoadOutletsMD, onLoadForForeignersMD } = this.props;
     fetch(outletsFile)
     .then( res => res.text())
     .then( res => JSON.parse(res) )
     .then( res => onLoadOutlets(res as IOutlets) )
-    .catch( err => console.log(err) );    
+    .catch( err => console.log(err) );  
+
+    languages.map((l, idx) => 
+      {
+        LoadMDFile(`${outletsRoot}outlets.` + l.toLowerCase() + `.md`, l, onLoadOutletsMD);  
+        LoadMDFile(`${forcustomerRoot}forforeigners.` + l.toLowerCase() + `.md`, l, onLoadForForeignersMD);     
+      }
+    )       
   }
 
   renderBody(): JSX.Element {
-    const { outlets, sl } = this.props;
-
+    const { outlets, sl, outletsMD, forForeignersMD } = this.props;
+    
     if (outlets) {
       outlets.outlets.sort((a, b) => a.ordr - b.ordr);
       return (
         <div>
-          <div>
-            <ReactMarkdown source={md[sl.toLowerCase()]} />
-          </div>  
+          { outletsMD && outletsMD[sl.toUpperCase()] &&
+            <div>
+              <ReactMarkdown source={outletsMD[sl.toUpperCase()].name} />            
+            </div> 
+          }  
           <div className="OutletBox FlexContainer">
             {
               outlets.outlets.map( (outlet, idx) => {
@@ -88,9 +83,14 @@ export class Outlets extends Page {
               })
             }
           </div>
-          <div id="foreigns">
-            <ReactMarkdown source={mdf[sl.toLowerCase()]} />
-          </div>  
+
+          { forForeignersMD && forForeignersMD[sl.toUpperCase()] &&
+            <div id="foreigns">
+              <ReactMarkdown source={forForeignersMD[sl.toUpperCase()].name} />            
+            </div> 
+          } 
+
+
         </div>  
       );
     } else {

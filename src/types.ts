@@ -17,6 +17,8 @@ export interface MenuItem {
   caption: LName;
 }
 
+export type OnLoadMDFile = (params: { lang: string, text: string }) => void;
+
 export type MenuItems = MenuItem[];
 
 export interface GoodCaptions {

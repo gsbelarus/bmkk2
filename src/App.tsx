@@ -4,9 +4,9 @@ import { Switch, Route } from 'react-router-dom';
 import { MainPage } from './components/MainPage';
 import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, loadPrice, LoadPrice, LoadGoods,
          LoadNews, loadNews, LoadContacts, loadContacts, LoadDepartments, loadDepartments,
-         LoadOutlets, loadOutlets, LoadcsvData, loadcsvData } from './actions';
+         LoadOutlets, loadOutlets, LoadcsvData, loadcsvData, loadOutletsMD, LoadOutletsMD, LoadForForeignersMD, loadForForeignersMD, loadAboutMD, LoadAboutMD, LoadHistoryMD, LoadStaffMD, LoadVacancyMD, LoadRestMD, loadHistoryMD, loadStaffMD, loadVacancyMD, loadRestMD, loadDirectionMD, loadRequisitesMD, LoadDirectionMD, LoadRequisitesMD, LoadForCustomerMD, loadForCustomerMD } from './actions';
 import { State } from './store';
-import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData } from './types';
+import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, LName } from './types';
 import { Production } from './components/Production';
 import { About } from './components/About';
 import { Goods } from './components/Goods';
@@ -27,6 +27,16 @@ export interface AppProps {
   contacts: IContacts;
   departments: IDepartments;
   outlets: IOutlets;
+  outletsMD?: LName;  
+  aboutMD? : LName;
+  historyMD?: LName;
+  staffMD?: LName;
+  vacancyMD?: LName;
+  restMD?: LName;    
+  forForeignersMD?: LName;    
+  directionMD?: LName;
+  requisitesMD?: LName;     
+  forCustomerMD?: LName;    
   sl: string;
   csvData: IcsvData; 
   onSetLanguage: SetLanguage;
@@ -39,6 +49,16 @@ export interface AppProps {
   onLoadDepartments: LoadDepartments;
   onLoadOutlets: LoadOutlets;
   onLoadcsvData: LoadcsvData;  
+  onLoadOutletsMD: LoadOutletsMD
+  onLoadForForeignersMD: LoadForForeignersMD,
+  onLoadAboutMD: LoadAboutMD,
+  onLoadHistoryMD: LoadHistoryMD;
+  onLoadStaffMD: LoadStaffMD;  
+  onLoadVacancyMD: LoadVacancyMD;
+  onLoadRestMD: LoadRestMD;
+  onLoadDirectionMD: LoadDirectionMD;
+  onLoadRequisitesMD: LoadRequisitesMD;    
+  onLoadForCustomerMD: LoadForCustomerMD;     
 }
 
 class App extends React.Component<AppProps, {}> {
@@ -162,6 +182,16 @@ export default connect(
     onLoadContacts: loadContacts,
     onLoadDepartments: loadDepartments,
     onLoadOutlets: loadOutlets,
-    onLoadcsvData: loadcsvData    
+    onLoadcsvData: loadcsvData, 
+    onLoadOutletsMD: loadOutletsMD,
+    onLoadForForeignersMD: loadForForeignersMD, 
+    onLoadAboutMD: loadAboutMD, 
+    onLoadHistoryMD: loadHistoryMD, 
+    onLoadStaffMD: loadStaffMD, 
+    onLoadVacancyMD: loadVacancyMD, 
+    onLoadRestMD: loadRestMD,
+    onLoadDirectionMD: loadDirectionMD, 
+    onLoadRequisitesMD: loadRequisitesMD,
+    onLoadForCustomerMD: loadForCustomerMD                           
   }
 )(App);

@@ -10,10 +10,6 @@
     "moduleResolution": "node",
     "rootDir": "src",
     "strict": true
-    // ,
-    // "paths": {
-    //   "@data_root/*": ["/data/*"]
-    // },    
   },
   "exclude": [
     "node_modules",
@@ -22,3 +18,8 @@
     "webpack.*.js"
   ]
 }
+
+    // ,
+    // "paths": {
+    //   "@data_root/*": ["/data/*"]
+    // },   

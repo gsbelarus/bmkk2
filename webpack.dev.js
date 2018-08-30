@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const path = require("path");
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
@@ -17,12 +16,14 @@ module.exports = merge(common, {
       'process.env.NODE_ENV': JSON.stringify('development')
     })
   ],
-  resolve: {
-    alias: {
-      '@mydata_root': path.resolve(__dirname, '/data/')
-    }
-  },
   output: {
     publicPath: '/'
   }
 });
+
+
+// resolve: {
+//   alias: {
+//     '@mydata_root': path.resolve(__dirname, '/data/')
+//   }
+// },

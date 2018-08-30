@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './page.css';
 import { LangSelector } from '../LangSelector';
-import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData } from '../../types';
-import { SetLanguage, LoadGroups, LoadGoods, LoadPrice, LoadNews, LoadContacts, LoadDepartments, LoadOutlets, LoadcsvData } from '../../actions';
+import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, OnLoadMDFile } from '../../types';
+import { SetLanguage, LoadGroups, LoadGoods, LoadPrice, LoadNews, LoadContacts, LoadDepartments, LoadOutlets, LoadcsvData, LoadOutletsMD, LoadForForeignersMD, LoadAboutMD, LoadHistoryMD, LoadStaffMD, LoadVacancyMD, LoadRestMD, LoadDirectionMD, LoadRequisitesMD, LoadForCustomerMD } from '../../actions';
 import { mainMenu, subMenu, goodGroupsFile, goodsFile, priceFile, addInfo, headers  } from '../../const';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { LName } from '../../types';
@@ -18,6 +18,16 @@ export interface PageProps extends RouteComponentProps<any> {
   contacts: IContacts;
   departments: IDepartments;
   outlets: IOutlets;
+  outletsMD?: LName;
+  aboutMD?: LName;
+  historyMD?: LName;
+  staffMD?: LName;
+  vacancyMD?: LName;
+  restMD?: LName;  
+  forForeignersMD?: LName;  
+  directionMD?: LName;
+  requisitesMD?: LName;     
+  forCustomerMD?: LName;   
   csvData: IcsvData;  
   sl: string;
   onSetLanguage: SetLanguage;
@@ -28,8 +38,25 @@ export interface PageProps extends RouteComponentProps<any> {
   onLoadContacts: LoadContacts;
   onLoadDepartments: LoadDepartments;
   onLoadOutlets: LoadOutlets;
+  onLoadOutletsMD: LoadOutletsMD;  
+  onLoadForForeignersMD: LoadForForeignersMD;
   onLoadcsvData: LoadcsvData;
+  onLoadAboutMD: LoadAboutMD;    
+  onLoadHistoryMD: LoadHistoryMD;
+  onLoadStaffMD: LoadStaffMD;  
+  onLoadVacancyMD: LoadVacancyMD;
+  onLoadRestMD: LoadRestMD;
+  onLoadDirectionMD: LoadDirectionMD;
+  onLoadRequisitesMD: LoadRequisitesMD;    
+  onLoadForCustomerMD: LoadForCustomerMD;   
 }
+
+export function LoadMDFile(url: string, lang: Language, onLoadMDFile: OnLoadMDFile) {
+  return fetch(url)
+    .then( res => res.text() )
+    .then( text => onLoadMDFile({ lang, text }) )
+    .catch( console.log );
+};
 
 export class Page<P extends PageProps = PageProps> extends React.PureComponent<P, {}> {
 

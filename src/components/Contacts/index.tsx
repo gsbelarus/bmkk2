@@ -1,14 +1,15 @@
 import * as React from 'react';
-import { Page } from '../Page';
+import { Page, LoadMDFile } from '../Page';
 import { IContacts, IDepartments } from '../../types';
-import { contactsFile, departmentsFile } from '../../const';
+import { contactsFile, departmentsFile, forcustomerRoot } from '../../const';
 import './contacts.css';
 import * as ReactMarkdown from 'react-markdown';
+import { languages } from '../../types';
 
 export class Contacts extends Page {
 
   componentDidMount() {
-    const { onLoadContacts, onLoadDepartments } = this.props;
+    const { onLoadContacts, onLoadDepartments, onLoadRequisitesMD } = this.props;
 
     fetch(contactsFile)
     .then( res => res.text() )
@@ -21,16 +22,16 @@ export class Contacts extends Page {
     .then( res => JSON.parse(res) )
     .then( res => onLoadDepartments(res as IDepartments) )
     .catch( err => console.log(err) );
+
+    languages.map((l, idx) => 
+      { 
+        LoadMDFile(`${forcustomerRoot}requisites.` + l.toLowerCase() + `.md`, l, onLoadRequisitesMD);  
+      }
+    )    
   }
 
   renderBody(): JSX.Element {
-    const { contacts, departments, sl } = this.props;
-
-    const mdr: { [lang: string]: string } = {
-      ru: require(`../../../public/data/forcustomer/requisites.ru.md`),
-      be: require(`../../../public/data/forcustomer/requisites.be.md`),
-      en: require(`../../../public/data/forcustomer/requisites.en.md`)
-    };    
+    const { contacts, departments, sl, requisitesMD } = this.props;
 
     if (contacts && departments) {
       const depts = departments.departments.filter(
@@ -60,9 +61,11 @@ export class Contacts extends Page {
               )
             }
           </div>
-          <div id="requisites">
-            <ReactMarkdown source={mdr[sl.toLowerCase()]} />
-          </div>           
+          { requisitesMD && requisitesMD[sl.toUpperCase()] && 
+            <div id="requisites">
+              <ReactMarkdown source={requisitesMD[sl.toUpperCase()].name} />
+            </div>
+          }             
         </div>
       );
     } else {
