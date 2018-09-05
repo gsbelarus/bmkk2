@@ -13,6 +13,8 @@ const img4 = require(`../../../public/data/about/about4.jpg`);
 export class About extends Page {
 
   componentDidMount() {
+    super.componentDidMount();
+
     const { onLoadAboutMD, onLoadHistoryMD, onLoadStaffMD, onLoadVacancyMD, onLoadRestMD} = this.props;
     languages.map((l, idx) => 
       {

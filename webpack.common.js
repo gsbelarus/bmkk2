@@ -51,6 +51,11 @@ module.exports =  {
         flatten: true
       },
       {
+        from: './public/data/downloads/*.*',
+        to: 'data/downloads/',
+        flatten: true
+      },     
+      {
         from: './public/data/upload_binary.php',
         to: 'data/',
         flatten: true

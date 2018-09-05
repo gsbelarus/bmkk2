@@ -21,25 +21,27 @@ export type OnLoadMDFile = (params: { lang: string, text: string }) => void;
 
 export type MenuItems = MenuItem[];
 
+
 export interface GoodCaptions {
-  description: {
-    ingredients: LName;
-    casing: LName;
-    beforuse: LName;
-    costnde: LName;
-    dcostfull: LName;
-    proteins: LName;
-    fats: LName;
-    carbons: LName;
-    energy: LName;
-    vitamins: LName;
-    B1: LName;
-    B2: LName;
-    C: LName;
-    Ca: LName;
-    Fe: LName;    
-  }
+  ingredients: LName;
+  casing: LName;
+  beforuse: LName;
+  costnde: LName;
+  dcostfull: LName;
+  textDiscount: LName;
+  textNew: LName;
+  proteins: LName;
+  fats: LName;
+  carbons: LName;
+  energy: LName;
+  vitamins: LName;
+  B1: LName;
+  B2: LName;
+  C: LName;
+  Ca: LName;
+  Fe: LName;   
 }
+
 
 //export type GoodCaptions = GoodCapt;
 
@@ -59,6 +61,7 @@ export interface PriceItem {
 }
 
 export type PriceItems = PriceItem[];
+
 
 export interface IGoods {
   version: string;
@@ -154,11 +157,9 @@ export interface IDepartments {
 }
 
 export interface ContactCaptions {
-  description: {
-    phone: LName;
-    fax: LName;
-    email: LName
-  }
+  phone: LName;
+  fax: LName;
+  email: LName
 }
 
 export interface IOutlets {
@@ -181,22 +182,24 @@ export interface IOutlets {
 }
 
 export interface OutletsCaptions {
-  description: {
-    caption: LName;
-    phone: LName;     
-    email: LName;
-    time: LName;   
-    timewd: LName;
-    timesat: LName;
-    timesun: LName;  
-  }
+  caption: LName;
+  address: LName;    
+  phone: LName;     
+  email: LName;
+  timewd: LName;
+  timesat: LName;
+  timesun: LName;  
+  coordinates: LName
 }
-
 export interface IAddInfo {
   textRights: LName; 
   textPriceMore: LName;  
   textPriceLink: LName;  
-  textOutlets: LName;  
+  textOutlets: LName;   
   textPriceTop: LName;
   textPriceXlsTop: LName;
+  textDownLoadFilesTop: LName; 
+  moreCaption: LName;
+  textPriceName: LName;
+  texName: LName
 }

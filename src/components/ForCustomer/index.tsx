@@ -11,6 +11,7 @@ const map = require('../../../public/image/map.jpg');
 export class ForCustomer extends Page {
 
   componentDidMount() {
+    super.componentDidMount();
     const { onLoadForCustomerMD, onLoadDirectionMD, onLoadRequisitesMD} = this.props;
       languages.map((l, idx) => 
         {

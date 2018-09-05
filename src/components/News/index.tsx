@@ -8,6 +8,7 @@ import './news.css';
 export class News extends Page {
 
   componentDidMount() {
+    super.componentDidMount();
     const { onLoadNews } = this.props;
     fetch(newsFile)
     .then( res => {

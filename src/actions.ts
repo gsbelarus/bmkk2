@@ -115,5 +115,18 @@ export const loadForCustomerMD = createAction('LOAD_FORCUSTOMERMD', resolve => {
 
 export type LoadForCustomerMD = typeof loadForCustomerMD;
 
+export const loadPriceTitleMD = createAction('LOAD_PRICETITLEMD', resolve => {
+  return (loadedPriceTitleMD: { lang: string, text: string }) => resolve(loadedPriceTitleMD);
+});
+
+export type LoadPriceTitleMD = typeof loadPriceTitleMD;
+
+export const loadDownLoadMD = createAction('LOAD_DOWNLOADMD', resolve => {
+  return (loadedDownLoadMD: { lang: string, text: string }) => resolve(loadedDownLoadMD);
+});
+
+export type LoadDownLoadMD = typeof loadDownLoadMD;
+
+
 
 

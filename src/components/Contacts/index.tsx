@@ -9,6 +9,7 @@ import { languages } from '../../types';
 export class Contacts extends Page {
 
   componentDidMount() {
+    super.componentDidMount();
     const { onLoadContacts, onLoadDepartments, onLoadRequisitesMD } = this.props;
 
     fetch(contactsFile)
@@ -48,10 +49,10 @@ export class Contacts extends Page {
                     contacts.contacts.filter( c => c.department === d.ruid ).map( (c, idx) => (
                       <div key={idx} className="ContactItem">
                         <div>{Page.getLName(c.caption, sl)}</div>
-                        {c.phone && <div><i className="fas fa-phone fa-xs" />{c.phone}</div>}
-                        {c.fax && <div><i className="fas fa-fax fa-xs" />{c.fax}</div>}
-                        {c.email && <div><i className="far fa-envelope fa-xs" />{c.email}</div>}
-                        {c.description && <div>{c.description}</div>}
+                        {c.phone && <div className="contactdiv"><i className="fas fa-phone fa-xs" />{c.phone}</div>}
+                        {c.fax && <div className="contactdiv"><i className="fas fa-fax fa-xs" />{c.fax}</div>}
+                        {c.email && <div className="contactdiv"><i className="far fa-envelope fa-xs" />{c.email}</div>}
+                        {c.description && <div className="contactdiv">{c.description}</div>}
                       </div>
                       )
                     )

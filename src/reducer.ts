@@ -1,7 +1,6 @@
 import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, LName } from './types';
 import * as actions from './actions';
 import { ActionType, getType } from 'typesafe-actions';
-import { lchmod } from 'fs';
 
 export type BMKKAction = ActionType<typeof actions>; 
 
@@ -26,6 +25,8 @@ export type State = {
   directionMD? : LName;
   requisitesMD? :LName;
   forCustomerMD? :LName;
+  priceTitleMD? :LName;
+  downLoadMD? :LName;
 };
 
 const initialState: State = {
@@ -111,7 +112,17 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
     case getType(actions.loadForCustomerMD):
       var { lang, text } = action.payload;
       const { forCustomerMD } = state;      
-      return {...state, forCustomerMD: {...forCustomerMD, [lang]: {name: text} } }       
+      return {...state, forCustomerMD: {...forCustomerMD, [lang]: {name: text} } }    
+      
+    case getType(actions.loadPriceTitleMD):
+      var { lang, text } = action.payload;
+      const { priceTitleMD } = state;      
+      return {...state, priceTitleMD: {...priceTitleMD, [lang]: {name: text} } } 
+      
+    case getType(actions.loadDownLoadMD):
+      var { lang, text } = action.payload;
+      const { downLoadMD } = state;      
+      return {...state, downLoadMD: {...downLoadMD, [lang]: {name: text} } }         
 
     default:
       return state;

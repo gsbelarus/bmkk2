@@ -1,0 +1,10 @@
+
+.downloadfiles a {
+  color: var(--colorBrown) !important;  
+  border-bottom: 1px dotted var(--colorBrown);
+  line-height: 30px;
+}
+
+.downloadfiles {
+  padding-top: 10px;
+}

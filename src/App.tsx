@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import { MainPage } from './components/MainPage';
 import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, loadPrice, LoadPrice, LoadGoods,
          LoadNews, loadNews, LoadContacts, loadContacts, LoadDepartments, loadDepartments,
-         LoadOutlets, loadOutlets, LoadcsvData, loadcsvData, loadOutletsMD, LoadOutletsMD, LoadForForeignersMD, loadForForeignersMD, loadAboutMD, LoadAboutMD, LoadHistoryMD, LoadStaffMD, LoadVacancyMD, LoadRestMD, loadHistoryMD, loadStaffMD, loadVacancyMD, loadRestMD, loadDirectionMD, loadRequisitesMD, LoadDirectionMD, LoadRequisitesMD, LoadForCustomerMD, loadForCustomerMD } from './actions';
+         LoadOutlets, loadOutlets, LoadcsvData, loadcsvData, loadOutletsMD, LoadOutletsMD, LoadForForeignersMD, loadForForeignersMD, loadAboutMD, LoadAboutMD, LoadHistoryMD, LoadStaffMD, LoadVacancyMD, LoadRestMD, loadHistoryMD, loadStaffMD, loadVacancyMD, loadRestMD, loadDirectionMD, loadRequisitesMD, LoadDirectionMD, LoadRequisitesMD, LoadForCustomerMD, loadForCustomerMD, LoadPriceTitleMD, loadPriceTitleMD, LoadDownLoadMD, loadDownLoadMD } from './actions';
 import { State } from './store';
 import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, LName } from './types';
 import { Production } from './components/Production';
@@ -16,8 +16,9 @@ import { News } from './components/News';
 import { Contacts } from './components/Contacts';
 import { Outlets } from './components/Outlets';
 import { ForCustomer } from './components/ForCustomer';
+import { DownLoadFiles } from './components/DownLoadFiles';
 import { BrowserRouter } from 'react-router-dom'
-
+ 
 export interface AppProps {
   selectedLang: Language;
   groups: IGoodGroups;
@@ -37,6 +38,7 @@ export interface AppProps {
   directionMD?: LName;
   requisitesMD?: LName;     
   forCustomerMD?: LName;    
+  priceTitleMD?: LName;  
   sl: string;
   csvData: IcsvData; 
   onSetLanguage: SetLanguage;
@@ -59,6 +61,8 @@ export interface AppProps {
   onLoadDirectionMD: LoadDirectionMD;
   onLoadRequisitesMD: LoadRequisitesMD;    
   onLoadForCustomerMD: LoadForCustomerMD;     
+  onLoadPriceTitleMD: LoadPriceTitleMD;   
+  onLoadDownLoadMD: LoadDownLoadMD;   
 }
 
 class App extends React.Component<AppProps, {}> {
@@ -160,6 +164,15 @@ class App extends React.Component<AppProps, {}> {
               }
             }
           />
+          <Route
+            path={`${PUBLIC_ROOT}downloads`}
+            render={
+              (props) => {
+                const mergedProps = {...this.props, ...props};
+                return <DownLoadFiles {...mergedProps} />;
+              }
+            }
+          />          
         </Switch>
       </BrowserRouter>
     );
@@ -173,7 +186,7 @@ export default connect(
       sl: state.appState.selectedLang.toLowerCase()
     }
   ),
-  {
+  { 
     onSetLanguage: setLanguage,
     onLoadGroups: loadGroups,
     onLoadGoods: loadGoods,
@@ -192,6 +205,8 @@ export default connect(
     onLoadRestMD: loadRestMD,
     onLoadDirectionMD: loadDirectionMD, 
     onLoadRequisitesMD: loadRequisitesMD,
-    onLoadForCustomerMD: loadForCustomerMD                           
+    onLoadForCustomerMD: loadForCustomerMD,
+    onLoadPriceTitleMD: loadPriceTitleMD,
+    onLoadDownLoadMD: loadDownLoadMD                           
   }
 )(App);

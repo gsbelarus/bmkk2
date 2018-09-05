@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './page.css';
 import { LangSelector } from '../LangSelector';
-import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, OnLoadMDFile } from '../../types';
-import { SetLanguage, LoadGroups, LoadGoods, LoadPrice, LoadNews, LoadContacts, LoadDepartments, LoadOutlets, LoadcsvData, LoadOutletsMD, LoadForForeignersMD, LoadAboutMD, LoadHistoryMD, LoadStaffMD, LoadVacancyMD, LoadRestMD, LoadDirectionMD, LoadRequisitesMD, LoadForCustomerMD } from '../../actions';
+import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, OnLoadMDFile} from '../../types';
+import { SetLanguage, LoadGroups, LoadGoods, LoadPrice, LoadNews, LoadContacts, LoadDepartments, LoadOutlets, LoadcsvData, LoadOutletsMD, LoadForForeignersMD, LoadAboutMD, LoadHistoryMD, LoadStaffMD, LoadVacancyMD, LoadRestMD, LoadDirectionMD, LoadRequisitesMD, LoadForCustomerMD, LoadPriceTitleMD, LoadDownLoadMD } from '../../actions';
 import { mainMenu, subMenu, goodGroupsFile, goodsFile, priceFile, addInfo, headers  } from '../../const';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { LName } from '../../types';
@@ -28,7 +28,9 @@ export interface PageProps extends RouteComponentProps<any> {
   directionMD?: LName;
   requisitesMD?: LName;     
   forCustomerMD?: LName;   
-  csvData: IcsvData;  
+  priceTitleMD?: LName; 
+  downLoadMD? :LName;    
+  csvData: IcsvData; 
   sl: string;
   onSetLanguage: SetLanguage;
   onLoadGroups: LoadGroups;
@@ -49,6 +51,8 @@ export interface PageProps extends RouteComponentProps<any> {
   onLoadDirectionMD: LoadDirectionMD;
   onLoadRequisitesMD: LoadRequisitesMD;    
   onLoadForCustomerMD: LoadForCustomerMD;   
+  onLoadPriceTitleMD: LoadPriceTitleMD; 
+  onLoadDownLoadMD: LoadDownLoadMD
 }
 
 export function LoadMDFile(url: string, lang: Language, onLoadMDFile: OnLoadMDFile) {
@@ -74,7 +78,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
     window.scrollTo(0, 0);
    
     const { goods, price, groups, onLoadGoods, onLoadPrice, onLoadGroups, sl, csvData, onLoadcsvData } = this.props;
-
+    
     const _groups = groups ? groups :
       fetch(goodGroupsFile)
       .then( res => res.text() )
@@ -118,25 +122,6 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
       )
       .catch( err => console.log(err) );
 
-    // if (goods && price) {
-    //    //csvData = [];
-    //   goods.goods.map( (g, idx) => {
-    //     const myprice = price.price.find( p => p.ruid === g.ruid );
-    //      csvData.push ({
-    //         '1' : idx+1,
-    //         '2' : g.fullname,
-    //         '3' : Page.getLName(g.valuename, sl),
-    //         '4' : myprice && myprice.costnde,
-    //         '5' : myprice && myprice.dcostfull,
-    //         '6' : g.rate,
-    //         '7' : g.beforuse,
-    //         '8' : g.term,
-    //         '9' : myprice && myprice.barcode,
-    //         '10' : Page.getLName(g.ingredientsprice, sl)
-    //     });
-    //   })
-    // }
-
   }
 
   renderBody(): JSX.Element {
@@ -145,7 +130,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
 
   renderNavPath(props: PageProps): JSX.Element[] {
     const { location, sl } = props;
-    let pathname = location.pathname;
+    let pathname = location.pathname;   
 
     if (pathname === `${PUBLIC_ROOT}`) {
       return [];
@@ -191,38 +176,42 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
   }  
 
   render() {
-    const { sl, location, goods, price, csvData } = this.props;
+    const { sl, location, goods, price } = this.props;
     const logoImgBtm = require('../../../public/image/logo_bw.svg');
-   
+
     return (
       <div>
         <div className={this.getPageStyle()}>
           <header>
             <div className="TopRibbon">
               <div className="container TopRibbonContent">
-                {csvData && <div><CSVLink filename={"PriceBmkk.xls"} headers={headers} data={csvData}>{addInfo.textPriceXlsTop[sl].name}</CSVLink></div>} 
+                <Link to={`${PUBLIC_ROOT}downloads`}>
+                  {addInfo.textDownLoadFilesTop[sl].name}
+                </Link>             
                 {goods && price && <div><Link to={`${PUBLIC_ROOT}price`}>{addInfo.textPriceTop[sl].name}</Link></div>}
                 <LangSelector {...this.props} />
                 </div>
               </div>
-            <nav className="TopMenu">
-              <div className="container TopMenuContent">
-              <Link to={`${PUBLIC_ROOT}`}>
-                {this.logoImg && <img className="Logo" src={this.logoImg} />}
-              </Link>
-                {
-                  mainMenu
-                  .filter( f => f.path )
-                  .map( (mi, idx) =>
-                    <Link key={idx} to={mi.path} >
-                      <span  className={mi.path !== `${PUBLIC_ROOT}` && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
-                        {mi.caption[sl].name}
-                      </span>
-                    </Link>
-                  )
-                }
-              </div>
-            </nav>
+              {mainMenu && 
+                <nav className="TopMenu">
+                  <div className="container TopMenuContent">
+                  <Link to={`${PUBLIC_ROOT}`}>
+                    {this.logoImg && <img className="Logo" src={this.logoImg} />}
+                  </Link>
+                  {
+                    mainMenu
+                    .filter( f => f.path )
+                    .map( (mi, idx) =>                     
+                      <Link key={idx} to={ mi.path } >
+                        <span  className={mi.path !== `${PUBLIC_ROOT}` && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
+                          {mi.caption[sl].name}
+                        </span>
+                      </Link>
+                    )
+                  }
+                </div>
+              </nav>
+            }
           </header>
           <div className="header-back" >
             <div className="header-back-title"> 
@@ -242,44 +231,46 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
           <footer>
             <div className="Bottom">
               <div className="container">
-                <nav className="FooterMenu">
-                  <Link to={`${PUBLIC_ROOT}`}>
-                    {<img className="Logo" src={logoImgBtm} />}
-                  </Link>
-                  {
-                    mainMenu
-                    .filter( f => f.path )
-                    .map( (mi, idx) => {
-                      const subM = subMenu.filter( t => t.id === mi.id );
-                      return (
-                        <div key={idx} >
-                        <span>
-                          <ul>
-                            <li className="TopLi">
-                              <Link to={mi.path} className={mi.path !== `${PUBLIC_ROOT}` && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
-                                {mi.caption[sl].name}
-                              </Link>
-                            </li>
-                            {
-                              subM && subM.map( (sm, idx) => (
-                              <li key={idx}>
-                                <a href={sm.path}>
-                                  {sm.caption[sl].name}
-                                </a>
+                { mainMenu && subMenu &&
+                  <nav className="FooterMenu">
+                    <Link to={`${PUBLIC_ROOT}`}>
+                      {<img className="Logo" src={logoImgBtm} />}
+                    </Link>
+                    {
+                      mainMenu
+                      .filter( f => f.path )
+                      .map( (mi, idx) => {
+                        const subM = subMenu.filter( t => t.id === mi.id );
+                        return (
+                          <div key={idx} >
+                          <span>
+                            <ul>
+                              <li className="TopLi">
+                                <Link to={mi.path} className={mi.path !== `${PUBLIC_ROOT}` && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
+                                  {mi.caption[sl].name}
+                                </Link>
                               </li>
-                              ))
-                            }
-                            {mi.id === 7 && <li key={idx+1}>Тел.: +375-1643-9-11-11 </li> }
-                            {mi.id === 7 && <li key={idx+2}>Тел.: +375-1643-9-11-12 </li> }
-                            {mi.id === 7 && <li key={idx+3}>Email: bmkk@meat.by </li> }
-                          </ul>
-                        </span>
-                        </div>
-                      )
-                    })
-                  }
-                </nav>
-                <div className="footer-copyright">
+                              {
+                                subM && subM.map( (sm, idx) => (
+                                <li key={idx}>
+                                  <a href={sm.path}>
+                                    {sm.caption[sl].name}
+                                  </a>
+                                </li>
+                                ))
+                              }
+                              {mi.id === 7 && <li key={idx+1}>Тел.: +375-1643-9-11-11 </li> }
+                              {mi.id === 7 && <li key={idx+2}>Тел.: +375-1643-9-11-12 </li> }
+                              {mi.id === 7 && <li key={idx+3}>Email: bmkk@meat.by </li> }
+                            </ul>
+                          </span>
+                          </div>
+                        )
+                      })
+                    }
+                  </nav>
+                }
+               <div className="footer-copyright">
                   {addInfo.textRights[sl].name}
                 </div>
               </div>

@@ -11,6 +11,7 @@ div.DepartmentItem:first-child {
 
 div.DepartmentItem div:first-child {
   font-size: 14px;
+  font-weight: bold;
 }
 
 div.ContactItem div:first-child{
@@ -19,15 +20,18 @@ div.ContactItem div:first-child{
   font-weight: 800;
   padding-top: 4px;
   padding-bottom: 12px;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  /* text-shadow: 1px 1px 1px rgba(0,0,0,0.2); */
 }
 
 div.ContactItem i {
-  padding-right: 6px;
+  padding-right: 8px;
   color: gray;
 }
 
 .DeptName {
   height: 30px;
   line-height: normal;
+}
+.contactdiv {
+  line-height: 22px;
 }

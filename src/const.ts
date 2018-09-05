@@ -24,6 +24,25 @@ export const departmentsFile = `${contactsRoot}departments.json`;
 export const outletsRoot = `${DATA_ROOT}outlets/`;
 export const outletsFile = `${outletsRoot}outlets.json`;
 export const forcustomerRoot = `${DATA_ROOT}forcustomer/`;
+export const downloadsRoot = `${DATA_ROOT}downloads/`;
+
+// export const mainMenu: MenuItems = [
+//   {
+//     id: "about",
+//     path: `${PUBLIC_ROOT}about`,
+//     caption: {
+//       ru: {
+//         name: 'О нас'
+//       },
+//       be: {
+//         name: 'Пра нас'
+//       },
+//       en: {
+//         name: 'About'
+//       }
+//     }
+//   }
+// ];
 
 export const mainMenu: MenuItems = [
   {
@@ -259,171 +278,191 @@ export const subMenu: MenuItems = [
 
 export const goodCaption: GoodCaptions =
   {
-    description: {
-      ingredients: {
-        ru: {
-          name: 'Состав:'
-        },
-        be: {
-          name: 'Склад:'
-        },
-        en: {
-          name: 'Composition:'
-        }
+    ingredients: {
+      ru: {
+        name: 'Состав:'
       },
-      casing: {
-        ru: {
-          name: 'Оболочка:'
-        },
-        be: {
-          name: 'Абалонка:'
-        },
-        en: {
-          name: 'Casing:'
-        }
+      be: {
+        name: 'Склад:'
       },
-      beforuse: {
-        ru: {
-          name: 'Срок реализации:'
-        },
-        be: {
-          name: 'Тэрмін рэалізацыі:'
-        },
-        en: {
-          name: 'Sell by:'
-        }
+      en: {
+        name: 'Composition:'
+      }
+    },
+    casing: {
+      ru: {
+        name: 'Оболочка:'
       },
-      costnde: {
-        ru: {
-          name: 'Цена ФСО, руб:'
-        },
-        be: {
-          name: 'Кошт ФСО, руб:'
-        },
-        en: {
-          name: 'Price ФСО, r:'
-        }
+      be: {
+        name: 'Абалонка:'
       },
-      dcostfull: {
-        ru: {
-          name: 'Цена ФСН, руб:'
-        },
-        be: {
-          name: 'Кошт ФСН, руб:'
-        },
-        en: {
-          name: 'Price ФСН, r:'
-        }
+      en: {
+        name: 'Casing:'
+      }
+    },
+    beforuse: {
+      ru: {
+        name: 'Срок реализации:'
       },
-      proteins: {
-        ru: {
-          name: 'Белки, г:'
-        },
-        be: {
-          name: 'Бялкі, г:'
-        },
-        en: {
-          name: 'Proteins, gr:'
-        }
+      be: {
+        name: 'Тэрмін рэалізацыі:'
       },
-      fats: {
-        ru: {
-          name: 'Жиры, г:'
-        },
-        be: {
-          name: 'Тлушчы, г:'
-        },
-        en: {
-          name: 'Fats, gr:'
-        }
+      en: {
+        name: 'Sell by:'
+      }
+    },
+    costnde: {
+      ru: {
+        name: 'Цена ФСО, руб:'
       },
-      carbons: {
-        ru: {
-          name: 'Углеводы, г:'
-        },
-        be: {
-          name: 'Вугляводы, г:'
-        },
-        en: {
-          name: 'Carbons, gr:'
-        }
+      be: {
+        name: 'Кошт ФСО, руб:'
       },
-      vitamins: {
-        ru: {
-          name: 'Витамины, мг:'
-        },
-        be: {
-          name: 'Вітаміны, мг:'
-        },
-        en: {
-          name: 'Vitamins, mg:'
-        }
+      en: {
+        name: 'Price ФСО, r:'
+      }
+    },
+    dcostfull: {
+      ru: {
+        name: 'Цена ФСН, руб:'
       },
-      energy: {
-        ru: {
-          name: 'Калорийность, ккал:'
-        },
-        be: {
-          name: 'Каларыйнасць, ккал:'
-        },
-        en: {
-          name: 'Energy value, kcal:'
-        }
+      be: {
+        name: 'Кошт ФСН, руб:'
       },
-      B1: {
-        ru: {
-          name: 'B1'
-        },
-        be: {
-          name: 'B1'
-        },
-        en: {
-          name: 'B1'
-        }
+      en: {
+        name: 'Price ФСН, r:'
+      }
+    },
+    textDiscount: {
+      ru: {
+        name: 'Скидка!'
       },
-      B2: {
-        ru: {
-          name: 'B2'
-        },
-        be: {
-          name: 'B2'
-        },
-        en: {
-          name: 'B2'
-        }
+      be: {
+        name: 'Зніжка!'
       },
-      C: {
-        ru: {
-          name: 'C'
-        },
-        be: {
-          name: 'C'
-        },
-        en: {
-          name: 'C'
-        }
+      en: {
+        name: 'A discount!'
+      }
+    },
+    textNew: {
+      ru: {
+        name: 'Новинка!'
       },
-      Ca: {
-        ru: {
-          name: 'Ca'
-        },
-        be: {
-          name: 'Ca'
-        },
-        en: {
-          name: 'Ca'
-        }
+      be: {
+        name: 'Навинка!'
       },
-      Fe: {
-        ru: {
-          name: 'Fe'
-        },
-        be: {
-          name: 'Fe'
-        },
-        en: {
-          name: 'Fe'
-        }
+      en: {
+        name: 'New!'
+      }
+    },        
+    proteins: {
+      ru: {
+        name: 'Белки, г:'
+      },
+      be: {
+        name: 'Бялкі, г:'
+      },
+      en: {
+        name: 'Proteins, gr:'
+      }
+    },
+    fats: {
+      ru: {
+        name: 'Жиры, г:'
+      },
+      be: {
+        name: 'Тлушчы, г:'
+      },
+      en: {
+        name: 'Fats, gr:'
+      }
+    },
+    carbons: {
+      ru: {
+        name: 'Углеводы, г:'
+      },
+      be: {
+        name: 'Вугляводы, г:'
+      },
+      en: {
+        name: 'Carbons, gr:'
+      }
+    },
+    vitamins: {
+      ru: {
+        name: 'Витамины, мг:'
+      },
+      be: {
+        name: 'Вітаміны, мг:'
+      },
+      en: {
+        name: 'Vitamins, mg:'
+      }
+    },
+    energy: {
+      ru: {
+        name: 'Калорийность, ккал:'
+      },
+      be: {
+        name: 'Каларыйнасць, ккал:'
+      },
+      en: {
+        name: 'Energy value, kcal:'
+      }
+    },
+    B1: {
+      ru: {
+        name: 'B1'
+      },
+      be: {
+        name: 'B1'
+      },
+      en: {
+        name: 'B1'
+      }
+    },
+    B2: {
+      ru: {
+        name: 'B2'
+      },
+      be: {
+        name: 'B2'
+      },
+      en: {
+        name: 'B2'
+      }
+    },
+    C: {
+      ru: {
+        name: 'C'
+      },
+      be: {
+        name: 'C'
+      },
+      en: {
+        name: 'C'
+      }
+    },
+    Ca: {
+      ru: {
+        name: 'Ca'
+      },
+      be: {
+        name: 'Ca'
+      },
+      en: {
+        name: 'Ca'
+      }
+    },
+    Fe: {
+      ru: {
+        name: 'Fe'
+      },
+      be: {
+        name: 'Fe'
+      },
+      en: {
+        name: 'Fe'
       }
     }
   }
@@ -565,143 +604,43 @@ export const priceCaption: PriceItems = [
 
 export const contactCaption: ContactCaptions =
   {
-    description: {
-      phone: {
-        ru: {
-          name: 'Телефон:'
-        },
-        be: {
-          name: 'Тэлефон:'
-        },
-        en: {
-          name: 'Phone:'
-        }
-      },
-      fax: {
-        ru: {
-          name: 'Факс:'
-        },
-        be: {
-          name: 'Факс:'
-        },
-        en: {
-          name: 'Fax:'
-        }
-      },
-      email: {
-        ru: {
-          name: 'email:'
-        },
-        be: {
-          name: 'email:'
-        },
-        en: {
-          name: 'email:'
-        }
-      }
-    }
-  };
-
-export const outletsCaption: OutletsCaptions =
-{
-  description: {
-    caption: {
-      ru: {
-        name: 'Наименование и адрес магазина/точки реализации'
-      },
-      be: {
-        name: 'бел Наименование и адрес магазина/точки реализации'
-      },
-      en: {
-        name: 'англ Наименование и адрес магазина/точки реализации'
-      }
-    },
     phone: {
       ru: {
-        name: 'Телефон, факс'
+        name: 'Телефон:'
       },
       be: {
-        name: 'Тэлефон, факс'
+        name: 'Тэлефон:'
       },
       en: {
-        name: 'Phone, Fax'
+        name: 'Phone:'
+      }
+    },
+    fax: {
+      ru: {
+        name: 'Факс:'
+      },
+      be: {
+        name: 'Факс:'
+      },
+      en: {
+        name: 'Fax:'
       }
     },
     email: {
       ru: {
-        name: 'Email'
+        name: 'email:'
       },
       be: {
-        name: 'Email'
+        name: 'email:'
       },
       en: {
-        name: 'Email'
-      }
-    },
-    time: {
-      ru: {
-        name: 'Время работы'
-      },
-      be: {
-        name: 'бел Время работы'
-      },
-      en: {
-        name: 'англ Время работы'
-      }
-    },
-    timewd: {
-      ru: {
-        name: 'Пн-пт'
-      },
-      be: {
-        name: 'Пн-пт'
-      },
-      en: {
-        name: 'Mon-Fr'
-      }
-    },
-    timesat: {
-      ru: {
-        name: 'Сб'
-      },
-      be: {
-        name: 'Сб'
-      },
-      en: {
-        name: 'Sat'
-      }
-    },
-    timesun: {
-      ru: {
-        name: 'Вс'
-      },
-      be: {
-        name: 'Нд'
-      },
-      en: {
-        name: 'Sun'
-      }
-    }
-  }
-};
-
-export const moreCaption: PriceItem =
-  {
-    caption: {
-      ru: {
-        name: 'подробнее..'
-      },
-      be: {
-        name: 'падрабязней..'
-      },
-      en: {
-        name: 'more..'
+        name: 'email:'
       }
     }
   };
 
   export const addInfo: IAddInfo =
-  {
+  { 
     textRights: {
       ru: {
         name: 'Березовский мясоконсервный комбинат © 2018 г. Все права защищены.'
@@ -748,10 +687,10 @@ export const moreCaption: PriceItem =
     },
     textPriceTop: {
       ru: {
-        name: 'Прейскурант'
+        name: 'Прайс-лист'
       },
       be: {
-        name: 'Прэйскурант'
+        name: 'Прайс-лiст'
       },
       en: {
         name: 'Price-list'
@@ -759,21 +698,162 @@ export const moreCaption: PriceItem =
     },
     textPriceXlsTop: {
       ru: {
-        name: 'Прейскурант XLS'
+        name: 'Скачать Прайс-лист в Excel'
       },
       be: {
-        name: 'Прэйскурант XLS'
+        name: 'Спампаваць Прайс-лiст Excel'
       },
       en: {
-        name: 'Price-list XLS'
+        name: 'Download Price-list Excel'
       }
-    }
+    },
+    textDownLoadFilesTop: {
+      ru: {
+        name: 'Материалы для скачивания'
+      },
+      be: {
+        name: 'Downloads'
+      },
+      en: {
+        name: 'Матэрыялы для запампоўкі'
+      }
+    },
+    moreCaption: {
+      ru: {
+        name: 'подробнее..'
+      },
+      be: {
+        name: 'падрабязней..'
+      },
+      en: {
+        name: 'more..'
+      }
+    },
+    textPriceName: {
+      ru: {
+        name: 'в соответствии с прейскурантом цен на '
+      },
+      be: {
+        name: 'у адпаведнасці з прэйскурантам цэн на '
+      },
+      en: {
+        name: 'in accordance with the price list for '
+      }    
+    },
+    texName: {
+      ru: {
+        name: 'ОАО "Березовский мясоконсервный комбинат"'
+      },
+      be: {
+        name: 'ОАО "Бярозаўскі мясакансервавы камбінат"'
+      },
+      en: {
+        name: 'англ ОАО "Березовский мясоконсервный комбинат"'
+      }    
+    }      
   };
 
 
-  export const headers: {label: string, key: number}[] = [];
+export const headers: {label: string, key: number}[] = [];
 
   priceCaption.map( (pr, p_idx) =>
     headers.push ({label: pr.caption['ru'].name, key: p_idx+1})
 );
+
+
+export const outletsCaption: OutletsCaptions = 
+{
+  caption: {
+    ru: {
+      name: 'Наименование и адрес магазина/точки реализации'
+    },
+    be: {
+      name: 'бел Наименование и адрес магазина/точки реализации'
+    },
+    en: {
+      name: 'англ Наименование и адрес магазина/точки реализации'
+    }
+  },
+  address: {
+    ru: {
+      name: 'Адрес'
+    },
+    be: {
+      name: 'Адрас'
+    },
+    en: {
+      name: 'Address'
+    }
+  },  
+  phone: {
+    ru: {
+      name: 'Телефон, факс'
+    },
+    be: {
+      name: 'Тэлефон, факс'
+    },
+    en: {
+      name: 'Phone, Fax'
+    }
+  },
+  email: {
+    ru: {
+      name: 'Email'
+    },
+    be: {
+      name: 'Email'
+    },
+    en: {
+      name: 'Email'
+    }
+  },
+  timewd: {
+    ru: {
+      name: 'В рабочие дни'
+    },
+    be: {
+      name: 'У працоўныя дні'
+    },
+    en: {
+      name: 'англ В рабочие дни'
+    }
+  },
+  timesat: {
+    ru: {
+      name: 'Сб'
+    },
+    be: {
+      name: 'Сб'
+    },
+    en: {
+      name: 'Sat'
+    }
+  },
+  timesun: {
+    ru: { 
+      name: 'Вс'
+    },
+    be: {
+      name: 'Нд'
+    },
+    en: {
+      name: 'Sun'
+    }
+  },
+  coordinates: {
+    ru: {
+      name: 'Координаты'
+    },
+    be: {
+      name: 'Каардынаты'
+    },
+    en: {
+      name: 'Coordinates'
+    }  
+  } 
+};
+
+
+
+
 

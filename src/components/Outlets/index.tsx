@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { Page, LoadMDFile } from '../Page';
 import { IOutlets, languages } from '../../types';
-import { outletsFile, outletsRoot, outletFileNoImage, forcustomerRoot } from '../../const';
+import { outletsFile, outletsRoot, outletFileNoImage, forcustomerRoot, outletsCaption } from '../../const';
 import * as ReactMarkdown from 'react-markdown';
 import './outlets.css';
-
 export class Outlets extends Page {
 
   componentDidMount() {
+    super.componentDidMount();
     const { onLoadOutlets, onLoadOutletsMD, onLoadForForeignersMD } = this.props;
     fetch(outletsFile)
     .then( res => res.text())
@@ -57,25 +57,25 @@ export class Outlets extends Page {
                         {Page.getLName(outlet.caption, sl)}
                       </div>
                       <div>
-                        <span className="CardCaptionLabel">Адрес: </span>{Page.getLName(outlet.address, sl)}
+                        <span className="CardCaptionLabel">{outletsCaption.address[sl].name}: </span>{Page.getLName(outlet.address, sl)}
                       </div>
                       <div>
-                        <span className="CardCaptionLabel">Телефон: </span>{outlet.phone}
+                        <span className="CardCaptionLabel">{outletsCaption.phone[sl].name}: </span>{outlet.phone}
                       </div>
                       <div>
-                        <span className="CardCaptionLabel">Email: </span>{outlet.email}
+                        <span className="CardCaptionLabel">{outletsCaption.email[sl].name}: </span>{outlet.email}
                       </div>
                       <div>
-                        <span className="CardCaptionLabel">В рабочие дни: </span>{outlet.timewd}
+                        <span className="CardCaptionLabel">{outletsCaption.timewd[sl].name}: </span>{outlet.timewd}
                       </div>
                       <div>
-                        <span className="CardCaptionLabel">В субботу: </span>{outlet.timesat}
+                        <span className="CardCaptionLabel">{outletsCaption.timesat[sl].name}: </span>{outlet.timesat}
                       </div>
                       <div>
-                        <span className="CardCaptionLabel">В воскресенье: </span>{outlet.timesun}
+                        <span className="CardCaptionLabel">{outletsCaption.timesun[sl].name}:</span>{outlet.timesun}
                       </div>
                       <div>
-                        <span className="CardCaptionLabel">Координаты: </span>{outlet.lat}, {outlet.lon}
+                        <span className="CardCaptionLabel">{outletsCaption.coordinates[sl].name}: </span>{outlet.lat}, {outlet.lon}
                       </div>
                     </div>
                   </div>
@@ -89,7 +89,6 @@ export class Outlets extends Page {
               <ReactMarkdown source={forForeignersMD[sl.toUpperCase()].name} />            
             </div> 
           } 
-
 
         </div>  
       );
