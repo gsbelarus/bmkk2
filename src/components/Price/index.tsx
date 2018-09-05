@@ -68,7 +68,7 @@ export class Price extends Page {
                           const myprice = price.price.find( p => p.ruid === g.ruid );
                           return (                            
                             <tr key={idx}>
-                              <td>{idx+1}</td>
+                              <td className="tdCentre">{idx+1}</td>
                               <td>                                
                                 <Link to={`${PUBLIC_ROOT}production/${g.group}/${g.ruid}`}>{g.fullname}</Link>
                               </td>
@@ -79,7 +79,7 @@ export class Price extends Page {
                               <td>{g.beforuse}</td>
                               <td>{g.term}</td>
                               <td>{myprice ? myprice.barcode : ''}</td>
-                              <td>{Page.getLName(g.ingredientsprice, sl)}</td>
+                              <td>{Page.getLName(g.ingredients, sl)}</td>
                             </tr>
                           )}
                         )

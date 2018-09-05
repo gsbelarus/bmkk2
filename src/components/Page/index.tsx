@@ -113,7 +113,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
                   '7' : g.beforuse,
                   '8' : g.term,
                   '9' : myprice && myprice.barcode,
-                  '10' : Page.getLName(g.ingredientsprice, sl)
+                  '10' : Page.getLName(g.ingredients, sl)
               });
               return prev;
             }, [] as IcsvData));
