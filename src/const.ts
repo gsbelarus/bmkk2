@@ -236,10 +236,10 @@ export const subMenu: MenuItems = [
         name: 'Схема проезда'
       },
       be: {
-        name: 'Схема проезда'
+        name: 'Схема праезду'
       },
       en: {
-        name: 'Схема проезда'
+        name: 'Directions'
       }
     }
   },
@@ -251,10 +251,10 @@ export const subMenu: MenuItems = [
         name: 'Реквизиты предприятия'
       },
       be: {
-        name: 'Реквизиты предприятия'
+        name: 'Рэквізіты прадпрыемства'
       },
       en: {
-        name: 'Реквизиты предприятия'
+        name: 'Requisites'
       }
     }
   },
@@ -266,10 +266,10 @@ export const subMenu: MenuItems = [
         name: 'Иностранным покупателям'
       },
       be: {
-        name: 'бел Иностранным покупателям'
+        name: 'Іншаземным пакупнікам'
       },
       en: {
-        name: 'англ Иностранным покупателям'
+        name: 'For foreign customers'
       }
     }
   }
@@ -286,7 +286,7 @@ export const goodCaption: GoodCaptions =
         name: 'Склад:'
       },
       en: {
-        name: 'Composition:'
+        name: 'Ingredients:'
       }
     },
     casing: {
@@ -316,10 +316,10 @@ export const goodCaption: GoodCaptions =
         name: 'Цена ФСО, руб:'
       },
       be: {
-        name: 'Кошт ФСО, руб:'
+        name: 'Кошт ФСА, руб:'
       },
       en: {
-        name: 'Price ФСО, r:'
+        name: 'Price FCA, rub:'
       }
     },
     dcostfull: {
@@ -330,7 +330,7 @@ export const goodCaption: GoodCaptions =
         name: 'Кошт ФСН, руб:'
       },
       en: {
-        name: 'Price ФСН, r:'
+        name: 'Price DAP, rub:'
       }
     },
     textDiscount: {
@@ -341,7 +341,7 @@ export const goodCaption: GoodCaptions =
         name: 'Зніжка!'
       },
       en: {
-        name: 'A discount!'
+        name: 'Discount!'
       }
     },
     textNew: {
@@ -349,12 +349,12 @@ export const goodCaption: GoodCaptions =
         name: 'Новинка!'
       },
       be: {
-        name: 'Навинка!'
+        name: 'Навінка!'
       },
       en: {
         name: 'New!'
       }
-    },        
+    },
     proteins: {
       ru: {
         name: 'Белки, г:'
@@ -488,7 +488,7 @@ export const priceCaption: PriceItems = [
         name: 'Наименование'
       },
       be: {
-        name: 'Найменне'
+        name: 'Назва'
       },
       en: {
         name: 'Name'
@@ -501,7 +501,7 @@ export const priceCaption: PriceItems = [
         name: 'Ед. изм.'
       },
       be: {
-        name: 'Адзінка вымярэння'
+        name: 'Адз. вым.'
       },
       en: {
         name: 'Unit'
@@ -514,10 +514,10 @@ export const priceCaption: PriceItems = [
         name: 'Цена ФСО, BYR'
       },
       be: {
-        name: 'Цена ФСО, BYR'
+        name: 'Кошт ФСА, BYR'
       },
       en: {
-        name: 'Price FSO'
+        name: 'Price FCA, BYR'
       }
     }
   },
@@ -527,10 +527,10 @@ export const priceCaption: PriceItems = [
         name: 'Цена ФСН, BYR'
       },
       be: {
-        name: 'Цена ФСН, BYR'
+        name: 'Кошт ФСН, BYR'
       },
       en: {
-        name: 'Price FSN'
+        name: 'Price DAP, BYR'
       }
     }
   },
@@ -540,10 +540,10 @@ export const priceCaption: PriceItems = [
         name: 'Ставка НДС, %'
       },
       be: {
-        name: 'Ставка НДС, %'
+        name: 'Стаўка ПДВ, %'
       },
       en: {
-        name: 'Vat rate, %'
+        name: 'VAT rate, %'
       }
     }
   },
@@ -553,10 +553,10 @@ export const priceCaption: PriceItems = [
         name: 'Срок хранения'
       },
       be: {
-        name: 'Срок хранения'
+        name: 'Тэрмін захоўвання'
       },
       en: {
-        name: 'Shelf life'
+        name: 'Best before'
       }
     }
   },
@@ -566,7 +566,7 @@ export const priceCaption: PriceItems = [
         name: 'Терм. состояние'
       },
       be: {
-        name: 'Терм. состояние'
+        name: 'Тэрм. стан'
       },
       en: {
         name: 'Thermal state'
@@ -579,7 +579,7 @@ export const priceCaption: PriceItems = [
         name: 'Штрих-код'
       },
       be: {
-        name: 'Штрих-код'
+        name: 'Штрых-код'
       },
       en: {
         name: 'Barcode'
@@ -593,7 +593,7 @@ export const priceCaption: PriceItems = [
         name: 'Описание'
       },
       be: {
-        name: 'Описание'
+        name: 'Апісанне'
       },
       en: {
         name: 'Description'
@@ -640,7 +640,7 @@ export const contactCaption: ContactCaptions =
   };
 
   export const addInfo: IAddInfo =
-  { 
+  {
     textRights: {
       ru: {
         name: 'Березовский мясоконсервный комбинат © 2018 г. Все права защищены.'
@@ -649,7 +649,7 @@ export const contactCaption: ContactCaptions =
         name: 'Бярозаўскі мясакансервавы камбінат © 2018 г. Усё правы абаронены.'
       },
       en: {
-        name: 'Bereza Meat Cannery © 2018 All rights reserved.'
+        name: 'Bereza Meat Processing Plant © 2018. All rights reserved.'
       }
     },
     textPriceMore: {
@@ -657,10 +657,10 @@ export const contactCaption: ContactCaptions =
         name: 'С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" можно ознакомиться'
       },
       be: {
-        name: 'бел С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" можно ознакомиться'
+        name: 'З поўным прэйскурантам прадукцыі ААТ "Бярозаўскі мясакансервавы камбінат" можна азнаёміцца'
       },
       en: {
-        name: 'англ С полным прейскурантом продукции ОАО "Березовский мясоконсервный комбинат" можно ознакомиться'
+        name: 'A complete price list of production of Bereza Meat Processing Plant can be read'
       }
     },
     textPriceLink: {
@@ -679,10 +679,10 @@ export const contactCaption: ContactCaptions =
         name: 'Комбинат имеет сеть фирменной торговли, где можно приобрести товар в розницу:'
       },
       be: {
-        name: 'бел Комбинат имеет сеть фирменной торговли, где можно приобрести товар в розницу:'
+        name: 'Камбінат мае сетку фірмовага гандлю, дзе магчыма набыць тавару раздроб:'
       },
       en: {
-        name: 'англ Комбинат имеет сеть фирменной торговли, где можно приобрести товар в розницу:'
+        name: 'The plant has a network of outlets where a production can be bought:'
       }
     },
     textPriceTop: {
@@ -690,7 +690,7 @@ export const contactCaption: ContactCaptions =
         name: 'Прайс-лист'
       },
       be: {
-        name: 'Прайс-лiст'
+        name: 'Прайс-аркуш'
       },
       en: {
         name: 'Price-list'
@@ -701,10 +701,10 @@ export const contactCaption: ContactCaptions =
         name: 'Скачать Прайс-лист в Excel'
       },
       be: {
-        name: 'Спампаваць Прайс-лiст Excel'
+        name: 'Спампаваць Прайс-аркуш у Excel'
       },
       en: {
-        name: 'Download Price-list Excel'
+        name: 'Download Price-list for MS Excel'
       }
     },
     textDownLoadFilesTop: {
@@ -712,10 +712,10 @@ export const contactCaption: ContactCaptions =
         name: 'Материалы для скачивания'
       },
       be: {
-        name: 'Downloads'
+        name: 'Матэрыялы для спампоўкі'
       },
       en: {
-        name: 'Матэрыялы для запампоўкі'
+        name: 'Files for download'
       }
     },
     moreCaption: {
@@ -734,23 +734,23 @@ export const contactCaption: ContactCaptions =
         name: 'в соответствии с прейскурантом цен на '
       },
       be: {
-        name: 'у адпаведнасці з прэйскурантам цэн на '
+        name: 'у адпаведнасці з прэйскурантам коштаў на '
       },
       en: {
-        name: 'in accordance with the price list for '
-      }    
+        name: 'in accordance with the price-list for '
+      }
     },
     texName: {
       ru: {
         name: 'ОАО "Березовский мясоконсервный комбинат"'
       },
       be: {
-        name: 'ОАО "Бярозаўскі мясакансервавы камбінат"'
+        name: 'ААТ "Бярозаўскі мясакансервавы камбінат"'
       },
       en: {
-        name: 'англ ОАО "Березовский мясоконсервный комбинат"'
-      }    
-    }      
+        name: 'JSV "Bereza Meat Processing Plant"'
+      }
+    }
   };
 
 
@@ -761,17 +761,17 @@ export const headers: {label: string, key: number}[] = [];
 );
 
 
-export const outletsCaption: OutletsCaptions = 
+export const outletsCaption: OutletsCaptions =
 {
   caption: {
     ru: {
       name: 'Наименование и адрес магазина/точки реализации'
     },
     be: {
-      name: 'бел Наименование и адрес магазина/точки реализации'
+      name: 'Назва і адрас крамы/пункта продажу'
     },
     en: {
-      name: 'англ Наименование и адрес магазина/точки реализации'
+      name: 'Name and address of a shop/point of sale'
     }
   },
   address: {
@@ -784,7 +784,7 @@ export const outletsCaption: OutletsCaptions =
     en: {
       name: 'Address'
     }
-  },  
+  },
   phone: {
     ru: {
       name: 'Телефон, факс'
@@ -815,7 +815,7 @@ export const outletsCaption: OutletsCaptions =
       name: 'У працоўныя дні'
     },
     en: {
-      name: 'англ В рабочие дни'
+      name: 'Weekdays'
     }
   },
   timesat: {
@@ -830,7 +830,7 @@ export const outletsCaption: OutletsCaptions =
     }
   },
   timesun: {
-    ru: { 
+    ru: {
       name: 'Вс'
     },
     be: {
@@ -849,8 +849,8 @@ export const outletsCaption: OutletsCaptions =
     },
     en: {
       name: 'Coordinates'
-    }  
-  } 
+    }
+  }
 };
 
 
