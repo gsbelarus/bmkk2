@@ -37,7 +37,7 @@ export class GoodCard extends Page {
 
   renderBody(): JSX.Element {
     const { goods, price, sl, match } = this.props;
-    if (goods) {
+    if (goods && price) {
       const g = goods.goods.find( t => t.ruid === match.params.goodID );
       const fullImageName = !g!.image2 ? `${goodsRoot}${goodFileNoImage2}`
       : g!.image2.includes('/') ? g!.image2
@@ -48,7 +48,7 @@ export class GoodCard extends Page {
         return (
           <div className="GoodsContainer">
             <div className="GoodCard">
-              <img src={fullImageName} />        
+              <img src={fullImageName} />
                 <div className="GoodCardItem">
                   {(myprice ? myprice.issale : '') && <div className="GoodCardNew">Скидка!</div>}
                   {(myprice ? myprice.isnew && !myprice.issale : '') && <div className="GoodCardNew">Новинка!</div>}
@@ -91,10 +91,10 @@ export class GoodCard extends Page {
                     </li>
                   </ul>
                   <div className="PriceGoods">
-                    {addInfo.textPriceMore[sl].name} 
+                    {addInfo.textPriceMore[sl].name}
                     <Link to={`${PUBLIC_ROOT}price`}> {addInfo.textPriceLink[sl].name}!</Link>
-                  </div>                    
-                </div>          
+                  </div>
+                </div>
             </div>
           </div>
         );
@@ -111,6 +111,6 @@ export class GoodCard extends Page {
           Loading...
         </div>
       );
-    }    
+    }
   }
 }

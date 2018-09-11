@@ -16,17 +16,17 @@ export class Price extends Page {
   componentDidMount() {
     super.componentDidMount();
     const {onLoadPriceTitleMD} = this.props;
-    languages.map((l, idx) => 
-      { 
-        LoadMDFile(`${forcustomerRoot}pricetitle.` + l.toLowerCase() + `.md`, l, onLoadPriceTitleMD); 
+    languages.map((l, idx) =>
+      {
+        LoadMDFile(`${forcustomerRoot}pricetitle.` + l.toLowerCase() + `.md`, l, onLoadPriceTitleMD);
       }
-    )   
+    )
   }
 
   renderBody(): JSX.Element {
     const { groups, goods, price, sl, priceTitleMD  } = this.props;
 
-    if (goods && price) {
+    if (goods && price && groups) {
       return (
         <div className="PriceContainer">
           <div className="PriceTop">
@@ -34,11 +34,11 @@ export class Price extends Page {
               <p>{addInfo.texName[sl].name}</p>
               <strong>{addInfo.textPriceTop[sl].name} </strong>{addInfo.textPriceName[sl].name} {goods.date}
             </div>
-            { priceTitleMD && priceTitleMD[sl.toUpperCase()] && 
+            { priceTitleMD && priceTitleMD[sl.toUpperCase()] &&
               <div className="PriceInfo">
                  <ReactMarkdown source={priceTitleMD[sl.toUpperCase()].name} />
               </div>
-            }  
+            }
           </div>
 
           {
@@ -66,10 +66,10 @@ export class Price extends Page {
                     {
                         goods.goods.filter( g => g.group === gr.ruid ).map( (g, idx) => {
                           const myprice = price.price.find( p => p.ruid === g.ruid );
-                          return (                            
+                          return (
                             <tr key={idx}>
                               <td className="tdCentre">{idx+1}</td>
-                              <td>                                
+                              <td>
                                 <Link to={`${PUBLIC_ROOT}production/${g.group}/${g.ruid}`}>{g.fullname}</Link>
                               </td>
                               <td>{Page.getLName(g.valuename, sl)}</td>

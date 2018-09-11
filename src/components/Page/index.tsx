@@ -11,26 +11,26 @@ import { Trade } from '../Trade';
 
 export interface PageProps extends RouteComponentProps<any> {
   selectedLang: Language;
-  groups: IGoodGroups;
-  goods: IGoods;
-  price: IPrice;
-  news: INews;
-  contacts: IContacts;
-  departments: IDepartments;
-  outlets: IOutlets;
+  groups?: IGoodGroups;
+  goods?: IGoods;
+  price?: IPrice;
+  news?: INews;
+  contacts?: IContacts;
+  departments?: IDepartments;
+  outlets?: IOutlets;
   outletsMD?: LName;
   aboutMD?: LName;
   historyMD?: LName;
   staffMD?: LName;
   vacancyMD?: LName;
-  restMD?: LName;  
-  forForeignersMD?: LName;  
+  restMD?: LName;
+  forForeignersMD?: LName;
   directionMD?: LName;
-  requisitesMD?: LName;     
-  forCustomerMD?: LName;   
-  priceTitleMD?: LName; 
-  downLoadMD? :LName;    
-  csvData: IcsvData; 
+  requisitesMD?: LName;
+  forCustomerMD?: LName;
+  priceTitleMD?: LName;
+  downLoadMD? :LName;
+  csvData?: IcsvData;
   sl: string;
   onSetLanguage: SetLanguage;
   onLoadGroups: LoadGroups;
@@ -40,18 +40,18 @@ export interface PageProps extends RouteComponentProps<any> {
   onLoadContacts: LoadContacts;
   onLoadDepartments: LoadDepartments;
   onLoadOutlets: LoadOutlets;
-  onLoadOutletsMD: LoadOutletsMD;  
+  onLoadOutletsMD: LoadOutletsMD;
   onLoadForForeignersMD: LoadForForeignersMD;
   onLoadcsvData: LoadcsvData;
-  onLoadAboutMD: LoadAboutMD;    
+  onLoadAboutMD: LoadAboutMD;
   onLoadHistoryMD: LoadHistoryMD;
-  onLoadStaffMD: LoadStaffMD;  
+  onLoadStaffMD: LoadStaffMD;
   onLoadVacancyMD: LoadVacancyMD;
   onLoadRestMD: LoadRestMD;
   onLoadDirectionMD: LoadDirectionMD;
-  onLoadRequisitesMD: LoadRequisitesMD;    
-  onLoadForCustomerMD: LoadForCustomerMD;   
-  onLoadPriceTitleMD: LoadPriceTitleMD; 
+  onLoadRequisitesMD: LoadRequisitesMD;
+  onLoadForCustomerMD: LoadForCustomerMD;
+  onLoadPriceTitleMD: LoadPriceTitleMD;
   onLoadDownLoadMD: LoadDownLoadMD
 }
 
@@ -76,29 +76,29 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
   componentDidMount() {
 
     window.scrollTo(0, 0);
-   
+
     const { goods, price, groups, onLoadGoods, onLoadPrice, onLoadGroups, sl, csvData, onLoadcsvData } = this.props;
-    
-    const _groups = groups ? groups :
+
+    const _groups = groups ? groups as IGoodGroups :
       fetch(goodGroupsFile)
       .then( res => res.text() )
       .then( res => JSON.parse(res) )
       .then( res => { const g = res as IGoodGroups; onLoadGroups(g); return g; } );
 
-    const _goods = goods ? goods :
+    const _goods = goods ? goods as IGoods :
       fetch(goodsFile)
       .then( res => res.text() )
       .then( res => JSON.parse(res) )
       .then( res => { const g = res as IGoods; onLoadGoods(g); return g; } );
 
-    const _price = price ? price :
+    const _price = price ? price as IPrice :
       fetch(priceFile)
       .then( res => res.text() )
       .then( res => JSON.parse(res) )
       .then( res => { const p = res as IPrice; onLoadPrice(p); return p; } );
-  
+
     Promise.all<IGoodGroups, IGoods, IPrice>([_groups, _goods, _price])
-      .then( 
+      .then(
         ([_, gd, p]) => {
           if (!csvData) {
             onLoadcsvData(gd.goods.reduce( (prev, g, idx) => {
@@ -118,7 +118,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
               return prev;
             }, [] as IcsvData));
           }
-        } 
+        }
       )
       .catch( err => console.log(err) );
 
@@ -130,7 +130,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
 
   renderNavPath(props: PageProps): JSX.Element[] {
     const { location, sl } = props;
-    let pathname = location.pathname;   
+    let pathname = location.pathname;
 
     if (pathname === `${PUBLIC_ROOT}`) {
       return [];
@@ -173,7 +173,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
       lname[lang].name : (
         lname && lname['ru'] && lname['ru'].name ? lname['ru'].name : ''
       );
-  }  
+  }
 
   render() {
     const { sl, location, goods, price } = this.props;
@@ -187,12 +187,12 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
               <div className="container TopRibbonContent">
                 <Link to={`${PUBLIC_ROOT}downloads`}>
                   {addInfo.textDownLoadFilesTop[sl].name}
-                </Link>             
+                </Link>
                 {goods && price && <div><Link to={`${PUBLIC_ROOT}price`}>{addInfo.textPriceTop[sl].name}</Link></div>}
                 <LangSelector {...this.props} />
                 </div>
               </div>
-              {mainMenu && 
+              {mainMenu &&
                 <nav className="TopMenu">
                   <div className="container TopMenuContent">
                   <Link to={`${PUBLIC_ROOT}`}>
@@ -201,7 +201,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
                   {
                     mainMenu
                     .filter( f => f.path )
-                    .map( (mi, idx) =>                     
+                    .map( (mi, idx) =>
                       <Link key={idx} to={ mi.path } >
                         <span  className={mi.path !== `${PUBLIC_ROOT}` && location.pathname.endsWith(mi.path) ? "Selected" : ""}>
                           {mi.caption[sl].name}
@@ -214,7 +214,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
             }
           </header>
           <div className="header-back" >
-            <div className="header-back-title"> 
+            <div className="header-back-title">
             </div>
           </div>
           <main className="FullPage">

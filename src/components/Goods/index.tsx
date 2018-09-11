@@ -21,7 +21,7 @@ export class Goods extends Page {
   renderBody(): JSX.Element {
     const { goods, price, sl, match  } = this.props;
 
-    if (goods) {
+    if (goods && price) {
 
       const filtered = goods.goods.filter( t => t.group === match.params.groupID && Page.getLName(t.caption, sl));
 

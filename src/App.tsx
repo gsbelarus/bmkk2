@@ -18,51 +18,52 @@ import { Outlets } from './components/Outlets';
 import { ForCustomer } from './components/ForCustomer';
 import { DownLoadFiles } from './components/DownLoadFiles';
 import { BrowserRouter } from 'react-router-dom'
- 
+
 export interface AppProps {
-  selectedLang: Language;
-  groups: IGoodGroups;
-  goods: IGoods;
-  price: IPrice;
-  news: INews;
-  contacts: IContacts;
-  departments: IDepartments;
-  outlets: IOutlets;
-  outletsMD?: LName;  
   aboutMD? : LName;
+  contacts?: IContacts;
+  csvData?: IcsvData;
+  departments?: IDepartments;
+  directionMD?: LName;
+  downloadMD?: LName;
+  forCustomerMD?: LName;
+  forForeignersMD?: LName;
+  goods?: IGoods;
+  groups?: IGoodGroups;
   historyMD?: LName;
+  news?: INews;
+  onLoadAboutMD: LoadAboutMD,
+  onLoadContacts: LoadContacts;
+  onLoadcsvData: LoadcsvData;
+  onLoadDepartments: LoadDepartments;
+  onLoadDirectionMD: LoadDirectionMD;
+  onLoadDownLoadMD: LoadDownLoadMD;
+  onLoadForCustomerMD: LoadForCustomerMD;
+  onLoadForForeignersMD: LoadForForeignersMD,
+  onLoadGoods: LoadGoods;
+  onLoadGroups: LoadGroups;
+  onLoadHistoryMD: LoadHistoryMD;
+  onLoadNews: LoadNews;
+  onLoadOutlets: LoadOutlets;
+  onLoadOutletsMD: LoadOutletsMD
+  onLoadPrice: LoadPrice;
+  onLoadPriceTitleMD: LoadPriceTitleMD;
+  onLoadRequisitesMD: LoadRequisitesMD;
+  onLoadRestMD: LoadRestMD;
+  onLoadStaffMD: LoadStaffMD;
+  onLoadVacancyMD: LoadVacancyMD;
+  onSetLanguage: SetLanguage;
+  outlets?: IOutlets;
+  outletsMD?: LName;
+  price?: IPrice;
+  priceTitleMD?: LName;
+  requisitesMD?: LName;
+  restMD?: LName;
+  selectedGroup: string;
+  selectedLang: Language;
+  sl: string;
   staffMD?: LName;
   vacancyMD?: LName;
-  restMD?: LName;    
-  forForeignersMD?: LName;    
-  directionMD?: LName;
-  requisitesMD?: LName;     
-  forCustomerMD?: LName;    
-  priceTitleMD?: LName;  
-  sl: string;
-  csvData: IcsvData; 
-  onSetLanguage: SetLanguage;
-  onLoadGroups: LoadGroups;
-  selectedGroup: string;
-  onLoadGoods: LoadGoods;
-  onLoadPrice: LoadPrice;
-  onLoadNews: LoadNews;
-  onLoadContacts: LoadContacts;
-  onLoadDepartments: LoadDepartments;
-  onLoadOutlets: LoadOutlets;
-  onLoadcsvData: LoadcsvData;  
-  onLoadOutletsMD: LoadOutletsMD
-  onLoadForForeignersMD: LoadForForeignersMD,
-  onLoadAboutMD: LoadAboutMD,
-  onLoadHistoryMD: LoadHistoryMD;
-  onLoadStaffMD: LoadStaffMD;  
-  onLoadVacancyMD: LoadVacancyMD;
-  onLoadRestMD: LoadRestMD;
-  onLoadDirectionMD: LoadDirectionMD;
-  onLoadRequisitesMD: LoadRequisitesMD;    
-  onLoadForCustomerMD: LoadForCustomerMD;     
-  onLoadPriceTitleMD: LoadPriceTitleMD;   
-  onLoadDownLoadMD: LoadDownLoadMD;   
 }
 
 class App extends React.Component<AppProps, {}> {
@@ -172,7 +173,7 @@ class App extends React.Component<AppProps, {}> {
                 return <DownLoadFiles {...mergedProps} />;
               }
             }
-          />          
+          />
         </Switch>
       </BrowserRouter>
     );
@@ -186,7 +187,7 @@ export default connect(
       sl: state.appState.selectedLang.toLowerCase()
     }
   ),
-  { 
+  {
     onSetLanguage: setLanguage,
     onLoadGroups: loadGroups,
     onLoadGoods: loadGoods,
@@ -195,18 +196,19 @@ export default connect(
     onLoadContacts: loadContacts,
     onLoadDepartments: loadDepartments,
     onLoadOutlets: loadOutlets,
-    onLoadcsvData: loadcsvData, 
+    onLoadcsvData: loadcsvData,
     onLoadOutletsMD: loadOutletsMD,
-    onLoadForForeignersMD: loadForForeignersMD, 
-    onLoadAboutMD: loadAboutMD, 
-    onLoadHistoryMD: loadHistoryMD, 
-    onLoadStaffMD: loadStaffMD, 
-    onLoadVacancyMD: loadVacancyMD, 
+    onLoadForForeignersMD: loadForForeignersMD,
+    onLoadAboutMD: loadAboutMD,
+    onLoadHistoryMD: loadHistoryMD,
+    onLoadStaffMD: loadStaffMD,
+    onLoadVacancyMD: loadVacancyMD,
     onLoadRestMD: loadRestMD,
-    onLoadDirectionMD: loadDirectionMD, 
+    onLoadDirectionMD: loadDirectionMD,
     onLoadRequisitesMD: loadRequisitesMD,
     onLoadForCustomerMD: loadForCustomerMD,
     onLoadPriceTitleMD: loadPriceTitleMD,
-    onLoadDownLoadMD: loadDownLoadMD                           
+    onLoadDownLoadMD: loadDownLoadMD
   }
 )(App);
+
