@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Page, PageProps } from '../Page';
-import { goodsRoot, goodFileNoImage, goodCaption } from '../../const';
+import { goodsRoot, goodFileNoImage, goodCaption, noImageRoot } from '../../const';
 import { Link } from 'react-router-dom';
 import './goods.css';
 
@@ -30,7 +30,7 @@ export class Goods extends Page {
           <div className="Goods FlexContainer">
             {
               filtered.map( (g, idx) => {
-                const fullImageName = !g.image ? `${goodsRoot}${goodFileNoImage}`
+                const fullImageName = !g.image ? `${noImageRoot}${goodFileNoImage}`
                   : g.image.includes('/') ? g.image
                   : `${goodsRoot}${g.image}`;
                 const myprice = price.price.find( p => p.ruid === g.ruid );

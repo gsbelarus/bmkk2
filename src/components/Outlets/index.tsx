@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Page, LoadMDFile } from '../Page';
 import { IOutlets, languages } from '../../types';
-import { outletsFile, outletsRoot, outletFileNoImage, forcustomerRoot, outletsCaption } from '../../const';
+import { outletsFile, outletsRoot, outletFileNoImage, forcustomerRoot, outletsCaption, noImageRoot } from '../../const';
 import * as ReactMarkdown from 'react-markdown';
 import './outlets.css';
 export class Outlets extends Page {
@@ -17,8 +17,8 @@ export class Outlets extends Page {
 
     languages.map((l, idx) => 
       {
-        LoadMDFile(`${outletsRoot}outlets.` + l.toLowerCase() + `.md`, l, onLoadOutletsMD);  
-        LoadMDFile(`${forcustomerRoot}forforeigners.` + l.toLowerCase() + `.md`, l, onLoadForForeignersMD);     
+        LoadMDFile(`${outletsRoot}outlets.${l.toLowerCase()}.md`, l, onLoadOutletsMD);  
+        LoadMDFile(`${forcustomerRoot}forforeigners.${l.toLowerCase()}.md`, l, onLoadForForeignersMD);     
       }
     )       
   }
@@ -40,7 +40,7 @@ export class Outlets extends Page {
               outlets.outlets.map( (outlet, idx) => {
                 const re = /(?:г|д)\.(?:\s){0,1}([А-Яа-я]+)/;
                 const match = re.exec(Page.getLName(outlet.address, sl));
-                const outletImg = !outlet.image ? `${outletsRoot}${outletFileNoImage}`
+                const outletImg = !outlet.image ? `${noImageRoot}${outletFileNoImage}`
                 : outlet.image.includes('/') ? outlet.image
                 : `${outletsRoot}${outlet.image}`;
                 return (

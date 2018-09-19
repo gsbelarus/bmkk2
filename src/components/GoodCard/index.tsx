@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Page, PageProps } from '../Page';
-import { goodsRoot, goodFileNoImage2, goodCaption, addInfo } from '../../const';
+import { goodsRoot, goodFileNoImage2, goodCaption, addInfo, noImageRoot } from '../../const';
 import './goodcard.css';
 import { Link } from 'react-router-dom';
 
@@ -39,7 +39,7 @@ export class GoodCard extends Page {
     const { goods, price, sl, match } = this.props;
     if (goods && price) {
       const g = goods.goods.find( t => t.ruid === match.params.goodID );
-      const fullImageName = !g!.image2 ? `${goodsRoot}${goodFileNoImage2}`
+      const fullImageName = !g!.image2 ? `${noImageRoot}${goodFileNoImage2}`
       : g!.image2.includes('/') ? g!.image2
       : `${goodsRoot}${g!.image2}`;
 

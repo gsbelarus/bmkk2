@@ -51,6 +51,11 @@ module.exports =  {
         flatten: true
       },
       {
+        from: './public/data/noimage/*.*',
+        to: 'data/noimage/',
+        flatten: true
+      },      
+      {
         from: './public/data/downloads/*.*',
         to: 'data/downloads/',
         flatten: true
