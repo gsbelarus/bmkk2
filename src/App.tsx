@@ -174,15 +174,6 @@ class App extends React.Component<AppProps, {}> {
                 return <ForCustomer {...mergedProps} />;
               }
             }
-          />  
-          <Route
-            path={`${PUBLIC_ROOT}forcustomer#direction`}
-            render={
-              (props) => {
-                const mergedProps = {...this.props, ...props};
-                return <ForCustomer {...mergedProps} />;
-              }
-            }
           />          
           <Route
             path={`${PUBLIC_ROOT}downloads`}
