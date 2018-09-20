@@ -15,3 +15,7 @@ div.GoodNew {
 .Goods .Card img {
   padding-top: 18px;
 }
+
+.Goods {
+  padding-top: 10px !important;
+}

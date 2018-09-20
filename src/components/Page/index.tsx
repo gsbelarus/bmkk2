@@ -220,7 +220,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
           <main className="FullPage">
             <div className="container">
               <div className={this.fullWidth ? "WorkAreaFullWidth" : "WorkArea"}>
-                {this.fullWidth ? null : <div className="navPath">{this.renderNavPath(this.props)}</div>}
+                {this.fullWidth || location.pathname.indexOf('production') == -1 ?  null : <div className="navPath">{this.renderNavPath(this.props)}</div>}
                 {this.renderBody()}
               </div>
               <div className={this.getPageStyle().includes('MainPage')  ? "Trade" : "NoneDisplay"}>
