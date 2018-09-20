@@ -18,6 +18,7 @@ import { Outlets } from './components/Outlets';
 import { ForCustomer } from './components/ForCustomer';
 import { DownLoadFiles } from './components/DownLoadFiles';
 import { BrowserRouter } from 'react-router-dom'
+import { Rest } from './components/Rest';
 
 export interface AppProps {
   aboutMD? : LName;
@@ -139,6 +140,15 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
+            path={`${PUBLIC_ROOT}rest`}
+            render={
+              (props) => {
+                const mergedProps = {...this.props, ...props};
+                return <Rest {...mergedProps} />;
+              }
+            }
+          />          
+          <Route
             path={`${PUBLIC_ROOT}contacts`}
             render={
               (props) => {
@@ -164,7 +174,16 @@ class App extends React.Component<AppProps, {}> {
                 return <ForCustomer {...mergedProps} />;
               }
             }
-          />
+          />  
+          <Route
+            path={`${PUBLIC_ROOT}forcustomer#direction`}
+            render={
+              (props) => {
+                const mergedProps = {...this.props, ...props};
+                return <ForCustomer {...mergedProps} />;
+              }
+            }
+          />          
           <Route
             path={`${PUBLIC_ROOT}downloads`}
             render={

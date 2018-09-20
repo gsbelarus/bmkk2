@@ -8,7 +8,7 @@ export class Outlets extends Page {
 
   componentDidMount() {
     super.componentDidMount();
-    const { onLoadOutlets, onLoadOutletsMD, onLoadForForeignersMD } = this.props;
+    const { onLoadOutlets, onLoadOutletsMD } = this.props;
     fetch(outletsFile)
     .then( res => res.text())
     .then( res => JSON.parse(res) )
@@ -17,8 +17,7 @@ export class Outlets extends Page {
 
     languages.map((l, idx) => 
       {
-        LoadMDFile(`${outletsRoot}outlets.${l.toLowerCase()}.md`, l, onLoadOutletsMD);  
-        LoadMDFile(`${forcustomerRoot}forforeigners.${l.toLowerCase()}.md`, l, onLoadForForeignersMD);     
+        LoadMDFile(`${outletsRoot}outlets.${l.toLowerCase()}.md`, l, onLoadOutletsMD);          
       }
     )       
   }
@@ -83,13 +82,6 @@ export class Outlets extends Page {
               })
             }
           </div>
-
-          { forForeignersMD && forForeignersMD[sl.toUpperCase()] &&
-            <div id="foreigns">
-              <ReactMarkdown source={forForeignersMD[sl.toUpperCase()].name} />            
-            </div> 
-          } 
-
         </div>  
       );
     } else {

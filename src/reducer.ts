@@ -63,11 +63,12 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
     case getType(actions.loadcsvData):
       return {...state, csvData: action.payload};
 
-    case getType(actions.loadOutletsMD):
-      var { lang, text } = action.payload;
+    case getType(actions.loadOutletsMD): {
+      const { lang, text } = action.payload;
       const { outletsMD } = state;
 
       return {...state, outletsMD: {...outletsMD, [lang]: {name: text} } };
+    }  
 
     case getType(actions.loadForForeignersMD):
       var { lang, text } = action.payload;

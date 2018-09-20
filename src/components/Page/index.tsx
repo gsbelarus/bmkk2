@@ -4,9 +4,9 @@ import { LangSelector } from '../LangSelector';
 import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, OnLoadMDFile} from '../../types';
 import { SetLanguage, LoadGroups, LoadGoods, LoadPrice, LoadNews, LoadContacts, LoadDepartments, LoadOutlets, LoadcsvData, LoadOutletsMD, LoadForForeignersMD, LoadAboutMD, LoadHistoryMD, LoadStaffMD, LoadVacancyMD, LoadRestMD, LoadDirectionMD, LoadRequisitesMD, LoadForCustomerMD, LoadPriceTitleMD, LoadDownLoadMD } from '../../actions';
 import { mainMenu, subMenu, goodGroupsFile, goodsFile, priceFile, addInfo, headers  } from '../../const';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { LName } from '../../types';
-import {CSVLink} from 'react-csv';
 import { Trade } from '../Trade';
 
 export interface PageProps extends RouteComponentProps<any> {
@@ -188,7 +188,7 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
                 <Link to={`${PUBLIC_ROOT}downloads`}>
                   {addInfo.textDownLoadFilesTop[sl].name}
                 </Link>
-                {goods && price && <div><Link to={`${PUBLIC_ROOT}price`}>{addInfo.textPriceTop[sl].name}</Link></div>}
+                {/* {goods && price && <div><Link to={`${PUBLIC_ROOT}price`}>{addInfo.textPriceTop[sl].name}</Link></div>} */}
                 <LangSelector {...this.props} />
                 </div>
               </div>
@@ -253,15 +253,15 @@ export class Page<P extends PageProps = PageProps> extends React.PureComponent<P
                               {
                                 subM && subM.map( (sm, idx) => (
                                 <li key={idx}>
-                                  <a href={sm.path}>
+                                  <Link to={sm.path}>
                                     {sm.caption[sl].name}
-                                  </a>
+                                  </Link>
                                 </li>
                                 ))
                               }
-                              {mi.id === 7 && <li key={idx+1}>Тел.: +375-1643-9-11-11 </li> }
-                              {mi.id === 7 && <li key={idx+2}>Тел.: +375-1643-9-11-12 </li> }
-                              {mi.id === 7 && <li key={idx+3}>Email: bmkk@meat.by </li> }
+                              {mi.id === 8 && <li key={idx+1}>Тел.: +375-1643-9-11-11 </li> }
+                              {mi.id === 8 && <li key={idx+2}>Тел.: +375-1643-9-11-12 </li> }
+                              {mi.id === 8 && <li key={idx+3}>Email: bmkk@meat.by </li> }
                             </ul>
                           </span>
                           </div>

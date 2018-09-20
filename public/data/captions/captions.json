@@ -139,7 +139,7 @@
   },
   {
     "id": "2",
-    "path": "${PUBLIC_ROOT}about#rest",
+    "path": "${PUBLIC_ROOT}rest",
     "caption": {
       "ru": {
         "name": "Отдых с нами"

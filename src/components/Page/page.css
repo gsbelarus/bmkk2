@@ -41,9 +41,9 @@ div.Page h3 {
 
 img.Logo {
   position: absolute;
-  top: -30px;
+  top: -34px;
   left: 0;
-  height: 120px;
+  height: 140px;
 }
 
 .TopRibbonContent {
@@ -95,7 +95,7 @@ nav.TopMenu a {
 }
 
 nav.TopMenu span {
-  padding: 8px 16px;
+  padding: 8px;
 }
 
 nav.TopMenu span:hover, nav.TopMenu span.Selected {

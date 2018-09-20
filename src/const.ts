@@ -138,6 +138,21 @@ export const mainMenu: MenuItems = [
   },
   {
     id: 7,
+    path: `${PUBLIC_ROOT}rest`,
+    caption: {
+      ru: {
+        name: 'Отдых с Нами'
+      },
+      be: {
+        name: 'Адпачанак з Намi'
+      },
+      en: {
+        name: 'Holidays with Us'
+      }
+    }
+  },  
+  {
+    id: 8,
     path: `${PUBLIC_ROOT}contacts`,
     caption: {
       ru: {
@@ -199,36 +214,21 @@ export const subMenu: MenuItems = [
       }
     }
   },
-  {
-    id: 2,
-    path: `${PUBLIC_ROOT}about#rest`,
-    caption: {
-      ru: {
-        name: 'Отдых с нами'
-      },
-      be: {
-        name: 'Адпачынак з намі'
-      },
-      en: {
-        name: 'Holidays with us'
-      }
-    }
-  },
-  {
-    id: 4,
-    path: `${PUBLIC_ROOT}price`,
-    caption: {
-      ru: {
-        name: 'Прейскурант'
-      },
-      be: {
-        name: 'Прэйскурант'
-      },
-      en: {
-        name: 'Price-list'
-      }
-    }
-  },
+  // {
+  //   id: 4,
+  //   path: `${PUBLIC_ROOT}price`,
+  //   caption: {
+  //     ru: {
+  //       name: 'Прейскурант'
+  //     },
+  //     be: {
+  //       name: 'Прэйскурант'
+  //     },
+  //     en: {
+  //       name: 'Price-list'
+  //     }
+  //   }
+  // },
   {
     id: 5,
     path: `${PUBLIC_ROOT}forcustomer#direction`,
@@ -260,8 +260,8 @@ export const subMenu: MenuItems = [
     }
   },
   {
-    id: 6,
-    path: `${PUBLIC_ROOT}outlets#foreigns`,
+    id: 5,
+    path: `${PUBLIC_ROOT}forcustomer#foreigns`,
     caption: {
       ru: {
         name: 'Иностранным покупателям'
@@ -273,7 +273,7 @@ export const subMenu: MenuItems = [
         name: 'For foreign customers'
       }
     }
-  }
+  } 
 ];
 
 
