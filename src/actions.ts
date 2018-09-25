@@ -126,7 +126,3 @@ export const loadDownLoadMD = createAction('LOAD_DOWNLOADMD', resolve => {
 });
 
 export type LoadDownLoadMD = typeof loadDownLoadMD;
-
-
-
-

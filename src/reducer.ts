@@ -31,7 +31,7 @@ export type State = {
 
 const initialState: State = {
   selectedLang: 'RU',
-  selectedGroup: ''
+  selectedGroup: ''    
 };
 
 export const  reducer = (state: State = initialState, action: BMKKAction): State => {
@@ -123,7 +123,7 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
     case getType(actions.loadDownLoadMD):
       var { lang, text } = action.payload;
       const { downLoadMD } = state;
-      return {...state, downLoadMD: {...downLoadMD, [lang]: {name: text} } }
+      return {...state, downLoadMD: {...downLoadMD, [lang]: {name: text} } }   
 
     default:
       return state;

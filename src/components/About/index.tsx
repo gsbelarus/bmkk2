@@ -18,10 +18,10 @@ export class About extends Page {
     const { onLoadAboutMD, onLoadHistoryMD, onLoadStaffMD, onLoadVacancyMD} = this.props;
     languages.map((l, idx) => 
       {
-        LoadMDFile(`${aboutRoot}about.` + l.toLowerCase() + `.md`, l, onLoadAboutMD);  
-        LoadMDFile(`${aboutRoot}history.` + l.toLowerCase() + `.md`, l, onLoadHistoryMD);     
-        LoadMDFile(`${aboutRoot}staff.` + l.toLowerCase() + `.md`, l, onLoadStaffMD);  
-        LoadMDFile(`${aboutRoot}vacancy.` + l.toLowerCase() + `.md`, l, onLoadVacancyMD);       
+        LoadMDFile(`${aboutRoot}about.${l.toLowerCase()}.md`, l, onLoadAboutMD);  
+        LoadMDFile(`${aboutRoot}history.${l.toLowerCase()}.md`, l, onLoadHistoryMD);     
+        LoadMDFile(`${aboutRoot}staff.${l.toLowerCase()}.md`, l, onLoadStaffMD);  
+        LoadMDFile(`${aboutRoot}vacancy.${l.toLowerCase()}.md`, l, onLoadVacancyMD);       
       }
     )    
   }

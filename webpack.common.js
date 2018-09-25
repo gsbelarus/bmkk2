@@ -86,7 +86,7 @@ module.exports =  {
       },
       {
         test: /\.(txt|md)$/,
-        use: 'raw-loader'
+        use: 'raw-loader' 
       },
       {
         test: /\.(png|jp(e*)g|svg|eot|ttf|woff|gif)$/,
@@ -99,7 +99,7 @@ module.exports =  {
             }
           }
         ]
-      }
+      }  
     ]
   },
   resolve: {
