@@ -24,10 +24,12 @@ export class DownLoadFiles extends Page {
    
 
   renderBody(): JSX.Element {
+   
     const { sl, downLoadMD, csvData } = this.props;
+    console.log(csvData);
     return (
       <div className="downloadfiles">
-        {csvData && <div><CSVLink filename={"PriceBmkk.xls"} headers={headers} data={csvData}>{addInfo.textPriceXlsTop[sl].name}</CSVLink></div>}
+        {csvData && <div><CSVLink filename={"PriceBmkk.xls"} headers={headers} data={csvData} target='_self'>{addInfo.textPriceXlsTop[sl].name} </CSVLink></div>}
         { downLoadMD && downLoadMD[sl.toUpperCase()] &&         
           <ReactMarkdown source={downLoadMD[sl.toUpperCase()].name}/> 
         }

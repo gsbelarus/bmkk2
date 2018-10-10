@@ -1,13 +1,20 @@
 .News .Card {
-  padding: 16px;
-  margin-bottom: 12px;
-  border-bottom: dotted 1px gray;
-  width: 100%;
-  text-align: left;  
+  width: 450px;
+}
+.News .Card img {
+  width: 450px;
+  height: 300px;
 }
 
 .News .Card h2 {
-  color: var(--colorBrown);
+  /* color: var(--colorBrown); */
+  font-size: 20px;
+}
+
+.News .CardCaption {
+  padding-bottom: 6px;
+  position: relative;
+  margin-top: -6px; 
 }
 
 div.NewsDate {

@@ -61,9 +61,9 @@ export class Outlets extends Page {
                       <div>
                         <span className="CardCaptionLabel">{outletsCaption.phone[sl].name}: </span>{outlet.phone}
                       </div>
-                      <div>
+                      {/* <div>
                         <span className="CardCaptionLabel">{outletsCaption.email[sl].name}: </span>{outlet.email}
-                      </div>
+                      </div> */}
                       <div>
                         <span className="CardCaptionLabel">{outletsCaption.timewd[sl].name}: </span>{outlet.timewd}
                       </div>
@@ -71,10 +71,7 @@ export class Outlets extends Page {
                         <span className="CardCaptionLabel">{outletsCaption.timesat[sl].name}: </span>{outlet.timesat}
                       </div>
                       <div>
-                        <span className="CardCaptionLabel">{outletsCaption.timesun[sl].name}:</span>{outlet.timesun}
-                      </div>
-                      <div>
-                        <span className="CardCaptionLabel">{outletsCaption.coordinates[sl].name}: </span>{outlet.lat}, {outlet.lon}
+                        <span className="CardCaptionLabel">{outletsCaption.timesun[sl].name}: </span>{outlet.timesun}
                       </div>
                     </div>
                   </div>

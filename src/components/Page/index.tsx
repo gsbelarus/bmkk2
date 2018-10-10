@@ -43,7 +43,8 @@ import {
   goodsFile,
   priceFile,
   addInfo,
-  headers
+  headers,
+  COUNT_IMG_BG
 } from "../../const";
 import { RouteComponentProps } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
@@ -147,14 +148,12 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
 
     this.TimerId = setInterval(() => {
       let c = this.state.counter;
-      if (c < 6) 
-        { c = c + 1 }
-      else 
-        { c = 0; } 
+      if (c < COUNT_IMG_BG - 1) c = c + 1 
+      else c = 0; 
       this.setState(
         { counter: c }
       );
-    }, 5000);    
+    }, 15000);    
 
     const _groups = groups
       ? (groups as IGoodGroups)
@@ -196,9 +195,10 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
             gd.goods.reduce(
               (prev, g, idx) => {
                 const myprice = p.price.find(p => p.ruid === g.ruid);
+                const n =  g.fullname;
                 prev.push({
                   "1": idx + 1,
-                  "2": g.fullname,
+                  "2": n && n.replace(',', ' ').replace('"', '""'),
                   "3": Page.getLName(g.valuename, sl),
                   "4": myprice && myprice.costnde,
                   "5": myprice && myprice.dcostfull,
