@@ -46,7 +46,7 @@
   z-index: 1000;
   height: 304px;
   background-repeat: no-repeat;
-  bottom: 16px;
+  bottom: 130px;
   left: 10px;
 }
 
@@ -65,7 +65,7 @@
   left: 10px;
 }
 .MainPage .LogoText {
-  top: 20px;
   position: absolute;
-  right: 0px;
+  bottom: 10px;
+  left: 14px;
 }

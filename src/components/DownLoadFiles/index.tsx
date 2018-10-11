@@ -27,6 +27,7 @@ export class DownLoadFiles extends Page {
     const { sl, downLoadMD, csvData } = this.props;
     return (
       <div className="downloadfiles">
+        <span>Полный прайс-лист в формате CSV (Microsoft Excel) на продукцию предприятия с указанием наименования, состава, срока хранения, штрих-кода, цен ФСО и ФСН.</span>
         {csvData && (
           <div>
             <CSVLink

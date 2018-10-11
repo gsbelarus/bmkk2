@@ -197,6 +197,7 @@ export interface IAddInfo {
   textOutlets: LName;   
   textPriceTop: LName;
   textPriceXlsTop: LName;
+  textPriceDescr: LName;
   textDownLoadFilesTop: LName; 
   moreCaption: LName;
   textPriceName: LName;

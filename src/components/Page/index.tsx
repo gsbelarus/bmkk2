@@ -113,23 +113,24 @@ export function LoadMDFile(
 }
 
 export class Page<P extends PageProps = PageProps> extends React.Component<
-  P, IState
+  P,
+  IState
 > {
   protected fullWidth: boolean;
   protected logoImg: any;
-  protected logo: any;  
+  protected logo: any;
   protected backgroundImgs: string[];
-  protected restImgs: string[];  
+  protected restImgs: string[];
   protected TimerId: any;
-  protected backImg1: any;  
+  protected backImg1: any;
 
   constructor(props: P) {
     super(props);
     this.fullWidth = false;
     this.logoImg = require("../../../public/image/logo_red_white_bk.png");
-    this.logo = require("../../../public/image/znv_1line.svg");    
+    this.logo = require("../../../public/image/znv_1line.svg");
     this.backgroundImgs = [];
-    this.restImgs = [];    
+    this.restImgs = [];
     this.state = {
       counter: 0
     };
@@ -152,12 +153,10 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
 
     this.TimerId = setInterval(() => {
       let c = this.state.counter;
-      if (c < COUNT_IMG_BG - 1) c = c + 1 
-      else c = 0; 
-      this.setState(
-        { counter: c }
-      );
-    }, 15000);    
+      if (c < COUNT_IMG_BG - 1) c = c + 1;
+      else c = 0;
+      this.setState({ counter: c });
+    }, 15000);
 
     const _groups = groups
       ? (groups as IGoodGroups)
@@ -199,7 +198,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
             gd.goods.reduce(
               (prev, g, idx) => {
                 const myprice = p.price.find(p => p.ruid === g.ruid);
-                const n =  g.fullname;
+                const n = g.fullname;
                 prev.push({
                   "1": idx + 1,
                   "2": n && n.replace(/"/g, '""'),
@@ -289,7 +288,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
     const logoImgBtm = require("../../../public/image/logo_bw.svg");
     const backImg = this.backgroundImgs.find((b, idx) => idx === counter);
     var sectionStyle = {
-       backgroundImage: `url(${backImg})`
+      backgroundImage: `url(${backImg})`
     };
 
     return (
@@ -313,9 +312,6 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                       <img className="Logo" src={this.logoImg} />
                     )}
                   </Link>
-                  {/* {this.logo && (
-                   <img className="LogoText" src={this.logo} />
-                    )} */}
                   {mainMenu.filter(f => f.path).map((mi, idx) => (
                     <Link key={idx} to={mi.path}>
                       <span
@@ -335,8 +331,9 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
             )}
           </header>
           {/* style={sectionStyle} */}
-          <div className="header-back" style={sectionStyle}></div>
+          <div className="header-back" style={sectionStyle} />
           <div className="header-back-title" />
+          {this.logo && <img className="LogoText" src={this.logo} />}
           <main className="FullPage">
             <div className="container">
               <div

@@ -507,13 +507,24 @@
 	},
 	"textPriceXlsTop": {
 		"ru": {
-			"name": "Прейскурант Excel"
+			"name": "Скачать Прайс-лист"
 		},
 		"be": {
-			"name": "Прэйскурант Excel"
+			"name": "Спамаваць Прэйскурант"
 		},
 		"en": {
-			"name": "Price-list Excel"
+			"name": "Download Price-list"
+		}
+	},
+	"textPriceDescr": {
+		"ru": {
+			"name": "Полный прайс-лист в формате CSV (Microsoft Excel) на продукцию предприятия с указанием наименования, состава, срока хранения, штрих-кода, цен ФСО и ФСН."
+		},
+		"be": {
+			"name": "Спамаваць Прэйскурант"
+		},
+		"en": {
+			"name": "Download Price-list"
 		}
 	},
 	"textDownLoadFilesTop": {
