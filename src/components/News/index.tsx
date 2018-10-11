@@ -25,25 +25,20 @@ export class News extends Page {
     if (news) {
       return (
         <div className="">
-          <div className="News FlexContainer">
+          <div className="News">
             {news.news.map((n, idx) => {
-              const fullImageName = !n.image
-                ? ``
-                : n.image.includes("/")
-                  ? n.image
-                  : `${newsRoot}${n.image}`;
               const newsTitle = `## ${Page.getLName(n.title, sl)}`;
+              const newsText = `${Page.getLName(n.body, sl).substring(0, 170).trimRight()}`;
               return (
-                <div className="Card" key={idx}>
-                  <div className="bg" />
+                <div className="NewsItem" key={idx}>
+                  <div className="bg"></div>
                   <Link to={`${PUBLIC_ROOT}news/` + n.ruid} />
-                  {/* <Link to={`${PUBLIC_ROOT}production/1015533282_1029231264/570070213_1585746679`} /> */}
-                  <img src={fullImageName} />
-                  <div className="CardCaption">
-                    <div className="CardText">
-                      <ReactMarkdown source={newsTitle} />
-                    </div>
-                  </div>
+                  <div className="NewsText">                    
+                    <ReactMarkdown source={newsTitle} />
+                    <ReactMarkdown source={newsText + '...'} />
+                    <div className="NewsDate">{n.date}</div>
+                  </div>                
+   
                 </div>
               );
             })}

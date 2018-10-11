@@ -48,6 +48,7 @@
     "@types/react-router": "^4.0.31",
     "@types/react-router-dom": "^4.3.1",
     "@types/react-router-hash-link": "^1.2.0",
+    "@types/react-slick": "^0.23.2",
     "@types/redux": "^3.6.0",
     "classnames": "^2.2.6",
     "react": "^16.5.2",
@@ -58,7 +59,9 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-hash-link": "^1.2.0",
+    "react-slick": "^0.23.1",
     "redux": "^4.0.0",
+    "slick-carousel": "^1.8.1",
     "typesafe-actions": "^2.0.4"
   }
 }

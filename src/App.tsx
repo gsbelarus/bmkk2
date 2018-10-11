@@ -135,6 +135,7 @@ class App extends React.Component<AppProps, {}> {
             }
           />
           <Route
+            exact={true}
             path={`${PUBLIC_ROOT}news`}
             render={
               (props) => {

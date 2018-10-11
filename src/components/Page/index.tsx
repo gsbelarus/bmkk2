@@ -328,9 +328,8 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
             )}
           </header>
           {/* style={sectionStyle} */}
-          <div className="header-back" style={sectionStyle}>
-            <div className="header-back-title" />
-          </div>
+          <div className="header-back" style={sectionStyle}></div>
+          <div className="header-back-title" />
           <main className="FullPage">
             <div className="container">
               <div
