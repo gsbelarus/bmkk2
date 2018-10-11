@@ -36,7 +36,7 @@
   background-size: cover;
   background-color: #464646;
   transition: background-image 3s linear 1s;
-  filter: brightness(0.8) sepia(10%);
+  filter: brightness(0.6) sepia(0.2);
 }
 
 .MainPage .header-back-title {
@@ -63,4 +63,9 @@
   top: -20px;
   height: 140px;
   left: 10px;
+}
+.MainPage .LogoText {
+  top: 20px;
+  position: absolute;
+  right: 0px;
 }

@@ -39,15 +39,11 @@ export class NewsCard extends Page {
         const newsText = `## ${Page.getLName(g.title, sl)}\n\n${Page.getLName(g.body, sl).trimRight()}`;
        
         return (
-          <div className="NewsContainer">
-            {/* <div className="GoodCard"> */}
-              {/* <div className=""> */}
-                <ReactMarkdown source={newsText} />
-                {fullImageName && <img src={fullImageName} />}
-                <div className="NewsDate">{g.date}</div>
-              {/* </div> */}
-            </div>
-          // </div>
+          <div className="NewsContainer">          
+            <ReactMarkdown source={newsText} />            
+            {fullImageName && <img src={fullImageName} />}
+            <div className="NewsDate">{g.date}</div>
+          </div>
         );
       } else {
         return <div>Loading...</div>;

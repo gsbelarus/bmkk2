@@ -1,7 +1,21 @@
 import * as React from "react";
 import Slider from "react-slick";
+import { PageProps } from "../Page";
 
-export class MultipleItems extends React.Component {
+export type SliderProps = {
+  sliderImgs: string[];
+};
+
+export class MultipleItems extends React.Component<SliderProps, {}> {
+  // constructor(P: PageProps) {
+  //   let i: number = 0;
+  //   let restImg: string[] = [];
+  //   for (i = 1; i <= 9; i++) {
+  //     restImg.push(require("../../../public/image/rest/rest" + i + ".jpg"));
+  //   }
+  //   super(P);
+  //   this.restImgs = restImg;
+  // }
   render() {
     const settings = {
       dots: true,
@@ -13,11 +27,17 @@ export class MultipleItems extends React.Component {
       autoplaySpeed: 2000,
       cssEase: "linear"
     };
+    const { sliderImgs } = this.props;
     return (
-      <div>
+      <div className="Slider">
         <h2> Multiple items </h2>
         <Slider {...settings}>
-          <div>
+          {sliderImgs.map((l, idx) => (
+            <div key={idx}>
+              <img src={l} />
+            </div>
+          ))}
+          {/* <div>
             <h3>1</h3>
           </div>
           <div>
@@ -43,7 +63,7 @@ export class MultipleItems extends React.Component {
           </div>
           <div>
             <h3>9</h3>
-          </div>
+          </div> */}
         </Slider>
       </div>
     );

@@ -117,7 +117,9 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
 > {
   protected fullWidth: boolean;
   protected logoImg: any;
+  protected logo: any;  
   protected backgroundImgs: string[];
+  protected restImgs: string[];  
   protected TimerId: any;
   protected backImg1: any;  
 
@@ -125,7 +127,9 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
     super(props);
     this.fullWidth = false;
     this.logoImg = require("../../../public/image/logo_red_white_bk.png");
+    this.logo = require("../../../public/image/znv_1line.svg");    
     this.backgroundImgs = [];
+    this.restImgs = [];    
     this.state = {
       counter: 0
     };
@@ -198,7 +202,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                 const n =  g.fullname;
                 prev.push({
                   "1": idx + 1,
-                  "2": n && n.replace(',', ' ').replace('"', '""'),
+                  "2": n && n.replace(/"/g, '""'),
                   "3": Page.getLName(g.valuename, sl),
                   "4": myprice && myprice.costnde,
                   "5": myprice && myprice.dcostfull,
@@ -309,6 +313,9 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                       <img className="Logo" src={this.logoImg} />
                     )}
                   </Link>
+                  {/* {this.logo && (
+                   <img className="LogoText" src={this.logo} />
+                    )} */}
                   {mainMenu.filter(f => f.path).map((mi, idx) => (
                     <Link key={idx} to={mi.path}>
                       <span
