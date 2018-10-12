@@ -208,7 +208,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                   "6": g.rate,
                   "7": g.beforuse,
                   "8": ' ' + g.term,
-                  "9": myprice ? ('ш/к ' + myprice.barcode) : '',
+                  "9": myprice && myprice.barcode ? ('ш/к ' + myprice.barcode) : '',
                   "10": Page.getLName(g.ingredients, sl)
                 });
                 return prev;
