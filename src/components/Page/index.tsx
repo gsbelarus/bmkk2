@@ -333,7 +333,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
           {/* style={sectionStyle} */}
           <div className="header-back" style={sectionStyle} />
           <div className="header-back-title" />
-          {this.logo && <img className="LogoText" src={this.logo} />}
+          {/* {this.logo && <img className="LogoText" src={this.logo} />} */}
           <main className="FullPage">
             <div className="container">
               <div

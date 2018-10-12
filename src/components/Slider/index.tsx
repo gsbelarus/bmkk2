@@ -1,6 +1,6 @@
 import * as React from "react";
 import Slider from "react-slick";
-import { PageProps } from "../Page";
+import './slider.css';
 
 export type SliderProps = {
   sliderImgs: string[];
@@ -23,47 +23,46 @@ export class MultipleItems extends React.Component<SliderProps, {}> {
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      cssEase: "linear"
+      variableWidth: true
+      //,
+      // autoplay: true,
+      // autoplaySpeed: 2000
     };
     const { sliderImgs } = this.props;
     return (
       <div className="Slider">
         <h2> Multiple items </h2>
         <Slider {...settings}>
-          {sliderImgs.map((l, idx) => (
+          {sliderImgs.map((l, idx) => ( 
             <div key={idx}>
               <img src={l} />
             </div>
           ))}
           {/* <div>
-            <h3>1</h3>
+            <img src={sliderImgs[0]} />
           </div>
           <div>
-            <h3>2</h3>
+            <img src={sliderImgs[1]} />
           </div>
           <div>
-            <h3>3</h3>
+            <img src={sliderImgs[2]} />
           </div>
           <div>
-            <h3>4</h3>
+            <img src={sliderImgs[3]} />
           </div>
           <div>
-            <h3>5</h3>
+            <img src={sliderImgs[4]} />
           </div>
           <div>
-            <h3>6</h3>
+            <img src={sliderImgs[5]} />
           </div>
           <div>
-            <h3>7</h3>
+            <img src={sliderImgs[6]} />
           </div>
           <div>
-            <h3>8</h3>
-          </div>
-          <div>
-            <h3>9</h3>
+            <img src={sliderImgs[7]} />
           </div> */}
+
         </Slider>
       </div>
     );

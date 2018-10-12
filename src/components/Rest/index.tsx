@@ -34,7 +34,7 @@ export class Rest extends Page {
         { restMD && restMD[sl.toUpperCase()] &&
           <div id="rest">
             <ReactMarkdown source={restMD[sl.toUpperCase()].name}/> 
-            {/* restImgs && <MultipleItems sliderImgs={this.restImgs}/>  */}
+        {this.restImgs && <MultipleItems sliderImgs={this.restImgs}/> }
           </div>                       
         }  
       </div>         

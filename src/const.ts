@@ -708,13 +708,13 @@ export const addInfo: IAddInfo = {
   },
   textPriceXlsTop: {
     ru: {
-      name: "Скачать Прайс-лист в Excel"
+      name: "Скачать Прайс-лист"
     },
     be: {
-      name: "Спампаваць Прайс-аркуш у Excel"
+      name: "Спампаваць Прайс-аркуш"
     },
     en: {
-      name: "Download Price-list for MS Excel"
+      name: "Download Price-list"
     }
   },
   textPriceDescr: {
