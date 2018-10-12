@@ -35,6 +35,7 @@ export class DownLoadFiles extends Page {
               headers={headers}
               data={csvData}
               target="_self"
+              separator=";"
             >
               {addInfo.textPriceXlsTop[sl].name}{" "}
             </CSVLink>

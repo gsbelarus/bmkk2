@@ -1,4 +1,13 @@
 .Slider img {
-  /* height: 200px;
-  width: 200px; */
+  max-height: 210px;
+  margin: 10px;
+  padding: 2%;
+}
+
+.slick-next:before, .slick-prev:before {
+  color: black;
+}
+
+.Slider {
+  padding: 16px;
 }
