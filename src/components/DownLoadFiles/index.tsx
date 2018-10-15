@@ -29,7 +29,7 @@ export class DownLoadFiles extends Page {
       <div className="downloadfiles">
         <span>Полный прайс-лист в формате CSV (Microsoft Excel) на продукцию предприятия с указанием наименования, состава, срока хранения, штрих-кода, цен ФСО и ФСН.</span>
         {csvData && (
-          <div>
+          <div className="PriceCsv">
             <CSVLink
               filename={"PriceBmkk.csv"}
               headers={headers}

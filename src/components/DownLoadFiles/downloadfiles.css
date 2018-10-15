@@ -1,10 +1,23 @@
 
 .downloadfiles a {
-  color: var(--colorBrown) !important;  
-  border-bottom: 1px dotted var(--colorBrown);
+  /* color: var(--colorBrown) !important;   */
+  /* border-bottom: 1px dotted var(--colorBrown); */
   line-height: 30px;
+  background-image: url('../../../public/image/file-download-solid.svg');
+  background-repeat: no-repeat;
+  background-size: 12px;  
+  background-position-y: center;
+  padding-left: 20px;
 }
+
+.downloadfiles a:hover {
+  color: var(--colorBrown) !important; 
+}  
 
 .downloadfiles {
   padding-top: 16px;
 }
+
+/* .PriceCsv a {
+  background-image: url('../../../public/image/file-archive-solid.svg') !important;
+} */
