@@ -31,7 +31,7 @@ export class ForCustomer extends Page {
   renderBody(): JSX.Element {
     const { sl, selectedLang, forCustomerMD, directionMD, requisitesMD, forForeignersMD } = this.props;
     return (
-      <div>
+      <div className="ForCust">
         { forCustomerMD && forCustomerMD[sl.toUpperCase()] &&
           <ReactMarkdown source={forCustomerMD[sl.toUpperCase()].name} />
         }  

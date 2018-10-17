@@ -166,6 +166,7 @@ export interface IOutlets {
   outlets: {
     ruid: string;
     caption: LName;
+    city: string;
     address: LName;  
     timewd: string;
     timesat: string;
@@ -178,6 +179,11 @@ export interface IOutlets {
     lat: string;
     ordr: number;
   }[];
+}
+
+export interface IGallery {
+  original: string;
+  thumbnail: string;
 }
 
 export interface OutletsCaptions {

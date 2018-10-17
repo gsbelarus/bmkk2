@@ -44,7 +44,8 @@ import {
   priceFile,
   addInfo,
   headers,
-  COUNT_IMG_BG
+  COUNT_IMG_BG,
+  newsFile
 } from "../../const";
 import { RouteComponentProps } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
@@ -128,7 +129,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
     super(props);
     this.fullWidth = false;
     this.logoImg = require("../../../public/image/logo_red_white_bk.png");
-    this.logo = require("../../../public/image/znv_1line.svg");
+    // this.logo = require("../../../public/image/znv_1line.svg");
     this.backgroundImgs = [];
     this.restImgs = [];
     this.state = {
@@ -143,9 +144,11 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
       goods,
       price,
       groups,
+      news,
       onLoadGoods,
       onLoadPrice,
       onLoadGroups,
+      onLoadNews,
       sl,
       csvData,
       onLoadcsvData
@@ -190,6 +193,17 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
             onLoadPrice(p);
             return p;
           });
+
+    const _news = news
+    ? (news as INews)
+    : fetch(newsFile)
+        .then(res => res.text())
+        .then(res => JSON.parse(res))
+        .then(res => {
+          const p = res as INews;
+          onLoadNews(p);
+          return p;
+        });          
 
     Promise.all<IGoodGroups, IGoods, IPrice>([_groups, _goods, _price])
       .then(([_, gd, p]) => {
@@ -306,6 +320,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
             </div>
             {mainMenu && (
               <nav className="TopMenu">
+                {/* <div className="TopMenuFilter"></div> */}
                 <div className="container TopMenuContent">
                   <Link to={`${PUBLIC_ROOT}`}>
                     {this.logoImg && (
@@ -333,7 +348,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
           {/* style={sectionStyle} */}
           <div className="header-back" style={sectionStyle} />
           <div className="header-back-title" />
-          {/* {this.logo && <img className="LogoText" src={this.logo} />} */}
+          {this.logo && <img className="LogoText" src={this.logo} />}
           <main className="FullPage">
             <div className="container">
               <div

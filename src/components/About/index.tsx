@@ -20,8 +20,8 @@ export class About extends Page {
       {
         LoadMDFile(`${aboutRoot}about.${l.toLowerCase()}.md`, l, onLoadAboutMD);  
         LoadMDFile(`${aboutRoot}history.${l.toLowerCase()}.md`, l, onLoadHistoryMD);     
-        LoadMDFile(`${aboutRoot}staff.${l.toLowerCase()}.md`, l, onLoadStaffMD);  
-        LoadMDFile(`${aboutRoot}vacancy.${l.toLowerCase()}.md`, l, onLoadVacancyMD);       
+        // LoadMDFile(`${aboutRoot}staff.${l.toLowerCase()}.md`, l, onLoadStaffMD);  
+        // LoadMDFile(`${aboutRoot}vacancy.${l.toLowerCase()}.md`, l, onLoadVacancyMD);       
       }
     )    
   }
@@ -46,7 +46,7 @@ export class About extends Page {
             <ReactMarkdown source={historyMD[sl.toUpperCase()].name}/> 
           </div>
         }
-        { staffMD && staffMD[sl.toUpperCase()] &&
+        {/* { staffMD && staffMD[sl.toUpperCase()] &&
           <div id="staff">
             <ReactMarkdown source={staffMD[sl.toUpperCase()].name}/> 
           </div>
@@ -55,7 +55,7 @@ export class About extends Page {
           <div id="vacancy">
             <ReactMarkdown source={vacancyMD[sl.toUpperCase()].name}/> 
           </div>          
-        }  
+        }   */}
       </div> 
         
       );

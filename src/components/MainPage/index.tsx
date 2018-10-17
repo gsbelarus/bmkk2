@@ -15,6 +15,7 @@ export class MainPage extends Page {
     }
     super(P);
     this.logoImg = require("../../../public/image/logo_bw.svg");
+    this.logo = require("../../../public/image/znv_1line.svg");
     this.backgroundImgs = arrImg;
   }
 }

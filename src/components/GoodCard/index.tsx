@@ -90,10 +90,10 @@ export class GoodCard extends Page {
                       {myprice ? myprice.dcostfull : ''}
                     </li>
                   </ul>
-                  <div className="PriceGoods">
+                  {/* <div className="PriceGoods">
                     {addInfo.textPriceMore[sl].name}
                     <Link to={`${PUBLIC_ROOT}price`}> {addInfo.textPriceLink[sl].name}!</Link>
-                  </div>
+                  </div> */}
                 </div>
             </div>
           </div>

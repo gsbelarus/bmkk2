@@ -11,12 +11,10 @@ export class News extends Page {
     super.componentDidMount();
     const { onLoadNews } = this.props;
     fetch(newsFile)
-      .then(res => {
-        return res.text();
-      })
-      .then(res => JSON.parse(res))
-      .then(res => onLoadNews(res as INews))
-      .catch(err => console.log(err));
+    .then( res => res.text())
+    .then( res => JSON.parse(res) )
+    .then( res => onLoadNews(res as INews) )
+    .catch( err => console.log(err) );  
   }
 
   renderBody(): JSX.Element {
@@ -35,7 +33,7 @@ export class News extends Page {
                   <Link to={`${PUBLIC_ROOT}news/` + n.ruid} />
                   <div className="NewsText">                    
                     <ReactMarkdown source={newsTitle} />
-                    <ReactMarkdown source={newsText + '...'} />
+                    <ReactMarkdown source={newsText + '...'}/>
                     <div className="NewsDate">{n.date}</div>
                   </div>                
    

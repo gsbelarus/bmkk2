@@ -13,16 +13,10 @@ export class NewsCard extends Page {
     if (news) {
       const g = news.news.find(t => t.ruid === match.params.newsID);
       if (g) {
-        // const fullImageName = !g.image
-        //   ? ``
-        //   : g.image.includes("/")
-        //     ? g.image
-        //     : `${newsRoot}${g.image}`;
         const newsText = `## ${Page.getLName(g.title, sl)}\n\n${Page.getLName(
           g.body,
           sl
-        ).trimRight()}`;
-
+        ).trimRight().split('![](').join(`![](${newsRoot}`)}`;
         return (
           <div className="NewsContainer">
             <ReactMarkdown source={newsText} />

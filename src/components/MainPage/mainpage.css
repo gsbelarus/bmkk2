@@ -7,7 +7,7 @@
 
 .MainPage header {
   background-color: transparent;
-  /* box-shadow: none; */
+  box-shadow: none; 
 }
 /* 
 .MainPage div.TopRibbon {
@@ -46,14 +46,23 @@
   z-index: 1000;
   height: 304px;
   background-repeat: no-repeat;
-  bottom: 16px;
+  bottom: 116px;
   left: 10px;
 }
 
 .MainPage nav.TopMenu {
-  background-color: rgba(219,69,53,0.8);
+  /* background-color: rgba(0, 0, 0, 0.55); */
+   /* rgba(219,69,53,0.8); */   
   box-shadow: none;
 } 
+
+.MainPage .TopMenuFilter {
+  filter: blur(0.7px);
+  background-color: rgba(0, 0, 0, 0.55);
+  height: 64px;
+  position: absolute;
+  width: 100%;
+}
 
 .MainPage .LangSelector span.Selected { 
   text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.7);

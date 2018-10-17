@@ -1,3 +1,9 @@
 #direction {
   margin-bottom: 22px;
 }
+
+.ForCust a {
+  color: var(--colorBrown) !important;
+  border-bottom: 1px dotted var(--colorBrown);
+  line-height: 30px;
+}

@@ -5,17 +5,19 @@ import "./rest.css";
 import { languages } from "../../types";
 import { aboutRoot } from "../../const";
 import { MultipleItems } from "../Slider";
+import { Gallery } from "../Gallery";
+
 
 export class Rest extends Page {
-  constructor(P: PageProps) {
-    let i: number = 0;
-    let restImg: string[] = [];
-    for (i = 1; i <= 9; i++) {
-      restImg.push(require("../../../public/image/rest/rest" + i + ".jpg"));
-    }
-    super(P);
-    this.restImgs = restImg;
-  }
+  // constructor(P: PageProps) {
+  //   let i: number = 0;
+  //   let restImg: string[] = [];
+  //   for (i = 1; i <= 9; i++) {
+  //     restImg.push(require("../../../public/image/rest/rest" + i + ".jpg"));
+  //   }
+  //   super(P);
+  //   this.restImgs = restImg;
+  // }
   componentDidMount() {
     super.componentDidMount();
 
@@ -37,7 +39,8 @@ export class Rest extends Page {
           restMD[sl.toUpperCase()] && (
             <div id="rest">
               <ReactMarkdown source={restMD[sl.toUpperCase()].name} />
-              {this.restImgs && <MultipleItems sliderImgs={this.restImgs} />}
+              {/* {this.restImgs && <MultipleItems sliderImgs={this.restImgs} />} */}
+              <Gallery />
             </div>
           )}
       </div>

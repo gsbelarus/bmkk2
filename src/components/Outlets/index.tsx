@@ -37,6 +37,7 @@ export class Outlets extends Page {
           <div className="OutletBox FlexContainer">
             {
               outlets.outlets.map( (outlet, idx) => {
+                const city = outlet.city;
                 const re = /(?:г|д)\.(?:\s){0,1}([А-Яа-я]+)/;
                 const match = re.exec(Page.getLName(outlet.address, sl));
                 const outletImg = !outlet.image ? `${noImageRoot}${outletFileNoImage}`
@@ -46,7 +47,7 @@ export class Outlets extends Page {
                   <div key={idx} className="Card">
                     <div className="bg"></div>                   
                     <div className="City">
-                      {match && match[1]}
+                      {(city ? city : match &&  match[1])}
                       </div>
                     <div className="OutletImg">
                       <img src={outletImg} />

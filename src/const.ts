@@ -35,6 +35,7 @@ export const outletsFile = `${outletsRoot}outlets.json`;
 export const forcustomerRoot = `${DATA_ROOT}forcustomer/`;
 export const downloadsRoot = `${DATA_ROOT}downloads/`;
 export const COUNT_IMG_BG = 14;
+export const restRoot = `${DATA_ROOT}rest/`;
 
 // export const mainMenu: MenuItems = [
 //   {
