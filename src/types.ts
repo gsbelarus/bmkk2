@@ -118,6 +118,8 @@ export type IcsvData = {
   '10': string | undefined
 }[];
 
+export type IxlsxData = (string|number)[][];
+
 export interface INews {
   version: string;
   news: {

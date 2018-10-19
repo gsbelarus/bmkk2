@@ -11,7 +11,8 @@ import {
   IDepartments,
   IOutlets,
   IcsvData,
-  OnLoadMDFile
+  OnLoadMDFile,
+  IxlsxData
 } from "../../types";
 import {
   SetLanguage,
@@ -23,6 +24,7 @@ import {
   LoadDepartments,
   LoadOutlets,
   LoadcsvData,
+  LoadxlsxData,
   LoadOutletsMD,
   LoadForForeignersMD,
   LoadAboutMD,
@@ -45,7 +47,8 @@ import {
   addInfo,
   headers,
   COUNT_IMG_BG,
-  newsFile
+  newsFile,
+  headersX
 } from "../../const";
 import { RouteComponentProps } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
@@ -74,6 +77,7 @@ export interface PageProps extends RouteComponentProps<any> {
   priceTitleMD?: LName;
   downLoadMD?: LName;
   csvData?: IcsvData;
+  xlsxData?: IxlsxData;
   sl: string;
   onSetLanguage: SetLanguage;
   onLoadGroups: LoadGroups;
@@ -86,6 +90,7 @@ export interface PageProps extends RouteComponentProps<any> {
   onLoadOutletsMD: LoadOutletsMD;
   onLoadForForeignersMD: LoadForForeignersMD;
   onLoadcsvData: LoadcsvData;
+  onLoadxlsxData: LoadxlsxData;
   onLoadAboutMD: LoadAboutMD;
   onLoadHistoryMD: LoadHistoryMD;
   onLoadStaffMD: LoadStaffMD;
@@ -151,7 +156,9 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
       onLoadNews,
       sl,
       csvData,
-      onLoadcsvData
+      onLoadcsvData,
+      xlsxData,
+      onLoadxlsxData
     } = this.props;
 
     this.TimerId = setInterval(() => {
@@ -195,39 +202,78 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
           });
 
     const _news = news
-    ? (news as INews)
-    : fetch(newsFile)
-        .then(res => res.text())
-        .then(res => JSON.parse(res))
-        .then(res => {
-          const p = res as INews;
-          onLoadNews(p);
-          return p;
-        });          
+      ? (news as INews)
+      : fetch(newsFile)
+          .then(res => res.text())
+          .then(res => JSON.parse(res))
+          .then(res => {
+            const p = res as INews;
+            onLoadNews(p);
+            return p;
+          });
 
     Promise.all<IGoodGroups, IGoods, IPrice>([_groups, _goods, _price])
       .then(([_, gd, p]) => {
-        if (!csvData) {
-          onLoadcsvData(
+        // if (!csvData) {
+        //   onLoadcsvData(
+        //     gd.goods.reduce(
+        //       (prev, g, idx) => {
+        //         const myprice = p.price.find(p => p.ruid === g.ruid);
+        //         const n = g.fullname;
+        //         prev.push({
+        //           "1": idx + 1,
+        //           "2": n && n.replace(/"/g, '""'),
+        //           "3": Page.getLName(g.valuename, sl),
+        //           "4": myprice && myprice.costnde,
+        //           "5": myprice && myprice.dcostfull,
+        //           "6": g.rate,
+        //           "7": g.beforuse,
+        //           "8": ' ' + g.term,
+        //           "9": myprice && myprice.barcode ? ('ш/к ' + myprice.barcode) : '',
+        //           "10": Page.getLName(g.ingredients, sl)
+        //         });
+        //         return prev;
+        //       },
+        //       [] as IcsvData
+        //     )
+        //   );
+        // };
+
+        if (!xlsxData) {
+          onLoadxlsxData(
             gd.goods.reduce(
-              (prev, g, idx) => {
+              (ws_data, g, idx) => {
                 const myprice = p.price.find(p => p.ruid === g.ruid);
                 const n = g.fullname;
-                prev.push({
-                  "1": idx + 1,
-                  "2": n && n.replace(/"/g, '""'),
-                  "3": Page.getLName(g.valuename, sl),
-                  "4": myprice && myprice.costnde,
-                  "5": myprice && myprice.dcostfull,
-                  "6": g.rate,
-                  "7": g.beforuse,
-                  "8": ' ' + g.term,
-                  "9": myprice && myprice.barcode ? ('ш/к ' + myprice.barcode) : '',
-                  "10": Page.getLName(g.ingredients, sl)
-                });
-                return prev;
+                if (idx === 0) {
+                  ws_data.push([addInfo.texName[sl].name]);
+                  ws_data.push([
+                    addInfo.textPriceTop[sl].name +
+                      " " +
+                      addInfo.textPriceName[sl].name +
+                      " " +
+                      gd.date
+                  ]);
+                  ws_data.push([]);
+                  ws_data.push(headersX);
+                }
+                if (myprice) {
+                  ws_data.push([
+                    idx + 1,
+                    n && n.replace(/"/g, '""'),
+                    Page.getLName(g.valuename, sl),
+                    myprice.costnde,
+                    myprice.dcostfull,
+                    g.rate,
+                    g.beforuse,
+                    " " + g.term,
+                    myprice && myprice.barcode ? "ш/к " + myprice.barcode : "",
+                    Page.getLName(g.ingredients, sl)
+                  ]);
+                }
+                return ws_data;
               },
-              [] as IcsvData
+              [] as IxlsxData
             )
           );
         }

@@ -1,4 +1,4 @@
-import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, LName } from './types';
+import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, LName, IxlsxData } from './types';
 import * as actions from './actions';
 import { ActionType, getType } from 'typesafe-actions';
 
@@ -8,6 +8,7 @@ export type State = {
   aboutMD? :LName;
   contacts?: IContacts;
   csvData?: IcsvData;
+  xlsxData?: IxlsxData;  
   departments?: IDepartments;
   directionMD? : LName;
   downLoadMD? :LName;
@@ -124,6 +125,10 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
       var { lang, text } = action.payload;
       const { downLoadMD } = state;
       return {...state, downLoadMD: {...downLoadMD, [lang]: {name: text} } }   
+
+
+    case getType(actions.loadxlsxData):
+      return {...state, xlsxData: action.payload}; 
 
     default:
       return state;

@@ -781,6 +781,12 @@ priceCaption.map((pr, p_idx) =>
   headers.push({ label: pr.caption["ru"].name, key: p_idx + 1 })
 );
 
+export const headersX: string[] = [];
+
+priceCaption.map((pr, p_idx) => 
+  headersX.push(pr.caption["ru"].name)
+);
+
 export const outletsCaption: OutletsCaptions = {
   caption: {
     ru: {

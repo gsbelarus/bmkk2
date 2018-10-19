@@ -18,6 +18,6 @@
   padding-top: 16px;
 }
 
-/* .PriceCsv a {
-  background-image: url('../../../public/image/file-archive-solid.svg') !important;
-} */
+.PriceCsv a {
+  cursor: pointer;
+}

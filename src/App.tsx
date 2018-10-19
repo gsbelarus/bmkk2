@@ -7,9 +7,9 @@ import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, loadPrice,
          LoadOutlets, loadOutlets, LoadcsvData, loadcsvData, loadOutletsMD, LoadOutletsMD, LoadForForeignersMD, loadForForeignersMD, 
          loadAboutMD, LoadAboutMD, LoadHistoryMD, LoadStaffMD, LoadVacancyMD, LoadRestMD, loadHistoryMD, loadStaffMD, loadVacancyMD, 
          loadRestMD, loadDirectionMD, loadRequisitesMD, LoadDirectionMD, LoadRequisitesMD, LoadForCustomerMD, loadForCustomerMD, 
-         LoadPriceTitleMD, loadPriceTitleMD, LoadDownLoadMD, loadDownLoadMD } from './actions';
+         LoadPriceTitleMD, loadPriceTitleMD, LoadDownLoadMD, loadDownLoadMD, LoadxlsxData, loadxlsxData } from './actions';
 import { State } from './store';
-import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, LName } from './types';
+import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, LName, IxlsxData } from './types';
 import { Production } from './components/Production';
 import { About } from './components/About';
 import { Goods } from './components/Goods';
@@ -28,6 +28,7 @@ export interface AppProps {
   aboutMD? : LName;
   contacts?: IContacts;
   csvData?: IcsvData;
+  xlsxData?: IxlsxData;  
   departments?: IDepartments;
   directionMD?: LName;
   downloadMD?: LName;
@@ -40,6 +41,7 @@ export interface AppProps {
   onLoadAboutMD: LoadAboutMD,
   onLoadContacts: LoadContacts;
   onLoadcsvData: LoadcsvData;
+  onLoadxlsxData: LoadxlsxData;  
   onLoadDepartments: LoadDepartments;
   onLoadDirectionMD: LoadDirectionMD;
   onLoadDownLoadMD: LoadDownLoadMD;
@@ -222,6 +224,7 @@ export default connect(
     onLoadDepartments: loadDepartments,
     onLoadOutlets: loadOutlets,
     onLoadcsvData: loadcsvData,
+    onLoadxlsxData: loadxlsxData,    
     onLoadOutletsMD: loadOutletsMD,
     onLoadForForeignersMD: loadForForeignersMD,
     onLoadAboutMD: loadAboutMD,
