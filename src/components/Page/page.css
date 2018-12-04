@@ -4,10 +4,11 @@ header {
   left: 0;
   top: 0;
   z-index: 10;
-  line-height: 64px;
+  /* line-height: 64px; */
   width: 100%;
   background-color: var(--colorBrown);
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14);
 
   /* background-image: url(/back.jpg); 
   background-repeat: no-repeat;
@@ -27,7 +28,7 @@ div.Page h1 {
   color: var(--colorBrown);
   width: 100%;
   font-size: 28px;
-  line-height: 32px;  
+  line-height: 32px;
 }
 
 div.Page h2 {
@@ -69,7 +70,7 @@ div.TopRibbon a {
   margin-right: 32px;
   color: inherit;
   text-decoration: none;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 div.TopRibbon a:hover {
@@ -80,12 +81,12 @@ div.TopRibbon a:hover {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 100%;  
+  width: 100%;
   height: 64px;
-  line-height: 64px;  
+  line-height: 64px;
 }
 
-nav.TopMenu a {
+.nav-main-menu li a {
   color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
   font-size: 18px;
@@ -94,15 +95,16 @@ nav.TopMenu a {
   text-decoration: none;
 }
 
-nav.TopMenu span {
+.nav-main-menu li span {
   padding: 8px;
 }
 
-nav.TopMenu span:hover, nav.TopMenu span.Selected {
+.nav-main-menu span:hover,
+.nav-main-menu span.Selected {
   color: White;
-  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.7); 
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.7);
   background-color: rgba(0, 0, 0, 0.08);
-  border-radius: 4px;  
+  border-radius: 4px;
 }
 
 div.WorkArea {
@@ -121,7 +123,7 @@ div.WorkAreaFullWidth {
     display: none;
   }
 
-  nav.TopMenu {
+  .TopMenu {
     display: none;
   }
 
@@ -157,7 +159,7 @@ div.navPath a:hover {
 }
 
 div.navPath span::after {
-  content: ' ⏵ ';
+  content: " ⏵ ";
 }
 
 div.navPath span:last-child::after {
@@ -180,17 +182,18 @@ div.Bottom {
 nav.FooterMenu {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;  
+  justify-content: space-between;
   width: 100%;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);  
-  background-color: inherit !important; 
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  background-color: inherit !important;
 }
 
 .TopLi a {
   font-size: 14px !important;
 }
 
-nav.FooterMenu a, nav.FooterMenu li {
+nav.FooterMenu a,
+nav.FooterMenu li {
   font-size: 14px;
   color: white;
   margin-right: 36px;
@@ -205,7 +208,6 @@ nav.FooterMenu li:last-child {
 nav.FooterMenu a:hover {
   color: var(--colorBrown);
   text-shadow: none;
-  
 }
 
 .Bottom img.Logo {
@@ -216,19 +218,19 @@ nav.FooterMenu a:hover {
   left: 0;
 }
 
-nav.FooterMenu ul  {
+nav.FooterMenu ul {
   list-style: none none;
   padding-left: 0px;
   margin-top: 2px;
 }
 
-nav.FooterMenu ul li { 
+nav.FooterMenu ul li {
   padding-top: 4px;
 }
 
 nav.FooterMenu ul a {
   font-size: 12px;
-}  
+}
 
 nav.FooterMenu a:last-child {
   margin-right: 0px;
@@ -251,4 +253,273 @@ div.footer-copyright {
 
 .FullPage {
   min-height: calc(100vh - 90px);
+}
+
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/*------------------------ RESPONSIVE NAVIGATION ------------------------*/
+
+/* checkbox */
+#header-toggle {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+/* menu toggle  */
+
+header .menu-btn {
+  margin-bottom: -12px;
+  z-index: 999;
+}
+
+header .menu-btn span {
+  display: block;
+  height: 2px;
+  width: 32px;
+  margin: 5px 0;
+  transition: transform 0.1s linear;
+
+  background: #fff;
+}
+
+header .menu-btn:hover .line-1,
+header .menu-btn:focus .line-1 {
+  transform: translateY(-1px);
+}
+header .menu-btn:hover .line-3,
+header .menu-btn:focus .line-3 {
+  transform: translateY(1px);
+}
+header .menu-btn:hover {
+  cursor: pointer;
+}
+
+header ul > li {
+  display: inline;
+  padding: 5px 0;
+}
+
+.LogoTitle {
+  color: white;
+  display: none;
+}
+
+.nav-main ul {
+  list-style: none;
+}
+
+/* ------ RESPONSIVE HEADER ------ */
+
+@media all and (min-width: 701px) {
+  .nav-main.flex .logoMenu {
+    flex: 1 8%;
+  }
+  .nav-main.flex .nav-main-menu {
+    flex: 1 90%;
+    justify-content: flex-end;
+  }
+
+  .MainPage .logoMenu img {
+    top: -15px !important;
+    height: 90px !important;
+  }
+
+  .logoMenu img {
+    top: -25px !important;
+    height: 120px !important;
+  }
+
+  #header-toggle:checked ~ .nav-main ul a {
+    border-bottom: 0;
+    background: transparent;
+  }
+
+  header .menu-btn {
+    display: none;
+  }
+}
+
+@media all and (min-width: 1020px) {
+  .flex {
+    flex-flow: row wrap;
+  }
+
+  .MainPage .logoMenu img {
+    top: -20px !important;
+    height: 140px !important;
+  }
+
+  .TopRibbon {
+    line-height: inherit;
+    height: auto;
+  }
+
+  header .logoMenu {
+    text-align: left;
+    margin: 0 !important;
+  }
+}
+
+#toggle:checked ~ .nav-main ul a,
+#toggle:checked ~ .nav-main ul #header-search {
+  border-bottom: 0;
+
+  background: transparent;
+}
+
+#toggle:checked ~ nav .nav-main-menu .nav-main-menu-close,
+.nav-main-menu .nav-main-menu-close {
+  display: none;
+}
+
+@media all and (max-width: 800px) {
+  footer .flex {
+    flex-flow: column wrap;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .flex nav.FooterMenu a,
+  nav.FooterMenu li {
+    margin-right: 10px !important;
+  }
+
+  .Bottom img.Logo {
+    display: none;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .WorkArea {
+    margin-top: 0px !important;
+  }
+
+  header .menu-btn {
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+  }
+
+  .nav-main.flex {
+    text-align: center;
+    flex-flow: column wrap;
+    padding: 22px 0 15px 0;
+  }
+
+  header {
+    position: relative;
+    background-color: var(--colorBrown) !important;
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  .logoMenu a {
+    width: 100%;
+  }
+
+  .logoMenu img {
+    top: 5px !important;
+    height: 56px !important;
+    left: 15px !important;
+  }
+
+  .TopRibbon a {
+    font-size: 12px;
+  }
+
+  .header-back-title {
+    display: none;
+  }
+
+  .LogoText {
+    display: none;
+  }
+
+  .LogoTitle {
+    display: inline !important;
+  }
+
+  .Trade {
+    margin-top: 0px !important;
+  }
+
+  .LangSelector {
+    margin-right: 0px !important;
+  }
+  header ul > li {
+    width: 100%;
+    padding: 0px !important;
+  }
+
+  #header-toggle:checked ~ .nav-main-menu {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  #header-toggle:not(:checked) ~ .nav-main-menu {
+    display: none;
+  }
+  #header-toggle:checked ~ .nav-main-menu {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-bottom: -25px;
+    margin-top: 40px;
+    padding: 0 15px;
+  }
+  #header-toggle:checked ~ .nav-main-menu li:first-child a {
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+  }
+  #header-toggle:checked ~ .nav-main-menu a {
+    display: block;
+    height: 54px;
+    line-height: 54px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+  #header-toggle:checked ~ .nav-main-menu a:hover,
+  #header-toggle:checked ~ .nav-main-menu a:focus {
+    background: rgba(255, 255, 255, 0.1);
+    background-color: none;
+    border-radius: 0px;
+  }
+}
+
+@media all and (max-width: 323px) {
+  .TopRibbon {
+    line-height: 14px !important;
+    height: 30px !important;
+  }
+}
+
+@media all and (max-width: 447px) {
+  .LogoTitle {
+    padding-left: 0;
+    padding-right: 14px;
+  }
+
+  .logoMenu img {
+    display: none !important;
+  }
+
+  header .menu-btn {
+    float: none;
+    position: relative;
+  }
+
+  .logoMenu a {
+    display: inline-block;
+  }
+  .nav-main.flex {
+    padding: 0px;
+  }
+
+  #header-toggle:checked ~ .nav-main-menu {
+    margin-bottom: -10px;
+  }
 }

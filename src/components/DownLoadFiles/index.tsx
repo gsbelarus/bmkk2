@@ -52,27 +52,18 @@ export class DownLoadFiles extends Page {
 
     return (
       <div className="downloadfiles">
-        <span>
+        {/* <span>
           Полный прайс-лист в формате CSV (Microsoft Excel) на продукцию
           предприятия с указанием наименования, состава, срока хранения,
           штрих-кода, цен ФСО и ФСН.
         </span>
         {xlsxData && (
           <div className="PriceCsv">
-            {/* <CSVLink
-              filename={"PriceBmkk.csv"}
-              headers={headers}
-              data={csvData}
-              target="_self"
-              separator=";"
-            >
-              {addInfo.textPriceXlsTop[sl].name}{" "}
-            </CSVLink> */}
             <a onClick={() => this.onClickSaveXml(xlsxData)}>
               {addInfo.textPriceXlsTop[sl].name}
             </a>
           </div>
-        )}
+        )} */}
         {downLoadMD &&
           downLoadMD[sl.toUpperCase()] && (
             <ReactMarkdown source={downLoadMD[sl.toUpperCase()].name} />
@@ -81,3 +72,5 @@ export class DownLoadFiles extends Page {
     );
   }
 }
+
+

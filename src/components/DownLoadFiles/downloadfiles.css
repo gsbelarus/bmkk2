@@ -14,9 +14,9 @@
   color: var(--colorBrown) !important; 
 }  
 
-.downloadfiles {
+/* .downloadfiles {
   padding-top: 16px;
-}
+} */
 
 .PriceCsv a {
   cursor: pointer;

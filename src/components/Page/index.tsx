@@ -364,32 +364,50 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                 <LangSelector {...this.props} />
               </div>
             </div>
-            {mainMenu && (
-              <nav className="TopMenu">
-                {/* <div className="TopMenuFilter"></div> */}
-                <div className="container TopMenuContent">
-                  <Link to={`${PUBLIC_ROOT}`}>
-                    {this.logoImg && (
-                      <img className="Logo" src={this.logoImg} />
-                    )}
-                  </Link>
-                  {mainMenu.filter(f => f.path).map((mi, idx) => (
-                    <Link key={idx} to={mi.path}>
-                      <span
-                        className={
-                          mi.path !== `${PUBLIC_ROOT}` &&
-                          location.pathname.endsWith(mi.path)
-                            ? "Selected"
-                            : ""
-                        }
-                      >
-                        {mi.caption[sl].name}
-                      </span>
+            <div className="container TopMenu">
+              {mainMenu && (
+                <nav className="nav-main flex">
+                  {/* <div className="TopMenuFilter"></div> */}
+
+                  <div className="logoMenu">
+                    <Link to={`${PUBLIC_ROOT}`}>
+                      {this.logoImg && (
+                        <img className="Logo" src={this.logoImg} />                        
+                      )}
                     </Link>
-                  ))}
-                </div>
-              </nav>
-            )}
+                    <Link to={`${PUBLIC_ROOT}`}>
+                      <span className="LogoTitle">{addInfo.texName[sl].name}</span>
+                    </Link>                    
+                    <label className="menu-btn" htmlFor="header-toggle">
+                      <span className="line line-1" />
+                      <span className="line line-2" />
+                      <span className="line line-3" />
+                    </label>
+                  </div>
+
+                  <input id="header-toggle" type="checkbox" />
+
+                  <ul className="nav-main-menu flex">
+                    {mainMenu.filter(f => f.path).map((mi, idx) => (
+                      <li>
+                        <Link key={idx} to={mi.path}>
+                          <span
+                            className={
+                              mi.path !== `${PUBLIC_ROOT}` &&
+                              location.pathname.endsWith(mi.path)
+                                ? "Selected"
+                                : ""
+                            }
+                          >
+                            {mi.caption[sl].name}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              )}
+            </div>
           </header>
           {/* style={sectionStyle} */}
           <div className="header-back" style={sectionStyle} />
@@ -424,7 +442,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
               <div className="container">
                 {mainMenu &&
                   subMenu && (
-                    <nav className="FooterMenu">
+                    <nav className="flex FooterMenu">
                       <Link to={`${PUBLIC_ROOT}`}>
                         {<img className="Logo" src={logoImgBtm} />}
                       </Link>
