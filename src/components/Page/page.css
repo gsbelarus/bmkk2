@@ -159,7 +159,7 @@ div.navPath a:hover {
 }
 
 div.navPath span::after {
-  content: " ⏵ ";
+  content: " » ";
 }
 
 div.navPath span:last-child::after {

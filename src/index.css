@@ -251,6 +251,6 @@ div.BadgeTopRight {
   top: 4px;
   font-size: 12px;
   font-weight: normal;
-  color: #504c4ad4;  
+  color: var(--colorText);  
 }
 
