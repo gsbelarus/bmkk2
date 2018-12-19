@@ -1,0 +1,8 @@
+RedirectMatch permanent ^/$ http://meat.by/bmkk/index.php
+RedirectMatch permanent ^/modules.php(.*)$ http://meat.by/bmkk/modules.php$1
+RedirectMatch permanent ^/index.php$ http://meat.by/bmkk/index.php
+
+#SecFilterCheckURLEncoding Off
+
+#set max post size
+php_value post_max_size 20M
