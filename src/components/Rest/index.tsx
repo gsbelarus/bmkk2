@@ -9,20 +9,11 @@ import { Gallery } from "../Gallery";
 
 
 export class Rest extends Page {
-  // constructor(P: PageProps) {
-  //   let i: number = 0;
-  //   let restImg: string[] = [];
-  //   for (i = 1; i <= 9; i++) {
-  //     restImg.push(require("../../../public/image/rest/rest" + i + ".jpg"));
-  //   }
-  //   super(P);
-  //   this.restImgs = restImg;
-  // }
   componentDidMount() {
     super.componentDidMount();
 
     const { onLoadRestMD } = this.props;
-    languages.map((l, idx) => {
+    languages.forEach((l, idx) => {
       LoadMDFile(
         `${aboutRoot}rest.` + l.toLowerCase() + `.md`,
         l,
@@ -39,7 +30,6 @@ export class Rest extends Page {
           restMD[sl.toUpperCase()] && (
             <div id="rest">
               <ReactMarkdown source={restMD[sl.toUpperCase()].name} />
-              {/* {this.restImgs && <MultipleItems sliderImgs={this.restImgs} />} */}
               <Gallery />
             </div>
           )}

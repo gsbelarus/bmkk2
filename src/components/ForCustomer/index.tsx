@@ -13,7 +13,7 @@ export class ForCustomer extends Page {
   componentDidMount() {
     super.componentDidMount();
     const { onLoadForCustomerMD, onLoadDirectionMD, onLoadRequisitesMD, onLoadForForeignersMD} = this.props;
-      languages.map((l, idx) => 
+      languages.forEach((l, idx) => 
         {
           LoadMDFile(`${forcustomerRoot}forcustomer.` + l.toLowerCase() + `.md`, l, onLoadForCustomerMD);  
           LoadMDFile(`${forcustomerRoot}direction.` + l.toLowerCase() + `.md`, l, onLoadDirectionMD);     

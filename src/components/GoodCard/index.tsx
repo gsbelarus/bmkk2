@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Page, PageProps } from '../Page';
-import { goodsRoot, goodFileNoImage2, goodCaption, addInfo, noImageRoot } from '../../const';
+import { goodsRoot, goodFileNoImage2, goodCaption, noImageRoot, addInfo } from '../../const';
 import './goodcard.css';
 import { Link } from 'react-router-dom';
 
@@ -90,10 +90,6 @@ export class GoodCard extends Page {
                       {myprice ? myprice.dcostfull : ''}
                     </li>
                   </ul>
-                  {/* <div className="PriceGoods">
-                    {addInfo.textPriceMore[sl].name}
-                    <Link to={`${PUBLIC_ROOT}price`}> {addInfo.textPriceLink[sl].name}!</Link>
-                  </div> */}
                 </div>
             </div>
           </div>
@@ -101,14 +97,14 @@ export class GoodCard extends Page {
       } else {
         return (
           <div>
-            Loading...
+            {addInfo.textLoading[sl].name}
           </div>
         );
       }
     } else {
       return (
         <div>
-          Loading...
+          {addInfo.textLoading[sl].name}
         </div>
       );
     }

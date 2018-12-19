@@ -194,51 +194,6 @@ export const subMenu: MenuItems = [
       }
     }
   },
-  // {
-  //   id: 2,
-  //   path: `${PUBLIC_ROOT}about#staff`,
-  //   caption: {
-  //     ru: {
-  //       name: 'Персонал'
-  //     },
-  //     be: {
-  //       name: 'Персанал'
-  //     },
-  //     en: {
-  //       name: 'Staff'
-  //     }
-  //   }
-  // },
-  // {
-  //   id: 2,
-  //   path: `${PUBLIC_ROOT}about#vacancy`,
-  //   caption: {
-  //     ru: {
-  //       name: 'Вакансии'
-  //     },
-  //     be: {
-  //       name: 'Вакансіі'
-  //     },
-  //     en: {
-  //       name: 'Vacancy'
-  //     }
-  //   }
-  // },
-  // {
-  //   id: 4,
-  //   path: `${PUBLIC_ROOT}price`,
-  //   caption: {
-  //     ru: {
-  //       name: 'Прейскурант'
-  //     },
-  //     be: {
-  //       name: 'Прэйскурант'
-  //     },
-  //     en: {
-  //       name: 'Price-list'
-  //     }
-  //   }
-  // },
   {
     id: 5,
     path: `${PUBLIC_ROOT}forcustomer#direction`,
@@ -646,6 +601,17 @@ export const contactCaption: ContactCaptions = {
 };
 
 export const addInfo: IAddInfo = {
+  textLoading: {
+    ru: {
+      name: "Загрузка..."
+    },
+    be: {
+      name: "Загрузка..."
+    },
+    en: {
+      name: "Loading.."
+    }
+  },  
   textRights: {
     ru: {
       name: "Березовский мясоконсервный комбинат © 2018 г. Все права защищены."

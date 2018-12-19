@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Page, LoadMDFile } from '../Page';
 import { IOutlets, languages } from '../../types';
-import { outletsFile, outletsRoot, outletFileNoImage, forcustomerRoot, outletsCaption, noImageRoot } from '../../const';
+import { outletsFile, outletsRoot, outletFileNoImage, forcustomerRoot, outletsCaption, noImageRoot, addInfo } from '../../const';
 import * as ReactMarkdown from 'react-markdown';
 import './outlets.css';
 export class Outlets extends Page {
@@ -15,7 +15,7 @@ export class Outlets extends Page {
     .then( res => onLoadOutlets(res as IOutlets) )
     .catch( err => console.log(err) );  
 
-    languages.map((l, idx) => 
+    languages.forEach((l, idx) => 
       {
         LoadMDFile(`${outletsRoot}outlets.${l.toLowerCase()}.md`, l, onLoadOutletsMD);          
       }
@@ -23,7 +23,7 @@ export class Outlets extends Page {
   }
 
   renderBody(): JSX.Element {
-    const { outlets, sl, outletsMD, forForeignersMD } = this.props;
+    const { outlets, sl, outletsMD } = this.props;
     
     if (outlets) {
       outlets.outlets.sort((a, b) => a.ordr - b.ordr);
@@ -62,9 +62,6 @@ export class Outlets extends Page {
                       <div>
                         <span className="CardCaptionLabel">{outletsCaption.phone[sl].name}: </span>{outlet.phone}
                       </div>
-                      {/* <div>
-                        <span className="CardCaptionLabel">{outletsCaption.email[sl].name}: </span>{outlet.email}
-                      </div> */}
                       <div>
                         <span className="CardCaptionLabel">{outletsCaption.timewd[sl].name}: </span>{outlet.timewd}
                       </div>
@@ -85,7 +82,7 @@ export class Outlets extends Page {
     } else {
       return (
         <div>
-          Loading...
+          {addInfo.textLoading[sl].name}
         </div>
       );
     }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Page, PageProps } from '../Page';
-import { goodsRoot, goodFileNoImage, goodCaption, noImageRoot } from '../../const';
+import { goodsRoot, goodFileNoImage, goodCaption, noImageRoot, addInfo } from '../../const';
 import { Link } from 'react-router-dom';
 import './goods.css';
 
@@ -38,7 +38,6 @@ export class Goods extends Page {
                   <div key={idx} className="Card CardGood">
                     <div className="bg"></div>
                     <Link className="GoodMore" to={`${PUBLIC_ROOT}production/${g.group}/${g.ruid}`}></Link>
-                    {/* <div className="Badge GoodNew">Скидка!</div> */}
                     {(myprice ? myprice.issale : '') && <div className="Badge GoodNew">{goodCaption.textDiscount[sl].name}</div>}
                     {(myprice ? myprice.isnew && !myprice.issale : '') && <div className="Badge GoodNew">{goodCaption.textNew[sl].name}</div>}
                     {g.grade && <div className="Badge BadgeTopRight">{Page.getLName(g.grade, sl)}</div>}
@@ -58,7 +57,7 @@ export class Goods extends Page {
     } else {
       return (
         <div>
-          Loading...
+          {addInfo.textLoading[sl].name}
         </div>
       );
     }

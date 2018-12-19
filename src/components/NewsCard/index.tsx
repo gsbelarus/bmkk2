@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Page, PageProps } from "../Page";
+import { Page } from "../Page";
 import { newsRoot } from "../../const";
 import * as ReactMarkdown from "react-markdown";
 
@@ -20,7 +20,6 @@ export class NewsCard extends Page {
         return (
           <div className="NewsContainer">
             <ReactMarkdown source={newsText} />
-            {/* {fullImageName && <img src={fullImageName} />} */}
             <div className="NewsDate">{g.date}</div>
           </div>
         );

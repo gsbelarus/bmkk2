@@ -45,7 +45,6 @@ import {
   goodsFile,
   priceFile,
   addInfo,
-  headers,
   COUNT_IMG_BG,
   newsFile,
   headersX
@@ -134,7 +133,6 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
     super(props);
     this.fullWidth = false;
     this.logoImg = require("../../../public/image/logo_red_white_bk.png");
-    // this.logo = require("../../../public/image/znv_1line.svg");
     this.backgroundImgs = [];
     this.restImgs = [];
     this.state = {
@@ -214,31 +212,6 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
 
     Promise.all<IGoodGroups, IGoods, IPrice>([_groups, _goods, _price])
       .then(([_, gd, p]) => {
-        // if (!csvData) {
-        //   onLoadcsvData(
-        //     gd.goods.reduce(
-        //       (prev, g, idx) => {
-        //         const myprice = p.price.find(p => p.ruid === g.ruid);
-        //         const n = g.fullname;
-        //         prev.push({
-        //           "1": idx + 1,
-        //           "2": n && n.replace(/"/g, '""'),
-        //           "3": Page.getLName(g.valuename, sl),
-        //           "4": myprice && myprice.costnde,
-        //           "5": myprice && myprice.dcostfull,
-        //           "6": g.rate,
-        //           "7": g.beforuse,
-        //           "8": ' ' + g.term,
-        //           "9": myprice && myprice.barcode ? ('ш/к ' + myprice.barcode) : '',
-        //           "10": Page.getLName(g.ingredients, sl)
-        //         });
-        //         return prev;
-        //       },
-        //       [] as IcsvData
-        //     )
-        //   );
-        // };
-
         if (!xlsxData) {
           onLoadxlsxData(
             gd.goods.reduce(
@@ -360,15 +333,12 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                 <Link to={`${PUBLIC_ROOT}downloads`}>
                   {addInfo.textDownLoadFilesTop[sl].name}
                 </Link>
-                {/* {goods && price && <div><Link to={`${PUBLIC_ROOT}price`}>{addInfo.textPriceTop[sl].name}</Link></div>} */}
                 <LangSelector {...this.props} />
               </div>
             </div>
             <div className="container TopMenu">
               {mainMenu && (
                 <nav className="nav-main flex">
-                  {/* <div className="TopMenuFilter"></div> */}
-
                   <div className="logoMenu">
                     <Link to={`${PUBLIC_ROOT}`}>
                       {this.logoImg && (
@@ -389,8 +359,8 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
 
                   <ul className="nav-main-menu flex">
                     {mainMenu.filter(f => f.path).map((mi, idx) => (
-                      <li>
-                        <Link key={idx} to={mi.path}>
+                      <li key={idx}>
+                        <Link to={mi.path}>
                           <span
                             className={
                               mi.path !== `${PUBLIC_ROOT}` &&
@@ -409,7 +379,6 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
               )}
             </div>
           </header>
-          {/* style={sectionStyle} */}
           <div className="header-back" style={sectionStyle} />
           <div className="header-back-title" />
           {this.logo && <img className="LogoText" src={this.logo} />}

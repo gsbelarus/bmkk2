@@ -10,13 +10,12 @@ export class Price extends Page {
   constructor(props: PageProps) {
     super(props);
     this.fullWidth = true;
-    // this.logoImg = undefined;
   }
 
   componentDidMount() {
     super.componentDidMount();
     const {onLoadPriceTitleMD} = this.props;
-    languages.map((l, idx) =>
+    languages.forEach((l, idx) =>
       {
         LoadMDFile(`${forcustomerRoot}pricetitle.` + l.toLowerCase() + `.md`, l, onLoadPriceTitleMD);
       }
@@ -94,7 +93,7 @@ export class Price extends Page {
     } else {
       return (
         <div>
-          Loading...
+          {addInfo.textLoading[sl].name}
         </div>
       );
     }

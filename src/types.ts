@@ -199,6 +199,7 @@ export interface OutletsCaptions {
   coordinates: LName
 }
 export interface IAddInfo {
+  textLoading: LName;
   textRights: LName; 
   textPriceMore: LName;  
   textPriceLink: LName;  

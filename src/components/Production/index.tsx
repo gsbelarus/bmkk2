@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Page } from "../Page";
-import { goodGroupsRoot, groupFileNoImage, noImageRoot } from "../../const";
+import { goodGroupsRoot, groupFileNoImage, noImageRoot, addInfo } from "../../const";
 import { Link } from "react-router-dom";
 import "./production.css";
 
@@ -32,7 +32,7 @@ export class Production extends Page {
         </div>
       );
     } else {
-      return <div>Loading...</div>;
+      return <div>{addInfo.textLoading[sl].name}</div>;
     }
   }
 }

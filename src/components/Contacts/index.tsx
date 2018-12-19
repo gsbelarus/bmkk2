@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Page, LoadMDFile } from '../Page';
 import { IContacts, IDepartments } from '../../types';
-import { contactsFile, departmentsFile, forcustomerRoot } from '../../const';
+import { contactsFile, departmentsFile, forcustomerRoot, addInfo } from '../../const';
 import './contacts.css';
 import * as ReactMarkdown from 'react-markdown';
 import { languages } from '../../types';
@@ -24,7 +24,7 @@ export class Contacts extends Page {
     .then( res => onLoadDepartments(res as IDepartments) )
     .catch( err => console.log(err) );
 
-    languages.map((l, idx) => 
+    languages.forEach((l, idx) => 
       { 
         LoadMDFile(`${forcustomerRoot}requisites.` + l.toLowerCase() + `.md`, l, onLoadRequisitesMD);  
       }
@@ -72,7 +72,7 @@ export class Contacts extends Page {
     } else {
       return (
         <div>
-          Loading...
+           {addInfo.textLoading[sl].name}
         </div>
       );
     }
