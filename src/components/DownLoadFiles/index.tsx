@@ -8,28 +8,28 @@ import { CSVLink } from "react-csv";
 import * as XLSX from "xlsx";
 
 export class DownLoadFiles extends Page {
-  onClickSaveXml = (xlsxData: IxlsxData) => {
-    let worksheet = XLSX.utils.aoa_to_sheet(xlsxData);
+  // onClickSaveXml = (xlsxData: IxlsxData) => {
+  //   let worksheet = XLSX.utils.aoa_to_sheet(xlsxData);
 
-    let wb = XLSX.utils.book_new();
-    var wscols = [
-      { wch: 5 },
-      { wch: 110 },
-      { wch: 7 },
-      { wch: 13 },
-      { wch: 13 },
-      { wch: 13 },
-      { wch: 13 },
-      { wch: 15 },
-      { wch: 18 },
-      { wch: 100 }
-    ];
+  //   let wb = XLSX.utils.book_new();
+  //   var wscols = [
+  //     { wch: 5 },
+  //     { wch: 110 },
+  //     { wch: 7 },
+  //     { wch: 13 },
+  //     { wch: 13 },
+  //     { wch: 13 },
+  //     { wch: 13 },
+  //     { wch: 15 },
+  //     { wch: 18 },
+  //     { wch: 100 }
+  //   ];
 
-    worksheet["!cols"] = wscols;
+  //   worksheet["!cols"] = wscols;
 
-    XLSX.utils.book_append_sheet(wb, worksheet, "SheetJS");
-    XLSX.writeFile(wb, "PriceBmkk.xlsx");
-  };
+  //   XLSX.utils.book_append_sheet(wb, worksheet, "SheetJS");
+  //   XLSX.writeFile(wb, "PriceBmkk.xlsx");
+  // };
 
   componentDidMount() {
     super.componentDidMount();
