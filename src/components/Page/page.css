@@ -393,6 +393,7 @@ header ul > li {
 }
 
 @media all and (max-width: 700px) {
+ 
   .WorkArea {
     margin-top: 0px !important;
   }
