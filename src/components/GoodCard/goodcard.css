@@ -18,7 +18,7 @@ div.GoodCardItem ul {
 div.GoodCardItem {
   float: left;
   padding-left: 40px;
-  max-width: 50%;
+  max-width: 70%;
   font-size: 14px;
 }
 
@@ -70,6 +70,5 @@ div.PriceGoods {
 }
 
 .GoodsContainer {
-  padding-top: 24px;
-  float: left;
+  padding-top: 24px; 
 }

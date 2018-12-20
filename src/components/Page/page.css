@@ -20,6 +20,9 @@ div.Page {
   width: 100%;
   height: 100%;
   color: var(--colorText);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 div.Page h1 {
@@ -252,7 +255,7 @@ div.footer-copyright {
 }
 
 .FullPage {
-  min-height: calc(100vh - 90px);
+  flex: 1 0 auto;
 }
 
 .flex {
@@ -393,7 +396,7 @@ header ul > li {
 }
 
 @media all and (max-width: 700px) {
- 
+   
   .WorkArea {
     margin-top: 0px !important;
   }
