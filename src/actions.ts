@@ -85,6 +85,12 @@ export const loadHistoryMD = createAction('LOAD_HISTORYMD', resolve => {
 
 export type LoadHistoryMD = typeof loadHistoryMD;
 
+export const loadAutomationMD = createAction('LOAD_AUTOMATIONMD', resolve => {
+  return (loadedAutomationMD: { lang: string, text: string }) => resolve(loadedAutomationMD);
+});
+
+export type LoadAutomationMD = typeof loadAutomationMD;
+
 export const loadVacancyMD = createAction('LOAD_VACANCYMD', resolve => {
   return (loadedVacancyMD: { lang: string, text: string }) => resolve(loadedVacancyMD);
 });

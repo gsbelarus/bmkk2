@@ -1,0 +1,8 @@
+.Automation {
+  padding-top: 12px;
+}
+.Automation a {
+  color: var(--colorBrown) !important;
+  border-bottom: 1px dotted var(--colorBrown);
+  line-height: 30px;
+}

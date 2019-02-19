@@ -170,7 +170,7 @@ div.navPath span:last-child::after {
 }
 
 footer {
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 div.Bottom {
@@ -216,7 +216,7 @@ nav.FooterMenu a:hover {
 .Bottom img.Logo {
   height: 70px;
   top: 6px;
-  padding-right: 40px;
+  /* padding-right: 40px; */
   position: relative;
   left: 0;
 }

@@ -17,6 +17,7 @@ export type State = {
   goods?: IGoods;
   groups?: IGoodGroups;
   historyMD?: LName;
+  automationMD?: LName;  
   news?: INews;
   outlets?: IOutlets;
   outletsMD?: LName;
@@ -85,6 +86,11 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
       var { lang, text } = action.payload;
       const { historyMD } = state;
       return {...state, historyMD: {...historyMD, [lang]: {name: text} } }
+
+    case getType(actions.loadAutomationMD):
+      var { lang, text } = action.payload;
+      const { automationMD } = state;
+      return {...state, automationMD: {...automationMD, [lang]: {name: text} } }      
 
     case getType(actions.loadStaffMD):
       var { lang, text } = action.payload;

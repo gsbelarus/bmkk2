@@ -36,7 +36,8 @@ import {
   LoadRequisitesMD,
   LoadForCustomerMD,
   LoadPriceTitleMD,
-  LoadDownLoadMD
+  LoadDownLoadMD,
+  LoadAutomationMD
 } from "../../actions";
 import {
   mainMenu,
@@ -66,6 +67,7 @@ export interface PageProps extends RouteComponentProps<any> {
   outletsMD?: LName;
   aboutMD?: LName;
   historyMD?: LName;
+  automationMD?: LName;
   staffMD?: LName;
   vacancyMD?: LName;
   restMD?: LName;
@@ -92,6 +94,7 @@ export interface PageProps extends RouteComponentProps<any> {
   onLoadxlsxData: LoadxlsxData;
   onLoadAboutMD: LoadAboutMD;
   onLoadHistoryMD: LoadHistoryMD;
+  onLoadAutomationMD: LoadAutomationMD;  
   onLoadStaffMD: LoadStaffMD;
   onLoadVacancyMD: LoadVacancyMD;
   onLoadRestMD: LoadRestMD;
@@ -437,9 +440,14 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                                 {subM &&
                                   subM.map((sm, idx) => (
                                     <li key={idx}>
-                                      <Link to={sm.path}>
-                                        {sm.caption[sl].name}
-                                      </Link>
+                                      { sm.path !== 'http://200025739.epfr.by/' 
+                                      ? <Link to={sm.path}>
+                                          {sm.caption[sl].name}
+                                        </Link> 
+                                      : <a href='http://200025739.epfr.by/' target="_blank">
+                                          {sm.caption[sl].name}
+                                        </a>
+                                      }
                                     </li>
                                   ))}
                                 {mi.id === 8 && (

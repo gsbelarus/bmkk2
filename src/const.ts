@@ -195,6 +195,36 @@ export const subMenu: MenuItems = [
     }
   },
   {
+    id: 2,
+    path: 'http://200025739.epfr.by/',
+    caption: {
+      ru: {
+        name: "Акционерам"
+      },
+      be: {
+        name: "Акцыянерам"
+      },
+      en: {
+        name: "Shareholders"
+      }
+    }
+  },
+  {
+    id: 2,
+    path: `${PUBLIC_ROOT}automation`,
+    caption: {
+      ru: {
+        name: "Автоматизация"
+      },
+      be: {
+        name: "Аўтаматызацыя"
+      },
+      en: {
+        name: "Automation"
+      }
+    }
+  },    
+  {
     id: 5,
     path: `${PUBLIC_ROOT}forcustomer#direction`,
     caption: {

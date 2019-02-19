@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import { MainPage } from './components/MainPage';
 import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, loadPrice, LoadPrice, LoadGoods,
          LoadNews, loadNews, LoadContacts, loadContacts, LoadDepartments, loadDepartments,
          LoadOutlets, loadOutlets, LoadcsvData, loadcsvData, loadOutletsMD, LoadOutletsMD, LoadForForeignersMD, loadForForeignersMD, 
          loadAboutMD, LoadAboutMD, LoadHistoryMD, LoadStaffMD, LoadVacancyMD, LoadRestMD, loadHistoryMD, loadStaffMD, loadVacancyMD, 
          loadRestMD, loadDirectionMD, loadRequisitesMD, LoadDirectionMD, LoadRequisitesMD, LoadForCustomerMD, loadForCustomerMD, 
-         LoadPriceTitleMD, loadPriceTitleMD, LoadDownLoadMD, loadDownLoadMD, LoadxlsxData, loadxlsxData } from './actions';
+         LoadPriceTitleMD, loadPriceTitleMD, LoadDownLoadMD, loadDownLoadMD, LoadxlsxData, loadxlsxData, LoadAutomationMD, loadAutomationMD } from './actions';
 import { State } from './store';
 import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, LName, IxlsxData } from './types';
 import { Production } from './components/Production';
@@ -23,6 +23,7 @@ import { DownLoadFiles } from './components/DownLoadFiles';
 import { BrowserRouter } from 'react-router-dom'
 import { Rest } from './components/Rest';
 import { NewsCard } from './components/NewsCard';
+import { Automation } from './components/Automation';
 
 export interface AppProps {
   aboutMD? : LName;
@@ -50,6 +51,7 @@ export interface AppProps {
   onLoadGoods: LoadGoods;
   onLoadGroups: LoadGroups;
   onLoadHistoryMD: LoadHistoryMD;
+  onLoadAutomationMD: LoadAutomationMD;  
   onLoadNews: LoadNews;
   onLoadOutlets: LoadOutlets;
   onLoadOutletsMD: LoadOutletsMD
@@ -201,6 +203,15 @@ class App extends React.Component<AppProps, {}> {
               }
             }
           />
+          <Route
+            path={`${PUBLIC_ROOT}automation`}
+            render={
+              (props) => {
+                const mergedProps = {...this.props, ...props};
+                return <Automation {...mergedProps} />;
+              }
+            }
+          />          
         </Switch>
       </BrowserRouter>
     );
@@ -229,6 +240,7 @@ export default connect(
     onLoadForForeignersMD: loadForForeignersMD,
     onLoadAboutMD: loadAboutMD,
     onLoadHistoryMD: loadHistoryMD,
+    onLoadAutomationMD: loadAutomationMD, 
     onLoadStaffMD: loadStaffMD,
     onLoadVacancyMD: loadVacancyMD,
     onLoadRestMD: loadRestMD,
