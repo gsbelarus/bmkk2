@@ -66,7 +66,33 @@ export class Contacts extends Page {
             <div id="requisites">
               <ReactMarkdown source={requisitesMD[sl.toUpperCase()].name} />
             </div>
-          }             
+          }    
+          <div>
+            <h1>Форма обратной связи</h1>
+            <form id="contact-form">
+              <input type="hidden" name="contact_number"/>
+              <div className="field-block">
+                <label htmlFor="name">Ваше имя:</label>
+                <input id="name" className="field" name="user_name" required type="text"/>
+              </div>
+
+              <div className="field-block">
+                <label htmlFor="email">Ваш E-mail:</label>
+                <input id="email" className="field" name="user_email" required type="email"/>
+              </div>
+
+              <div className="field-block">
+                <label htmlFor="phone">Ваш телефон:</label>
+                <input id="phone" className="field" name="user_phone" required type="text"/>
+              </div>
+              <div className="field-block">
+                <label htmlFor="message">Текст сообщения:</label>
+                <textarea id="message" className="field" required name="message_html" data-size="4"></textarea>
+              </div>   
+              <button id='submit' className="button">Отправить</button>
+              <div className="info"></div>
+            </form>            
+          </div>          
         </div>
       );
     } else {

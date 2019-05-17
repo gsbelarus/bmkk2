@@ -54,6 +54,7 @@ import { RouteComponentProps } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import { LName } from "../../types";
 import { Trade } from "../Trade";
+import * as ReactGA from 'react-ga';
 
 export interface PageProps extends RouteComponentProps<any> {
   selectedLang: Language;
@@ -145,7 +146,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
 
   componentDidMount() {
     window.scrollTo(0, 0);
-
+    ReactGA.pageview(window.location.pathname)
     const {
       goods,
       price,
