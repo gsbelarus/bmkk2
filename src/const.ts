@@ -268,6 +268,21 @@ export const subMenu: MenuItems = [
         name: "For foreign customers"
       }
     }
+  },
+  {
+    id: 8,
+    path: `${PUBLIC_ROOT}contacts#contact-form`,
+    caption: {
+      ru: {
+        name: "Форма обратной связи"
+      },
+      be: {
+        name: "Форма зваротнай сувязі"
+      },
+      en: {
+        name: "Feedback form"
+      }
+    }
   }
 ];
 
