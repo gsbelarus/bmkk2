@@ -458,7 +458,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                                 )}
                                 {mi.id === 8 && (
                                   <li key={idx + 2}>
-                                    Тел.: +375-1643-9-11-12{" "}
+                                    Тел.: +375-1643-9-11-91{" "}
                                   </li>
                                 )}
                                 {mi.id === 8 && (
