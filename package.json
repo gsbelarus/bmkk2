@@ -54,6 +54,7 @@
     "@types/react-slick": "^0.23.4",
     "@types/redux": "^3.6.0",
     "classnames": "^2.2.6",
+    "emailjs-com": "^2.4.1",
     "react": "^16.8.6",
     "react-csv": "^1.1.1",
     "react-dom": "^16.8.6",

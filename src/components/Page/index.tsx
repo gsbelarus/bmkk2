@@ -95,7 +95,7 @@ export interface PageProps extends RouteComponentProps<any> {
   onLoadxlsxData: LoadxlsxData;
   onLoadAboutMD: LoadAboutMD;
   onLoadHistoryMD: LoadHistoryMD;
-  onLoadAutomationMD: LoadAutomationMD;  
+  onLoadAutomationMD: LoadAutomationMD;
   onLoadStaffMD: LoadStaffMD;
   onLoadVacancyMD: LoadVacancyMD;
   onLoadRestMD: LoadRestMD;
@@ -106,8 +106,9 @@ export interface PageProps extends RouteComponentProps<any> {
   onLoadDownLoadMD: LoadDownLoadMD;
 }
 
-interface IState {
+export interface IState {
   counter: number;
+  sendText: string;
 }
 
 export function LoadMDFile(
@@ -140,8 +141,9 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
     this.backgroundImgs = [];
     this.restImgs = [];
     this.state = {
-      counter: 0
-    };
+      counter: 0,
+      sendText: ''
+     };
   }
 
   componentDidMount() {
@@ -346,12 +348,12 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                   <div className="logoMenu">
                     <Link to={`${PUBLIC_ROOT}`}>
                       {this.logoImg && (
-                        <img className="Logo" src={this.logoImg} />                        
+                        <img className="Logo" src={this.logoImg} />
                       )}
                     </Link>
                     <Link to={`${PUBLIC_ROOT}`}>
                       <span className="LogoTitle">{addInfo.texName[sl].name}</span>
-                    </Link>                    
+                    </Link>
                     <label className="menu-btn" htmlFor="header-toggle">
                       <span className="line line-1" />
                       <span className="line line-2" />
@@ -441,10 +443,10 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                                 {subM &&
                                   subM.map((sm, idx) => (
                                     <li key={idx}>
-                                      { sm.path !== 'http://200025739.epfr.by/' 
+                                      { sm.path !== 'http://200025739.epfr.by/'
                                       ? <Link to={sm.path}>
                                           {sm.caption[sl].name}
-                                        </Link> 
+                                        </Link>
                                       : <a href='http://200025739.epfr.by/' target="_blank">
                                           {sm.caption[sl].name}
                                         </a>
