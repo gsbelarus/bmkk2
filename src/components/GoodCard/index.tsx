@@ -77,7 +77,7 @@ export class GoodCard extends Page {
                       </strong>
                       {g.beforuse}
                     </li>
-                    <li>
+                    {/* <li>
                       <strong>
                         {goodCaption.costnde[sl].name}
                       </strong>
@@ -88,7 +88,7 @@ export class GoodCard extends Page {
                         {goodCaption.dcostfull[sl].name}
                       </strong>
                       {myprice ? myprice.dcostfull : ''}
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
             </div>
