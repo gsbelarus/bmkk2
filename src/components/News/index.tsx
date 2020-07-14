@@ -14,11 +14,11 @@ export class News extends Page {
     .then( res => res.text())
     .then( res => JSON.parse(res) )
     .then( res => onLoadNews(res as INews) )
-    .catch( err => console.log(err) );  
+    .catch( err => console.log(err) );
   }
 
   renderBody(): JSX.Element {
-    const { news, sl } = this.props;    
+    const { news, sl } = this.props;
     if (news) {
       news.news.sort((a, b) => a.ordr - b.ordr);
       return (
@@ -31,11 +31,11 @@ export class News extends Page {
                 <div className="NewsItem" key={idx}>
                   <div className="bg"></div>
                   <Link to={`${PUBLIC_ROOT}news/` + n.ruid} />
-                  <div className="NewsText">                    
+                  <div className="NewsText">
                     <ReactMarkdown source={newsTitle} />
                     <ReactMarkdown source={newsText + '...'}/>
                     <div className="NewsDate">{n.date}</div>
-                  </div>               
+                  </div>
                 </div>
               );
             })}

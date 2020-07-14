@@ -1,10 +1,9 @@
 import * as React from "react";
-import { Page, LoadMDFile, PageProps } from "../Page";
+import { Page, LoadMDFile } from "../Page";
 import * as ReactMarkdown from "react-markdown";
 import "./rest.css";
 import { languages } from "../../types";
 import { aboutRoot } from "../../const";
-import { MultipleItems } from "../Slider";
 import { Gallery } from "../Gallery";
 
 

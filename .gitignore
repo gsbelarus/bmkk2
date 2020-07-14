@@ -23,4 +23,5 @@ yarn-error.log*
 
 package-lock.json
 
-public/data/goodgroup/*.jpg
+public/data/**/*.json
+public/data/**/*.jpg

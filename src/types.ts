@@ -39,7 +39,7 @@ export interface GoodCaptions {
   B2: LName;
   C: LName;
   Ca: LName;
-  Fe: LName;   
+  Fe: LName;
 }
 
 
@@ -65,18 +65,18 @@ export type PriceItems = PriceItem[];
 
 export interface IGoods {
   version: string;
-  date: string;  
+  date: string;
   goods: {
     ruid: string;
     group: string;
     caption: LName;
     fullname: string;
-    valuename: LName; 
-    grade: LName; 
-    ingredients: LName;          
-    casing: LName; 
+    valuename: LName;
+    grade: LName;
+    ingredients: LName;
+    casing: LName;
     image: string;
-    image2: string;    
+    image2: string;
     rate: number;
     term: string;
     beforuse: string;
@@ -94,11 +94,11 @@ export interface IGoods {
 
 export interface IPrice {
   version: string;
-  date: string;  
+  date: string;
   price: {
-    ruid: string; 
+    ruid: string;
     costnde: number;
-    dcostfull: number; 
+    dcostfull: number;
     barcode: string;
     issale: string;
     isnew: string;
@@ -127,11 +127,13 @@ export interface INews {
     title: LName;
     short: LName;
     body: LName;
-    date: Date;  
-    expireson: Date;       
-    pinned: Boolean; 
-    ordr: number;    
+    date: Date;
+    expireson: Date;
+    pinned: Boolean;
+    ordr: number;
     image: string;
+    image2: string;
+    image3: string;
   }[];
 }
 
@@ -141,9 +143,9 @@ export interface IContacts {
     ruid: string;
     department: string;
     caption: LName;
-    phone: string;  
-    email: string;       
-    fax: string; 
+    phone: string;
+    email: string;
+    fax: string;
     description: string;
   }[];
 }
@@ -153,7 +155,7 @@ export interface IDepartments {
   departments: {
     ruid: string;
     caption: LName;
-    ordr: number; 
+    ordr: number;
   }[];
 }
 
@@ -169,13 +171,13 @@ export interface IOutlets {
     ruid: string;
     caption: LName;
     city: string;
-    address: LName;  
+    address: LName;
     timewd: string;
     timesat: string;
-    timesun: string;  
-    phone: string;  
-    email: string;       
-    fax: string; 
+    timesun: string;
+    phone: string;
+    email: string;
+    fax: string;
     image: string;
     lon: string;
     lat: string;
@@ -190,24 +192,24 @@ export interface IGallery {
 
 export interface OutletsCaptions {
   caption: LName;
-  address: LName;    
-  phone: LName;     
+  address: LName;
+  phone: LName;
   email: LName;
   timewd: LName;
   timesat: LName;
-  timesun: LName;  
+  timesun: LName;
   coordinates: LName
 }
 export interface IAddInfo {
   textLoading: LName;
-  textRights: LName; 
-  textPriceMore: LName;  
-  textPriceLink: LName;  
-  textOutlets: LName;   
+  textRights: LName;
+  textPriceMore: LName;
+  textPriceLink: LName;
+  textOutlets: LName;
   textPriceTop: LName;
   textPriceXlsTop: LName;
   textPriceDescr: LName;
-  textDownLoadFilesTop: LName; 
+  textDownLoadFilesTop: LName;
   moreCaption: LName;
   textPriceName: LName;
   texName: LName

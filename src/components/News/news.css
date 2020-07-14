@@ -10,15 +10,15 @@ div.NewsDate {
 }
 
 .NewsItem {
-  width: 100%;  
+  width: 100%;
   margin-bottom: 20px;
   border-bottom: dotted 1px gray;
-  text-align: left;  
+  text-align: left;
   border-radius: 2px;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26); 
-  position: relative; 
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  position: relative;
 }
-.NewsText { 
+.NewsText {
   padding: 16px;
 }
 
@@ -34,7 +34,7 @@ div.NewsDate {
 }
 
 .NewsItem h2 {
-  color: var(--colorBrown); 
+  color: var(--colorBrown);
   font-size: 20px;
 }
 
@@ -53,6 +53,13 @@ div.NewsDate {
 }
 
 .NewsContainer h2 {
-  color: var(--colorBrown); 
+  color: var(--colorBrown);
   font-size: 20px;
+}
+
+.NewImgs img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }
