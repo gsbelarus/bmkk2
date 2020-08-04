@@ -32,6 +32,7 @@ import {
   LoadStaffMD,
   LoadVacancyMD,
   LoadRestMD,
+  LoadRestMD2,
   LoadDirectionMD,
   LoadRequisitesMD,
   LoadForCustomerMD,
@@ -72,6 +73,7 @@ export interface PageProps extends RouteComponentProps<any> {
   staffMD?: LName;
   vacancyMD?: LName;
   restMD?: LName;
+  restMD2?: LName;
   forForeignersMD?: LName;
   directionMD?: LName;
   requisitesMD?: LName;
@@ -99,6 +101,7 @@ export interface PageProps extends RouteComponentProps<any> {
   onLoadStaffMD: LoadStaffMD;
   onLoadVacancyMD: LoadVacancyMD;
   onLoadRestMD: LoadRestMD;
+  onLoadRestMD2: LoadRestMD2;
   onLoadDirectionMD: LoadDirectionMD;
   onLoadRequisitesMD: LoadRequisitesMD;
   onLoadForCustomerMD: LoadForCustomerMD;

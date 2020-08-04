@@ -8,7 +8,7 @@ export type State = {
   aboutMD? :LName;
   contacts?: IContacts;
   csvData?: IcsvData;
-  xlsxData?: IxlsxData;  
+  xlsxData?: IxlsxData;
   departments?: IDepartments;
   directionMD? : LName;
   downLoadMD? :LName;
@@ -17,7 +17,7 @@ export type State = {
   goods?: IGoods;
   groups?: IGoodGroups;
   historyMD?: LName;
-  automationMD?: LName;  
+  automationMD?: LName;
   news?: INews;
   outlets?: IOutlets;
   outletsMD?: LName;
@@ -25,6 +25,7 @@ export type State = {
   priceTitleMD? :LName;
   requisitesMD? :LName;
   restMD?: LName;
+  restMD2?: LName;
   selectedGroup: string;
   selectedLang: Language;
   staffMD?: LName;
@@ -33,7 +34,7 @@ export type State = {
 
 const initialState: State = {
   selectedLang: 'RU',
-  selectedGroup: ''    
+  selectedGroup: ''
 };
 
 export const  reducer = (state: State = initialState, action: BMKKAction): State => {
@@ -70,7 +71,7 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
       const { outletsMD } = state;
 
       return {...state, outletsMD: {...outletsMD, [lang]: {name: text} } };
-    }  
+    }
 
     case getType(actions.loadForForeignersMD):
       var { lang, text } = action.payload;
@@ -90,7 +91,7 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
     case getType(actions.loadAutomationMD):
       var { lang, text } = action.payload;
       const { automationMD } = state;
-      return {...state, automationMD: {...automationMD, [lang]: {name: text} } }      
+      return {...state, automationMD: {...automationMD, [lang]: {name: text} } }
 
     case getType(actions.loadStaffMD):
       var { lang, text } = action.payload;
@@ -106,6 +107,11 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
       var { lang, text } = action.payload;
       const { restMD } = state;
       return {...state, restMD: {...restMD, [lang]: {name: text} } }
+
+    case getType(actions.loadRestMD2):
+      var { lang, text } = action.payload;
+      const { restMD2 } = state;
+      return {...state, restMD2: {...restMD2, [lang]: {name: text} } }
 
     case getType(actions.loadDirectionMD):
       var { lang, text } = action.payload;
@@ -130,11 +136,11 @@ export const  reducer = (state: State = initialState, action: BMKKAction): State
     case getType(actions.loadDownLoadMD):
       var { lang, text } = action.payload;
       const { downLoadMD } = state;
-      return {...state, downLoadMD: {...downLoadMD, [lang]: {name: text} } }   
+      return {...state, downLoadMD: {...downLoadMD, [lang]: {name: text} } }
 
 
     case getType(actions.loadxlsxData):
-      return {...state, xlsxData: action.payload}; 
+      return {...state, xlsxData: action.payload};
 
     default:
       return state;

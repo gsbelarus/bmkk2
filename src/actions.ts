@@ -103,6 +103,12 @@ export const loadRestMD = createAction('LOAD_RESTMD', resolve => {
 
 export type LoadRestMD = typeof loadRestMD;
 
+export const loadRestMD2 = createAction('LOAD_RESTMD2', resolve => {
+  return (loadedRestMD2: { lang: string, text: string }) => resolve(loadedRestMD2);
+});
+
+export type LoadRestMD2 = typeof loadRestMD2;
+
 export const loadStaffMD = createAction('LOAD_STAFFMD', resolve => {
   return (loadedStaffMD: { lang: string, text: string }) => resolve(loadedStaffMD);
 });

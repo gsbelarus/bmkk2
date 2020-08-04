@@ -4,9 +4,9 @@ import { Switch, Route, Link } from 'react-router-dom';
 import { MainPage } from './components/MainPage';
 import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, loadPrice, LoadPrice, LoadGoods,
          LoadNews, loadNews, LoadContacts, loadContacts, LoadDepartments, loadDepartments,
-         LoadOutlets, loadOutlets, LoadcsvData, loadcsvData, loadOutletsMD, LoadOutletsMD, LoadForForeignersMD, loadForForeignersMD, 
-         loadAboutMD, LoadAboutMD, LoadHistoryMD, LoadStaffMD, LoadVacancyMD, LoadRestMD, loadHistoryMD, loadStaffMD, loadVacancyMD, 
-         loadRestMD, loadDirectionMD, loadRequisitesMD, LoadDirectionMD, LoadRequisitesMD, LoadForCustomerMD, loadForCustomerMD, 
+         LoadOutlets, loadOutlets, LoadcsvData, loadcsvData, loadOutletsMD, LoadOutletsMD, LoadForForeignersMD, loadForForeignersMD,
+         loadAboutMD, LoadAboutMD, LoadHistoryMD, LoadStaffMD, LoadVacancyMD, LoadRestMD, LoadRestMD2, loadHistoryMD, loadStaffMD, loadVacancyMD,
+         loadRestMD, loadRestMD2, loadDirectionMD, loadRequisitesMD, LoadDirectionMD, LoadRequisitesMD, LoadForCustomerMD, loadForCustomerMD,
          LoadPriceTitleMD, loadPriceTitleMD, LoadDownLoadMD, loadDownLoadMD, LoadxlsxData, loadxlsxData, LoadAutomationMD, loadAutomationMD } from './actions';
 import { State } from './store';
 import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, LName, IxlsxData } from './types';
@@ -29,7 +29,7 @@ export interface AppProps {
   aboutMD? : LName;
   contacts?: IContacts;
   csvData?: IcsvData;
-  xlsxData?: IxlsxData;  
+  xlsxData?: IxlsxData;
   departments?: IDepartments;
   directionMD?: LName;
   downloadMD?: LName;
@@ -42,7 +42,7 @@ export interface AppProps {
   onLoadAboutMD: LoadAboutMD,
   onLoadContacts: LoadContacts;
   onLoadcsvData: LoadcsvData;
-  onLoadxlsxData: LoadxlsxData;  
+  onLoadxlsxData: LoadxlsxData;
   onLoadDepartments: LoadDepartments;
   onLoadDirectionMD: LoadDirectionMD;
   onLoadDownLoadMD: LoadDownLoadMD;
@@ -51,7 +51,7 @@ export interface AppProps {
   onLoadGoods: LoadGoods;
   onLoadGroups: LoadGroups;
   onLoadHistoryMD: LoadHistoryMD;
-  onLoadAutomationMD: LoadAutomationMD;  
+  onLoadAutomationMD: LoadAutomationMD;
   onLoadNews: LoadNews;
   onLoadOutlets: LoadOutlets;
   onLoadOutletsMD: LoadOutletsMD
@@ -59,6 +59,7 @@ export interface AppProps {
   onLoadPriceTitleMD: LoadPriceTitleMD;
   onLoadRequisitesMD: LoadRequisitesMD;
   onLoadRestMD: LoadRestMD;
+  onLoadRestMD2: LoadRestMD2;
   onLoadStaffMD: LoadStaffMD;
   onLoadVacancyMD: LoadVacancyMD;
   onSetLanguage: SetLanguage;
@@ -68,6 +69,7 @@ export interface AppProps {
   priceTitleMD?: LName;
   requisitesMD?: LName;
   restMD?: LName;
+  restMD2?: LName;
   selectedGroup: string;
   selectedLang: Language;
   sl: string;
@@ -157,7 +159,7 @@ class App extends React.Component<AppProps, {}> {
                 return <NewsCard {...mergedProps} />;
               }
             }
-          />          
+          />
           <Route
             path={`${PUBLIC_ROOT}rest`}
             render={
@@ -166,7 +168,7 @@ class App extends React.Component<AppProps, {}> {
                 return <Rest {...mergedProps} />;
               }
             }
-          />          
+          />
           <Route
             path={`${PUBLIC_ROOT}contacts`}
             render={
@@ -193,7 +195,7 @@ class App extends React.Component<AppProps, {}> {
                 return <ForCustomer {...mergedProps} />;
               }
             }
-          />          
+          />
           <Route
             path={`${PUBLIC_ROOT}downloads`}
             render={
@@ -211,7 +213,7 @@ class App extends React.Component<AppProps, {}> {
                 return <Automation {...mergedProps} />;
               }
             }
-          />          
+          />
         </Switch>
       </BrowserRouter>
     );
@@ -235,15 +237,16 @@ export default connect(
     onLoadDepartments: loadDepartments,
     onLoadOutlets: loadOutlets,
     onLoadcsvData: loadcsvData,
-    onLoadxlsxData: loadxlsxData,    
+    onLoadxlsxData: loadxlsxData,
     onLoadOutletsMD: loadOutletsMD,
     onLoadForForeignersMD: loadForForeignersMD,
     onLoadAboutMD: loadAboutMD,
     onLoadHistoryMD: loadHistoryMD,
-    onLoadAutomationMD: loadAutomationMD, 
+    onLoadAutomationMD: loadAutomationMD,
     onLoadStaffMD: loadStaffMD,
     onLoadVacancyMD: loadVacancyMD,
     onLoadRestMD: loadRestMD,
+    onLoadRestMD2: loadRestMD2,
     onLoadDirectionMD: loadDirectionMD,
     onLoadRequisitesMD: loadRequisitesMD,
     onLoadForCustomerMD: loadForCustomerMD,

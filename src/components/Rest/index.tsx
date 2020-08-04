@@ -11,25 +11,38 @@ export class Rest extends Page {
   componentDidMount() {
     super.componentDidMount();
 
-    const { onLoadRestMD } = this.props;
+    const { onLoadRestMD, onLoadRestMD2 } = this.props;
     languages.forEach((l, idx) => {
       LoadMDFile(
         `${aboutRoot}rest.` + l.toLowerCase() + `.md`,
         l,
         onLoadRestMD
       );
+      LoadMDFile(
+        `${aboutRoot}rest2.` + l.toLowerCase() + `.md`,
+        l,
+        onLoadRestMD2
+      );
     });
   }
 
   renderBody(): JSX.Element {
-    const { sl, restMD } = this.props;
+    const { sl, restMD, restMD2 } = this.props;
+    const slUp = sl.toUpperCase()
     return (
       <div>
         {restMD &&
-          restMD[sl.toUpperCase()] && (
+          restMD[slUp] && (
             <div id="rest">
-              <ReactMarkdown source={restMD[sl.toUpperCase()].name} />
-              <Gallery />
+              <ReactMarkdown source={restMD[slUp].name} />
+              <Gallery n='1'/>
+            </div>
+          )}
+        {restMD2 &&
+          restMD2[slUp] && (
+            <div id="rest">
+              <ReactMarkdown source={restMD2[slUp].name} />
+              <Gallery n='2'/>
             </div>
           )}
       </div>

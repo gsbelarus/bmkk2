@@ -54,17 +54,22 @@ module.exports =  {
         from: './public/data/noimage/*.*',
         to: 'data/noimage/',
         flatten: true
-      },      
+      },
       {
         from: './public/data/downloads/*.*',
         to: 'data/downloads/',
         flatten: true
-      },     
+      },
       {
         from: './public/data/rest/*.*',
         to: 'data/rest',
         flatten: true
-      },              
+      },
+      {
+        from: './public/data/rest2/*.*',
+        to: 'data/rest2',
+        flatten: true
+      },
       {
         from: './public/data/upload_binary.php',
         to: 'data/',
@@ -91,7 +96,7 @@ module.exports =  {
       },
       {
         test: /\.(txt|md)$/,
-        use: 'raw-loader' 
+        use: 'raw-loader'
       },
       {
         test: /\.(png|jp(e*)g|svg|eot|ttf|woff|gif)$/,
@@ -104,7 +109,7 @@ module.exports =  {
             }
           }
         ]
-      }  
+      }
     ]
   },
   resolve: {
