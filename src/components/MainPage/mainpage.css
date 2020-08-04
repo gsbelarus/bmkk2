@@ -1,4 +1,4 @@
-/* .MainPage { 
+/* .MainPage {
   background-image: url('../../../public/image/back.jpg');
   background-repeat: no-repeat;
   background-size: auto;
@@ -7,9 +7,9 @@
 
 .MainPage header {
   background-color: transparent;
-  box-shadow: none; 
+  box-shadow: none;
 }
-/* 
+/*
 .MainPage div.TopRibbon {
   color: white;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
@@ -36,7 +36,7 @@
   background-size: cover;
   background-color: #464646;
   transition: background-image 3s linear 1s;
-  filter: brightness(0.6) sepia(0.2);
+  filter: brightness(0.7); /*sepia(0.2)*/
 }
 
 .MainPage .header-back-title {
@@ -52,9 +52,9 @@
 
 .MainPage nav.TopMenu {
   /* background-color: rgba(0, 0, 0, 0.55); */
-   /* rgba(219,69,53,0.8); */   
+   /* rgba(219,69,53,0.8); */
   box-shadow: none;
-} 
+}
 
 .MainPage .TopMenuFilter {
   filter: blur(0.7px);
@@ -64,7 +64,7 @@
   width: 100%;
 }
 
-.MainPage .LangSelector span.Selected { 
+.MainPage .LangSelector span.Selected {
   text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.7);
 }
 

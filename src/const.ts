@@ -4,7 +4,6 @@ import {
   PriceItems,
   ContactCaptions,
   OutletsCaptions,
-  PriceItem,
   IAddInfo
 } from "./types";
 
@@ -34,7 +33,7 @@ export const outletsRoot = `${DATA_ROOT}outlets/`;
 export const outletsFile = `${outletsRoot}outlets.json`;
 export const forcustomerRoot = `${DATA_ROOT}forcustomer/`;
 export const downloadsRoot = `${DATA_ROOT}downloads/`;
-export const COUNT_IMG_BG = 14;
+export const COUNT_IMG_BG = 2;
 export const restRoot = `${DATA_ROOT}rest/`;
 
 // export const mainMenu: MenuItems = [
@@ -223,7 +222,7 @@ export const subMenu: MenuItems = [
         name: "Automation"
       }
     }
-  },    
+  },
   {
     id: 5,
     path: `${PUBLIC_ROOT}forcustomer#direction`,
@@ -656,7 +655,7 @@ export const addInfo: IAddInfo = {
     en: {
       name: "Loading.."
     }
-  },  
+  },
   textRights: {
     ru: {
       name: "Березовский мясоконсервный комбинат © 2018 г. Все права защищены."
@@ -794,7 +793,7 @@ priceCaption.map((pr, p_idx) =>
 
 export const headersX: string[] = [];
 
-priceCaption.map((pr, p_idx) => 
+priceCaption.map((pr, p_idx) =>
   headersX.push(pr.caption["ru"].name)
 );
 
