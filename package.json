@@ -69,6 +69,6 @@
     "redux": "^4.0.1",
     "slick-carousel": "^1.8.1",
     "typesafe-actions": "^4.4.2",
-    "xlsx": "^0.14.3"
+    "xlsx": "^0.17.0"
   }
 }
