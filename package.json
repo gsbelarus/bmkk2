@@ -44,7 +44,16 @@
     "minimist": ">=1.2.6",
     "json-schema": ">=0.4.0",
     "cryptiles": ">=4.1.2",
-    "macaddress": ">=0.2.9"
+    "macaddress": ">=0.2.9",
+    "loader-utils": ">=1.4.2",
+    "shell-quote": ">=1.7.3",
+    "eventsource": ">=1.1.1",
+    "url-parse": ">=1.5.9",
+    "handlebars": ">=4.7.7",
+    "mixin-deep": ">=1.3.2",
+    "set-value": ">=2.0.1",
+    "lodash": ">=4.17.21",
+    "deep-extend": ">=0.5.1"
   },
   "dependencies": {
     "@types/classnames": "^2.2.9",
