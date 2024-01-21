@@ -1,5 +1,5 @@
 import { createAction } from 'typesafe-actions';
-import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, IxlsxData } from './types';
+import { IContacts, IDepartments, IGoodGroups, IGoods, INews, IOutlets, IPrice, IVacancies, IcsvData, IxlsxData, Language } from './types';
 
 export const setLanguage = createAction('SET_LANGUAGE', resolve => {
   return (lang: Language) => resolve(lang);
@@ -49,6 +49,12 @@ export const loadOutlets = createAction('LOAD_OUTLETS', resolve => {
 
 export type LoadOutlets = typeof loadOutlets;
 
+export const loadVacancies = createAction('LOAD_VACANCIES', resolve => {
+  return (loadedVacancies: IVacancies) => resolve(loadedVacancies);
+});
+
+export type LoadVacancies = typeof loadVacancies;
+
 export const loadcsvData = createAction('LOAD_CSVDATA', resolve => {
   return (loadedcsvData: IcsvData) => resolve(loadedcsvData);
 });
@@ -66,6 +72,12 @@ export const loadOutletsMD = createAction('LOAD_OUTLETSMD', resolve => {
 });
 
 export type LoadOutletsMD = typeof loadOutletsMD;
+
+export const loadVacanciesMD = createAction('LOAD_VACANCIESMD', resolve => {
+  return (loadedVacanciesMD: { lang: string, text: string }) => resolve(loadedVacanciesMD);
+});
+
+export type LoadVacanciesMD = typeof loadVacanciesMD;
 
 export const loadForForeignersMD = createAction('LOAD_FORFOREIGNERSMD', resolve => {
   return (loadedForForeignersMD: { lang: string, text: string }) => resolve(loadedForForeignersMD);

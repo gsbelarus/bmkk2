@@ -1,61 +1,64 @@
 import * as React from "react";
-import "./page.css";
-import { LangSelector } from "../LangSelector";
-import {
-  Language,
-  IGoodGroups,
-  IGoods,
-  IPrice,
-  INews,
-  IContacts,
-  IDepartments,
-  IOutlets,
-  IcsvData,
-  OnLoadMDFile,
-  IxlsxData
-} from "../../types";
-import {
-  SetLanguage,
-  LoadGroups,
-  LoadGoods,
-  LoadPrice,
-  LoadNews,
-  LoadContacts,
-  LoadDepartments,
-  LoadOutlets,
-  LoadcsvData,
-  LoadxlsxData,
-  LoadOutletsMD,
-  LoadForForeignersMD,
-  LoadAboutMD,
-  LoadHistoryMD,
-  LoadStaffMD,
-  LoadVacancyMD,
-  LoadRestMD,
-  LoadRestMD2,
-  LoadDirectionMD,
-  LoadRequisitesMD,
-  LoadForCustomerMD,
-  LoadPriceTitleMD,
-  LoadDownLoadMD,
-  LoadAutomationMD
-} from "../../actions";
-import {
-  mainMenu,
-  subMenu,
-  goodGroupsFile,
-  goodsFile,
-  priceFile,
-  addInfo,
-  COUNT_IMG_BG,
-  newsFile,
-  headersX
-} from "../../const";
+import * as ReactGA from 'react-ga';
 import { RouteComponentProps } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
-import { LName } from "../../types";
+import {
+  LoadAboutMD,
+  LoadAutomationMD,
+  LoadContacts,
+  LoadDepartments,
+  LoadDirectionMD,
+  LoadDownLoadMD,
+  LoadForCustomerMD,
+  LoadForForeignersMD,
+  LoadGoods,
+  LoadGroups,
+  LoadHistoryMD,
+  LoadNews,
+  LoadOutlets,
+  LoadOutletsMD,
+  LoadPrice,
+  LoadPriceTitleMD,
+  LoadRequisitesMD,
+  LoadRestMD,
+  LoadRestMD2,
+  LoadStaffMD,
+  LoadVacancies,
+  LoadVacanciesMD,
+  LoadVacancyMD,
+  LoadcsvData,
+  LoadxlsxData,
+  SetLanguage
+} from "../../actions";
+import {
+  COUNT_IMG_BG,
+  addInfo,
+  goodGroupsFile,
+  goodsFile,
+  headersX,
+  mainMenu,
+  newsFile,
+  priceFile,
+  subMenu
+} from "../../const";
+import {
+  IContacts,
+  IDepartments,
+  IGoodGroups,
+  IGoods,
+  INews,
+  IOutlets,
+  IPrice,
+  IVacancies,
+  IcsvData,
+  IxlsxData,
+  LName,
+  Language,
+  OnLoadMDFile
+} from "../../types";
+import { LangSelector } from "../LangSelector";
 import { Trade } from "../Trade";
-import * as ReactGA from 'react-ga';
+import "./page.css";
 
 export interface PageProps extends RouteComponentProps<any> {
   selectedLang: Language;
@@ -67,6 +70,8 @@ export interface PageProps extends RouteComponentProps<any> {
   departments?: IDepartments;
   outlets?: IOutlets;
   outletsMD?: LName;
+  vacancies?: IVacancies;
+  vacanciesMD?: LName;
   aboutMD?: LName;
   historyMD?: LName;
   automationMD?: LName;
@@ -92,6 +97,8 @@ export interface PageProps extends RouteComponentProps<any> {
   onLoadDepartments: LoadDepartments;
   onLoadOutlets: LoadOutlets;
   onLoadOutletsMD: LoadOutletsMD;
+  onLoadVacancies: LoadVacancies;
+  onLoadVacanciesMD: LoadVacanciesMD;
   onLoadForForeignersMD: LoadForForeignersMD;
   onLoadcsvData: LoadcsvData;
   onLoadxlsxData: LoadxlsxData;
@@ -146,7 +153,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
     this.state = {
       counter: 0,
       sendText: ''
-     };
+    };
   }
 
   componentDidMount() {
@@ -178,48 +185,48 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
     const _groups = groups
       ? (groups as IGoodGroups)
       : fetch(goodGroupsFile)
-          .then(res => res.text())
-          .then(res => JSON.parse(res))
-          .then(res => {
-            const g = res as IGoodGroups;
-            onLoadGroups(g);
-            return g;
-          });
+        .then(res => res.text())
+        .then(res => JSON.parse(res))
+        .then(res => {
+          const g = res as IGoodGroups;
+          onLoadGroups(g);
+          return g;
+        });
 
     const _goods = goods
       ? (goods as IGoods)
       : fetch(goodsFile)
-          .then(res => res.text())
-          .then(res => JSON.parse(res))
-          .then(res => {
-            const g = res as IGoods;
-            onLoadGoods(g);
-            return g;
-          });
+        .then(res => res.text())
+        .then(res => JSON.parse(res))
+        .then(res => {
+          const g = res as IGoods;
+          onLoadGoods(g);
+          return g;
+        });
 
     const _price = price
       ? (price as IPrice)
       : fetch(priceFile)
-          .then(res => res.text())
-          .then(res => JSON.parse(res))
-          .then(res => {
-            const p = res as IPrice;
-            onLoadPrice(p);
-            return p;
-          });
+        .then(res => res.text())
+        .then(res => JSON.parse(res))
+        .then(res => {
+          const p = res as IPrice;
+          onLoadPrice(p);
+          return p;
+        });
 
     const _news = news
       ? (news as INews)
       : fetch(newsFile)
-          .then(res => res.text())
-          .then(res => JSON.parse(res))
-          .then(res => {
-            const p = res as INews;
-            onLoadNews(p);
-            return p;
-          });
+        .then(res => res.text())
+        .then(res => JSON.parse(res))
+        .then(res => {
+          const p = res as INews;
+          onLoadNews(p);
+          return p;
+        });
 
-    Promise.all<IGoodGroups, IGoods, IPrice>([_groups, _goods, _price])
+    Promise.all([_groups, _goods, _price])
       .then(([_, gd, p]) => {
         if (!xlsxData) {
           onLoadxlsxData(
@@ -231,10 +238,10 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                   ws_data.push([addInfo.texName[sl].name]);
                   ws_data.push([
                     addInfo.textPriceTop[sl].name +
-                      " " +
-                      addInfo.textPriceName[sl].name +
-                      " " +
-                      gd.date
+                    " " +
+                    addInfo.textPriceName[sl].name +
+                    " " +
+                    gd.date
                   ]);
                   ws_data.push([]);
                   ws_data.push(headersX);
@@ -328,6 +335,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
     const { sl, location } = this.props;
     const { counter } = this.state;
     const logoImgBtm = require("../../../public/image/logo_bw.svg");
+    const logoImgBel = require('../../../public/image/logo_btm.png');
     const backImg = this.backgroundImgs.find((b, idx) => idx === counter);
     var sectionStyle = {
       backgroundImage: `url(${backImg})`
@@ -373,7 +381,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                           <span
                             className={
                               mi.path !== `${PUBLIC_ROOT}` &&
-                              location.pathname.endsWith(mi.path)
+                                location.pathname.endsWith(mi.path)
                                 ? "Selected"
                                 : ""
                             }
@@ -397,7 +405,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                 className={this.fullWidth ? "WorkAreaFullWidth" : "WorkArea"}
               >
                 {this.fullWidth ||
-                location.pathname.indexOf("production") == -1 ? null : (
+                  location.pathname.indexOf("production") == -1 ? null : (
                   <div className="navPath">
                     {this.renderNavPath(this.props)}
                   </div>
@@ -421,8 +429,11 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                 {mainMenu &&
                   subMenu && (
                     <nav className="flex FooterMenu">
-                      <Link to={`${PUBLIC_ROOT}`}>
-                        {<img className="Logo" src={logoImgBtm} />}
+                      <Link to={`${PUBLIC_ROOT}`} className='LogoBtm'>
+                        {/* {<img className="Logo" src={logoImgBtm} />} */}
+                        <img className="Logo" src={logoImgBtm} alt="imageLogo" />
+                        <img className="Logo LogoBel" src={logoImgBel} alt="imageLogo" />
+                        <div className='LogoBgWhite'></div>
                       </Link>
                       {mainMenu.filter(f => f.path).map((mi, idx) => {
                         const subM = subMenu.filter(t => t.id === mi.id);
@@ -435,7 +446,7 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                                     to={mi.path}
                                     className={
                                       mi.path !== `${PUBLIC_ROOT}` &&
-                                      location.pathname.endsWith(mi.path)
+                                        location.pathname.endsWith(mi.path)
                                         ? "Selected"
                                         : ""
                                     }
@@ -446,27 +457,27 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                                 {subM &&
                                   subM.map((sm, idx) => (
                                     <li key={idx}>
-                                      { sm.path !== 'http://200025739.epfr.by/'
-                                      ? <Link to={sm.path}>
+                                      {sm.path !== 'http://200025739.epfr.by/'
+                                        ? <Link to={sm.path}>
                                           {sm.caption[sl].name}
                                         </Link>
-                                      : <a href='http://200025739.epfr.by/' target="_blank">
+                                        : <a href='http://200025739.epfr.by/' target="_blank">
                                           {sm.caption[sl].name}
                                         </a>
                                       }
                                     </li>
                                   ))}
-                                {mi.id === 8 && (
+                                {mi.id === 9 && (
                                   <li key={idx + 1}>
                                     Тел.: +375-1643-9-11-11{" "}
                                   </li>
                                 )}
-                                {mi.id === 8 && (
+                                {mi.id === 9 && (
                                   <li key={idx + 2}>
                                     Тел.: +375-1643-9-11-91{" "}
                                   </li>
                                 )}
-                                {mi.id === 8 && (
+                                {mi.id === 9 && (
                                   <li key={idx + 3}>Email: bmkk@meat.by </li>
                                 )}
                               </ul>

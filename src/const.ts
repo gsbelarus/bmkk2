@@ -1,10 +1,10 @@
 import {
-  MenuItems,
-  GoodCaptions,
-  PriceItems,
   ContactCaptions,
+  GoodCaptions,
+  IAddInfo,
+  MenuItems,
   OutletsCaptions,
-  IAddInfo
+  PriceItems
 } from "./types";
 
 /**
@@ -36,6 +36,8 @@ export const downloadsRoot = `${DATA_ROOT}downloads/`;
 export const COUNT_IMG_BG = 4;
 export const restRoot = `${DATA_ROOT}rest/`;
 export const restRoot2 = `${DATA_ROOT}rest2/`;
+export const vacanciesRoot = `${DATA_ROOT}vacancies/`;
+export const vacanciesFile = `${vacanciesRoot}vacancies.json`;
 
 // export const mainMenu: MenuItems = [
 //   {
@@ -163,6 +165,21 @@ export const mainMenu: MenuItems = [
   },
   {
     id: 8,
+    path: `${PUBLIC_ROOT}vacancies`,
+    caption: {
+      ru: {
+        name: "Вакансии"
+      },
+      be: {
+        name: "Вакансii"
+      },
+      en: {
+        name: "Vacancies"
+      }
+    }
+  },
+  {
+    id: 9,
     path: `${PUBLIC_ROOT}contacts`,
     caption: {
       ru: {
@@ -270,7 +287,7 @@ export const subMenu: MenuItems = [
     }
   },
   {
-    id: 8,
+    id: 9,
     path: `${PUBLIC_ROOT}contacts#contact-form`,
     caption: {
       ru: {
@@ -730,16 +747,16 @@ export const addInfo: IAddInfo = {
     }
   },
   textPriceDescr: {
-		ru: {
+    ru: {
       name: "Полный прайс-лист в формате CSV (Microsoft Excel) на продукцию предприятия с указанием наименования, состава, срока хранения, штрих-кода, цен ФСО и ФСН."
     },
-      be: {
-        name: "Полный прайс-лист в формате CSV (Microsoft Excel) на продукцию предприятия с указанием наименования, состава, срока хранения, штрих-кода, цен ФСО и ФСН."
-      },
-      en: {
-        name: "Полный прайс-лист в формате CSV (Microsoft Excel) на продукцию предприятия с указанием наименования, состава, срока хранения, штрих-кода, цен ФСО и ФСН."
-      }
+    be: {
+      name: "Полный прайс-лист в формате CSV (Microsoft Excel) на продукцию предприятия с указанием наименования, состава, срока хранения, штрих-кода, цен ФСО и ФСН."
     },
+    en: {
+      name: "Полный прайс-лист в формате CSV (Microsoft Excel) на продукцию предприятия с указанием наименования, состава, срока хранения, штрих-кода, цен ФСО и ФСН."
+    }
+  },
   textDownLoadFilesTop: {
     ru: {
       name: "Материалы для скачивания"

@@ -118,7 +118,7 @@ export type IcsvData = {
   '10': string | undefined
 }[];
 
-export type IxlsxData = (string|number)[][];
+export type IxlsxData = (string | number)[][];
 
 export interface INews {
   version: string;
@@ -182,6 +182,17 @@ export interface IOutlets {
     lon: string;
     lat: string;
     ordr: number;
+  }[];
+}
+
+export interface IVacancies {
+  version: string;
+  vacancies: {
+    ruid: string;
+    caption: LName;
+    ordr: number;
+    salary: LName;
+    image: string;
   }[];
 }
 

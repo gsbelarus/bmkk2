@@ -10,7 +10,7 @@ header {
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14);
 
-  /* background-image: url(/back.jpg); 
+  /* background-image: url(/back.jpg);
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;*/
@@ -48,6 +48,8 @@ img.Logo {
   top: -34px;
   left: 0;
   height: 140px;
+  width: auto !important;
+  object-fit: contain;
 }
 
 .TopRibbonContent {
@@ -92,14 +94,14 @@ div.TopRibbon a:hover {
 .nav-main-menu li a {
   color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   margin-right: 10px;
   text-decoration: none;
 }
 
 .nav-main-menu li span {
-  padding: 8px;
+  padding: 4px;
 }
 
 .nav-main-menu span:hover,
@@ -205,7 +207,7 @@ nav.FooterMenu li {
 }
 
 nav.FooterMenu li:last-child {
-  margin-right: 28px;
+  margin-right: 20px;
 }
 
 nav.FooterMenu a:hover {
@@ -214,11 +216,34 @@ nav.FooterMenu a:hover {
 }
 
 .Bottom img.Logo {
-  height: 70px;
-  top: 6px;
-  /* padding-right: 40px; */
+  height: 60px;
+  top: 10px;
   position: relative;
   left: 0;
+  margin-right: 2px;
+  margin-bottom: 14px;
+}
+
+.Bottom img.LogoBel {
+  height: 50px;
+  z-index: 2;
+}
+
+.LogoBtm {
+  display: flex;
+  flex-direction: column;
+}
+
+.LogoBgWhite {
+  background-color: white;
+  position: absolute;
+  height: 55px;
+  width: 54px;
+  z-index: 1;
+  top: 72px;
+  left: 16px;
+  border-top-right-radius: 10px;
+  margin-top: 10px;
 }
 
 nav.FooterMenu ul {
@@ -387,16 +412,19 @@ header ul > li {
 @media all and (max-width: 1024px) {
   .flex nav.FooterMenu a,
   nav.FooterMenu li {
-    margin-right: 10px !important;
+    margin-right: 4px !important;
   }
 
-  .Bottom img.Logo {
-    display: none;
+  nav.FooterMenu a {
+    margin-right: 2px !important;
+  }
+
+  .Bottom .LogoBtm {
+    display: none !important;
   }
 }
 
 @media all and (max-width: 700px) {
-   
   .WorkArea {
     margin-top: 0px !important;
   }

@@ -1,32 +1,74 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Switch, Route, Link } from 'react-router-dom';
-import { MainPage } from './components/MainPage';
-import { setLanguage, SetLanguage, loadGroups, LoadGroups, loadGoods, loadPrice, LoadPrice, LoadGoods,
-         LoadNews, loadNews, LoadContacts, loadContacts, LoadDepartments, loadDepartments,
-         LoadOutlets, loadOutlets, LoadcsvData, loadcsvData, loadOutletsMD, LoadOutletsMD, LoadForForeignersMD, loadForForeignersMD,
-         loadAboutMD, LoadAboutMD, LoadHistoryMD, LoadStaffMD, LoadVacancyMD, LoadRestMD, LoadRestMD2, loadHistoryMD, loadStaffMD, loadVacancyMD,
-         loadRestMD, loadRestMD2, loadDirectionMD, loadRequisitesMD, LoadDirectionMD, LoadRequisitesMD, LoadForCustomerMD, loadForCustomerMD,
-         LoadPriceTitleMD, loadPriceTitleMD, LoadDownLoadMD, loadDownLoadMD, LoadxlsxData, loadxlsxData, LoadAutomationMD, loadAutomationMD } from './actions';
-import { State } from './store';
-import { Language, IGoodGroups, IGoods, IPrice, INews, IContacts, IDepartments, IOutlets, IcsvData, LName, IxlsxData } from './types';
-import { Production } from './components/Production';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {
+  LoadAboutMD,
+  LoadAutomationMD,
+  LoadContacts,
+  LoadDepartments,
+  LoadDirectionMD,
+  LoadDownLoadMD,
+  LoadForCustomerMD,
+  LoadForForeignersMD,
+  LoadGoods,
+  LoadGroups,
+  LoadHistoryMD,
+  LoadNews,
+  LoadOutlets,
+  LoadOutletsMD,
+  LoadPrice,
+  LoadPriceTitleMD,
+  LoadRequisitesMD,
+  LoadRestMD, LoadRestMD2,
+  LoadStaffMD,
+  LoadVacancies, LoadVacanciesMD,
+  LoadVacancyMD,
+  LoadcsvData,
+  LoadxlsxData,
+  SetLanguage,
+  loadAboutMD,
+  loadAutomationMD,
+  loadContacts,
+  loadDepartments,
+  loadDirectionMD,
+  loadDownLoadMD,
+  loadForCustomerMD,
+  loadForForeignersMD,
+  loadGoods,
+  loadGroups,
+  loadHistoryMD,
+  loadNews,
+  loadOutlets,
+  loadOutletsMD,
+  loadPrice,
+  loadPriceTitleMD,
+  loadRequisitesMD,
+  loadRestMD, loadRestMD2,
+  loadStaffMD, loadVacancies, loadVacanciesMD, loadVacancyMD,
+  loadcsvData,
+  loadxlsxData,
+  setLanguage
+} from './actions';
 import { About } from './components/About';
-import { Goods } from './components/Goods';
-import { Price } from './components/Price';
-import { GoodCard } from './components/GoodCard';
-import { News } from './components/News';
-import { Contacts } from './components/Contacts';
-import { Outlets } from './components/Outlets';
-import { ForCustomer } from './components/ForCustomer';
-import { DownLoadFiles } from './components/DownLoadFiles';
-import { BrowserRouter } from 'react-router-dom'
-import { Rest } from './components/Rest';
-import { NewsCard } from './components/NewsCard';
 import { Automation } from './components/Automation';
+import { Contacts } from './components/Contacts';
+import { DownLoadFiles } from './components/DownLoadFiles';
+import { ForCustomer } from './components/ForCustomer';
+import { GoodCard } from './components/GoodCard';
+import { Goods } from './components/Goods';
+import { MainPage } from './components/MainPage';
+import { News } from './components/News';
+import { NewsCard } from './components/NewsCard';
+import { Outlets } from './components/Outlets';
+import { Price } from './components/Price';
+import { Production } from './components/Production';
+import { Rest } from './components/Rest';
+import { Vacancies } from './components/Vacancies';
+import { State } from './store';
+import { IContacts, IDepartments, IGoodGroups, IGoods, INews, IOutlets, IPrice, IVacancies, IcsvData, IxlsxData, LName, Language } from './types';
 
 export interface AppProps {
-  aboutMD? : LName;
+  aboutMD?: LName;
   contacts?: IContacts;
   csvData?: IcsvData;
   xlsxData?: IxlsxData;
@@ -54,7 +96,9 @@ export interface AppProps {
   onLoadAutomationMD: LoadAutomationMD;
   onLoadNews: LoadNews;
   onLoadOutlets: LoadOutlets;
-  onLoadOutletsMD: LoadOutletsMD
+  onLoadOutletsMD: LoadOutletsMD;
+  onLoadVacancies: LoadVacancies;
+  onLoadVacanciesMD: LoadVacanciesMD;
   onLoadPrice: LoadPrice;
   onLoadPriceTitleMD: LoadPriceTitleMD;
   onLoadRequisitesMD: LoadRequisitesMD;
@@ -65,6 +109,8 @@ export interface AppProps {
   onSetLanguage: SetLanguage;
   outlets?: IOutlets;
   outletsMD?: LName;
+  vacancies?: IVacancies;
+  vacanciesMD?: LName;
   price?: IPrice;
   priceTitleMD?: LName;
   requisitesMD?: LName;
@@ -87,7 +133,7 @@ class App extends React.Component<AppProps, {}> {
             path={PUBLIC_ROOT}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <MainPage {...mergedProps} />;
               }
             }
@@ -97,7 +143,7 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}production`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <Production {...mergedProps} />;
               }
             }
@@ -107,7 +153,7 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}production/:groupID`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <Goods {...mergedProps} />;
               }
             }
@@ -116,7 +162,7 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}about`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <About {...mergedProps} />;
               }
             }
@@ -126,7 +172,7 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}production/:groupID/:goodID`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <GoodCard {...mergedProps} />;
               }
             }
@@ -135,7 +181,7 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}price`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <Price {...mergedProps} />;
               }
             }
@@ -145,7 +191,7 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}news`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <News {...mergedProps} />;
               }
             }
@@ -155,7 +201,7 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}news/:newsID`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <NewsCard {...mergedProps} />;
               }
             }
@@ -164,8 +210,17 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}rest`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <Rest {...mergedProps} />;
+              }
+            }
+          />
+          <Route
+            path={`${PUBLIC_ROOT}vacancies`}
+            render={
+              (props) => {
+                const mergedProps = { ...this.props, ...props };
+                return <Vacancies {...mergedProps} />;
               }
             }
           />
@@ -173,7 +228,7 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}contacts`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <Contacts {...mergedProps} />;
               }
             }
@@ -182,7 +237,7 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}outlets`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <Outlets {...mergedProps} />;
               }
             }
@@ -191,7 +246,7 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}forcustomer`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <ForCustomer {...mergedProps} />;
               }
             }
@@ -200,7 +255,7 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}downloads`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <DownLoadFiles {...mergedProps} />;
               }
             }
@@ -209,7 +264,7 @@ class App extends React.Component<AppProps, {}> {
             path={`${PUBLIC_ROOT}automation`}
             render={
               (props) => {
-                const mergedProps = {...this.props, ...props};
+                const mergedProps = { ...this.props, ...props };
                 return <Automation {...mergedProps} />;
               }
             }
@@ -239,6 +294,8 @@ export default connect(
     onLoadcsvData: loadcsvData,
     onLoadxlsxData: loadxlsxData,
     onLoadOutletsMD: loadOutletsMD,
+    onLoadVacancies: loadVacancies,
+    onLoadVacanciesMD: loadVacanciesMD,
     onLoadForForeignersMD: loadForForeignersMD,
     onLoadAboutMD: loadAboutMD,
     onLoadHistoryMD: loadHistoryMD,

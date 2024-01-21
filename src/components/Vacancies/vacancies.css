@@ -1,0 +1,74 @@
+.VacancyBox {
+  padding-top: 0px !important;
+}
+
+.VacancyBox .Card {
+  width: 180px;
+  min-height: 192px;
+}
+
+/* div.VacancyData {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+} */
+.CardCaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.CardText {
+  text-transform: uppercase;
+}
+
+.CardCaptionLabel {
+  color: var(--colorText);
+}
+/*
+div.VacancyBox .CardCaptionTitle {
+  color: var(--colorBrown);
+  font-size: 15px;
+  padding-bottom: 8px;
+  line-height: 1.2em;
+}
+
+.CardCaptionLabel {
+  color: var(--colorText);
+}
+
+div.VacancyData {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 190px;
+  width: 100%;
+} */
+
+.VacCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 182px;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  min-height: 200px;
+}
+
+.VacText {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.VacCaption {
+  padding: 8px;
+  background-color: #ebebeba1;
+  min-height: 90px;
+}
+
+.VacSalary {
+  font-weight: 300;
+}
