@@ -1,6 +1,19 @@
-import { ActionType, getType } from 'typesafe-actions';
-import * as actions from './actions';
-import { IContacts, IDepartments, IGoodGroups, IGoods, INews, IOutlets, IPrice, IVacancies, IcsvData, IxlsxData, LName, Language } from './types';
+import { ActionType, getType } from "typesafe-actions";
+import * as actions from "./actions";
+import {
+  IContacts,
+  IDepartments,
+  IGoodGroups,
+  IGoods,
+  INews,
+  IOutlets,
+  IPrice,
+  IVacancies,
+  IcsvData,
+  IxlsxData,
+  LName,
+  Language,
+} from "./types";
 
 export type BMKKAction = ActionType<typeof actions>;
 
@@ -26,6 +39,7 @@ export type State = {
   price?: IPrice;
   priceTitleMD?: LName;
   requisitesMD?: LName;
+  feedbackMD?: LName;
   restMD?: LName;
   restMD2?: LName;
   selectedGroup: string;
@@ -35,11 +49,14 @@ export type State = {
 };
 
 const initialState: State = {
-  selectedLang: 'RU',
-  selectedGroup: ''
+  selectedLang: "RU",
+  selectedGroup: "",
 };
 
-export const reducer = (state: State = initialState, action: BMKKAction): State => {
+export const reducer = (
+  state: State = initialState,
+  action: BMKKAction
+): State => {
   switch (action.type) {
     case getType(actions.setLanguage):
       return { ...state, selectedLang: action.payload };
@@ -82,74 +99,105 @@ export const reducer = (state: State = initialState, action: BMKKAction): State 
       const { lang, text } = action.payload;
       const { vacanciesMD } = state;
 
-      return { ...state, vacanciesMD: { ...vacanciesMD, [lang]: { name: text } } };
+      return {
+        ...state,
+        vacanciesMD: { ...vacanciesMD, [lang]: { name: text } },
+      };
     }
 
     case getType(actions.loadForForeignersMD):
       var { lang, text } = action.payload;
       const { forForeignersMD } = state;
-      return { ...state, forForeignersMD: { ...forForeignersMD, [lang]: { name: text } } }
+      return {
+        ...state,
+        forForeignersMD: { ...forForeignersMD, [lang]: { name: text } },
+      };
 
     case getType(actions.loadAboutMD):
       var { lang, text } = action.payload;
       const { aboutMD } = state;
-      return { ...state, aboutMD: { ...aboutMD, [lang]: { name: text } } }
+      return { ...state, aboutMD: { ...aboutMD, [lang]: { name: text } } };
 
     case getType(actions.loadHistoryMD):
       var { lang, text } = action.payload;
       const { historyMD } = state;
-      return { ...state, historyMD: { ...historyMD, [lang]: { name: text } } }
+      return { ...state, historyMD: { ...historyMD, [lang]: { name: text } } };
 
     case getType(actions.loadAutomationMD):
       var { lang, text } = action.payload;
       const { automationMD } = state;
-      return { ...state, automationMD: { ...automationMD, [lang]: { name: text } } }
+      return {
+        ...state,
+        automationMD: { ...automationMD, [lang]: { name: text } },
+      };
 
     case getType(actions.loadStaffMD):
       var { lang, text } = action.payload;
       const { staffMD } = state;
-      return { ...state, staffMD: { ...staffMD, [lang]: { name: text } } }
+      return { ...state, staffMD: { ...staffMD, [lang]: { name: text } } };
 
     case getType(actions.loadVacancyMD):
       var { lang, text } = action.payload;
       const { vacancyMD } = state;
-      return { ...state, vacancyMD: { ...vacancyMD, [lang]: { name: text } } }
+      return { ...state, vacancyMD: { ...vacancyMD, [lang]: { name: text } } };
 
     case getType(actions.loadRestMD):
       var { lang, text } = action.payload;
       const { restMD } = state;
-      return { ...state, restMD: { ...restMD, [lang]: { name: text } } }
+      return { ...state, restMD: { ...restMD, [lang]: { name: text } } };
 
     case getType(actions.loadRestMD2):
       var { lang, text } = action.payload;
       const { restMD2 } = state;
-      return { ...state, restMD2: { ...restMD2, [lang]: { name: text } } }
+      return { ...state, restMD2: { ...restMD2, [lang]: { name: text } } };
 
     case getType(actions.loadDirectionMD):
       var { lang, text } = action.payload;
       const { directionMD } = state;
-      return { ...state, directionMD: { ...directionMD, [lang]: { name: text } } }
+      return {
+        ...state,
+        directionMD: { ...directionMD, [lang]: { name: text } },
+      };
 
     case getType(actions.loadRequisitesMD):
       var { lang, text } = action.payload;
       const { requisitesMD } = state;
-      return { ...state, requisitesMD: { ...requisitesMD, [lang]: { name: text } } }
+      return {
+        ...state,
+        requisitesMD: { ...requisitesMD, [lang]: { name: text } },
+      };
+
+    case getType(actions.loadFeedbackMD):
+      var { lang, text } = action.payload;
+      const { feedbackMD } = state;
+      return {
+        ...state,
+        feedbackMD: { ...feedbackMD, [lang]: { name: text } },
+      };
 
     case getType(actions.loadForCustomerMD):
       var { lang, text } = action.payload;
       const { forCustomerMD } = state;
-      return { ...state, forCustomerMD: { ...forCustomerMD, [lang]: { name: text } } }
+      return {
+        ...state,
+        forCustomerMD: { ...forCustomerMD, [lang]: { name: text } },
+      };
 
     case getType(actions.loadPriceTitleMD):
       var { lang, text } = action.payload;
       const { priceTitleMD } = state;
-      return { ...state, priceTitleMD: { ...priceTitleMD, [lang]: { name: text } } }
+      return {
+        ...state,
+        priceTitleMD: { ...priceTitleMD, [lang]: { name: text } },
+      };
 
     case getType(actions.loadDownLoadMD):
       var { lang, text } = action.payload;
       const { downLoadMD } = state;
-      return { ...state, downLoadMD: { ...downLoadMD, [lang]: { name: text } } }
-
+      return {
+        ...state,
+        downLoadMD: { ...downLoadMD, [lang]: { name: text } },
+      };
 
     case getType(actions.loadxlsxData):
       return { ...state, xlsxData: action.payload };

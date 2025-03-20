@@ -15,13 +15,12 @@ div.DepartmentItem div:first-child {
   font-weight: bold;
 }
 
-div.ContactItem div:first-child{
+div.ContactItem div:first-child {
   color: var(--colorBrown);
   font-size: 18px;
   font-weight: 800;
   padding-top: 4px;
   padding-bottom: 12px;
-  /* text-shadow: 1px 1px 1px rgba(0,0,0,0.2); */
 }
 
 div.ContactItem i {
@@ -42,53 +41,56 @@ div.ContactItem i {
 }
 
 #contact-form {
-	max-width: 500px;
+  max-width: 500px;
   /* margin: 50px auto; */
   margin-top: 20px;
-	padding: 20px;
-	border-radius: 4px;
+  padding: 20px;
+  border-radius: 4px;
   background-color: #ebebeba1;
   border-radius: 2px;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
-#contact-form h2, .field-block {
-	margin-bottom: 20px;
+#contact-form h2,
+.field-block {
+  margin-bottom: 20px;
 }
 
-.field-block label, .field-block .field {
-	display: block;
-	width: 100%;
+.field-block label,
+.field-block .field {
+  display: block;
+  width: 100%;
 }
 
 .field-block label {
-	margin-bottom: 8px;
-	font-weight: bold;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
 .field-block .field {
-	font-size: 16px;
-	padding: 8px 12px;
-	line-height: 1.5;
-	border-radius: 4px;
-	border: 1px solid #ccc;
-	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  font-size: 16px;
+  padding: 8px 12px;
+  line-height: 1.5;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
 .field-block .field:focus {
   border-color: #66afe9;
   outline: 0;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(102, 175, 233, 0.6);
 }
 
 .field-block textarea {
-	resize: vertical;
+  resize: vertical;
 }
 
 .check-text {
-	font-size: 14px;
-	vertical-align: top;
+  font-size: 14px;
+  vertical-align: top;
 }
 
 .button {
@@ -104,7 +106,7 @@ div.ContactItem i {
   min-width: 80px;
   height: 32px;
   background-color: var(--colorBrown);
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   color: rgb(255, 255, 255);
   border-style: none;
   border-radius: 2px;
@@ -113,4 +115,55 @@ div.ContactItem i {
 .info {
   float: right;
   margin-top: 6px;
+}
+
+.contentContainer {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.feedbackInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 0 20px 0;
+}
+
+.feedbackForm {
+  width: 50%;
+}
+
+div.Feedback {
+  color: var(--colorBrown);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+div.Feedback i {
+  color: var(--colorBrown);
+  padding-right: 8px;
+}
+
+.feedback {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: row;
+  z-index: 1;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .feedback {
+    gap: 0px;
+    flex-direction: column-reverse;
+  }
+  .feedbackInfo {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .feedbackForm {
+    width: 100%;
+  }
 }

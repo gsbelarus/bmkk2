@@ -1,6 +1,6 @@
-export type Language = 'RU' | 'BE' | 'EN';
+export type Language = "RU" | "BE" | "EN";
 
-export const languages: Language[] = ['RU', 'BE', 'EN'];
+export const languages: Language[] = ["RU", "BE", "EN"];
 
 export interface TName {
   name: string;
@@ -12,15 +12,14 @@ export interface LName {
 }
 
 export interface MenuItem {
-  id: number,
+  id: number;
   path: string;
   caption: LName;
 }
 
-export type OnLoadMDFile = (params: { lang: string, text: string }) => void;
+export type OnLoadMDFile = (params: { lang: string; text: string }) => void;
 
 export type MenuItems = MenuItem[];
-
 
 export interface GoodCaptions {
   ingredients: LName;
@@ -42,7 +41,6 @@ export interface GoodCaptions {
   Fe: LName;
 }
 
-
 //export type GoodCaptions = GoodCapt;
 
 export interface IGoodGroups {
@@ -61,7 +59,6 @@ export interface PriceItem {
 }
 
 export type PriceItems = PriceItem[];
-
 
 export interface IGoods {
   version: string;
@@ -106,16 +103,16 @@ export interface IPrice {
 }
 
 export type IcsvData = {
-  '1': number;
-  '2': string;
-  '3': string;
-  '4': number | undefined,
-  '5': number | undefined,
-  '6': number,
-  '7': string,
-  '8': string,
-  '9': string | undefined,
-  '10': string | undefined
+  "1": number;
+  "2": string;
+  "3": string;
+  "4": number | undefined;
+  "5": number | undefined;
+  "6": number;
+  "7": string;
+  "8": string;
+  "9": string | undefined;
+  "10": string | undefined;
 }[];
 
 export type IxlsxData = (string | number)[][];
@@ -162,7 +159,7 @@ export interface IDepartments {
 export interface ContactCaptions {
   phone: LName;
   fax: LName;
-  email: LName
+  email: LName;
 }
 
 export interface IOutlets {
@@ -209,7 +206,7 @@ export interface OutletsCaptions {
   timewd: LName;
   timesat: LName;
   timesun: LName;
-  coordinates: LName
+  coordinates: LName;
 }
 export interface IAddInfo {
   textLoading: LName;
@@ -223,5 +220,15 @@ export interface IAddInfo {
   textDownLoadFilesTop: LName;
   moreCaption: LName;
   textPriceName: LName;
-  texName: LName
+  texName: LName;
+}
+
+export interface HotLineCaptions {
+  caption: LName;
+  name: LName;
+  email: LName;
+  phone: LName;
+  message: LName;
+  submit: LName;
+  hotline: LName;
 }

@@ -8,6 +8,7 @@ import {
   LoadDepartments,
   LoadDirectionMD,
   LoadDownLoadMD,
+  LoadFeedbackMD,
   LoadForCustomerMD,
   LoadForForeignersMD,
   LoadGoods,
@@ -32,6 +33,7 @@ import {
   loadDepartments,
   loadDirectionMD,
   loadDownLoadMD,
+  loadFeedbackMD,
   loadForCustomerMD,
   loadForForeignersMD,
   loadGoods,
@@ -102,6 +104,7 @@ export interface AppProps {
   onLoadPrice: LoadPrice;
   onLoadPriceTitleMD: LoadPriceTitleMD;
   onLoadRequisitesMD: LoadRequisitesMD;
+  onLoadFeedbackMD: LoadFeedbackMD;
   onLoadRestMD: LoadRestMD;
   onLoadRestMD2: LoadRestMD2;
   onLoadStaffMD: LoadStaffMD;
@@ -114,6 +117,7 @@ export interface AppProps {
   price?: IPrice;
   priceTitleMD?: LName;
   requisitesMD?: LName;
+  feedbackMD?: LName;
   restMD?: LName;
   restMD2?: LName;
   selectedGroup: string;
@@ -306,6 +310,7 @@ export default connect(
     onLoadRestMD2: loadRestMD2,
     onLoadDirectionMD: loadDirectionMD,
     onLoadRequisitesMD: loadRequisitesMD,
+    onLoadFeedbackMD: loadFeedbackMD,
     onLoadForCustomerMD: loadForCustomerMD,
     onLoadPriceTitleMD: loadPriceTitleMD,
     onLoadDownLoadMD: loadDownLoadMD
