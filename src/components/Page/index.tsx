@@ -9,6 +9,7 @@ import {
   LoadDepartments,
   LoadDirectionMD,
   LoadDownLoadMD,
+  LoadFeedbackMD,
   LoadForCustomerMD,
   LoadForForeignersMD,
   LoadGoods,
@@ -82,6 +83,7 @@ export interface PageProps extends RouteComponentProps<any> {
   forForeignersMD?: LName;
   directionMD?: LName;
   requisitesMD?: LName;
+  feedbackMD?: LName;
   forCustomerMD?: LName;
   priceTitleMD?: LName;
   downLoadMD?: LName;
@@ -111,6 +113,7 @@ export interface PageProps extends RouteComponentProps<any> {
   onLoadRestMD2: LoadRestMD2;
   onLoadDirectionMD: LoadDirectionMD;
   onLoadRequisitesMD: LoadRequisitesMD;
+  onLoadFeedbackMD: LoadFeedbackMD;
   onLoadForCustomerMD: LoadForCustomerMD;
   onLoadPriceTitleMD: LoadPriceTitleMD;
   onLoadDownLoadMD: LoadDownLoadMD;
@@ -468,17 +471,19 @@ export class Page<P extends PageProps = PageProps> extends React.Component<
                                     </li>
                                   ))}
                                 {mi.id === 9 && (
-                                  <li key={idx + 1}>
-                                    Тел.: +375-1643-9-11-11{" "}
-                                  </li>
+                                  <li><i className="fas fa-phone fa-xs Phone" />+375 (29) 798-77-67</li>
                                 )}
                                 {mi.id === 9 && (
-                                  <li key={idx + 2}>
-                                    Тел.: +375-1643-9-11-91{" "}
-                                  </li>
+                                  <li key={idx + 3}><i className="fas fa-phone fa-xs Phone" />+375-1643-9-11-11</li>
                                 )}
                                 {mi.id === 9 && (
-                                  <li key={idx + 3}>Email: bmkk@meat.by </li>
+                                  <li key={idx + 4}><i className="fas fa-phone fa-xs Phone" />+375-1643-9-11-91</li>
+                                )}
+                                {mi.id === 9 && (
+                                  <li key={idx + 5}><i className="far fa-envelope fa-xs Phone" />market_bmkk@mail.ru</li>
+                                )}
+                                {mi.id === 9 && (
+                                  <li key={idx + 6}><i className="far fa-envelope fa-xs Phone" />bmkk@meat.by</li>
                                 )}
                               </ul>
                             </span>
