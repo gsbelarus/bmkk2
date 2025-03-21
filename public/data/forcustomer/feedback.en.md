@@ -1,5 +1,5 @@
-﻿If you have any questions or need additional information, please contact us.
+﻿We are always ready to help and answer all your questions.
 
-We are always ready to help and answer all your questions.
+HOTLINE PHONE NUMBER:
 
-Hotline phone number (Mon - Fri: 8:00 - 17:00):
+**+375 29 798-77-67 (MTS)** Mon - Fri: 8:00 - 17:00

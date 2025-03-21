@@ -132,12 +132,6 @@ export class Contacts extends Page<PageProps> {
                     <ReactMarkdown>{feedbackMD[sl.toUpperCase()].name}</ReactMarkdown>
                   </div>
                 }
-                <div className="Feedback">
-                  <div className="contactdiv">
-                    <i className="fas fa-phone fa-xs" />
-                    <strong>+375 (29) 798-77-67 (MTS)</strong>
-                  </div>
-                </div>
               </div>
             </div>
           </div >
