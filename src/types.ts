@@ -231,4 +231,6 @@ export interface HotLineCaptions {
   message: LName;
   submit: LName;
   hotline: LName;
+  hotLinePhone: LName;
+  hotLineTime: LName;
 }

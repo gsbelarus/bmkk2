@@ -194,6 +194,21 @@ export const mainMenu: MenuItems = [
       },
     },
   },
+  {
+    id: 10,
+    path: `${PUBLIC_ROOT}contacts#contact-form`,
+    caption: {
+      ru: {
+        name: "Форма обратной связи",
+      },
+      be: {
+        name: "Форма зваротнай сувязі",
+      },
+      en: {
+        name: "Feedback form",
+      },
+    },
+  },
 ];
 
 export const subMenu: MenuItems = [
@@ -287,21 +302,21 @@ export const subMenu: MenuItems = [
       },
     },
   },
-  {
-    id: 9,
-    path: `${PUBLIC_ROOT}contacts#contact-form`,
-    caption: {
-      ru: {
-        name: "Форма обратной связи",
-      },
-      be: {
-        name: "Форма зваротнай сувязі",
-      },
-      en: {
-        name: "Feedback form",
-      },
-    },
-  },
+  // {
+  //   id: 10,
+  //   path: `${PUBLIC_ROOT}contacts#contact-form`,
+  //   caption: {
+  //     ru: {
+  //       name: "Форма обратной связи",
+  //     },
+  //     be: {
+  //       name: "Форма зваротнай сувязі",
+  //     },
+  //     en: {
+  //       name: "Feedback form",
+  //     },
+  //   },
+  // },
 ];
 
 export const goodCaption: GoodCaptions = {
@@ -975,6 +990,28 @@ export const feedbackCaption: HotLineCaptions = {
     },
     en: {
       name: "Hot line",
+    },
+  },
+  hotLinePhone: {
+    ru: {
+      name: "ТЕЛЕФОН ГОРЯЧЕЙ ЛИНИИ",
+    },
+    be: {
+      name: "ТЭЛЕФОН ГАРАЧАЙ ЛІНІІ",
+    },
+    en: {
+      name: "PHONE HOT LINE",
+    },
+  },
+  hotLineTime: {
+    ru: {
+      name: "Пн.-Пт. с 8:00 до 17:00",
+    },
+    be: {
+      name: "Пн.-Пт. з 8:00 да 17:00",
+    },
+    en: {
+      name: "Mon.-Fri. from 8:00 to 17:00",
     },
   },
 };
